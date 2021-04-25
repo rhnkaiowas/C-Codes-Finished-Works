@@ -1,6 +1,0 @@
->>> Warning 202 "Kontrol Karti.c" Line 48(16,29): Variable never used:   step_for_10um
->>> Warning 202 "Kontrol Karti.c" Line 50(6,19): Variable never used:   data_x_setted
->>> Warning 202 "Kontrol Karti.c" Line 51(6,19): Variable never used:   data_y_setted
-      Memory usage:   ROM=4%      RAM=5% - 5%
-      0 Errors,  3 Warnings.
-Build Successful.

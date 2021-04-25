@@ -1,6 +1,0 @@
-#ifndef DRV8711 
-#define DRV8711 
-
-void I2C_init(void); 
-
-#endif DRV8711

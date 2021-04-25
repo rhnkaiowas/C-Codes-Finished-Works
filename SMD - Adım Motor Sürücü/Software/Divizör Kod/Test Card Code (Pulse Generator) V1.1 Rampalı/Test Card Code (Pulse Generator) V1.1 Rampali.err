@@ -1,6 +1,0 @@
->>> Warning 225 "C:\Program Files (x86)\PICC\devices\16f1826.h" Line 284(20,30): Duplicate #define
->>> Warning 225 "C:\Program Files (x86)\PICC\devices\16f1826.h" Line 293(20,33): Duplicate #define
->>> Warning 202 "Test Card Code (Pulse Generator) V1.1 Rampali.c" Line 74(20,27): Variable never used:   periods
->>> Warning 202 "Test Card Code (Pulse Generator) V1.1 Rampali.c" Line 80(37,50): Variable never used:   distance_step
-      Memory usage:   ROM=7%      RAM=3% - 7%
-      0 Errors,  4 Warnings.
