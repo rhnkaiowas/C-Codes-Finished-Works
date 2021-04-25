@@ -1,0 +1,126 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PACKED_MEMORY.P3
+004-005 @WRITE_PROGRAM_MEMORY8.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+011     SPI_PIR1
+011.3   SPI_FLAG
+020-021 step_count
+022     motion_state
+023     md_init.Ctrl_1
+023-024 motion_cycle.step_count
+023     MAIN.@SCRATCH1
+024     md_init.Ctrl_0
+025     md_init.Torque_1
+025-026 motion_cycle.period
+026     md_init.Torque_0
+027     md_init.Off_1
+027.0   motion_cycle.running
+028     md_init.Off_0
+028     motion_cycle.upwards
+029     md_init.Blank_1
+029     md_set_direction.value
+029     motion_cycle.@SCRATCH1
+02A     md_init.Blank_0
+02A     motion_cycle.@SCRATCH2
+02B     md_init.Decay_1
+02B     motion_cycle.@SCRATCH3
+02C     @delay_us1.P1
+02C     md_init.Decay_0
+02D     md_init.Stall_1
+02E     md_init.Stall_0
+02F     md_init.Drive_1
+030     md_init.Drive_0
+031     md_init.Status_1
+032     md_init.Status_0
+033     md_set_state.value
+034     md_set_state.Ctrl_1
+035     md_set_state.Ctrl_0
+036     md_set_state.Ctrl_1
+037     md_set_state.Ctrl_0
+038     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+095     OPTION
+095.7   OPTION_WPUEN
+111.6   C1OUT
+113.6   C2OUT
+11D     PIN_APFCON0
+11D.5   PIN_SS_SELECT
+11D.6   PIN_SDO_SELECT
+11D.7   PIN_RX_SELECT
+11E     PIN_APFCON1
+11E.0   PIN_TX_SELECT
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
+211     SPI_SSP1BUF
+214.0   SPI_BUFFER_STATUS
+214     SPI_SSP1STAT
+214.6   SPI_CLOCK_EDGE
+214.7   SPI_INPUT_SAMPLE
+215.0   SPI_MODE_0
+215     SPI_SSP1CON1
+215.1   SPI_MODE_1
+215.2   SPI_MODE_2
+215.3   SPI_MODE_3
+215.4   SPI_CLOCK_POLARITY
+215.5   SPI_ENABLE
+215.7   SPI_WRITE_FLAG
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+000003  periods.call
+00000C  periods.data
+000458  @delay_ms1
+00046D  set_pins
+000473  set_SPI
+000480  set_variables
+00048B  md_set_state
+0004DC  md_init
+000612  md_set_direction
+000620  @delay_us1
+000632  motion_cycle
+000759  @goto10737
+000762  MAIN
+000762  @cinit1
+000772  @cinit2
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Fuar Kodu\Fuar asansör kod SMD v1.1\
+
+Project Files:
+    SMD V1.1_Versiyon2.c                                    [10-Eki-14 15:29  CRC=3C2E3344]
+    C:\Program Files (x86)\PICC\Devices\16f1826.h           [03-Tem-13 14:28  CRC=186BCABD]
+
+Source signature=6D05C8BE
+
+Units:
+    SMD V1.1_Versiyon2 (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    XREF file:   SMD V1.1_Versiyon2.xsym
+    Errors:      SMD V1.1_Versiyon2.err
+    Ext Symbols: SMD V1.1_Versiyon2.esym
+    INHX8:       SMD V1.1_Versiyon2.hex
+    Symbols:     SMD V1.1_Versiyon2.sym
+    List:        SMD V1.1_Versiyon2.lst
+    Debug/COFF:  SMD V1.1_Versiyon2.cof
+    Project:     SMD V1.1_Versiyon2.ccspjt
+    Call Tree:   SMD V1.1_Versiyon2.tre
+    Statistics:  SMD V1.1_Versiyon2.STA

@@ -1,0 +1,296 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W3  @ADDFF64.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0 -W1  @SFTOI.P3
+W0 -W1  @DIV3232B.P4
+W0 -W1  @MULS3232.P5
+W0 -W2  @F48TO64.P6
+W0 -W3  @F64TOI64.P7
+W0 -W1  @DIVS3232A.P8
+W0      @delay_us1.P9
+W0 -W3  @I64TOF64.P10
+W0      @ITOF.P11
+W0 -W2  @MULFF48.P12
+W0 -W2  @DIVFF48.P13
+W0 -W1  @DIV3232A.P14
+W0 -W2  @ADDFF48.P15
+W0 -W1  @DIVFF.P16
+W0      @delay_ms1.P17
+W0 -W2  @F48TOSI64.P18
+W0 -W3  @FLT64.P19
+W0 -W3  @MULFF64.P20
+W0 -W3  @SI64TOF48.P21
+W0 -W1  @MULFF.P22
+W0 -W3  @F64TOSI64.P23
+W0 -W2  @FLT48.P24
+W0 -W1  @FLT.P25
+W0 -W3  @SI64TOF64.P26
+W0      @SITOF.P27
+W0      @PRINTFU16_38400_5893_5892.P28
+W0 -W3  @DIVFF64.P29
+W0 -W3  @I64TOF48.P30
+W0 -W1  @MUL3232.P31
+W0 -W1  @ADDFF.P32
+W1      @SCRATCH
+W1      @WRITE_PACKED_MEMORY.P1
+W1      @READ_PACKED_MEMORY.P2
+W2      @READ_PACKED_MEMORY.P1
+W2 -W3  @MUL3232.P2
+W2      @READ_ROM_MEMORY.P3
+W2 -W3  @FLT.P4
+W2 -W3  @DIVFF.P5
+W2      @WRITE_PACKED_MEMORY.P6
+W2 -W3  @DIV3232B.P7
+W2 -W3  @ADDFF.P8
+W2 -W3  @MULS3232.P9
+W2 -W3  @DIVS3232A.P10
+W2 -W3  @DIV3232A.P11
+W2 -W3  @MULFF.P12
+W3      @READ_ROM_MEMORY.P1
+W3 -W5  @FLT48.P2
+W3      @READ_PACKED_MEMORY.P3
+W3 -W5  @DIVFF48.P4
+W3      @WRITE_PACKED_MEMORY.P5
+W3 -W5  @MULFF48.P6
+W3 -W5  @ADDFF48.P7
+W4 -W7  @ADDFF64.P1
+W4 -W7  @MULFF64.P2
+W4 -W7  @DIVFF64.P3
+W4 -W7  @FLT64.P4
+W4      @PRINTFU16_38400_5893_5892.P5
+088     PWM_IFS2
+088.7   PWM_IFS2_PWMIF
+090     PWM_IEC2
+090.7   PWM_IEC2_PWMIE
+1C0     PWM_PTCON
+1C0.0   PWM_PTCON_PTMOD0
+1C0.1   PWM_PTCON_PTMOD1
+1C0.2   PWM_PTCON_PTCKPS0
+1C0.3   PWM_PTCON_PTCKPS1
+1C0.4   PWM_PTCON_PTOPS0
+1C0.5   PWM_PTCON_PTOPS1
+1C0.6   PWM_PTCON_PTOPS2
+1C0.7   PWM_PTCON_PTOPS3
+1C1.7   PWM_PTCON_PTEN
+1C4     PWM_PTPER
+1C8     PWM_PWMCON1
+1C8.0   PWM_PWMCON1_PEN1L
+1C8.4   PWM_PWMCON1_PEN1H
+1C9.0   PWM_PWMCON1_PMOD1
+1CA.0   PWM_PWMCON2_UDIS
+1CA     PWM_PWMCON2
+1CA.1   PWM_PWMCON2_OSYNC
+1CA.2   PWM_PWMCON2_IUE
+1D6     PWM_PDC1
+800-827 pas_64
+828-84F qas_64
+850-87F pat_64
+880-8AF qat_64
+8B0.0   debug_mode_dp
+8B0.1   debug_mode_md
+8B0.2   debug_mode_pwm
+8B0.3   reg_md_running
+8B0.4   reg_md_homing
+8B0.5   reg_demo_run
+8B0.6   reg_rs232_message
+8B0.7   reg_rs485_busy
+8B1     md_run_state
+8B2-8B3 dp_tap_limit
+8B4-8B5 dp_voltage_limit
+8B6-8B7 mt_voltage_limit
+8B8-8B9 mt_percent_trip
+8BA-8BB md_conv_const
+8BC-8BD md_move_range
+8BE-8BF md_home_offset
+8C0-8C1 md_current_step
+8C2-8C3 md_direction
+8C4-8C5 md_current_pos
+8C6-8C7 md_accel
+8C8-8C9 md_decel
+8CA-8CB md_decel_lim
+8CC-8CD md_accel_lim
+8CE-8CF md_decel_count
+8D0-8D1 md_step_count
+8D2-8D3 reg_pin_state
+8D4-8D5 md_min_delay
+8D6-8D7 md_torque_set.percent
+8D6     rs232_message.input
+8D8-8D9 md_torque_set.voltage
+8D8-8D9 rs232_message.i
+8DA-8E1 rs232_message.input_const
+8DC-8DD md_torque_get.analog
+8DC-8DD dp_set.voltage
+8DE-8DF dp_set.iteration_limit
+8DE-8DF md_torque_get.percent
+8E0-8E1 dp_set.iteration
+8E2-8E3 dp_set.region
+8E2-8E3 rs232_message.conv_const
+8E4-8E5 dp_set.tap_desired
+8E4-8E9 rs232_message.input_speed
+8E6-8E7 dp_set.voltage_current
+8E8-8E9 dp_set.voltage_diff
+8EA-8EB rs232_message.speed
+8EA-8EB dp_set.tap_current
+8EC-8F3 rs232_message.input_pos
+8F4-8F5 rs232_message.position
+8F6-8F7 rs232_message.x
+8F6-8F7 dp_down.tap
+8F6-8F7 dp_up.tap
+8F8-8F9 dp_down.i
+8F8-8F9 rs232_message.y
+8F8-8F9 dp_up.i
+8FA-8FB rs232_message.state
+8FC-903 rs232_message.input_up_time
+904-905 rs232_message.up_time
+906-90D rs232_message.input_down_time
+90E-90F rs232_message.down_time
+910-919 rs232_message.input_state
+91A-91B rs232_message.value
+93E     set_all_pins.state
+93E-93F move_to_pos.position
+93E-93F set_speed.speed
+93E-93F set_pin_up_time.time
+93E-93F set_pin_down_time.time
+940-941 move_to_pos.displacement
+940     set_pin_down_time.time_high
+940     set_pin_up_time.time_high
+941     set_pin_down_time.time_low
+941     set_pin_up_time.time_low
+944-945 md_set_dir.mode
+944-945 move.displacement
+946-947 move.counts
+94A-94B pwm_enable.position
+94C-94D pwm_enable.last_pos
+950-951 pwm_select_mode.mode
+950-951 update_pins.current_position
+950-951 md_set_state.mode
+954-955 pwm_set_period.period
+954-955 set_pin.x
+956-957 set_pin.y
+956-957 pwm_set_period.pwm_period
+958-959 set_pin.state
+95A     set_pin.pin_ID
+960-961 set_register_bits.reg
+960-961 send_pin_state.state
+962     send_pin_state.pin_reg_high
+962     set_register_bits.bit_address
+963     send_pin_state.pin_reg_low
+963     set_register_bits.bit_size
+964-965 set_register_bits.value
+966-967 set_register_bits.i
+2780-27FF Stack
+
+ROM Allocation:
+000100  delays.call
+000120  delays.data
+0002F2  @const1225.call
+000316  @const1229.call
+000336  @const1230.call
+00035A  @const1231.call
+00037A  @const1232.call
+0003A0  @const1233.call
+0003BC  @const1235.call
+0003E0  @const1237.call
+000406  @const1238.call
+00041C  @const1239.call
+00043C  @const1251.call
+000462  @const1254.call
+000482  @const1292.call
+0004A8  @const1297.call
+0004C4  @const1310.call
+0004DE  @const1314.call
+000506  @const1315.call
+000530  @const1316.call
+000556  @const1317.call
+00057C  @const1318.call
+0005A2  @const1321.call
+000610  @const1322.call
+000628  @const1324.call
+000644  @const1326.call
+00065C  @const1327.call
+000678  @const1332.call
+0006AE  @const1336.call
+0006C2  @const1337.call
+0006F2  @const1342.call
+000714  @const1347.call
+000732  @const1353.call
+000756  @const1355.call
+000778  @const1357.call
+0007AA  @const1362.call
+0007DE  @const1367.call
+000804  @const1372.call
+00081C  @const1379.call
+000854  isr_rs485_message
+000882  isr_rs232_message
+0008A6  @delay_ms1
+0008B6  pwm_select_mode
+0008CE  pwm_init
+00090C  dp_init
+000916  @PRINTFU16_38400_5893_5892
+0009C8  @MUL3232
+0009F8  @DIV3232A
+000A4C  dp_up
+000A8C  dp_down
+000AC6  dp_set
+000DCE  md_torque_get
+000E40  md_torque_set
+000EAC  md_init
+000ED6  set_speed
+000F24  md_set_dir
+000F3C  @MULS3232
+000F7E  @DIVS3232A
+000FFC  md_set_state
+00100E  pwm_set_period
+001058  @delay_us1
+001068  pwm_disable
+001094  pwm_control
+00117A  set_register_bits
+0011E4  send_pin_state
+00121E  set_pin
+00124C  update_pins
+0013C6  pwm_enable
+001468  move
+00161E  move_to_pos
+0016B4  set_all_pins
+0016CA  move_to_home
+00173C  set_pin_up_time
+001776  set_pin_down_time
+0017B0  demo_run
+0017D6  rs232_message
+001D5C  @cinit1
+001D5C  MAIN
+001DC4  @cinit2
+
+Project Directory:
+    C:\Users\Onur Yarkýnoðlu\Desktop\Debug sks\Control Card v2.0\
+
+Project Files:
+    Control_Card_v2.0.c                                     [26-Kas-14 03:29  CRC=FD9330E8]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\30f6015.h [03-Tem-13 13:30  CRC=3241D9AD]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h  [28-Eyl-12 10:35  CRC=546412C9]
+
+Source signature=D89D3027
+
+Units:
+    Control_Card_v2.0 (main)
+
+Compiler Settings:
+    Processor:      DSPIC30F6015
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    XREF file:   Control_Card_v2.0.xsym
+    Errors:      Control_Card_v2.0.err
+    Ext Symbols: Control_Card_v2.0.esym
+    INHX8:       Control_Card_v2.0.hex
+    Symbols:     Control_Card_v2.0.sym
+    List:        Control_Card_v2.0.lst
+    Debug/COFF:  Control_Card_v2.0.cof
+    Project:     Control_Card_v2.0.ccspjt
+    Call Tree:   Control_Card_v2.0.tre
+    Statistics:  Control_Card_v2.0.STA

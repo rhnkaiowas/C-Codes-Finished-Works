@@ -1,0 +1,4 @@
+>>> Warning 225 "C:\Program Files (x86)\PICC\devices\16f1826.h" Line 284(20,30): Duplicate #define
+>>> Warning 225 "C:\Program Files (x86)\PICC\devices\16f1826.h" Line 293(20,33): Duplicate #define
+      Memory usage:   ROM=35%      RAM=2% - 10%
+      0 Errors,  2 Warnings.

@@ -1,0 +1,75 @@
+
+ROM used: 1514 (74%)
+          1514 (74%) including unused fragments
+
+          2 Average locations per line
+          14 Average locations per statement
+
+RAM used: 26 (8%) at main() level
+          52 (16%) worst case
+
+Stack used: 4 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  253   109 100  Pulser_rs232-asansor.c
+  474     0   0  C:\Program Files (x86)\PICC\devices\16f1826.h
+----- -----
+  727   109 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1   1             @delay_ms1
+0     37   2   1             @PUTCHAR_1_
+0     36   2   1             @GETCH_1_
+0      4   0   0    18  1.0  isr_rs232_message
+0    147  10  10   549  6.7  data_set_frequency
+0     21   1   5             @MUL1616
+0     37   2   2             @MUL88
+ Inline        5             @DIV1616
+0     55   4   6   398  7.2  data_set_enable
+ Inline        8   460  6.2  data_set_distance_upwards
+ Inline        8   460  6.2  data_set_distance_downwards
+0    500  33   2  1117  4.8  rs232_message
+0     22   1   0             @const113
+0     64   4   3             @PSTRINGC7_62
+0     12   1   0             @const115
+0     13   1   0             @const116
+0      9   1   0             @const118
+0     72   5   4             @PSTRINGCN7_62
+ Inline        9             @PRINTF_LU_62
+0     10   1   0             @const123
+0     21   1   3             @DIV88
+ Inline        2             @PRINTF_U_62
+0     20   1   0             @const131
+0     18   1   0             @const133
+0     14   1   0             @const135
+0     21   1   0             @const137
+0     18   1   0             @const139
+0     14   1   0             @const141
+0    230  15   1  1278  6.4  MAIN
+0     33   2   0             @const146
+0     20   1   0             @const147
+0     15   1   0             @const148
+
+Program metrics:
+    Functions               7
+    Statements              109
+    Comments                116
+    Volume (V)              6120
+    Difficilty (D)          35.9
+    Effort to implement (E) 219885
+    Time to implement (T)   3 hours, 24 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   15
+    Maintainability (MI)    92
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-0001E    27  0  
+0001F-007FF  1484  533  
+
+
+

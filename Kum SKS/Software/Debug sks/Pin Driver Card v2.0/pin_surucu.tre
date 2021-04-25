@@ -1,0 +1,40 @@
+ÀÄPin Driver Card v2
+   ÃÄMAIN  1/202  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄset_address  0/52  Ram=1
+   ³  ÃÄreset_motor_states  0/17  Ram=0
+   ³  ³  ÀÄset_motor_state  0/328  Ram=4
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÃÄ@WRITEBBITA  0/38  Ram=7
+   ³  ³     ÀÄ@WRITEBBITA  0/38  Ram=7
+   ³  ÃÄset_motor_timer  0/10  Ram=0
+   ³  ÃÄ@PSTRINGC7_38400_5225_5226  0/80  Ram=4
+   ³  ÀÄrs485_message  0/228  Ram=3
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄset_pins  (Inline)  Ram=6
+   ³     ³  ÃÄ@READBITA  0/26  Ram=5
+   ³     ³  ÃÄset_motor_state  0/328  Ram=4
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄset_motor_state  0/328  Ram=4
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄ@WRITEBITA  0/35  Ram=6
+   ³     ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÃÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ³     ÀÄ@PUTCHARI_BIU_1  0/6  Ram=0
+   ÃÄisr_rs485_message  0/7  Ram=0
+   ÀÄisr_timer0  0/995  Ram=1

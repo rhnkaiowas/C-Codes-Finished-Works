@@ -1,0 +1,62 @@
+
+ROM used:   2536/49152 (3%)
+            2536/49152 (3%) including unused fragments
+
+            0.8 Average locations per line
+            2.4 Average locations per statement
+
+RAM used:   335/8192 (4%) at main() level
+            511/8192 (6%) worst case
+
+Stack used: 62 worst case (62 in main + 0 for interrupts)
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  288   141  13  Kontrol Karti.c
+  824     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\30f6015.h
+ 2229   921  87  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h
+----- -----
+ 3341  1062 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     68   1    8             @DIV3232B
+0    196   4    8             @MULFF
+0     20   0    2             @delay_ms1
+0     20   0    4    48  1.6  send_data_single
+0    200   4    0             @PRINTFU32_38400_5893_5892
+0     52   1    4   154  3.5  send_go
+0     56   1    4             @DTOF
+0     60   1    4             @FTOSD
+0    108   2    8   362  4.3  send_write
+0     18   0    2    48  1.6  send_speed
+0    178   4    0             @PRINTFU16_38400_5893_5892
+0    654  13    9  2875 12.5  check_rs485_message
+0     48   1    8             @MUL3232
+0    140   3    1   556  3.3  isr_rs232_message
+0    102   2    4   344  4.2  isr_rs485_message
+0    360   7    0   313  2.8  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              1062
+    Comments                468
+    Volume (V)              6377
+    Difficulty (D)          33.7
+    Effort to implement (E) 214836
+    Time to implement (T)   3 hours, 19 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   32
+    Maintainability (MI)    23
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-000FE   252  0  
+00100-0FFFE  2280  63000  
+10000-17FFE     0  32768  
+
+
+

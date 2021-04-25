@@ -1,0 +1,128 @@
+004-005 @WRITE_PACKED_MEMORY.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+004-005 @READ_PACKED_MEMORY.P3
+004-005 @WRITE_PROGRAM_MEMORY8.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+011     SPI_PIR1
+011.3   SPI_FLAG
+020     motion_state
+021     md_init.Ctrl_1
+021-022 motion_cycle.step_count
+021     MAIN.@SCRATCH1
+022     md_init.Ctrl_0
+023     md_init.Torque_1
+023-024 motion_cycle.period
+024     md_init.Torque_0
+025.0   motion_cycle.running
+025     md_init.Off_1
+026-029 motion_cycle.i
+026     md_init.Off_0
+027     md_init.Blank_1
+028     md_init.Blank_0
+029     md_init.Decay_1
+02A     md_init.Decay_0
+02B     md_init.Stall_1
+02B     md_set_direction.value
+02B     motion_cycle.@SCRATCH1
+02C     md_init.Stall_0
+02C     motion_cycle.@SCRATCH2
+02D     md_init.Drive_1
+02D     motion_cycle.@SCRATCH3
+02E     md_init.Drive_0
+02E     @delay_us1.P1
+02F     md_init.Status_1
+030     md_init.Status_0
+031     md_set_state.value
+032     md_set_state.Ctrl_1
+033     md_set_state.Ctrl_0
+034     md_set_state.Ctrl_1
+035     md_set_state.Ctrl_0
+036     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+095     OPTION
+095.7   OPTION_WPUEN
+111.6   C1OUT
+113.6   C2OUT
+11D     PIN_APFCON0
+11D.5   PIN_SS_SELECT
+11D.6   PIN_SDO_SELECT
+11D.7   PIN_RX_SELECT
+11E     PIN_APFCON1
+11E.0   PIN_TX_SELECT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+211     SPI_SSP1BUF
+214.0   SPI_BUFFER_STATUS
+214     SPI_SSP1STAT
+214.6   SPI_CLOCK_EDGE
+214.7   SPI_INPUT_SAMPLE
+215.0   SPI_MODE_0
+215     SPI_SSP1CON1
+215.1   SPI_MODE_1
+215.2   SPI_MODE_2
+215.3   SPI_MODE_3
+215.4   SPI_CLOCK_POLARITY
+215.5   SPI_ENABLE
+215.7   SPI_WRITE_FLAG
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+000003  periods.call
+000004  periods.data
+0000EE  @delay_ms1
+000104  set_pins
+00010A  set_SPI
+000117  set_variables
+000122  md_set_state
+000173  md_init
+0002A9  md_set_direction
+0002B6  @delay_us1
+0002C6  motion_cycle
+00046D  @goto10770
+000476  MAIN
+000476  @cinit1
+000484  @cinit2
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\SMD V1.1(20 mikon konumlamalý)\
+
+Project Files:
+    SMD V1.1(20 mikon).c                                    [18-Tem-14 16:53  CRC=6981EB2A]
+    C:\Program Files (x86)\PICC\devices\16f1826.h           [02-May-14 16:07  CRC=31E44C8E]
+
+Source signature=CD4A8446
+
+Units:
+    SMD V1.1(20 mikon) (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   SMD V1.1(20 mikon).xsym
+    Errors:      SMD V1.1(20 mikon).err
+    Ext Symbols: SMD V1.1(20 mikon).esym
+    INHX8:       SMD V1.1(20 mikon).hex
+    Symbols:     SMD V1.1(20 mikon).sym
+    List:        SMD V1.1(20 mikon).lst
+    Debug/COFF:  SMD V1.1(20 mikon).cof
+    Project:     SMD V1.1(20 mikon).ccspjt
+    Call Tree:   SMD V1.1(20 mikon).tre
+    Statistics:  SMD V1.1(20 mikon).STA

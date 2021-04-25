@@ -1,0 +1,2652 @@
+CCS PCM C Compiler, Version 5.008, 5967               25-Kas-14 18:21
+
+               Filename:   C:\Users\Onur Yarkýnoðlu\Desktop\Debug sks\Pin Driver Card v2.0\pin_surucu.lst
+
+               ROM used:   2080 words (25%)
+                           Largest free fragment is 2048
+               RAM used:   129 (25%) at main() level
+                           161 (31%) worst case
+               Stack used: 4 locations (3 in main + 1 for interrupts)
+               Stack size: 16
+
+*
+0000:  MOVLP  08
+0001:  GOTO   000
+0002:  NOP
+*
+0004:  CLRF   03
+0005:  MOVLP  00
+0006:  MOVLB  00
+0007:  MOVF   77,W
+0008:  MOVWF  20
+0009:  MOVF   78,W
+000A:  MOVWF  21
+000B:  MOVF   79,W
+000C:  MOVWF  22
+000D:  MOVF   7A,W
+000E:  MOVWF  23
+000F:  BTFSS  0B.5
+0010:  GOTO   013
+0011:  BTFSC  0B.2
+0012:  GOTO   023
+0013:  CLRF   05
+0014:  MOVLW  94
+0015:  MOVWF  04
+0016:  BTFSS  00.5
+0017:  GOTO   01A
+0018:  BTFSC  14.5
+0019:  GOTO   025
+001A:  MOVF   20,W
+001B:  MOVWF  77
+001C:  MOVF   21,W
+001D:  MOVWF  78
+001E:  MOVF   22,W
+001F:  MOVWF  79
+0020:  MOVF   23,W
+0021:  MOVWF  7A
+0022:  RETFIE
+0023:  MOVLP  00
+0024:  GOTO   02E
+0025:  MOVLP  00
+0026:  GOTO   027
+.................... #INCLUDE <16f1946.h>  
+.................... //////// Standard Header file for the PIC16F1946 device //////////////// 
+.................... #device PIC16F1946 
+*
+0411:  DATA D3,25
+0412:  DATA 53,10
+0413:  DATA D0,34
+0414:  DATA 6E,10
+0415:  DATA C3,30
+0416:  DATA 72,32
+0417:  DATA A0,16
+0418:  DATA A0,21
+0419:  DATA 6F,32
+041A:  DATA 65,10
+041B:  DATA D6,32
+041C:  DATA F2,39
+041D:  DATA E9,37
+041E:  DATA 6E,10
+041F:  DATA D6,18
+0420:  DATA AE,18
+0421:  DATA 8A,06
+0422:  DATA 00,00
+*
+0457:  MOVLB  01
+0458:  MOVF   59,W
+0459:  ANDLW  07
+045A:  MOVWF  77
+045B:  RRF    5A,W
+045C:  MOVWF  79
+045D:  RRF    59,W
+045E:  MOVWF  78
+045F:  RRF    79,F
+0460:  RRF    78,F
+0461:  RRF    79,F
+0462:  RRF    78,F
+0463:  MOVLW  1F
+0464:  ANDWF  79,F
+0465:  MOVF   78,W
+0466:  ADDWF  5C,W
+0467:  MOVWF  04
+0468:  MOVF   79,W
+0469:  ADDWFC 5D,W
+046A:  MOVWF  05
+046B:  CLRF   78
+046C:  INCF   78,F
+046D:  INCF   77,F
+046E:  GOTO   470
+046F:  RLF    78,F
+0470:  DECFSZ 77,F
+0471:  GOTO   46F
+0472:  MOVF   5B,F
+0473:  BTFSC  03.2
+0474:  GOTO   478
+0475:  MOVF   78,W
+0476:  IORWF  00,F
+0477:  GOTO   47B
+0478:  COMF   78,F
+0479:  MOVF   78,W
+047A:  ANDWF  00,F
+047B:  MOVLB  00
+047C:  RETURN
+*
+05E0:  MOVF   0B,W
+05E1:  MOVLB  01
+05E2:  MOVWF  4A
+05E3:  BCF    0B.7
+05E4:  MOVLB  03
+05E5:  BSF    15.7
+05E6:  BSF    15.0
+05E7:  NOP
+05E8:  NOP
+05E9:  MOVF   13,W
+05EA:  ANDLW  7F
+05EB:  BTFSC  03.2
+05EC:  GOTO   62A
+05ED:  MOVLB  01
+05EE:  MOVWF  4B
+05EF:  MOVLB  03
+05F0:  MOVF   11,W
+05F1:  MOVLB  01
+05F2:  MOVWF  4C
+05F3:  MOVLB  03
+05F4:  MOVF   12,W
+05F5:  MOVLB  01
+05F6:  MOVWF  4D
+05F7:  MOVF   4B,W
+05F8:  MOVLB  00
+05F9:  BTFSS  14.4
+05FA:  GOTO   5F9
+05FB:  MOVLB  09
+05FC:  MOVWF  12
+05FD:  MOVLB  01
+05FE:  MOVF   4C,W
+05FF:  MOVLB  03
+0600:  MOVWF  11
+0601:  MOVLB  01
+0602:  MOVF   4D,W
+0603:  MOVLB  03
+0604:  MOVWF  12
+0605:  BSF    15.7
+0606:  BSF    15.0
+0607:  NOP
+0608:  NOP
+0609:  RLF    13,W
+060A:  RLF    14,W
+060B:  ANDLW  7F
+060C:  BTFSC  03.2
+060D:  GOTO   62A
+060E:  MOVLB  01
+060F:  MOVWF  4B
+0610:  MOVLB  03
+0611:  MOVF   11,W
+0612:  MOVLB  01
+0613:  MOVWF  4C
+0614:  MOVLB  03
+0615:  MOVF   12,W
+0616:  MOVLB  01
+0617:  MOVWF  4D
+0618:  MOVF   4B,W
+0619:  MOVLB  00
+061A:  BTFSS  14.4
+061B:  GOTO   61A
+061C:  MOVLB  09
+061D:  MOVWF  12
+061E:  MOVLB  01
+061F:  MOVF   4C,W
+0620:  MOVLB  03
+0621:  MOVWF  11
+0622:  MOVLB  01
+0623:  MOVF   4D,W
+0624:  MOVLB  03
+0625:  MOVWF  12
+0626:  INCF   11,F
+0627:  BTFSC  03.2
+0628:  INCF   12,F
+0629:  GOTO   5E5
+062A:  MOVLB  01
+062B:  BTFSC  4A.7
+062C:  BSF    0B.7
+062D:  MOVLP  08
+062E:  MOVLB  00
+062F:  GOTO   0BC (RETURN)
+*
+0636:  MOVLB  01
+0637:  MOVF   55,W
+0638:  ANDLW  07
+0639:  MOVWF  77
+063A:  RRF    55,W
+063B:  MOVWF  78
+063C:  RRF    78,F
+063D:  RRF    78,F
+063E:  MOVLW  1F
+063F:  ANDWF  78,F
+0640:  MOVF   78,W
+0641:  ADDWF  56,W
+0642:  MOVWF  04
+0643:  MOVLW  00
+0644:  ADDWFC 57,W
+0645:  MOVWF  05
+0646:  MOVF   00,W
+0647:  MOVWF  78
+0648:  INCF   77,F
+0649:  GOTO   64B
+064A:  RRF    78,F
+064B:  DECFSZ 77,F
+064C:  GOTO   64A
+064D:  MOVLP  00
+064E:  MOVLB  00
+064F:  GOTO   6CC (RETURN)
+0650:  MOVLB  01
+0651:  MOVF   56,W
+0652:  ANDLW  07
+0653:  MOVWF  77
+0654:  RRF    56,W
+0655:  MOVWF  78
+0656:  RRF    78,F
+0657:  RRF    78,F
+0658:  MOVLW  1F
+0659:  ANDWF  78,F
+065A:  MOVF   78,W
+065B:  ADDWF  58,W
+065C:  MOVWF  04
+065D:  MOVLW  00
+065E:  ADDWFC 59,W
+065F:  MOVWF  05
+0660:  CLRF   78
+0661:  INCF   78,F
+0662:  INCF   77,F
+0663:  GOTO   665
+0664:  RLF    78,F
+0665:  DECFSZ 77,F
+0666:  GOTO   664
+0667:  MOVF   57,F
+0668:  BTFSC  03.2
+0669:  GOTO   66D
+066A:  MOVF   78,W
+066B:  IORWF  00,F
+066C:  GOTO   670
+066D:  COMF   78,F
+066E:  MOVF   78,W
+066F:  ANDWF  00,F
+0670:  MOVLP  00
+0671:  MOVLB  00
+0672:  GOTO   702 (RETURN)
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES INTRC_IO      // Internal RC clock (OSC1 and OSC2 pins are normal I/O) 
+.................... #FUSES NOWDT         // Watch Dog Timer disabled 
+.................... #FUSES PUT           // Power Up Timer enabled 
+.................... #FUSES NOMCLR        // Master Clear pin is used for I/O 
+.................... #FUSES PROTECT       // Code protected from reads 
+.................... #FUSES CPD           // Data EEPROM code protected 
+.................... #FUSES NOBROWNOUT    // No Brown_Out reset 
+.................... #FUSES NOCLKOUT      // Disable clock output on OSC2 
+.................... #FUSES NOIESO        // Internal External Switch Over Mode disabled 
+.................... #FUSES NOFCMEN       // Fail-safe clock monitor disabled 
+.................... #FUSES WRT           // Program memory write protected                                               
+.................... #FUSES NOLVP         // Low Voltage Programming disabled 
+.................... #FUSES NODEBUG       // No debug mode for ICD 
+....................  
+.................... #USE  DELAY(clock = 16000000) 
+*
+0707:  MOVLW  20
+0708:  MOVWF  05
+0709:  MOVLW  85
+070A:  MOVWF  04
+070B:  MOVF   00,W
+070C:  BTFSC  03.2
+070D:  GOTO   71C
+070E:  MOVLW  05
+070F:  MOVWF  78
+0710:  CLRF   77
+0711:  DECFSZ 77,F
+0712:  GOTO   711
+0713:  DECFSZ 78,F
+0714:  GOTO   710
+0715:  MOVLW  2E
+0716:  MOVWF  77
+0717:  DECFSZ 77,F
+0718:  GOTO   717
+0719:  GOTO   71A
+071A:  DECFSZ 00,F
+071B:  GOTO   70E
+.................... #USE  RS232(stream=RS485,UART2,baud=38400,parity=N,bits=8,stop=1) 
+*
+0630:  BTFSS  14.4
+0631:  GOTO   630
+0632:  MOVLB  09
+0633:  MOVWF  12
+0634:  MOVLB  00
+0635:  RETURN
+....................  
+.................... //TX and RX control pins 
+.................... #DEFINE TX_Enable           PIN_G3      //If high Transmit enabled. 
+.................... #DEFINE RX_Disable          PIN_G4      //If low Receive enabled. 
+....................  
+.................... // Led pin 
+.................... #DEFINE LED          PIN_E2             //output               // Led used in debugging 
+....................  
+.................... // Pins used to control motor drivers 
+.................... #DEFINE M1_IN1    PIN_B1  //output    //1   
+.................... #DEFINE M1_IN2    PIN_B0  //output 
+....................  
+.................... #DEFINE M2_IN1    PIN_B3  //output    //2 
+.................... #DEFINE M2_IN2    PIN_B2  //output 
+....................  
+.................... #DEFINE M3_IN1    PIN_C3  //output    //3 
+.................... #DEFINE M3_IN2    PIN_C4  //output 
+....................  
+.................... #DEFINE M4_IN1    PIN_C7  //output    //4 
+.................... #DEFINE M4_IN2    PIN_C2  //output 
+....................  
+.................... #DEFINE M5_IN1    PIN_D5  //output    //5 
+.................... #DEFINE M5_IN2    PIN_D4  //output 
+....................  
+.................... #DEFINE M6_IN1    PIN_D7  //output    //6 
+.................... #DEFINE M6_IN2    PIN_D6  //output 
+....................  
+.................... #DEFINE M7_IN1    PIN_C1  //output    //7 
+.................... #DEFINE M7_IN2    PIN_C0  //output 
+....................  
+.................... #DEFINE M8_IN1    PIN_A5  //output    //8 
+.................... #DEFINE M8_IN2    PIN_A4  //output 
+....................  
+.................... #DEFINE M9_IN1    PIN_D3  //output    //9 
+.................... #DEFINE M9_IN2    PIN_D2  //output 
+....................  
+.................... #DEFINE M10_IN1    PIN_D1  //output    //10 
+.................... #DEFINE M10_IN2    PIN_D0  //output 
+....................  
+.................... #DEFINE M11_IN1    PIN_A3  //output    //11 
+.................... #DEFINE M11_IN2    PIN_A2  //output 
+....................  
+.................... #DEFINE M12_IN1    PIN_A1  //output    //12 
+.................... #DEFINE M12_IN2    PIN_A0  //output 
+....................  
+.................... #DEFINE M13_IN1    PIN_E7  //output    //13 
+.................... #DEFINE M13_IN2    PIN_E6  //output 
+....................  
+.................... #DEFINE M14_IN1    PIN_E5  //output    //14 
+.................... #DEFINE M14_IN2    PIN_E4  //output 
+....................  
+.................... #DEFINE M15_IN1    PIN_F3  //output    //15 
+.................... #DEFINE M15_IN2    PIN_F2  //output 
+....................  
+.................... #DEFINE M16_IN1    PIN_F1  //output    //16 
+.................... #DEFINE M16_IN2    PIN_F0  //output 
+....................  
+.................... // Pins used to identify adress 
+.................... #DEFINE ID_0      PIN_F4 //input 
+.................... #DEFINE ID_1      PIN_F5 //input 
+.................... #DEFINE ID_2      PIN_F6 //input 
+.................... #DEFINE ID_3      PIN_F7 //input 
+....................  
+.................... // States of the motors 
+.................... #DEFINE STOP      0 
+.................... #DEFINE UP        1 
+.................... #DEFINE DOWN      2 
+....................  
+.................... // Variable initialization 
+.................... int1           pin_states     [16]  = { 0 };                // States of the pin connections 
+.................... unsigned int16 motor_runtimes [16]  = { 0 };                // Run time of the motors (in ms) 
+.................... unsigned int8  motor_states   [16]  = { STOP };             // States of the pin motors 
+.................... unsigned int16 motor_ports    [32]  = { M1_IN1, M1_IN2,     // Motor control pins 
+....................                                         M2_IN1, M2_IN2,  
+....................                                         M3_IN1, M3_IN2, 
+....................                                         M4_IN1, M4_IN2,  
+....................                                         M5_IN1, M5_IN2,  
+....................                                         M6_IN1, M6_IN2,  
+....................                                         M7_IN1, M7_IN2,  
+....................                                         M8_IN1, M8_IN2,  
+....................                                         M9_IN1, M9_IN2,  
+....................                                         M10_IN1, M10_IN2,  
+....................                                         M11_IN1, M11_IN2,  
+....................                                         M12_IN1, M12_IN2,  
+....................                                         M13_IN1, M13_IN2,  
+....................                                         M14_IN1, M14_IN2,  
+....................                                         M15_IN1, M15_IN2,  
+....................                                         M16_IN1, M16_IN2}; 
+....................  
+.................... unsigned int16 down_time         = 600; 
+.................... unsigned int16 up_time           = 600; 
+.................... unsigned int8  card_ID           = 0;                       // Communication ID of the pin card 
+.................... int1           reg_rs485_message = 0;                       // RS232 message flag 
+....................  
+.................... // Timer used to stop motors (1 ms timer count) 
+.................... void set_motor_timer() 
+.................... { 
+....................    enable_interrupts(INT_TIMER0); 
+*
+05D6:  BSF    0B.5
+....................    setup_timer_0(RTCC_INTERNAL | RTCC_DIV_16 | RTCC_8_BIT); // 1 ms timer count 
+05D7:  MOVLB  01
+05D8:  MOVF   15,W
+05D9:  ANDLW  C0
+05DA:  IORLW  03
+05DB:  MOVWF  15
+....................    set_timer0(0); 
+05DC:  MOVLB  00
+05DD:  CLRF   15
+05DE:  MOVLP  08
+05DF:  GOTO   0AF (RETURN)
+.................... } 
+.................... // Reads jumper pin states and sets the card_ID variable 
+.................... void set_address() 
+.................... { 
+....................    card_ID  =  8*input(ID_3) + 4*input(ID_2) + 2*input(ID_1) + input(ID_0); 
+*
+0423:  MOVLB  06
+0424:  BSF    0C.7
+0425:  MOVLW  00
+0426:  MOVLB  05
+0427:  BTFSC  0C.7
+0428:  MOVLW  01
+0429:  MOVWF  77
+042A:  RLF    77,W
+042B:  MOVLB  01
+042C:  MOVWF  4A
+042D:  RLF    4A,F
+042E:  RLF    4A,F
+042F:  MOVLW  F8
+0430:  ANDWF  4A,F
+0431:  MOVLB  06
+0432:  BSF    0C.6
+0433:  MOVLW  00
+0434:  MOVLB  05
+0435:  BTFSC  0C.6
+0436:  MOVLW  01
+0437:  MOVWF  77
+0438:  RLF    77,F
+0439:  RLF    77,F
+043A:  MOVLW  FC
+043B:  ANDWF  77,F
+043C:  MOVF   77,W
+043D:  MOVLB  01
+043E:  ADDWF  4A,F
+043F:  MOVLB  06
+0440:  BSF    0C.5
+0441:  MOVLW  00
+0442:  MOVLB  05
+0443:  BTFSC  0C.5
+0444:  MOVLW  01
+0445:  MOVWF  77
+0446:  BCF    03.0
+0447:  RLF    77,F
+0448:  MOVF   77,W
+0449:  MOVLB  01
+044A:  ADDWF  4A,F
+044B:  MOVLB  06
+044C:  BSF    0C.4
+044D:  MOVLW  00
+044E:  MOVLB  05
+044F:  BTFSC  0C.4
+0450:  MOVLW  01
+0451:  MOVLB  01
+0452:  ADDWF  4A,W
+0453:  MOVWF  70
+0454:  MOVLP  08
+0455:  MOVLB  00
+0456:  GOTO   0A9 (RETURN)
+.................... } 
+....................  
+.................... // Set the state of the given motor 
+.................... void set_motor_state(unsigned int8 motor_ID, unsigned int state) 
+.................... { 
+....................    // Motor ID cannot be larger than number of pins 
+....................    if(motor_ID > 15)  
+*
+047D:  MOVLB  01
+047E:  MOVF   55,W
+047F:  SUBLW  0F
+0480:  BTFSC  03.0
+0481:  GOTO   484
+....................       motor_ID = 15; 
+0482:  MOVLW  0F
+0483:  MOVWF  55
+....................  
+....................    // UP = 0, DOWN = 1, STOP = 2,  
+....................    switch (state) 
+0484:  MOVF   56,W
+0485:  XORLW  00
+0486:  MOVLB  00
+0487:  BTFSC  03.2
+0488:  GOTO   490
+0489:  XORLW  02
+048A:  BTFSC  03.2
+048B:  GOTO   4F7
+048C:  XORLW  03
+048D:  BTFSC  03.2
+048E:  GOTO   55E
+048F:  GOTO   5C4
+....................    { 
+....................       case STOP:  output_low(motor_ports[2*motor_ID]); 
+0490:  BCF    03.0
+0491:  MOVLB  01
+0492:  RLF    55,W
+0493:  MOVWF  77
+0494:  BCF    03.0
+0495:  RLF    77,F
+0496:  MOVF   77,W
+0497:  ADDLW  36
+0498:  MOVWF  04
+0499:  MOVLW  20
+049A:  MOVWF  05
+049B:  BTFSC  03.0
+049C:  INCF   05,F
+049D:  MOVF   00,W
+049E:  MOVWF  57
+049F:  ADDFSR 01,FSR0
+04A0:  MOVF   00,W
+04A1:  MOVWF  58
+04A2:  ADDFSR 3F,FSR0
+04A3:  MOVF   58,W
+04A4:  MOVWF  5A
+04A5:  MOVF   57,W
+04A6:  MOVWF  59
+04A7:  CLRF   5B
+04A8:  MOVLW  01
+04A9:  MOVWF  5D
+04AA:  CLRF   5C
+04AB:  MOVLB  00
+04AC:  CALL   457
+04AD:  MOVLB  01
+04AE:  MOVF   58,W
+04AF:  MOVWF  5A
+04B0:  MOVF   57,W
+04B1:  MOVWF  59
+04B2:  CLRF   5B
+04B3:  CLRF   5D
+04B4:  MOVLW  80
+04B5:  MOVWF  5C
+04B6:  MOVLB  00
+04B7:  CALL   457
+....................                   output_low(motor_ports[2*motor_ID + 1]); 
+04B8:  BCF    03.0
+04B9:  MOVLB  01
+04BA:  RLF    55,W
+04BB:  ADDLW  01
+04BC:  MOVWF  77
+04BD:  BCF    03.0
+04BE:  RLF    77,F
+04BF:  MOVF   77,W
+04C0:  ADDLW  36
+04C1:  MOVWF  04
+04C2:  MOVLW  20
+04C3:  MOVWF  05
+04C4:  BTFSC  03.0
+04C5:  INCF   05,F
+04C6:  MOVF   00,W
+04C7:  MOVWF  57
+04C8:  ADDFSR 01,FSR0
+04C9:  MOVF   00,W
+04CA:  MOVWF  58
+04CB:  ADDFSR 3F,FSR0
+04CC:  MOVF   58,W
+04CD:  MOVWF  5A
+04CE:  MOVF   57,W
+04CF:  MOVWF  59
+04D0:  CLRF   5B
+04D1:  MOVLW  01
+04D2:  MOVWF  5D
+04D3:  CLRF   5C
+04D4:  MOVLB  00
+04D5:  CALL   457
+04D6:  MOVLB  01
+04D7:  MOVF   58,W
+04D8:  MOVWF  5A
+04D9:  MOVF   57,W
+04DA:  MOVWF  59
+04DB:  CLRF   5B
+04DC:  CLRF   5D
+04DD:  MOVLW  80
+04DE:  MOVWF  5C
+04DF:  MOVLB  00
+04E0:  CALL   457
+....................                   // Initialize motor runtime and set motor state 
+....................                   motor_runtimes[motor_ID] = 0; 
+04E1:  BCF    03.0
+04E2:  MOVLB  01
+04E3:  RLF    55,W
+04E4:  ADDLW  06
+04E5:  MOVWF  04
+04E6:  MOVLW  20
+04E7:  MOVWF  05
+04E8:  BTFSC  03.0
+04E9:  INCF   05,F
+04EA:  CLRF   00
+04EB:  ADDFSR 01,FSR0
+04EC:  CLRF   00
+....................                   motor_states[motor_ID] = STOP; 
+04ED:  MOVLW  26
+04EE:  ADDWF  55,W
+04EF:  MOVWF  04
+04F0:  MOVLW  20
+04F1:  MOVWF  05
+04F2:  BTFSC  03.0
+04F3:  INCF   05,F
+04F4:  CLRF   00
+....................                   break; 
+04F5:  MOVLB  00
+04F6:  GOTO   5C4
+....................       case DOWN:  if(motor_states[motor_ID] == STOP) 
+04F7:  MOVLW  26
+04F8:  MOVLB  01
+04F9:  ADDWF  55,W
+04FA:  MOVWF  04
+04FB:  MOVLW  20
+04FC:  MOVWF  05
+04FD:  BTFSC  03.0
+04FE:  INCF   05,F
+04FF:  MOVF   00,F
+0500:  BTFSS  03.2
+0501:  GOTO   55C
+....................                   {     
+....................                      output_low(motor_ports[2*motor_ID]); 
+0502:  BCF    03.0
+0503:  RLF    55,W
+0504:  MOVWF  77
+0505:  BCF    03.0
+0506:  RLF    77,F
+0507:  MOVF   77,W
+0508:  ADDLW  36
+0509:  MOVWF  04
+050A:  MOVLW  20
+050B:  MOVWF  05
+050C:  BTFSC  03.0
+050D:  INCF   05,F
+050E:  MOVF   00,W
+050F:  MOVWF  57
+0510:  ADDFSR 01,FSR0
+0511:  MOVF   00,W
+0512:  MOVWF  58
+0513:  ADDFSR 3F,FSR0
+0514:  MOVF   58,W
+0515:  MOVWF  5A
+0516:  MOVF   57,W
+0517:  MOVWF  59
+0518:  CLRF   5B
+0519:  MOVLW  01
+051A:  MOVWF  5D
+051B:  CLRF   5C
+051C:  MOVLB  00
+051D:  CALL   457
+051E:  MOVLB  01
+051F:  MOVF   58,W
+0520:  MOVWF  5A
+0521:  MOVF   57,W
+0522:  MOVWF  59
+0523:  CLRF   5B
+0524:  CLRF   5D
+0525:  MOVLW  80
+0526:  MOVWF  5C
+0527:  MOVLB  00
+0528:  CALL   457
+....................                      output_high(motor_ports[2*motor_ID + 1]); 
+0529:  BCF    03.0
+052A:  MOVLB  01
+052B:  RLF    55,W
+052C:  ADDLW  01
+052D:  MOVWF  77
+052E:  BCF    03.0
+052F:  RLF    77,F
+0530:  MOVF   77,W
+0531:  ADDLW  36
+0532:  MOVWF  04
+0533:  MOVLW  20
+0534:  MOVWF  05
+0535:  BTFSC  03.0
+0536:  INCF   05,F
+0537:  MOVF   00,W
+0538:  MOVWF  57
+0539:  ADDFSR 01,FSR0
+053A:  MOVF   00,W
+053B:  MOVWF  58
+053C:  ADDFSR 3F,FSR0
+053D:  MOVF   58,W
+053E:  MOVWF  5A
+053F:  MOVF   57,W
+0540:  MOVWF  59
+0541:  MOVLW  01
+0542:  MOVWF  5B
+0543:  MOVWF  5D
+0544:  CLRF   5C
+0545:  MOVLB  00
+0546:  CALL   457
+0547:  MOVLB  01
+0548:  MOVF   58,W
+0549:  MOVWF  5A
+054A:  MOVF   57,W
+054B:  MOVWF  59
+054C:  CLRF   5B
+054D:  CLRF   5D
+054E:  MOVLW  80
+054F:  MOVWF  5C
+0550:  MOVLB  00
+0551:  CALL   457
+....................                      motor_states[motor_ID] = DOWN; 
+0552:  MOVLW  26
+0553:  MOVLB  01
+0554:  ADDWF  55,W
+0555:  MOVWF  04
+0556:  MOVLW  20
+0557:  MOVWF  05
+0558:  BTFSC  03.0
+0559:  INCF   05,F
+055A:  MOVLW  02
+055B:  MOVWF  00
+....................                   } 
+....................                   break; 
+055C:  MOVLB  00
+055D:  GOTO   5C4
+....................       case UP:    if(motor_states[motor_ID] == STOP) 
+055E:  MOVLW  26
+055F:  MOVLB  01
+0560:  ADDWF  55,W
+0561:  MOVWF  04
+0562:  MOVLW  20
+0563:  MOVWF  05
+0564:  BTFSC  03.0
+0565:  INCF   05,F
+0566:  MOVF   00,F
+0567:  BTFSS  03.2
+0568:  GOTO   5C3
+....................                   { 
+....................                      output_high(motor_ports[2*motor_ID]); 
+0569:  BCF    03.0
+056A:  RLF    55,W
+056B:  MOVWF  77
+056C:  BCF    03.0
+056D:  RLF    77,F
+056E:  MOVF   77,W
+056F:  ADDLW  36
+0570:  MOVWF  04
+0571:  MOVLW  20
+0572:  MOVWF  05
+0573:  BTFSC  03.0
+0574:  INCF   05,F
+0575:  MOVF   00,W
+0576:  MOVWF  57
+0577:  ADDFSR 01,FSR0
+0578:  MOVF   00,W
+0579:  MOVWF  58
+057A:  ADDFSR 3F,FSR0
+057B:  MOVF   58,W
+057C:  MOVWF  5A
+057D:  MOVF   57,W
+057E:  MOVWF  59
+057F:  MOVLW  01
+0580:  MOVWF  5B
+0581:  MOVWF  5D
+0582:  CLRF   5C
+0583:  MOVLB  00
+0584:  CALL   457
+0585:  MOVLB  01
+0586:  MOVF   58,W
+0587:  MOVWF  5A
+0588:  MOVF   57,W
+0589:  MOVWF  59
+058A:  CLRF   5B
+058B:  CLRF   5D
+058C:  MOVLW  80
+058D:  MOVWF  5C
+058E:  MOVLB  00
+058F:  CALL   457
+....................                      output_low(motor_ports[2*motor_ID + 1]); 
+0590:  BCF    03.0
+0591:  MOVLB  01
+0592:  RLF    55,W
+0593:  ADDLW  01
+0594:  MOVWF  77
+0595:  BCF    03.0
+0596:  RLF    77,F
+0597:  MOVF   77,W
+0598:  ADDLW  36
+0599:  MOVWF  04
+059A:  MOVLW  20
+059B:  MOVWF  05
+059C:  BTFSC  03.0
+059D:  INCF   05,F
+059E:  MOVF   00,W
+059F:  MOVWF  57
+05A0:  ADDFSR 01,FSR0
+05A1:  MOVF   00,W
+05A2:  MOVWF  58
+05A3:  ADDFSR 3F,FSR0
+05A4:  MOVF   58,W
+05A5:  MOVWF  5A
+05A6:  MOVF   57,W
+05A7:  MOVWF  59
+05A8:  CLRF   5B
+05A9:  MOVLW  01
+05AA:  MOVWF  5D
+05AB:  CLRF   5C
+05AC:  MOVLB  00
+05AD:  CALL   457
+05AE:  MOVLB  01
+05AF:  MOVF   58,W
+05B0:  MOVWF  5A
+05B1:  MOVF   57,W
+05B2:  MOVWF  59
+05B3:  CLRF   5B
+05B4:  CLRF   5D
+05B5:  MOVLW  80
+05B6:  MOVWF  5C
+05B7:  MOVLB  00
+05B8:  CALL   457
+....................                      motor_states[motor_ID] = UP; 
+05B9:  MOVLW  26
+05BA:  MOVLB  01
+05BB:  ADDWF  55,W
+05BC:  MOVWF  04
+05BD:  MOVLW  20
+05BE:  MOVWF  05
+05BF:  BTFSC  03.0
+05C0:  INCF   05,F
+05C1:  MOVLW  01
+05C2:  MOVWF  00
+....................                   } 
+....................                   break; 
+05C3:  MOVLB  00
+....................    }  
+05C4:  RETURN
+.................... } 
+.................... // Reset all motor states to STOP 
+.................... void reset_motor_states() 
+.................... { 
+....................    for(int i=0; i<16; i++) 
+05C5:  MOVLB  01
+05C6:  CLRF   4A
+05C7:  MOVF   4A,W
+05C8:  SUBLW  0F
+05C9:  BTFSS  03.0
+05CA:  GOTO   5D3
+....................       set_motor_state(i, STOP); 
+05CB:  MOVF   4A,W
+05CC:  MOVWF  55
+05CD:  CLRF   56
+05CE:  MOVLB  00
+05CF:  CALL   47D
+05D0:  MOVLB  01
+05D1:  INCF   4A,F
+05D2:  GOTO   5C7
+05D3:  MOVLP  08
+05D4:  MOVLB  00
+05D5:  GOTO   0AC (RETURN)
+.................... } 
+....................  
+.................... // Sets the states of all pins (if the new state is different than the current one) 
+.................... void set_pins(unsigned int16 value) 
+.................... { 
+....................    int1 new_state; 
+....................     
+....................    for(int i=0; i<4; i++) 
+*
+06A2:  CLRF   52
+06A3:  MOVF   52,W
+06A4:  SUBLW  03
+06A5:  BTFSS  03.0
+06A6:  GOTO   71E
+....................    { 
+....................       for(int j=0; j<4; j++) 
+06A7:  CLRF   53
+06A8:  MOVF   53,W
+06A9:  SUBLW  03
+06AA:  BTFSS  03.0
+06AB:  GOTO   705
+....................       { 
+....................          unsigned int8 index = i * 4 + j;  
+....................          int1 new_state = bit_test(value, index); 
+06AC:  RLF    52,W
+06AD:  MOVWF  77
+06AE:  RLF    77,F
+06AF:  MOVLW  FC
+06B0:  ANDWF  77,F
+06B1:  MOVF   77,W
+06B2:  ADDWF  53,W
+06B3:  MOVWF  54
+06B4:  MOVF   50,W
+06B5:  MOVWF  7A
+06B6:  MOVF   4F,W
+06B7:  MOVWF  79
+06B8:  MOVF   54,W
+06B9:  MOVWF  77
+06BA:  BTFSC  03.2
+06BB:  GOTO   6C0
+06BC:  LSRF   7A,F
+06BD:  RRF    79,F
+06BE:  DECFSZ 77,F
+06BF:  GOTO   6BC
+06C0:  MOVF   79,W
+06C1:  BCF    51.1
+06C2:  BTFSC  79.0
+06C3:  BSF    51.1
+....................           
+....................          //fprintf(RS485,"old: %u, new: %u, mstate: %u\n\r", pin_states[index], new_state, motor_states[index]); 
+....................          if((pin_states[index] == !new_state) && (motor_states[index] == STOP)) 
+06C4:  MOVF   54,W
+06C5:  MOVWF  55
+06C6:  MOVLW  20
+06C7:  MOVWF  57
+06C8:  MOVLW  04
+06C9:  MOVWF  56
+06CA:  MOVLB  00
+06CB:  GOTO   636
+06CC:  MOVF   78,W
+06CD:  MOVLB  01
+06CE:  MOVWF  55
+06CF:  MOVLW  00
+06D0:  BTFSS  51.1
+06D1:  MOVLW  01
+06D2:  MOVWF  56
+06D3:  MOVLW  00
+06D4:  BTFSC  55.0
+06D5:  MOVLW  01
+06D6:  SUBWF  56,W
+06D7:  BTFSS  03.2
+06D8:  GOTO   703
+06D9:  MOVLW  26
+06DA:  ADDWF  54,W
+06DB:  MOVWF  04
+06DC:  MOVLW  20
+06DD:  MOVWF  05
+06DE:  BTFSC  03.0
+06DF:  INCF   05,F
+06E0:  MOVF   00,F
+06E1:  BTFSS  03.2
+06E2:  GOTO   703
+....................          { 
+....................             if(new_state) 
+06E3:  BTFSS  51.1
+06E4:  GOTO   6ED
+....................                set_motor_state(index, DOWN); 
+06E5:  MOVF   54,W
+06E6:  MOVWF  55
+06E7:  MOVLW  02
+06E8:  MOVWF  56
+06E9:  MOVLB  00
+06EA:  CALL   47D
+06EB:  GOTO   6F3
+06EC:  MOVLB  01
+....................             else 
+....................                set_motor_state(index, UP); 
+06ED:  MOVF   54,W
+06EE:  MOVWF  55
+06EF:  MOVLW  01
+06F0:  MOVWF  56
+06F1:  MOVLB  00
+06F2:  CALL   47D
+....................                 
+....................             pin_states[index] = new_state; 
+06F3:  MOVLW  00
+06F4:  MOVLB  01
+06F5:  BTFSC  51.1
+06F6:  MOVLW  01
+06F7:  MOVWF  55
+06F8:  MOVF   54,W
+06F9:  MOVWF  56
+06FA:  MOVF   55,W
+06FB:  MOVWF  57
+06FC:  MOVLW  20
+06FD:  MOVWF  59
+06FE:  MOVLW  04
+06FF:  MOVWF  58
+0700:  MOVLB  00
+0701:  GOTO   650
+0702:  MOVLB  01
+....................          } 
+0703:  INCF   53,F
+0704:  GOTO   6A8
+....................       } 
+....................       delay_ms(100); 
+0705:  MOVLW  64
+0706:  MOVWF  55
+*
+071C:  INCF   52,F
+071D:  GOTO   6A3
+....................    } 
+.................... } 
+....................  
+.................... // Handles the messages of RS485 connection 
+.................... void rs485_message() 
+*
+0673:  BTFSS  14.5
+0674:  GOTO   673
+0675:  MOVLB  09
+0676:  MOVF   11,W
+0677:  MOVLB  01
+0678:  MOVWF  4A
+.................... { 
+....................    char input = fgetc(RS485); 
+....................     
+....................    unsigned int high_byte; 
+....................    unsigned int low_byte; 
+....................     
+....................    switch (input) 
+0679:  MOVF   4A,W
+067A:  XORLW  70
+067B:  MOVLB  00
+067C:  BTFSC  03.2
+067D:  GOTO   685
+067E:  XORLW  05
+067F:  BTFSC  03.2
+0680:  GOTO   720
+0681:  XORLW  11
+0682:  BTFSC  03.2
+0683:  GOTO   73B
+0684:  GOTO   755
+....................    { 
+....................       case 'p':   fputc('r', RS485); 
+0685:  MOVLW  72
+0686:  CALL   630
+....................                   high_byte = (unsigned)(fgetc(RS485)); 
+0687:  BTFSS  14.5
+0688:  GOTO   687
+0689:  MOVLB  09
+068A:  MOVF   11,W
+068B:  MOVLB  01
+068C:  MOVWF  4B
+....................                   fputc('r', RS485); 
+068D:  MOVLW  72
+068E:  MOVLB  00
+068F:  CALL   630
+....................                   low_byte = (unsigned)(fgetc(RS485)); 
+0690:  BTFSS  14.5
+0691:  GOTO   690
+0692:  MOVLB  09
+0693:  MOVF   11,W
+0694:  MOVLB  01
+0695:  MOVWF  4C
+....................                   fputc('r', RS485); 
+0696:  MOVLW  72
+0697:  MOVLB  00
+0698:  CALL   630
+....................                    
+....................                   unsigned int16 value = make16(high_byte, low_byte);                   
+0699:  MOVLB  01
+069A:  MOVF   4B,W
+069B:  MOVWF  4E
+069C:  MOVF   4C,W
+069D:  MOVWF  4D
+....................                   //fprintf(RS485,"state: %Lu\n\r", value); 
+....................                    
+....................                   set_pins(value); 
+069E:  MOVF   4E,W
+069F:  MOVWF  50
+06A0:  MOVF   4D,W
+06A1:  MOVWF  4F
+....................                   break; 
+*
+071E:  MOVLB  00
+071F:  GOTO   755
+....................       case 'u':   fputc('r', RS485); 
+0720:  MOVLW  72
+0721:  CALL   630
+....................                   high_byte = (unsigned)(fgetc(RS485)); 
+0722:  BTFSS  14.5
+0723:  GOTO   722
+0724:  MOVLB  09
+0725:  MOVF   11,W
+0726:  MOVLB  01
+0727:  MOVWF  4B
+....................                   fputc('r', RS485); 
+0728:  MOVLW  72
+0729:  MOVLB  00
+072A:  CALL   630
+....................                   low_byte = (unsigned)(fgetc(RS485)); 
+072B:  BTFSS  14.5
+072C:  GOTO   72B
+072D:  MOVLB  09
+072E:  MOVF   11,W
+072F:  MOVLB  01
+0730:  MOVWF  4C
+....................                   fputc('r', RS485); 
+0731:  MOVLW  72
+0732:  MOVLB  00
+0733:  CALL   630
+....................                    
+....................                   up_time = make16(high_byte, low_byte);                   
+0734:  MOVLB  01
+0735:  MOVF   4B,W
+0736:  MOVWF  49
+0737:  MOVF   4C,W
+0738:  MOVWF  48
+....................                   //fprintf(RS485,"up_time: %Lu\n\r", up_time); 
+....................                   break; 
+0739:  MOVLB  00
+073A:  GOTO   755
+....................       case 'd':   fputc('r', RS485); 
+073B:  MOVLW  72
+073C:  CALL   630
+....................                   high_byte = (unsigned)(fgetc(RS485)); 
+073D:  BTFSS  14.5
+073E:  GOTO   73D
+073F:  MOVLB  09
+0740:  MOVF   11,W
+0741:  MOVLB  01
+0742:  MOVWF  4B
+....................                   fputc('r', RS485); 
+0743:  MOVLW  72
+0744:  MOVLB  00
+0745:  CALL   630
+....................                   low_byte = (unsigned)(fgetc(RS485)); 
+0746:  BTFSS  14.5
+0747:  GOTO   746
+0748:  MOVLB  09
+0749:  MOVF   11,W
+074A:  MOVLB  01
+074B:  MOVWF  4C
+....................                   fputc('r', RS485); 
+074C:  MOVLW  72
+074D:  MOVLB  00
+074E:  CALL   630
+....................                    
+....................                   down_time = make16(high_byte, low_byte);                   
+074F:  MOVLB  01
+0750:  MOVF   4B,W
+0751:  MOVWF  47
+0752:  MOVF   4C,W
+0753:  MOVWF  46
+....................                   //fprintf(RS485,"down_time: %Lu\n\r", down_time); 
+....................                   break; 
+0754:  MOVLB  00
+....................    } 
+0755:  MOVLP  08
+0756:  GOTO   0C2 (RETURN)
+.................... } 
+....................  
+.................... // RS485 receive byte interrupt 
+.................... #INT_RDA2 
+.................... void isr_rs485_message()  
+.................... { 
+....................    // Disable RS485 receive byte interrupt 
+....................    disable_interrupts(INT_RDA2); 
+*
+0027:  MOVLB  01
+0028:  BCF    14.5
+....................    // Receive the RS485 message 
+....................    reg_rs485_message = 1;            
+0029:  BSF    71.0
+.................... } 
+.................... // Timer0 overflow interrupt (1ms) 
+002A:  MOVLB  00
+002B:  BCF    14.5
+002C:  MOVLP  00
+002D:  GOTO   01A
+.................... #INT_TIMER0 
+.................... void isr_timer0()  
+.................... { 
+....................    /* 
+....................    // Update motor states 
+....................    for(int i=0; i<16; i++) 
+....................    { 
+....................       unsigned int8 state = motor_states[i]; 
+....................       if(state != STOP) 
+....................       { 
+....................          motor_runtimes[i]++; 
+....................          if((state == UP && motor_runtimes[i] > up_time) || (state == DOWN && motor_runtimes[i] > down_time)) 
+....................          { 
+....................             set_motor_state(i, STOP); 
+....................          } 
+....................       } 
+....................    } 
+....................    */ 
+....................     
+....................    unsigned int8 state; 
+....................     
+....................    state = motor_states[0]; 
+002E:  MOVF   46,W
+002F:  MOVLB  01
+0030:  MOVWF  60
+....................    if(state != STOP) 
+0031:  MOVF   60,F
+0032:  BTFSC  03.2
+0033:  GOTO   06B
+....................    { 
+....................       motor_runtimes[0]++; 
+0034:  MOVLB  00
+0035:  INCF   26,F
+0036:  BTFSC  03.2
+0037:  INCF   27,F
+....................       if((state == UP && motor_runtimes[0] > up_time) || (state == DOWN && motor_runtimes[0] > down_time)) 
+0038:  MOVLB  01
+0039:  DECFSZ 60,W
+003A:  GOTO   04B
+003B:  MOVF   49,W
+003C:  MOVLB  00
+003D:  SUBWF  27,W
+003E:  BTFSC  03.0
+003F:  GOTO   042
+0040:  MOVLB  01
+0041:  GOTO   04B
+0042:  BTFSS  03.2
+0043:  GOTO   05E
+0044:  MOVF   26,W
+0045:  MOVLB  01
+0046:  SUBWF  48,W
+0047:  BTFSC  03.0
+0048:  GOTO   04B
+0049:  MOVLB  00
+004A:  GOTO   05E
+004B:  MOVF   60,W
+004C:  SUBLW  02
+004D:  BTFSS  03.2
+004E:  GOTO   06B
+004F:  MOVF   47,W
+0050:  MOVLB  00
+0051:  SUBWF  27,W
+0052:  BTFSC  03.0
+0053:  GOTO   056
+0054:  MOVLB  01
+0055:  GOTO   06B
+0056:  BTFSS  03.2
+0057:  GOTO   05E
+0058:  MOVF   26,W
+0059:  MOVLB  01
+005A:  SUBWF  46,W
+005B:  BTFSC  03.0
+005C:  GOTO   06B
+005D:  MOVLB  00
+....................       { 
+....................          output_low(M1_IN1); 
+005E:  MOVLB  01
+005F:  BCF    0D.1
+0060:  MOVLB  02
+0061:  BCF    0D.1
+....................          output_low(M1_IN2); 
+0062:  MOVLB  01
+0063:  BCF    0D.0
+0064:  MOVLB  02
+0065:  BCF    0D.0
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[0] = 0; 
+0066:  MOVLB  00
+0067:  CLRF   27
+0068:  CLRF   26
+....................          motor_states[0] = STOP; 
+0069:  CLRF   46
+006A:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[1]; 
+006B:  MOVLB  00
+006C:  MOVF   47,W
+006D:  MOVLB  01
+006E:  MOVWF  60
+....................    if(state != STOP) 
+006F:  MOVF   60,F
+0070:  BTFSC  03.2
+0071:  GOTO   0A9
+....................    { 
+....................       motor_runtimes[1]++; 
+0072:  MOVLB  00
+0073:  INCF   28,F
+0074:  BTFSC  03.2
+0075:  INCF   29,F
+....................       if((state == UP && motor_runtimes[1] > up_time) || (state == DOWN && motor_runtimes[1] > down_time)) 
+0076:  MOVLB  01
+0077:  DECFSZ 60,W
+0078:  GOTO   089
+0079:  MOVF   49,W
+007A:  MOVLB  00
+007B:  SUBWF  29,W
+007C:  BTFSC  03.0
+007D:  GOTO   080
+007E:  MOVLB  01
+007F:  GOTO   089
+0080:  BTFSS  03.2
+0081:  GOTO   09C
+0082:  MOVF   28,W
+0083:  MOVLB  01
+0084:  SUBWF  48,W
+0085:  BTFSC  03.0
+0086:  GOTO   089
+0087:  MOVLB  00
+0088:  GOTO   09C
+0089:  MOVF   60,W
+008A:  SUBLW  02
+008B:  BTFSS  03.2
+008C:  GOTO   0A9
+008D:  MOVF   47,W
+008E:  MOVLB  00
+008F:  SUBWF  29,W
+0090:  BTFSC  03.0
+0091:  GOTO   094
+0092:  MOVLB  01
+0093:  GOTO   0A9
+0094:  BTFSS  03.2
+0095:  GOTO   09C
+0096:  MOVF   28,W
+0097:  MOVLB  01
+0098:  SUBWF  46,W
+0099:  BTFSC  03.0
+009A:  GOTO   0A9
+009B:  MOVLB  00
+....................       { 
+....................          output_low(M2_IN1); 
+009C:  MOVLB  01
+009D:  BCF    0D.3
+009E:  MOVLB  02
+009F:  BCF    0D.3
+....................          output_low(M2_IN2); 
+00A0:  MOVLB  01
+00A1:  BCF    0D.2
+00A2:  MOVLB  02
+00A3:  BCF    0D.2
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[1] = 0; 
+00A4:  MOVLB  00
+00A5:  CLRF   29
+00A6:  CLRF   28
+....................          motor_states[1] = STOP; 
+00A7:  CLRF   47
+00A8:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[2]; 
+00A9:  MOVLB  00
+00AA:  MOVF   48,W
+00AB:  MOVLB  01
+00AC:  MOVWF  60
+....................    if(state != STOP) 
+00AD:  MOVF   60,F
+00AE:  BTFSC  03.2
+00AF:  GOTO   0E7
+....................    { 
+....................       motor_runtimes[2]++; 
+00B0:  MOVLB  00
+00B1:  INCF   2A,F
+00B2:  BTFSC  03.2
+00B3:  INCF   2B,F
+....................       if((state == UP && motor_runtimes[2] > up_time) || (state == DOWN && motor_runtimes[2] > down_time)) 
+00B4:  MOVLB  01
+00B5:  DECFSZ 60,W
+00B6:  GOTO   0C7
+00B7:  MOVF   49,W
+00B8:  MOVLB  00
+00B9:  SUBWF  2B,W
+00BA:  BTFSC  03.0
+00BB:  GOTO   0BE
+00BC:  MOVLB  01
+00BD:  GOTO   0C7
+00BE:  BTFSS  03.2
+00BF:  GOTO   0DA
+00C0:  MOVF   2A,W
+00C1:  MOVLB  01
+00C2:  SUBWF  48,W
+00C3:  BTFSC  03.0
+00C4:  GOTO   0C7
+00C5:  MOVLB  00
+00C6:  GOTO   0DA
+00C7:  MOVF   60,W
+00C8:  SUBLW  02
+00C9:  BTFSS  03.2
+00CA:  GOTO   0E7
+00CB:  MOVF   47,W
+00CC:  MOVLB  00
+00CD:  SUBWF  2B,W
+00CE:  BTFSC  03.0
+00CF:  GOTO   0D2
+00D0:  MOVLB  01
+00D1:  GOTO   0E7
+00D2:  BTFSS  03.2
+00D3:  GOTO   0DA
+00D4:  MOVF   2A,W
+00D5:  MOVLB  01
+00D6:  SUBWF  46,W
+00D7:  BTFSC  03.0
+00D8:  GOTO   0E7
+00D9:  MOVLB  00
+....................       { 
+....................          output_low(M3_IN1); 
+00DA:  MOVLB  01
+00DB:  BCF    0E.3
+00DC:  MOVLB  02
+00DD:  BCF    0E.3
+....................          output_low(M3_IN2); 
+00DE:  MOVLB  01
+00DF:  BCF    0E.4
+00E0:  MOVLB  02
+00E1:  BCF    0E.4
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[2] = 0; 
+00E2:  MOVLB  00
+00E3:  CLRF   2B
+00E4:  CLRF   2A
+....................          motor_states[2] = STOP; 
+00E5:  CLRF   48
+00E6:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[3]; 
+00E7:  MOVLB  00
+00E8:  MOVF   49,W
+00E9:  MOVLB  01
+00EA:  MOVWF  60
+....................    if(state != STOP) 
+00EB:  MOVF   60,F
+00EC:  BTFSC  03.2
+00ED:  GOTO   125
+....................    { 
+....................       motor_runtimes[3]++; 
+00EE:  MOVLB  00
+00EF:  INCF   2C,F
+00F0:  BTFSC  03.2
+00F1:  INCF   2D,F
+....................       if((state == UP && motor_runtimes[3] > up_time) || (state == DOWN && motor_runtimes[3] > down_time)) 
+00F2:  MOVLB  01
+00F3:  DECFSZ 60,W
+00F4:  GOTO   105
+00F5:  MOVF   49,W
+00F6:  MOVLB  00
+00F7:  SUBWF  2D,W
+00F8:  BTFSC  03.0
+00F9:  GOTO   0FC
+00FA:  MOVLB  01
+00FB:  GOTO   105
+00FC:  BTFSS  03.2
+00FD:  GOTO   118
+00FE:  MOVF   2C,W
+00FF:  MOVLB  01
+0100:  SUBWF  48,W
+0101:  BTFSC  03.0
+0102:  GOTO   105
+0103:  MOVLB  00
+0104:  GOTO   118
+0105:  MOVF   60,W
+0106:  SUBLW  02
+0107:  BTFSS  03.2
+0108:  GOTO   125
+0109:  MOVF   47,W
+010A:  MOVLB  00
+010B:  SUBWF  2D,W
+010C:  BTFSC  03.0
+010D:  GOTO   110
+010E:  MOVLB  01
+010F:  GOTO   125
+0110:  BTFSS  03.2
+0111:  GOTO   118
+0112:  MOVF   2C,W
+0113:  MOVLB  01
+0114:  SUBWF  46,W
+0115:  BTFSC  03.0
+0116:  GOTO   125
+0117:  MOVLB  00
+....................       { 
+....................          output_low(M4_IN1); 
+0118:  MOVLB  01
+0119:  BCF    0E.7
+011A:  MOVLB  02
+011B:  BCF    0E.7
+....................          output_low(M4_IN2); 
+011C:  MOVLB  01
+011D:  BCF    0E.2
+011E:  MOVLB  02
+011F:  BCF    0E.2
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[3] = 0; 
+0120:  MOVLB  00
+0121:  CLRF   2D
+0122:  CLRF   2C
+....................          motor_states[3] = STOP; 
+0123:  CLRF   49
+0124:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[4]; 
+0125:  MOVLB  00
+0126:  MOVF   4A,W
+0127:  MOVLB  01
+0128:  MOVWF  60
+....................    if(state != STOP) 
+0129:  MOVF   60,F
+012A:  BTFSC  03.2
+012B:  GOTO   163
+....................    { 
+....................       motor_runtimes[4]++; 
+012C:  MOVLB  00
+012D:  INCF   2E,F
+012E:  BTFSC  03.2
+012F:  INCF   2F,F
+....................       if((state == UP && motor_runtimes[4] > up_time) || (state == DOWN && motor_runtimes[4] > down_time)) 
+0130:  MOVLB  01
+0131:  DECFSZ 60,W
+0132:  GOTO   143
+0133:  MOVF   49,W
+0134:  MOVLB  00
+0135:  SUBWF  2F,W
+0136:  BTFSC  03.0
+0137:  GOTO   13A
+0138:  MOVLB  01
+0139:  GOTO   143
+013A:  BTFSS  03.2
+013B:  GOTO   156
+013C:  MOVF   2E,W
+013D:  MOVLB  01
+013E:  SUBWF  48,W
+013F:  BTFSC  03.0
+0140:  GOTO   143
+0141:  MOVLB  00
+0142:  GOTO   156
+0143:  MOVF   60,W
+0144:  SUBLW  02
+0145:  BTFSS  03.2
+0146:  GOTO   163
+0147:  MOVF   47,W
+0148:  MOVLB  00
+0149:  SUBWF  2F,W
+014A:  BTFSC  03.0
+014B:  GOTO   14E
+014C:  MOVLB  01
+014D:  GOTO   163
+014E:  BTFSS  03.2
+014F:  GOTO   156
+0150:  MOVF   2E,W
+0151:  MOVLB  01
+0152:  SUBWF  46,W
+0153:  BTFSC  03.0
+0154:  GOTO   163
+0155:  MOVLB  00
+....................       { 
+....................          output_low(M5_IN1); 
+0156:  MOVLB  01
+0157:  BCF    0F.5
+0158:  MOVLB  02
+0159:  BCF    0F.5
+....................          output_low(M5_IN2); 
+015A:  MOVLB  01
+015B:  BCF    0F.4
+015C:  MOVLB  02
+015D:  BCF    0F.4
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[4] = 0; 
+015E:  MOVLB  00
+015F:  CLRF   2F
+0160:  CLRF   2E
+....................          motor_states[4] = STOP; 
+0161:  CLRF   4A
+0162:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[5]; 
+0163:  MOVLB  00
+0164:  MOVF   4B,W
+0165:  MOVLB  01
+0166:  MOVWF  60
+....................    if(state != STOP) 
+0167:  MOVF   60,F
+0168:  BTFSC  03.2
+0169:  GOTO   1A1
+....................    { 
+....................       motor_runtimes[5]++; 
+016A:  MOVLB  00
+016B:  INCF   30,F
+016C:  BTFSC  03.2
+016D:  INCF   31,F
+....................       if((state == UP && motor_runtimes[5] > up_time) || (state == DOWN && motor_runtimes[5] > down_time)) 
+016E:  MOVLB  01
+016F:  DECFSZ 60,W
+0170:  GOTO   181
+0171:  MOVF   49,W
+0172:  MOVLB  00
+0173:  SUBWF  31,W
+0174:  BTFSC  03.0
+0175:  GOTO   178
+0176:  MOVLB  01
+0177:  GOTO   181
+0178:  BTFSS  03.2
+0179:  GOTO   194
+017A:  MOVF   30,W
+017B:  MOVLB  01
+017C:  SUBWF  48,W
+017D:  BTFSC  03.0
+017E:  GOTO   181
+017F:  MOVLB  00
+0180:  GOTO   194
+0181:  MOVF   60,W
+0182:  SUBLW  02
+0183:  BTFSS  03.2
+0184:  GOTO   1A1
+0185:  MOVF   47,W
+0186:  MOVLB  00
+0187:  SUBWF  31,W
+0188:  BTFSC  03.0
+0189:  GOTO   18C
+018A:  MOVLB  01
+018B:  GOTO   1A1
+018C:  BTFSS  03.2
+018D:  GOTO   194
+018E:  MOVF   30,W
+018F:  MOVLB  01
+0190:  SUBWF  46,W
+0191:  BTFSC  03.0
+0192:  GOTO   1A1
+0193:  MOVLB  00
+....................       { 
+....................          output_low(M6_IN1); 
+0194:  MOVLB  01
+0195:  BCF    0F.7
+0196:  MOVLB  02
+0197:  BCF    0F.7
+....................          output_low(M6_IN2); 
+0198:  MOVLB  01
+0199:  BCF    0F.6
+019A:  MOVLB  02
+019B:  BCF    0F.6
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[5] = 0; 
+019C:  MOVLB  00
+019D:  CLRF   31
+019E:  CLRF   30
+....................          motor_states[5] = STOP; 
+019F:  CLRF   4B
+01A0:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[6]; 
+01A1:  MOVLB  00
+01A2:  MOVF   4C,W
+01A3:  MOVLB  01
+01A4:  MOVWF  60
+....................    if(state != STOP) 
+01A5:  MOVF   60,F
+01A6:  BTFSC  03.2
+01A7:  GOTO   1DF
+....................    { 
+....................       motor_runtimes[6]++; 
+01A8:  MOVLB  00
+01A9:  INCF   32,F
+01AA:  BTFSC  03.2
+01AB:  INCF   33,F
+....................       if((state == UP && motor_runtimes[6] > up_time) || (state == DOWN && motor_runtimes[6] > down_time)) 
+01AC:  MOVLB  01
+01AD:  DECFSZ 60,W
+01AE:  GOTO   1BF
+01AF:  MOVF   49,W
+01B0:  MOVLB  00
+01B1:  SUBWF  33,W
+01B2:  BTFSC  03.0
+01B3:  GOTO   1B6
+01B4:  MOVLB  01
+01B5:  GOTO   1BF
+01B6:  BTFSS  03.2
+01B7:  GOTO   1D2
+01B8:  MOVF   32,W
+01B9:  MOVLB  01
+01BA:  SUBWF  48,W
+01BB:  BTFSC  03.0
+01BC:  GOTO   1BF
+01BD:  MOVLB  00
+01BE:  GOTO   1D2
+01BF:  MOVF   60,W
+01C0:  SUBLW  02
+01C1:  BTFSS  03.2
+01C2:  GOTO   1DF
+01C3:  MOVF   47,W
+01C4:  MOVLB  00
+01C5:  SUBWF  33,W
+01C6:  BTFSC  03.0
+01C7:  GOTO   1CA
+01C8:  MOVLB  01
+01C9:  GOTO   1DF
+01CA:  BTFSS  03.2
+01CB:  GOTO   1D2
+01CC:  MOVF   32,W
+01CD:  MOVLB  01
+01CE:  SUBWF  46,W
+01CF:  BTFSC  03.0
+01D0:  GOTO   1DF
+01D1:  MOVLB  00
+....................       { 
+....................          output_low(M7_IN1); 
+01D2:  MOVLB  01
+01D3:  BCF    0E.1
+01D4:  MOVLB  02
+01D5:  BCF    0E.1
+....................          output_low(M7_IN2); 
+01D6:  MOVLB  01
+01D7:  BCF    0E.0
+01D8:  MOVLB  02
+01D9:  BCF    0E.0
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[6] = 0; 
+01DA:  MOVLB  00
+01DB:  CLRF   33
+01DC:  CLRF   32
+....................          motor_states[6] = STOP; 
+01DD:  CLRF   4C
+01DE:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[7]; 
+01DF:  MOVLB  00
+01E0:  MOVF   4D,W
+01E1:  MOVLB  01
+01E2:  MOVWF  60
+....................    if(state != STOP) 
+01E3:  MOVF   60,F
+01E4:  BTFSC  03.2
+01E5:  GOTO   21D
+....................    { 
+....................       motor_runtimes[7]++; 
+01E6:  MOVLB  00
+01E7:  INCF   34,F
+01E8:  BTFSC  03.2
+01E9:  INCF   35,F
+....................       if((state == UP && motor_runtimes[7] > up_time) || (state == DOWN && motor_runtimes[7] > down_time)) 
+01EA:  MOVLB  01
+01EB:  DECFSZ 60,W
+01EC:  GOTO   1FD
+01ED:  MOVF   49,W
+01EE:  MOVLB  00
+01EF:  SUBWF  35,W
+01F0:  BTFSC  03.0
+01F1:  GOTO   1F4
+01F2:  MOVLB  01
+01F3:  GOTO   1FD
+01F4:  BTFSS  03.2
+01F5:  GOTO   210
+01F6:  MOVF   34,W
+01F7:  MOVLB  01
+01F8:  SUBWF  48,W
+01F9:  BTFSC  03.0
+01FA:  GOTO   1FD
+01FB:  MOVLB  00
+01FC:  GOTO   210
+01FD:  MOVF   60,W
+01FE:  SUBLW  02
+01FF:  BTFSS  03.2
+0200:  GOTO   21D
+0201:  MOVF   47,W
+0202:  MOVLB  00
+0203:  SUBWF  35,W
+0204:  BTFSC  03.0
+0205:  GOTO   208
+0206:  MOVLB  01
+0207:  GOTO   21D
+0208:  BTFSS  03.2
+0209:  GOTO   210
+020A:  MOVF   34,W
+020B:  MOVLB  01
+020C:  SUBWF  46,W
+020D:  BTFSC  03.0
+020E:  GOTO   21D
+020F:  MOVLB  00
+....................       { 
+....................          output_low(M8_IN1); 
+0210:  MOVLB  01
+0211:  BCF    0C.5
+0212:  MOVLB  02
+0213:  BCF    0C.5
+....................          output_low(M8_IN2); 
+0214:  MOVLB  01
+0215:  BCF    0C.4
+0216:  MOVLB  02
+0217:  BCF    0C.4
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[7] = 0; 
+0218:  MOVLB  00
+0219:  CLRF   35
+021A:  CLRF   34
+....................          motor_states[7] = STOP; 
+021B:  CLRF   4D
+021C:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[8]; 
+021D:  MOVLB  00
+021E:  MOVF   4E,W
+021F:  MOVLB  01
+0220:  MOVWF  60
+....................    if(state != STOP) 
+0221:  MOVF   60,F
+0222:  BTFSC  03.2
+0223:  GOTO   25B
+....................    { 
+....................       motor_runtimes[8]++; 
+0224:  MOVLB  00
+0225:  INCF   36,F
+0226:  BTFSC  03.2
+0227:  INCF   37,F
+....................       if((state == UP && motor_runtimes[8] > up_time) || (state == DOWN && motor_runtimes[8] > down_time)) 
+0228:  MOVLB  01
+0229:  DECFSZ 60,W
+022A:  GOTO   23B
+022B:  MOVF   49,W
+022C:  MOVLB  00
+022D:  SUBWF  37,W
+022E:  BTFSC  03.0
+022F:  GOTO   232
+0230:  MOVLB  01
+0231:  GOTO   23B
+0232:  BTFSS  03.2
+0233:  GOTO   24E
+0234:  MOVF   36,W
+0235:  MOVLB  01
+0236:  SUBWF  48,W
+0237:  BTFSC  03.0
+0238:  GOTO   23B
+0239:  MOVLB  00
+023A:  GOTO   24E
+023B:  MOVF   60,W
+023C:  SUBLW  02
+023D:  BTFSS  03.2
+023E:  GOTO   25B
+023F:  MOVF   47,W
+0240:  MOVLB  00
+0241:  SUBWF  37,W
+0242:  BTFSC  03.0
+0243:  GOTO   246
+0244:  MOVLB  01
+0245:  GOTO   25B
+0246:  BTFSS  03.2
+0247:  GOTO   24E
+0248:  MOVF   36,W
+0249:  MOVLB  01
+024A:  SUBWF  46,W
+024B:  BTFSC  03.0
+024C:  GOTO   25B
+024D:  MOVLB  00
+....................       { 
+....................          output_low(M9_IN1); 
+024E:  MOVLB  01
+024F:  BCF    0F.3
+0250:  MOVLB  02
+0251:  BCF    0F.3
+....................          output_low(M9_IN2); 
+0252:  MOVLB  01
+0253:  BCF    0F.2
+0254:  MOVLB  02
+0255:  BCF    0F.2
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[8] = 0; 
+0256:  MOVLB  00
+0257:  CLRF   37
+0258:  CLRF   36
+....................          motor_states[8] = STOP; 
+0259:  CLRF   4E
+025A:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[9]; 
+025B:  MOVLB  00
+025C:  MOVF   4F,W
+025D:  MOVLB  01
+025E:  MOVWF  60
+....................    if(state != STOP) 
+025F:  MOVF   60,F
+0260:  BTFSC  03.2
+0261:  GOTO   299
+....................    { 
+....................       motor_runtimes[9]++; 
+0262:  MOVLB  00
+0263:  INCF   38,F
+0264:  BTFSC  03.2
+0265:  INCF   39,F
+....................       if((state == UP && motor_runtimes[9] > up_time) || (state == DOWN && motor_runtimes[9] > down_time)) 
+0266:  MOVLB  01
+0267:  DECFSZ 60,W
+0268:  GOTO   279
+0269:  MOVF   49,W
+026A:  MOVLB  00
+026B:  SUBWF  39,W
+026C:  BTFSC  03.0
+026D:  GOTO   270
+026E:  MOVLB  01
+026F:  GOTO   279
+0270:  BTFSS  03.2
+0271:  GOTO   28C
+0272:  MOVF   38,W
+0273:  MOVLB  01
+0274:  SUBWF  48,W
+0275:  BTFSC  03.0
+0276:  GOTO   279
+0277:  MOVLB  00
+0278:  GOTO   28C
+0279:  MOVF   60,W
+027A:  SUBLW  02
+027B:  BTFSS  03.2
+027C:  GOTO   299
+027D:  MOVF   47,W
+027E:  MOVLB  00
+027F:  SUBWF  39,W
+0280:  BTFSC  03.0
+0281:  GOTO   284
+0282:  MOVLB  01
+0283:  GOTO   299
+0284:  BTFSS  03.2
+0285:  GOTO   28C
+0286:  MOVF   38,W
+0287:  MOVLB  01
+0288:  SUBWF  46,W
+0289:  BTFSC  03.0
+028A:  GOTO   299
+028B:  MOVLB  00
+....................       { 
+....................          output_low(M10_IN1); 
+028C:  MOVLB  01
+028D:  BCF    0F.1
+028E:  MOVLB  02
+028F:  BCF    0F.1
+....................          output_low(M10_IN2); 
+0290:  MOVLB  01
+0291:  BCF    0F.0
+0292:  MOVLB  02
+0293:  BCF    0F.0
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[9] = 0; 
+0294:  MOVLB  00
+0295:  CLRF   39
+0296:  CLRF   38
+....................          motor_states[9] = STOP; 
+0297:  CLRF   4F
+0298:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[10]; 
+0299:  MOVLB  00
+029A:  MOVF   50,W
+029B:  MOVLB  01
+029C:  MOVWF  60
+....................    if(state != STOP) 
+029D:  MOVF   60,F
+029E:  BTFSC  03.2
+029F:  GOTO   2D7
+....................    { 
+....................       motor_runtimes[10]++; 
+02A0:  MOVLB  00
+02A1:  INCF   3A,F
+02A2:  BTFSC  03.2
+02A3:  INCF   3B,F
+....................       if((state == UP && motor_runtimes[10] > up_time) || (state == DOWN && motor_runtimes[10] > down_time)) 
+02A4:  MOVLB  01
+02A5:  DECFSZ 60,W
+02A6:  GOTO   2B7
+02A7:  MOVF   49,W
+02A8:  MOVLB  00
+02A9:  SUBWF  3B,W
+02AA:  BTFSC  03.0
+02AB:  GOTO   2AE
+02AC:  MOVLB  01
+02AD:  GOTO   2B7
+02AE:  BTFSS  03.2
+02AF:  GOTO   2CA
+02B0:  MOVF   3A,W
+02B1:  MOVLB  01
+02B2:  SUBWF  48,W
+02B3:  BTFSC  03.0
+02B4:  GOTO   2B7
+02B5:  MOVLB  00
+02B6:  GOTO   2CA
+02B7:  MOVF   60,W
+02B8:  SUBLW  02
+02B9:  BTFSS  03.2
+02BA:  GOTO   2D7
+02BB:  MOVF   47,W
+02BC:  MOVLB  00
+02BD:  SUBWF  3B,W
+02BE:  BTFSC  03.0
+02BF:  GOTO   2C2
+02C0:  MOVLB  01
+02C1:  GOTO   2D7
+02C2:  BTFSS  03.2
+02C3:  GOTO   2CA
+02C4:  MOVF   3A,W
+02C5:  MOVLB  01
+02C6:  SUBWF  46,W
+02C7:  BTFSC  03.0
+02C8:  GOTO   2D7
+02C9:  MOVLB  00
+....................       { 
+....................          output_low(M11_IN1); 
+02CA:  MOVLB  01
+02CB:  BCF    0C.3
+02CC:  MOVLB  02
+02CD:  BCF    0C.3
+....................          output_low(M11_IN2); 
+02CE:  MOVLB  01
+02CF:  BCF    0C.2
+02D0:  MOVLB  02
+02D1:  BCF    0C.2
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[10] = 0; 
+02D2:  MOVLB  00
+02D3:  CLRF   3B
+02D4:  CLRF   3A
+....................          motor_states[10] = STOP; 
+02D5:  CLRF   50
+02D6:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[11]; 
+02D7:  MOVLB  00
+02D8:  MOVF   51,W
+02D9:  MOVLB  01
+02DA:  MOVWF  60
+....................    if(state != STOP) 
+02DB:  MOVF   60,F
+02DC:  BTFSC  03.2
+02DD:  GOTO   315
+....................    { 
+....................       motor_runtimes[11]++; 
+02DE:  MOVLB  00
+02DF:  INCF   3C,F
+02E0:  BTFSC  03.2
+02E1:  INCF   3D,F
+....................       if((state == UP && motor_runtimes[11] > up_time) || (state == DOWN && motor_runtimes[11] > down_time)) 
+02E2:  MOVLB  01
+02E3:  DECFSZ 60,W
+02E4:  GOTO   2F5
+02E5:  MOVF   49,W
+02E6:  MOVLB  00
+02E7:  SUBWF  3D,W
+02E8:  BTFSC  03.0
+02E9:  GOTO   2EC
+02EA:  MOVLB  01
+02EB:  GOTO   2F5
+02EC:  BTFSS  03.2
+02ED:  GOTO   308
+02EE:  MOVF   3C,W
+02EF:  MOVLB  01
+02F0:  SUBWF  48,W
+02F1:  BTFSC  03.0
+02F2:  GOTO   2F5
+02F3:  MOVLB  00
+02F4:  GOTO   308
+02F5:  MOVF   60,W
+02F6:  SUBLW  02
+02F7:  BTFSS  03.2
+02F8:  GOTO   315
+02F9:  MOVF   47,W
+02FA:  MOVLB  00
+02FB:  SUBWF  3D,W
+02FC:  BTFSC  03.0
+02FD:  GOTO   300
+02FE:  MOVLB  01
+02FF:  GOTO   315
+0300:  BTFSS  03.2
+0301:  GOTO   308
+0302:  MOVF   3C,W
+0303:  MOVLB  01
+0304:  SUBWF  46,W
+0305:  BTFSC  03.0
+0306:  GOTO   315
+0307:  MOVLB  00
+....................       { 
+....................          output_low(M12_IN1); 
+0308:  MOVLB  01
+0309:  BCF    0C.1
+030A:  MOVLB  02
+030B:  BCF    0C.1
+....................          output_low(M12_IN2); 
+030C:  MOVLB  01
+030D:  BCF    0C.0
+030E:  MOVLB  02
+030F:  BCF    0C.0
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[11] = 0; 
+0310:  MOVLB  00
+0311:  CLRF   3D
+0312:  CLRF   3C
+....................          motor_states[11] = STOP; 
+0313:  CLRF   51
+0314:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[12]; 
+0315:  MOVLB  00
+0316:  MOVF   52,W
+0317:  MOVLB  01
+0318:  MOVWF  60
+....................    if(state != STOP) 
+0319:  MOVF   60,F
+031A:  BTFSC  03.2
+031B:  GOTO   353
+....................    { 
+....................       motor_runtimes[12]++; 
+031C:  MOVLB  00
+031D:  INCF   3E,F
+031E:  BTFSC  03.2
+031F:  INCF   3F,F
+....................       if((state == UP && motor_runtimes[12] > up_time) || (state == DOWN && motor_runtimes[12] > down_time)) 
+0320:  MOVLB  01
+0321:  DECFSZ 60,W
+0322:  GOTO   333
+0323:  MOVF   49,W
+0324:  MOVLB  00
+0325:  SUBWF  3F,W
+0326:  BTFSC  03.0
+0327:  GOTO   32A
+0328:  MOVLB  01
+0329:  GOTO   333
+032A:  BTFSS  03.2
+032B:  GOTO   346
+032C:  MOVF   3E,W
+032D:  MOVLB  01
+032E:  SUBWF  48,W
+032F:  BTFSC  03.0
+0330:  GOTO   333
+0331:  MOVLB  00
+0332:  GOTO   346
+0333:  MOVF   60,W
+0334:  SUBLW  02
+0335:  BTFSS  03.2
+0336:  GOTO   353
+0337:  MOVF   47,W
+0338:  MOVLB  00
+0339:  SUBWF  3F,W
+033A:  BTFSC  03.0
+033B:  GOTO   33E
+033C:  MOVLB  01
+033D:  GOTO   353
+033E:  BTFSS  03.2
+033F:  GOTO   346
+0340:  MOVF   3E,W
+0341:  MOVLB  01
+0342:  SUBWF  46,W
+0343:  BTFSC  03.0
+0344:  GOTO   353
+0345:  MOVLB  00
+....................       { 
+....................          output_low(M13_IN1); 
+0346:  MOVLB  01
+0347:  BCF    10.7
+0348:  MOVLB  02
+0349:  BCF    10.7
+....................          output_low(M13_IN2); 
+034A:  MOVLB  01
+034B:  BCF    10.6
+034C:  MOVLB  02
+034D:  BCF    10.6
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[12] = 0; 
+034E:  MOVLB  00
+034F:  CLRF   3F
+0350:  CLRF   3E
+....................          motor_states[12] = STOP; 
+0351:  CLRF   52
+0352:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[13]; 
+0353:  MOVLB  00
+0354:  MOVF   53,W
+0355:  MOVLB  01
+0356:  MOVWF  60
+....................    if(state != STOP) 
+0357:  MOVF   60,F
+0358:  BTFSC  03.2
+0359:  GOTO   391
+....................    { 
+....................       motor_runtimes[13]++; 
+035A:  MOVLB  00
+035B:  INCF   40,F
+035C:  BTFSC  03.2
+035D:  INCF   41,F
+....................       if((state == UP && motor_runtimes[13] > up_time) || (state == DOWN && motor_runtimes[13] > down_time)) 
+035E:  MOVLB  01
+035F:  DECFSZ 60,W
+0360:  GOTO   371
+0361:  MOVF   49,W
+0362:  MOVLB  00
+0363:  SUBWF  41,W
+0364:  BTFSC  03.0
+0365:  GOTO   368
+0366:  MOVLB  01
+0367:  GOTO   371
+0368:  BTFSS  03.2
+0369:  GOTO   384
+036A:  MOVF   40,W
+036B:  MOVLB  01
+036C:  SUBWF  48,W
+036D:  BTFSC  03.0
+036E:  GOTO   371
+036F:  MOVLB  00
+0370:  GOTO   384
+0371:  MOVF   60,W
+0372:  SUBLW  02
+0373:  BTFSS  03.2
+0374:  GOTO   391
+0375:  MOVF   47,W
+0376:  MOVLB  00
+0377:  SUBWF  41,W
+0378:  BTFSC  03.0
+0379:  GOTO   37C
+037A:  MOVLB  01
+037B:  GOTO   391
+037C:  BTFSS  03.2
+037D:  GOTO   384
+037E:  MOVF   40,W
+037F:  MOVLB  01
+0380:  SUBWF  46,W
+0381:  BTFSC  03.0
+0382:  GOTO   391
+0383:  MOVLB  00
+....................       { 
+....................          output_low(M14_IN1); 
+0384:  MOVLB  01
+0385:  BCF    10.5
+0386:  MOVLB  02
+0387:  BCF    10.5
+....................          output_low(M14_IN2); 
+0388:  MOVLB  01
+0389:  BCF    10.4
+038A:  MOVLB  02
+038B:  BCF    10.4
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[13] = 0; 
+038C:  MOVLB  00
+038D:  CLRF   41
+038E:  CLRF   40
+....................          motor_states[13] = STOP; 
+038F:  CLRF   53
+0390:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[14]; 
+0391:  MOVLB  00
+0392:  MOVF   54,W
+0393:  MOVLB  01
+0394:  MOVWF  60
+....................    if(state != STOP) 
+0395:  MOVF   60,F
+0396:  BTFSC  03.2
+0397:  GOTO   3CF
+....................    { 
+....................       motor_runtimes[14]++; 
+0398:  MOVLB  00
+0399:  INCF   42,F
+039A:  BTFSC  03.2
+039B:  INCF   43,F
+....................       if((state == UP && motor_runtimes[14] > up_time) || (state == DOWN && motor_runtimes[14] > down_time)) 
+039C:  MOVLB  01
+039D:  DECFSZ 60,W
+039E:  GOTO   3AF
+039F:  MOVF   49,W
+03A0:  MOVLB  00
+03A1:  SUBWF  43,W
+03A2:  BTFSC  03.0
+03A3:  GOTO   3A6
+03A4:  MOVLB  01
+03A5:  GOTO   3AF
+03A6:  BTFSS  03.2
+03A7:  GOTO   3C2
+03A8:  MOVF   42,W
+03A9:  MOVLB  01
+03AA:  SUBWF  48,W
+03AB:  BTFSC  03.0
+03AC:  GOTO   3AF
+03AD:  MOVLB  00
+03AE:  GOTO   3C2
+03AF:  MOVF   60,W
+03B0:  SUBLW  02
+03B1:  BTFSS  03.2
+03B2:  GOTO   3CF
+03B3:  MOVF   47,W
+03B4:  MOVLB  00
+03B5:  SUBWF  43,W
+03B6:  BTFSC  03.0
+03B7:  GOTO   3BA
+03B8:  MOVLB  01
+03B9:  GOTO   3CF
+03BA:  BTFSS  03.2
+03BB:  GOTO   3C2
+03BC:  MOVF   42,W
+03BD:  MOVLB  01
+03BE:  SUBWF  46,W
+03BF:  BTFSC  03.0
+03C0:  GOTO   3CF
+03C1:  MOVLB  00
+....................       { 
+....................          output_low(M15_IN1); 
+03C2:  MOVLB  06
+03C3:  BCF    0C.3
+03C4:  MOVLB  07
+03C5:  BCF    0C.3
+....................          output_low(M15_IN2); 
+03C6:  MOVLB  06
+03C7:  BCF    0C.2
+03C8:  MOVLB  07
+03C9:  BCF    0C.2
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[14] = 0; 
+03CA:  MOVLB  00
+03CB:  CLRF   43
+03CC:  CLRF   42
+....................          motor_states[14] = STOP; 
+03CD:  CLRF   54
+03CE:  MOVLB  01
+....................       } 
+....................    } 
+....................     
+....................    state = motor_states[15]; 
+03CF:  MOVLB  00
+03D0:  MOVF   55,W
+03D1:  MOVLB  01
+03D2:  MOVWF  60
+....................    if(state != STOP) 
+03D3:  MOVF   60,F
+03D4:  BTFSC  03.2
+03D5:  GOTO   40D
+....................    { 
+....................       motor_runtimes[15]++; 
+03D6:  MOVLB  00
+03D7:  INCF   44,F
+03D8:  BTFSC  03.2
+03D9:  INCF   45,F
+....................       if((state == UP && motor_runtimes[15] > up_time) || (state == DOWN && motor_runtimes[15] > down_time)) 
+03DA:  MOVLB  01
+03DB:  DECFSZ 60,W
+03DC:  GOTO   3ED
+03DD:  MOVF   49,W
+03DE:  MOVLB  00
+03DF:  SUBWF  45,W
+03E0:  BTFSC  03.0
+03E1:  GOTO   3E4
+03E2:  MOVLB  01
+03E3:  GOTO   3ED
+03E4:  BTFSS  03.2
+03E5:  GOTO   400
+03E6:  MOVF   44,W
+03E7:  MOVLB  01
+03E8:  SUBWF  48,W
+03E9:  BTFSC  03.0
+03EA:  GOTO   3ED
+03EB:  MOVLB  00
+03EC:  GOTO   400
+03ED:  MOVF   60,W
+03EE:  SUBLW  02
+03EF:  BTFSS  03.2
+03F0:  GOTO   40D
+03F1:  MOVF   47,W
+03F2:  MOVLB  00
+03F3:  SUBWF  45,W
+03F4:  BTFSC  03.0
+03F5:  GOTO   3F8
+03F6:  MOVLB  01
+03F7:  GOTO   40D
+03F8:  BTFSS  03.2
+03F9:  GOTO   400
+03FA:  MOVF   44,W
+03FB:  MOVLB  01
+03FC:  SUBWF  46,W
+03FD:  BTFSC  03.0
+03FE:  GOTO   40D
+03FF:  MOVLB  00
+....................       { 
+....................          output_low(M16_IN1); 
+0400:  MOVLB  06
+0401:  BCF    0C.1
+0402:  MOVLB  07
+0403:  BCF    0C.1
+....................          output_low(M16_IN2); 
+0404:  MOVLB  06
+0405:  BCF    0C.0
+0406:  MOVLB  07
+0407:  BCF    0C.0
+....................          // Initialize motor runtime and set motor state 
+....................          motor_runtimes[15] = 0; 
+0408:  MOVLB  00
+0409:  CLRF   45
+040A:  CLRF   44
+....................          motor_states[15] = STOP; 
+040B:  CLRF   55
+040C:  MOVLB  01
+....................       } 
+....................    } 
+040D:  BCF    0B.2
+040E:  MOVLP  00
+040F:  MOVLB  00
+0410:  GOTO   01A
+.................... } 
+....................  
+.................... void main() 
+*
+0800:  MOVLW  7A
+0801:  MOVLB  01
+0802:  MOVWF  19
+0803:  MOVLB  09
+0804:  BCF    17.3
+0805:  MOVLW  19
+0806:  MOVWF  13
+0807:  MOVLW  A6
+0808:  MOVWF  16
+0809:  MOVLW  90
+080A:  MOVWF  15
+080B:  MOVLW  02
+080C:  MOVLB  01
+080D:  MOVWF  47
+080E:  MOVLW  58
+080F:  MOVWF  46
+0810:  MOVLW  02
+0811:  MOVWF  49
+0812:  MOVLW  58
+0813:  MOVWF  48
+0814:  CLRF   70
+0815:  BCF    71.0
+0816:  MOVLB  0F
+0817:  CLRF   11
+0818:  CLRF   12
+0819:  CLRF   18
+081A:  CLRF   19
+081B:  CLRF   1A
+081C:  CLRF   1B
+081D:  CLRF   1C
+081E:  CLRF   1D
+081F:  MOVLB  03
+0820:  CLRF   0C
+0821:  CLRF   10
+0822:  MOVLB  08
+0823:  CLRF   0C
+0824:  CLRF   0D
+0825:  MOVLB  02
+0826:  CLRF   12
+0827:  CLRF   11
+0828:  GOTO   073
+0829:  DATA 32,34
+082A:  DATA 40,34
+082B:  DATA 24,34
+082C:  DATA 00,34
+082D:  DATA 1A,34
+082E:  DATA 80,34
+082F:  DATA 69,34
+0830:  DATA 00,34
+0831:  DATA 68,34
+0832:  DATA 00,34
+0833:  DATA 6B,34
+0834:  DATA 00,34
+0835:  DATA 6A,34
+0836:  DATA 00,34
+0837:  DATA 73,34
+0838:  DATA 00,34
+0839:  DATA 74,34
+083A:  DATA 00,34
+083B:  DATA 77,34
+083C:  DATA 00,34
+083D:  DATA 72,34
+083E:  DATA 00,34
+083F:  DATA 7D,34
+0840:  DATA 00,34
+0841:  DATA 7C,34
+0842:  DATA 00,34
+0843:  DATA 7F,34
+0844:  DATA 00,34
+0845:  DATA 7E,34
+0846:  DATA 00,34
+0847:  DATA 71,34
+0848:  DATA 00,34
+0849:  DATA 26,34
+084A:  DATA 00,34
+084B:  DATA A0,34
+084C:  DATA 70,34
+084D:  DATA 00,34
+084E:  DATA 65,34
+084F:  DATA 00,34
+0850:  DATA 64,34
+0851:  DATA 00,34
+0852:  DATA 7B,34
+0853:  DATA 00,34
+0854:  DATA 7A,34
+0855:  DATA 00,34
+0856:  DATA 79,34
+0857:  DATA 00,34
+0858:  DATA 78,34
+0859:  DATA 00,34
+085A:  DATA 63,34
+085B:  DATA 00,34
+085C:  DATA 62,34
+085D:  DATA 00,34
+085E:  DATA 61,34
+085F:  DATA 00,34
+0860:  DATA 60,34
+0861:  DATA 00,34
+0862:  DATA 87,34
+0863:  DATA 00,34
+0864:  DATA 86,34
+0865:  DATA 00,34
+0866:  DATA 85,34
+0867:  DATA 00,34
+0868:  DATA 84,34
+0869:  DATA 00,34
+086A:  DATA 63,34
+086B:  DATA 14,34
+086C:  DATA 62,34
+086D:  DATA 14,34
+086E:  DATA 61,34
+086F:  DATA 14,34
+0870:  DATA 60,34
+0871:  DATA 14,34
+0872:  DATA 00,34
+0873:  MOVLW  08
+0874:  MOVWF  05
+0875:  MOVLW  29
+0876:  MOVWF  04
+0877:  BSF    05.7
+0878:  MOVIW  [FSR0++],W
+0879:  MOVWF  77
+087A:  XORLW  00
+087B:  BTFSC  03.2
+087C:  GOTO   08D
+087D:  MOVIW  [FSR0++],W
+087E:  MOVWF  78
+087F:  BTFSC  78.7
+0880:  GOTO   085
+0881:  ANDLW  0F
+0882:  MOVWF  07
+0883:  MOVIW  [FSR0++],W
+0884:  MOVWF  06
+0885:  BTFSC  78.6
+0886:  MOVIW  [FSR0++],W
+0887:  BTFSS  78.6
+0888:  MOVIW  [FSR0++],W
+0889:  MOVWI  W,[FSR1++]
+088A:  DECFSZ 77,F
+088B:  GOTO   087
+088C:  GOTO   078
+.................... { 
+....................    // Set I/O states of the ports 
+....................    //           76543210 
+....................    set_tris_a(0b00000000); 
+088D:  MOVLW  00
+088E:  TRIS   5
+....................    set_tris_b(0b11000000); 
+088F:  MOVLW  C0
+0890:  TRIS   6
+....................    set_tris_c(0b00000000); 
+0891:  MOVLW  00
+0892:  TRIS   7
+....................    set_tris_d(0b00000000); 
+0893:  MOVLB  01
+0894:  MOVWF  0F
+....................    set_tris_e(0b00000000); 
+0895:  MOVWF  10
+....................    set_tris_f(0b11110000); 
+0896:  MOVLW  F0
+0897:  MOVLB  06
+0898:  MOVWF  0C
+....................    set_tris_g(0b11100100); 
+0899:  MOVLW  E4
+089A:  MOVWF  0D
+....................  
+....................    // Enable RS485 communication 
+....................    output_low(RX_Disable);     
+089B:  BCF    0D.4
+089C:  MOVLB  07
+089D:  BCF    0D.4
+....................    output_high(TX_Enable); 
+089E:  MOVLB  06
+089F:  BCF    0D.3
+08A0:  MOVLB  07
+08A1:  BSF    0D.3
+....................  
+....................    // Turn on debug led 
+....................    output_high(LED); 
+08A2:  MOVLB  01
+08A3:  BCF    10.2
+08A4:  MOVLB  02
+08A5:  BSF    10.2
+....................     
+....................    // Sets the card_ID variable 
+....................    set_address(); 
+08A6:  MOVLP  00
+08A7:  MOVLB  00
+08A8:  GOTO   423
+08A9:  MOVLP  08
+....................    // Resets all motors to STOP state 
+....................    reset_motor_states(); 
+08AA:  MOVLP  00
+08AB:  GOTO   5C5
+08AC:  MOVLP  08
+....................    // Setups the motor timer 
+....................    set_motor_timer(); 
+08AD:  MOVLP  00
+08AE:  GOTO   5D6
+08AF:  MOVLP  08
+....................  
+....................    // Enable RS485 receive byte interrupt 
+....................    enable_interrupts(global); 
+08B0:  MOVLW  C0
+08B1:  IORWF  0B,F
+....................    enable_interrupts(INT_RDA2); 
+08B2:  MOVLB  01
+08B3:  BSF    14.5
+....................     
+....................    // Sent ready signal to the control card 
+....................    fprintf(RS485, "SKS Pin Card - Code Version V1.1\n\r"); 
+08B4:  MOVLW  11
+08B5:  MOVLB  03
+08B6:  MOVWF  11
+08B7:  MOVLW  04
+08B8:  MOVWF  12
+08B9:  MOVLP  00
+08BA:  MOVLB  00
+08BB:  GOTO   5E0
+08BC:  MOVLP  08
+....................  
+....................    while(true) 
+....................    { 
+....................       if(reg_rs485_message) 
+08BD:  BTFSS  71.0
+08BE:  GOTO   0C8
+....................       { 
+....................          reg_rs485_message = 0; 
+08BF:  BCF    71.0
+....................          rs485_message(); 
+08C0:  MOVLP  00
+08C1:  GOTO   673
+08C2:  MOVLP  08
+....................           
+....................          // Enable RS485 receive byte interrupt 
+....................          clear_interrupt(INT_RDA2); 
+08C3:  MOVF   07,W
+08C4:  BCF    14.5
+....................          enable_interrupts(INT_RDA2); 
+08C5:  MOVLB  01
+08C6:  BSF    14.5
+08C7:  MOVLB  00
+....................       } 
+08C8:  GOTO   0BD
+....................    } 
+.................... } 
+08C9:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0804   INTRC_IO NOWDT PUT NOMCLR PROTECT CPD NOBROWNOUT NOCLKOUT NOIESO NOFCMEN
+   Word  2: 1EFC   WRT NOVCAP PLL_SW STVREN BORV19 NODEBUG NOLVP

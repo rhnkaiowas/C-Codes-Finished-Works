@@ -1,0 +1,38 @@
+[PROJECT]
+Target=SLS_Software_v2.1_without_INT.hex
+Processor_Text=DSPIC30F6015
+CCSVersion=5.008
+Compiler=PCD
+[Target Data]
+FileList=SLS_Software_v2.1_without_INT.c
+[SLS_Software_v2.1_without_INT.c]
+Type=4
+[mru-list]
+1=SLS_Software_v2.1_without_INT.c
+
+[ProjectLog]
+Days=1
+D1=23-07-2014
+D1_L=6
+D1_L1=[40172]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L2=[40172]Project Closed.
+D1_L3=[40179]Project Opened.
+D1_L4=[40193]Project Closed.
+D1_L5=[40224]Project Opened.
+D1_L6=[40258]Project Closed.
+
+[Opened Files]
+1=..\..\..\SKS - Sayýsal Kum Sandýðý\Elektronik\V1\Pin Sürücü Kartý\Software\pin_surucu.c
+t1=2089
+Count=1
+2=
+3=
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Units]
+Count=1
+1=SLS_Software_v2.1_without_INT (main)

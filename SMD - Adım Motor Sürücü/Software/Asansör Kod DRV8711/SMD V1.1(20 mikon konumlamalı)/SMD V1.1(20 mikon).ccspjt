@@ -1,0 +1,22 @@
+[PROJECT]
+Target=SMD V1.1(20 mikon).hex
+Processor_Text=PIC16F1826
+CCSVersion=5.025d
+Compiler=PCM
+[Target Data]
+FileList=SMD V1.1(20 mikon).c
+[SMD V1.1(20 mikon).c]
+Type=4
+[mru-list]
+1=SMD V1.1(20 mikon).c
+[Units]
+Count=1
+1=SMD V1.1(20 mikon) (main)
+
+[ProjectLog]
+Days=1
+D1=18-07-2014
+D1_L=3
+D1_L1=[60824]Project Closed.
+D1_L2=[61091]Project Opened.
+D1_L3=[61971]Project Closed.

@@ -1,0 +1,55 @@
+
+ROM used:   1924/2048 (94%)
+            1924/2048 (94%) including unused fragments
+
+            1.5 Average locations per line
+            8.4 Average locations per statement
+
+RAM used:   9/335 (3%) at main() level
+            40/335 (12%) worst case
+
+Stack used: 3 worst case (3 in main + 0 for interrupts)
+Stack size: 16
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  453   229 100  SMD V1.1_Versiyon2.c
+  825     0   0  C:\Program Files (x86)\PICC\Devices\16f1826.h
+----- -----
+ 1278   229 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1    1             @delay_ms1
+0     18   1    1             @delay_us1
+0   1109  58    0             @const637
+0     13   1    0   174  1.8  set_SPI
+0     11   1    0    32  1.0  set_variables
+0      6   0    0    33  1.3  set_pins
+0     81   4    1   662  4.6  md_set_state
+0     14   1    1    52  1.9  md_set_direction
+0    310  16    0  3002  3.2  md_init
+0    295  15    9  2627  9.4  motion_cycle
+0      9   0    0             @goto10737
+0     34   2    1   116  1.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              229
+    Comments                213
+    Volume (V)              8652
+    Difficulty (D)          26.4
+    Effort to implement (E) 228194
+    Time to implement (T)   3 hours, 31 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   24
+    Maintainability (MI)    129
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF  1921  124  
+
+
+

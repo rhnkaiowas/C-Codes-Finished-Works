@@ -1,0 +1,37 @@
+ÀÄAsansor Version1
+   ÀÄMAIN  0/38  Ram=1
+      ÃÄ??0??
+      ÃÄ@delay_ms1  0/22  Ram=1
+      ÃÄset_pullups  0/8  Ram=0
+      ÃÄset_pins  0/6  Ram=0
+      ÃÄset_SPI  0/13  Ram=0
+      ÃÄset_variables  0/15  Ram=0
+      ÃÄmd_init  0/315  Ram=0
+      ³  ÃÄmd_set_state  0/13  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÃÄ@delay_ms1  0/22  Ram=1
+      ³  ÀÄ@delay_ms1  0/22  Ram=1
+      ÀÄmotion_cycle  0/289  Ram=9
+         ÃÄ@delay_ms1  0/22  Ram=1
+         ÃÄ@delay_ms1  0/22  Ram=1
+         ÃÄmd_set_direction  0/13  Ram=1
+         ÃÄ@delay_ms1  0/22  Ram=1
+         ÃÄ@delay_ms1  0/22  Ram=1
+         ÃÄmd_set_direction  0/13  Ram=1
+         ÃÄ@goto10238  0/9  Ram=0
+         ÃÄmd_set_state  0/13  Ram=1
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄ@const104  0/235  Ram=0
+         ÃÄmd_set_state  0/13  Ram=1
+         ÃÄ@delay_us1  0/16  Ram=1
+         ÀÄ@delay_us1  0/16  Ram=1

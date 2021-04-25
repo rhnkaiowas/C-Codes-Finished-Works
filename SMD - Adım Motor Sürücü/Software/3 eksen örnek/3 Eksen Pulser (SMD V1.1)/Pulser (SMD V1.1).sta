@@ -1,0 +1,46 @@
+
+ROM used: 570 (28%)
+          570 (28%) including unused fragments
+
+          1 Average locations per line
+          15 Average locations per statement
+
+RAM used: 18 (5%) at main() level
+          46 (14%) worst case
+
+Stack used: 1 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  102    39 100  Pulser (SMD V1.1).c
+  474     0   0  C:\Program Files (x86)\PICC\devices\16f1826.h
+----- -----
+  576    39 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   4   1             @delay_ms1
+0     18   3   1             @delay_us1
+0    408  72   2  1268  6.4  main
+0     77  14  13             @DIV3232
+0     43   8  13             @MUL3232
+
+Program metrics:
+    Functions               1
+    Statements              39
+    Comments                96
+    Volume (V)              1278
+    Difficilty (D)          6.1
+    Effort to implement (E) 7773
+    Time to implement (T)   7 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   5
+    Maintainability (MI)    99
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF   567  1478  
+
+
+

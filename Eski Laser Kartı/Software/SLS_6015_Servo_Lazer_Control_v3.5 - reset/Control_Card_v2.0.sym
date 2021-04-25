@@ -1,0 +1,546 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W2  @ADDFF48.P1
+W0 -W1  @READ_PROGRAM_MEMORY.P2
+W0 -W3  @F64TOI64.P3
+W0 -W2  @MULFF48.P4
+W0      @SITOF.P5
+W0 -W1  @DIV3232B.P6
+W0      @delay_ms1.P7
+W0      @PRINTFD16_38400_5893_5892.P8
+W0      @delay_us1.P9
+W0 -W1  @MULFF.P10
+W0 -W3  @I64TOF48.P11
+W0 -W1  @FLT.P12
+W0 -W3  @F64TOSI64.P13
+W0 -W3  @FLT64.P14
+W0 -W3  @SI64TOF48.P15
+W0 -W3  @SI64TOF64.P16
+W0      @ITOF.P17
+W0 -W1  @MUL3232.P18
+W0 -W3  @I64TOF64.P19
+W0 -W2  @FLT48.P20
+W0 -W1  @MULS3232.P21
+W0 -W1  @ADDFF.P22
+W0 -W2  @F48TOSI64.P23
+W0 -W1  @DIVS3232A.P24
+W0 -W2  @DIVFF48.P25
+W0 -W3  @ADDFF64.P26
+W0      @PRINTFU16_38400_5893_5892.P27
+W0 -W3  @MULFF64.P28
+W0 -W1  @SFTOI.P29
+W0 -W1  @DIV3232A.P30
+W0 -W1  @DIVFF.P31
+W0 -W3  @DIVFF64.P32
+W1      @SCRATCH
+W1      @READ_PACKED_MEMORY.P1
+W1      @WRITE_PACKED_MEMORY.P2
+W2 -W3  @DIVFF.P1
+W2 -W3  @FLT.P2
+W2      @READ_PACKED_MEMORY.P3
+W2 -W3  @ADDFF.P4
+W2      @READ_PROGRAM_MEMORY.P5
+W2 -W3  @DIVS3232A.P6
+W2 -W3  @MUL3232.P7
+W2 -W3  @DIV3232B.P8
+W2 -W3  @DIV3232A.P9
+W2      @WRITE_PACKED_MEMORY.P10
+W2 -W3  @MULFF.P11
+W2 -W3  @MULS3232.P12
+W3 -W5  @ADDFF48.P1
+W3 -W5  @FLT48.P2
+W3      @WRITE_PACKED_MEMORY.P3
+W3 -W5  @MULFF48.P4
+W3      @READ_PROGRAM_MEMORY.P5
+W3      @READ_PACKED_MEMORY.P6
+W3 -W5  @DIVFF48.P7
+W4      @PRINTFD16_38400_5893_5892.P1
+W4 -W7  @FLT64.P2
+W4 -W7  @ADDFF64.P3
+W4      @PRINTFU16_38400_5893_5892.P4
+W4 -W7  @MULFF64.P5
+W4 -W7  @DIVFF64.P6
+088     UART_IFS0
+088     PWM_IFS2
+088.7   PWM_IFS2_PWMIF
+089.1   UART_IFS0_U1RXIF
+089.2   UART_IFS0_U1TXIF
+090     PWM_IEC2
+090.7   PWM_IEC2_PWMIE
+122.0   QEI_QEICON_UDSRC
+122     QEI_QEICON
+122.1   QEI_QEICON_TQCS
+122.2   QEI_QEICON_POSRES
+122.3   QEI_QEICON_TQCKPS0
+122.4   QEI_QEICON_TQCKPS1
+122.5   QEI_QEICON_TQGATE
+122.6   QEI_QEICON_PCDOUT
+122.7   QEI_QEICON_SWPAB
+123.0   QEI_QEICON_QEIM0
+123.1   QEI_QEICON_QEIM1
+123.2   QEI_QEICON_QEIM2
+123.3   QEI_QEICON_UPDN
+123.4   QEI_QEICON_INDEX
+123.5   QEI_QEICON_QEISIDL
+123.7   QEI_QEICON_CNTERR
+124     QEI_DFLTCON
+124.4   QEI_DFLTCON_QECK0
+124.5   QEI_DFLTCON_QECK1
+124.6   QEI_DFLTCON_QECK2
+124.7   QEI_DFLTCON_QEOUT
+125.0   QEI_DFLTCON_CEID
+125.1   QEI_DFLTCON_IMV0
+125.2   QEI_DFLTCON_IMV1
+126     QEI_POSCNT
+128     QEI_MAXCNT
+1C0     PWM_PTCON
+1C0.0   PWM_PTCON_PTMOD0
+1C0.1   PWM_PTCON_PTMOD1
+1C0.2   PWM_PTCON_PTCKPS0
+1C0.3   PWM_PTCON_PTCKPS1
+1C0.4   PWM_PTCON_PTOPS0
+1C0.5   PWM_PTCON_PTOPS1
+1C0.6   PWM_PTCON_PTOPS2
+1C0.7   PWM_PTCON_PTOPS3
+1C1.7   PWM_PTCON_PTEN
+1C4     PWM_PTPER
+1C8     PWM_PWMCON1
+1C8.0   PWM_PWMCON1_PEN1L
+1C8.4   PWM_PWMCON1_PEN1H
+1C9.0   PWM_PWMCON1_PMOD1
+1CA.0   PWM_PWMCON2_UDIS
+1CA     PWM_PWMCON2
+1CA.1   PWM_PWMCON2_OSYNC
+1CA.2   PWM_PWMCON2_IUE
+1D6     PWM_PDC1
+740.0   RCON_POR
+740     RCON
+740.1   RCON_BOR
+740.2   RCON_IDLE
+740.3   RCON_SLEEP
+740.4   RCON_WDTO
+740.5   RCON_SWDTEN
+740.6   RCON_SWR
+740.7   RCON_EXTR
+741.5   RCON_BGST
+741.6   RCON_IOPUWR
+741.7   RCON_TRAPR
+800.0   debug_mode_dp
+800.1   debug_mode_pp
+800.2   debug_mode_fr
+800.3   debug_mode_md
+800.4   debug_mode_pwm
+800.5   debug_mode_qei
+800.6   reg_comm_type
+800.7   reg_pp_stop
+801     md_run_state
+802-803 dp_tap_limit
+804-805 dp_voltage_limit
+806-807 mt_voltage_limit
+808-809 mt_percent_trip
+80A-80B mt_percent_rest
+80C-80D md_conv_const
+80E-80F md_move_range
+810-811 md_home_pos
+812-813 md_end_pos
+814-815 md_end_offset
+816-817 md_home_offset
+818-819 md_min_distance
+81A-81B md_target_count
+81C-81D md_accel
+81E-81F md_decel
+820-821 md_min_delay
+822-823 md_decel_lim
+824-825 md_accel_lim
+826-827 md_decel_count
+828-829 md_pos_iter
+82A-82B md_error
+82C-82D md_backlash
+82E-82F md_cc_step
+830-831 md_cc_count
+832-833 fr_serial_no
+834-835 fr_move_range
+836-837 fr_home_pos
+838-839 fr_end_pos
+83A-83B fr_conv_const
+83C-83D fr_backlash
+83E-83F fr_comm_type
+840-841 fr_last_pos
+842-843 fr_pos_table
+844-845 pp_str_check
+846-847 pp_str_delay
+848-849 pp_ack_delay
+84A-84B pp_rdy_delay
+84C.0   reg_pp_strobe
+84C.1   reg_md_home
+84C.2   reg_md_home_return
+84C.3   reg_rs232_message
+84C.4   reg_md_cc_sample
+84E-84F md_max_acc_lim
+850-851 i
+852     rs232_message.input
+852-853 pp_get_command.input
+853.0   rs232_message.value
+854-855 pp_move_pos.input
+854-855 rs232_message.i
+854-855 pp_set_pos.index
+854-855 pp_get_byte.data
+856-857 pp_move_pos.index
+856-857 pp_set_pos.pos0
+856-857 qei_set_max_count.value
+856-857 pp_get_byte.D7
+856-85D rs232_message.input_step
+858-859 pp_set_pos.pos1
+858-859 pp_get_byte.D6
+858-859 pp_move_pos.position
+85A-85B pp_get_byte.D5
+85A-85B i
+85C-85D pp_get_byte.D4
+85C-85D pp_get_BCD_byte.data
+85E-85F rs232_message.step
+85E-85F pp_get_byte.D3
+85E-85F pp_get_BCD_byte.D7
+860-861 pp_get_BCD_byte.D6
+860-861 rs232_message.k
+860-861 pp_get_byte.D2
+862-863 pp_get_byte.D1
+862-865 rs232_message.input_index
+862-863 pp_get_BCD_byte.D5
+864-865 pp_get_byte.D0
+864-865 pp_get_BCD_byte.D4
+866-867 pp_get_BCD_byte.D3
+866-867 rs232_message.index
+868-869 pp_get_BCD_byte.D2
+868-86B rs232_message.input_pos
+86A-86B pp_get_BCD_byte.D1
+86C-86D rs232_message.posi
+86C-86D pp_get_BCD_byte.D0
+86E-86F rs232_message.r
+86E-86F pp_get_BCD_byte.byte0
+870-871 pp_get_BCD_byte.byte1
+870-877 rs232_message.input_speed
+878-879 rs232_message.delay
+87A-87B rs232_message.m
+87C-87D rs232_message.pos_cal
+87E-87F rs232_message.num
+880-881 rs232_message.p
+882-883 rs232_message.l
+884-885 rs232_message.pos_cal_2
+886-887 rs232_message.num_2
+888-889 rs232_message.f
+88A-88B rs232_message.input_ds
+88C-88D rs232_message.input_mem_test
+88E     rs232_message.mem
+890     data_set_comm_type.input
+890-891 data_set_conv_const.cc_first_count
+890-891 data_get_last_pos.position
+890-891 data_get_move_range.range
+890     data_set_home_pos.i
+890     data_set_move_range.i
+890     data_get_serial_no.i
+890-891 data_get_backlash.backlash
+890-891 data_get_pos_table.input
+890     data_set_backlash.i
+890     data_get_comm_type.comm_type
+890-891 data_get_end_pos.end
+890     data_set_serial_no.i
+890-891 data_get_conv_const.conv_const
+890     data_set_end_pos.i
+892-893 data_get_pos_table.i
+892-899 data_set_home_pos.input
+892-89E data_set_serial_no.input
+892-89E data_get_serial_no.input
+892-899 data_set_move_range.input
+892     data_set_pos.index
+892-893 data_set_conv_const.conv_const
+892-89B data_set_end_pos.input
+892-895 data_set_backlash.input
+894-895 data_get_pos_table.index
+894-895 move_pos.position
+894-895 data_set_pos.position
+896-897 data_set_backlash.backlash
+896     data_get_pos.index
+896-897 move_pos.count
+898-899 data_get_pos.position
+89A-89B data_set_home_pos.home_pos
+89A-89B data_set_last_pos.position
+89A-89B data_set_move_range.range
+89A-89B move_to.count
+89C-89D data_set_end_pos.end
+89C-89D move_to.displ
+89E-89F data_get_home_pos.home_pos
+89E-89F fr_write.address
+89E-89F move_to.current_count
+8A0-8A1 fr_read.address
+8A0-8A1 fr_write.data
+8A2.0   pwm_enable.reg_md_running
+8A2     fr_write.data_high
+8A2-8A3 fr_read.data_buffer
+8A3     fr_write.data_low
+8A4-8A5 pwm_enable.md_step_count
+8A4-8A5 fr_read.data_low
+8A6-8A7 fr_read.data_high
+8A6-8A7 difference
+8A8-8A9 md_mt_set.percent
+8A8-8A9 qei_set_count.value
+8A8-8A9 pwm_select_mode.mode
+8AA-8AB md_mt_set.voltage
+8AC-8AD pwm_set_period.period
+8AC-8AD fr_write_byte.address
+8AE-8AF pwm_set_period.pwm_period
+8AE-8AF dp_set.voltage
+8AE-8AF md_mt_get.analog
+8AE     fr_write_byte.data
+8AE-8AF fr_read_byte.address
+8AF     fr_write_byte.i
+8B0-8B2 fr_read_byte.cmd
+8B0-8B1 md_mt_get.percent
+8B0-8B3 fr_write_byte.cmd
+8B0-8B1 dp_set.iteration_limit
+8B2-8B3 dp_set.iteration
+8B3     fr_read_byte.i
+8B4     fr_write_byte.wren
+8B4-8B5 dp_set.region
+8B4     fr_read_byte.data
+8B5     fr_write_byte.write
+8B5     fr_read_byte.read
+8B6     fr_write_byte.wrdi
+8B6-8B7 dp_set.tap_desired
+8B8-8B9 dp_set.voltage_current
+8BA-8BB dp_set.voltage_diff
+8BC-8BD dp_set.tap_current
+8C4-8C5 dp_up.tap
+8C4-8C5 dp_down.tap
+8C6-8C7 dp_up.i
+8C6-8C7 dp_down.i
+2780-27FF Stack
+
+ROM Allocation:
+002712  @SFTOI
+0023AA  @ITOF
+0023E4  @DIVFF
+002572  @ADDFF
+0024AE  @MULFF
+00155E  @delay_ms1
+001F08  @delay_us1
+000100  delays
+0016CE  dp_init
+00175C  dp_up
+0017A6  dp_down
+0017E8  dp_set
+000196  @const594
+001572  @PRINTFU16_38400_5893_5892
+0001BA  @const598
+0001DA  @const599
+0001FE  @const600
+00021E  @const601
+000244  @const602
+000260  @const604
+000284  @const606
+0002AA  @const607
+0002C0  @const608
+0016D8  @MUL3232
+001708  @DIV3232A
+001B18  md_mt_get
+0002E0  @const620
+001B88  md_mt_set
+000306  @const623
+001BF6  md_init
+001C20  fr_init
+002264  fr_write_byte
+001C32  fr_read_byte
+002370  fr_write
+001CCA  fr_read
+0032FA  data_get_serial_no
+000326  @const655
+001CFC  data_get_move_range
+00033E  @const659
+001D4C  data_get_home_pos
+000362  @const662
+001D9C  data_get_end_pos
+00038A  @const665
+001E80  data_get_conv_const
+0003B0  @const668
+001DEC  data_get_backlash
+0003D8  @const671
+002E16  data_get_comm_type
+0003FA  @const674
+00042A  @const675
+000458  @const676
+002214  data_get_last_pos
+000484  @const679
+003430  data_get_pos
+0004A8  @const683
+0034B2  data_get_pos_table
+003374  data_get_sys_data
+0004D2  @const690
+000502  @const692
+000532  @const694
+002E92  data_set_serial_no
+002EF6  data_set_move_range
+00056A  @const705
+0005C6  @const706
+002FCE  data_set_home_pos
+000624  @const711
+003064  data_set_end_pos
+00067A  @const716
+00310E  data_set_conv_const
+0006DC  @const720
+0006FC  @const721
+00071A  @const722
+003238  data_set_backlash
+00329C  data_set_comm_type
+00239C  data_set_last_pos
+003516  data_set_pos
+001628  qei_init
+000748  @const735
+001F46  qei_set_count
+000776  @const738
+001E3C  qei_set_max_count
+0007A6  @const741
+001F8A  qei_get_count
+001676  pwm_select_mode
+00168E  pwm_init
+0007E0  @const745
+001EE2  pwm_set_period
+001F18  pwm_disable
+000806  @const750
+001F90  pwm_enable
+00280A  move_to
+00273E  @MULS3232
+002780  @DIVS3232A
+000822  @const765
+000842  @const766
+000868  @const767
+00088E  @const768
+002AD4  move_pos
+0008B4  @const769
+000922  @const770
+00098C  @const771
+0009B4  @const773
+0029DA  @PRINTFD16_38400_5893_5892
+0009D4  @const777
+0009FC  @const778
+000A24  @const779
+000A4C  @const781
+0021D2  move_home
+000A64  @const783
+002D7E  move_init
+000A7C  @const785
+004092  pp_get_byte
+0041B0  pp_get_BCD_byte
+00411C  pp_comm_pause
+000AA6  @const813
+000AC4  @const815
+000AEA  @const816
+004248  pp_set_pos
+000B0A  @const821
+00434C  pp_move_pos
+000B40  @const826
+0043BA  pp_get_command
+000B78  @const829
+000B9E  @const830
+000BBC  @const831
+000BDC  @const832
+000BFC  @const833
+003532  rs232_message
+000C20  @const836
+000C3E  @const837
+000C62  @const838
+000C86  @const839
+000CAE  @const840
+000CD2  @const841
+000CFC  @const842
+000D1E  @const843
+000D48  @const844
+000D6C  @const845
+000D92  @const846
+000DB6  @const847
+000DDA  @const848
+000E00  @const849
+000E28  @const850
+000E4C  @const851
+000E72  @const852
+000E98  @const853
+000EBA  @const855
+000EEC  @const857
+000F18  @const859
+000F4E  @const861
+000F82  @const863
+000FB2  @const865
+000FD4  @const867
+001010  @const869
+00103C  @const870
+001060  @const875
+001088  @const880
+0010A0  @const881
+0010C6  @const885
+0010E2  @const886
+001100  @const900
+001120  @const901
+001152  @const902
+001184  @const903
+0011B6  @const904
+0011E8  @const905
+00121A  @const906
+00124C  @const907
+00127E  @const908
+00129C  @const913
+0012B8  @const915
+0012DA  @const916
+001312  @const920
+00151E  isr_pp_strobe
+001540  isr_rs232_message
+0044BA  MAIN
+001344  @const929
+001378  @const930
+0013A2  @const931
+0013D6  @const934
+0013FA  @const936
+001410  @const939
+001426  @const942
+00143C  @const945
+001452  @const948
+001468  @const951
+00147E  @const954
+001494  @const957
+0014AA  @const960
+0014C0  @const963
+0014D6  @const966
+0014EC  @const969
+0044BA  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\LPS - Lazer Projeksiyon Sistemi\Eski Dosyalar\Software\SLS_6015_Servo_Lazer_Control_v3.5 - reset\
+
+Project Files:
+    Control_Card_v2.0.c
+    C:\Program Files (x86)\PICC\devices\30f6015.h
+    C:\Program Files (x86)\PICC\drivers\math.h
+
+Units:
+    E:\File Server\Modesis\Proje Dosyalarý\LPS - Lazer Projeksiyon Sistemi\Eski Dosyalar\Software\SLS_6015_Servo_Lazer_Control_v3.5 - reset\Control_Card_v2.0 (main)
+
+Compiler Settings:
+    Processor:      DSPIC30F6015
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      0
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    Errors:      Control_Card_v2.0.err
+    Ext Symbols: Control_Card_v2.0.esym
+    INHX8:       Control_Card_v2.0.hex
+    Symbols:     Control_Card_v2.0.sym
+    List:        Control_Card_v2.0.lst
+    Debug/COFF:  Control_Card_v2.0.cof
+    Project:     Control_Card_v2.0.PJT
+    Call Tree:   Control_Card_v2.0.tre
+    Statistics:  Control_Card_v2.0.sta

@@ -1,0 +1,189 @@
+ÀÄControl Card v2
+   ÃÄMAIN  0/462  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@delay_ms1  0/16  Ram=2
+   ³  ÃÄ@const1379  0/56  Ram=0
+   ³  ÃÄpwm_init  0/62  Ram=0
+   ³  ³  ÃÄpwm_select_mode  0/24  Ram=2
+   ³  ³  ÀÄ@const1292  0/38  Ram=0
+   ³  ÃÄdp_init  0/10  Ram=0
+   ³  ÃÄmd_init  0/42  Ram=0
+   ³  ³  ÀÄmd_torque_set  0/108  Ram=7
+   ³  ³     ÃÄ@const1254  0/32  Ram=0
+   ³  ³     ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ÃÄ@MUL3232  0/48  Ram=8
+   ³  ³     ÃÄ@DIV3232A  0/84  Ram=8
+   ³  ³     ÃÄdp_set  0/776  Ram=19
+   ³  ³     ³  ÃÄ@const1225  0/36  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1229  0/32  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1230  0/36  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1231  0/32  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1232  0/38  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄdp_up  0/64  Ram=2
+   ³  ³     ³  ÃÄdp_down  0/58  Ram=2
+   ³  ³     ³  ÃÄdp_up  0/64  Ram=2
+   ³  ³     ³  ÃÄdp_down  0/58  Ram=2
+   ³  ³     ³  ÃÄ@const1233  0/28  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1231  0/32  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1235  0/36  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1232  0/38  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1237  0/38  Ram=0
+   ³  ³     ³  ÃÄ@const1238  0/22  Ram=0
+   ³  ³     ³  ÃÄ@const1239  0/32  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1235  0/36  Ram=0
+   ³  ³     ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ³  ÃÄ@const1232  0/38  Ram=0
+   ³  ³     ³  ÀÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ³     ÀÄmd_torque_get  0/114  Ram=9
+   ³  ³        ÃÄ@MUL3232  0/48  Ram=8
+   ³  ³        ÃÄ@DIV3232A  0/84  Ram=8
+   ³  ³        ÃÄ@const1251  0/38  Ram=0
+   ³  ³        ÀÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³  ÀÄrs232_message  0/1414  Ram=7
+   ³     ÃÄ@const1332  0/54  Ram=0
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1337  0/48  Ram=0
+   ³     ÃÄset_speed  0/78  Ram=2
+   ³     ³  ÃÄ@DIV3232A  0/84  Ram=8
+   ³     ³  ÃÄ@const1310  0/26  Ram=0
+   ³     ³  ÀÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1342  0/34  Ram=0
+   ³     ÃÄmove_to_pos  0/150  Ram=2
+   ³     ³  ÃÄ@const1321  0/110  Ram=0
+   ³     ³  ÃÄ@const1322  0/24  Ram=0
+   ³     ³  ÃÄmd_set_dir  0/24  Ram=2
+   ³     ³  ÃÄmd_set_dir  0/24  Ram=2
+   ³     ³  ÃÄmove  0/438  Ram=9
+   ³     ³  ³  ÃÄ@MULS3232  0/66  Ram=8
+   ³     ³  ³  ÃÄ@DIVS3232A  0/126  Ram=8
+   ³     ³  ³  ÃÄ@const1314  0/40  Ram=0
+   ³     ³  ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ³  ³  ÃÄ@const1314  0/40  Ram=0
+   ³     ³  ³  ÃÄ@const1315  0/42  Ram=0
+   ³     ³  ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ³  ³  ÃÄ@const1315  0/42  Ram=0
+   ³     ³  ³  ÃÄ@MULS3232  0/66  Ram=8
+   ³     ³  ³  ÃÄ@DIVS3232A  0/126  Ram=8
+   ³     ³  ³  ÃÄ@MULS3232  0/66  Ram=8
+   ³     ³  ³  ÃÄ@DIVS3232A  0/126  Ram=8
+   ³     ³  ³  ÃÄ@const1316  0/38  Ram=0
+   ³     ³  ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ³  ³  ÃÄ@const1317  0/38  Ram=0
+   ³     ³  ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ³  ³  ÃÄ@const1318  0/38  Ram=0
+   ³     ³  ³  ÃÄ@PRINTFU16_38400_5893_5892  0/178  Ram=0
+   ³     ³  ³  ÀÄpwm_enable  0/162  Ram=5
+   ³     ³  ³     ÃÄmd_set_state  0/18  Ram=2
+   ³     ³  ³     ÃÄ@delay_ms1  0/16  Ram=2
+   ³     ³  ³     ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ÃÄpwm_select_mode  0/24  Ram=2
+   ³     ³  ³     ÃÄpwm_control  0/230  Ram=3
+   ³     ³  ³     ³  ÃÄ@const1206  0/498  Ram=0
+   ³     ³  ³     ³  ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ³  ÃÄ@const1206  0/498  Ram=0
+   ³     ³  ³     ³  ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ³  ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ³  ÃÄ@const1206  0/498  Ram=0
+   ³     ³  ³     ³  ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ³  ÃÄ@const1206  0/498  Ram=0
+   ³     ³  ³     ³  ÃÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ³  ÃÄpwm_disable  0/44  Ram=0
+   ³     ³  ³     ³  ³  ÃÄ@delay_us1  0/16  Ram=2
+   ³     ³  ³     ³  ³  ÀÄ@const1297  0/28  Ram=0
+   ³     ³  ³     ³  ÃÄ@const1206  0/498  Ram=0
+   ³     ³  ³     ³  ÀÄpwm_set_period  0/74  Ram=9
+   ³     ³  ³     ÃÄ@MULS3232  0/66  Ram=8
+   ³     ³  ³     ÃÄ@DIVS3232A  0/126  Ram=8
+   ³     ³  ³     ÃÄupdate_pins  0/378  Ram=2
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÃÄset_register_bits  0/106  Ram=9
+   ³     ³  ³     ³  ³  ÀÄsend_pin_state  0/58  Ram=4
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÃÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³  ³  ÀÄ*
+   ³     ³  ³     ³  ÀÄset_pin  0/46  Ram=10
+   ³     ³  ³     ³     ÀÄ*
+   ³     ³  ³     ÃÄ@delay_ms1  0/16  Ram=2
+   ³     ³  ³     ÀÄmd_set_state  0/18  Ram=2
+   ³     ³  ÀÄ@const1324  0/28  Ram=0
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄmove_to_home  0/114  Ram=3
+   ³     ³  ÃÄ@const1326  0/24  Ram=0
+   ³     ³  ÃÄset_all_pins  0/22  Ram=1
+   ³     ³  ³  ÀÄsend_pin_state  0/58  Ram=4
+   ³     ³  ÃÄ@delay_ms1  0/16  Ram=2
+   ³     ³  ÃÄmd_set_dir  0/24  Ram=2
+   ³     ³  ÃÄmove  0/438  Ram=9
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄmove  0/438  Ram=9
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÀÄ@const1327  0/28  Ram=0
+   ³     ÃÄ@const1347  0/30  Ram=0
+   ³     ÃÄset_pin  0/46  Ram=10
+   ³     ³  ÀÄ*
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1353  0/36  Ram=0
+   ³     ÃÄset_all_pins  0/22  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1355  0/34  Ram=0
+   ³     ÃÄset_all_pins  0/22  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1357  0/50  Ram=0
+   ³     ÃÄset_pin_up_time  0/58  Ram=4
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1362  0/52  Ram=0
+   ³     ÃÄset_pin_down_time  0/58  Ram=4
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1367  0/38  Ram=0
+   ³     ÃÄsend_pin_state  0/58  Ram=4
+   ³     ÃÄ@const1336  0/20  Ram=0
+   ³     ÃÄ@const1372  0/24  Ram=0
+   ³     ÃÄdemo_run  0/38  Ram=0
+   ³     ³  ÃÄ@delay_ms1  0/16  Ram=2
+   ³     ³  ÃÄmove_to_pos  0/150  Ram=2
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÃÄ@delay_ms1  0/16  Ram=2
+   ³     ³  ÃÄset_all_pins  0/22  Ram=1
+   ³     ³  ³  ÀÄ*
+   ³     ³  ÀÄ@delay_ms1  0/16  Ram=2
+   ³     ÀÄ@const1336  0/20  Ram=0
+   ÃÄisr_rs485_message  0/46  Ram=2
+   ÀÄisr_rs232_message  0/36  Ram=0

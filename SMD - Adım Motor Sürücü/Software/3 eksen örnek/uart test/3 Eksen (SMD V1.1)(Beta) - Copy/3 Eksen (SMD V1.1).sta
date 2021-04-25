@@ -1,0 +1,43 @@
+
+ROM used: 59 (3%)
+          59 (3%) including unused fragments
+
+          0 Average locations per line
+          12 Average locations per statement
+
+RAM used: 5 (1%) at main() level
+          17 (5%) worst case
+
+Stack used: 1 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   40     5 100  3 Eksen (SMD V1.1).c
+  474     0   0  C:\Program Files (x86)\PICC\devices\16f1826.h
+----- -----
+  514     5 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     22  37   1             @delay_ms1
+0     34  58   1    67  1.6  main
+
+Program metrics:
+    Functions               1
+    Statements              5
+    Comments                113
+    Volume (V)              69
+    Difficilty (D)          1.4
+    Effort to implement (E) 96
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    88
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF    56  1989  
+
+
+

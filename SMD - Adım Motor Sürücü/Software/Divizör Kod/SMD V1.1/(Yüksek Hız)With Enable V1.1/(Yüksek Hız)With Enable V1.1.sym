@@ -1,0 +1,123 @@
+004-005 @READ_PACKED_MEMORY.P1
+004-005 @WRITE_PACKED_MEMORY.P2
+004-005 @READ_PROGRAM_MEMORY8.P3
+004     @WRITE_PROGRAM_MEMORY8.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+00B     IOC_INTCON
+00B.3   IOC_IOCIE
+00B.6   IOC_PEIE
+00B.7   IOC_GIE
+011     SPI_PIR1
+011.3   SPI_FLAG
+020.0   dir
+020.1   step
+020.2   enable_state
+020.3   check
+021     set_driver.Ctrl_1
+021     Ctrl_1
+021     MAIN.@SCRATCH1
+022     set_driver.Ctrl_0
+022     Ctrl_0
+023     set_driver.Torque_1
+023     Ctrl_1
+024     set_driver.Torque_0
+024     Ctrl_0
+025     set_driver.Off_1
+025     motion_cycle.@SCRATCH1
+026     set_driver.Off_0
+027     set_driver.Blank_1
+028     set_driver.Blank_0
+029     set_driver.Decay_1
+02A     set_driver.Decay_0
+02B     set_driver.Stall_1
+02C     set_driver.Stall_0
+02D     set_driver.Drive_1
+02E     set_driver.Drive_0
+02F     set_driver.Status_1
+030     set_driver.Status_0
+031     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+111.6   C1OUT
+113.6   C2OUT
+11D     PIN_APFCON0
+11D.5   PIN_SS_SELECT
+11D.6   PIN_SDO_SELECT
+11D.7   PIN_RX_SELECT
+11E.0   PIN_TX_SELECT
+11E     PIN_APFCON1
+18D     ANSELB
+18D.3   ANSELB_PINB3
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+211     SPI_SSP1BUF
+214     SPI_SSP1STAT
+214.0   SPI_BUFFER_STATUS
+214.6   SPI_CLOCK_EDGE
+214.7   SPI_INPUT_SAMPLE
+215.0   SPI_MODE_0
+215     SPI_SSP1CON1
+215.1   SPI_MODE_1
+215.2   SPI_MODE_2
+215.3   SPI_MODE_3
+215.4   SPI_CLOCK_POLARITY
+215.5   SPI_ENABLE
+215.7   SPI_WRITE_FLAG
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+394     IOC_IOCBP
+394.3   IOC_PINB3_RISING
+395     IOC_IOCBN
+395.3   IOC_PINB3_FALLING
+396     IOC_IOCBF
+396.3   IOC_PINB3_FLAG
+
+ROM Allocation:
+0016  @delay_ms1
+0003  set_pins
+0009  set_SPI
+002B  set_variables
+0042  set_driver
+0192  motion_cycle
+0261  MAIN
+0261  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Divizör Kod\SMD V1.1\(Yüksek Hýz)With Enable V1.1\
+
+Project Files:
+    (Yüksek Hýz)With Enable V1.1.c
+    C:\Program Files (x86)\PICC\devices\16f1826.h
+
+Units:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Divizör Kod\SMD V1.1\(Yüksek Hýz)With Enable V1.1\(Yüksek Hýz)With Enable V1.1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      (Yüksek Hýz)With Enable V1.1.err
+    Ext Symbols: (Yüksek Hýz)With Enable V1.1.esym
+    INHX8:       (Yüksek Hýz)With Enable V1.1.hex
+    Symbols:     (Yüksek Hýz)With Enable V1.1.sym
+    List:        (Yüksek Hýz)With Enable V1.1.lst
+    Debug/COFF:  (Yüksek Hýz)With Enable V1.1.cof
+    Project:     (Yüksek Hýz)With Enable V1.1.PJT
+    Call Tree:   (Yüksek Hýz)With Enable V1.1.tre
+    Statistics:  (Yüksek Hýz)With Enable V1.1.sta

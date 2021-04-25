@@ -1,0 +1,242 @@
+
+ROM used:   19836/49152 (20%)
+            19836/49152 (20%) including unused fragments
+
+            3.7 Average locations per line
+            9.5 Average locations per statement
+
+RAM used:   387/8192 (5%) at main() level
+            714/8192 (9%) worst case
+
+Stack used: 200 worst case (200 in main + 0 for interrupts)
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 2274  1176  56  SLS_Software_v2.1_without_INT.c
+  824     0   0  C:\Program Files (x86)\PICC\Devices\30f6015.h
+ 2229   921  44  C:\Program Files (x86)\PICC\Drivers\math.h
+----- -----
+ 5327  2097 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     44   0    4             @SFTOI
+0     58   0    2             @ITOF
+0    196   0    8             @MULFF
+0    426   1    8             @ADDFF
+0    202   1    8             @DIVFF
+0     16   0    2             @delay_ms1
+0     16   0    2             @delay_us1
+0    150   0    0             @const1269
+0     10   0    0    32  1.0  dp_init
+0     64   0    2   414  4.5  dp_up
+0     58   0    2   361  4.5  dp_down
+0    776   2   19  2140  8.1  dp_set
+0     36   0    0             @const1291
+0    178   0    0             @PRINTFU16_38400_5893_5892
+0     32   0    0             @const1295
+0     36   0    0             @const1296
+0     32   0    0             @const1297
+0     38   0    0             @const1298
+0     28   0    0             @const1299
+0     36   0    0             @const1301
+0     38   0    0             @const1303
+0     22   0    0             @const1304
+0     32   0    0             @const1305
+0     48   0    8             @MUL3232
+0     84   0    8             @DIV3232A
+0    114   0    9   171  4.5  md_mt_get
+0     38   0    0             @const1317
+0    108   0    7   274  5.0  md_mt_set
+0     32   0    0             @const1320
+0     34   0    0   127  1.3  md_init
+0     18   0    0    67  1.2  fr_init
+0    226   1   11  2091  5.9  fr_write_byte
+0    132   0    8  1080  6.2  fr_read_byte
+0     44   0    9   243  5.3  fr_write
+0     50   0   11   204  4.2  fr_read
+0    122   0    5   355  6.3  data_get_serial_no
+0     24   0    0             @const1352
+0     76   0    2   104  3.0  data_get_move_range
+0     36   0    0             @const1356
+0     76   0    2   104  3.0  data_get_home_pos
+0     40   0    0             @const1359
+0     76   0    2   104  3.0  data_get_end_pos
+0     38   0    0             @const1362
+0     96   0    2   191  4.3  data_get_conv_const
+0     40   0    0             @const1365
+0     76   0    2   104  3.0  data_get_backlash
+0     34   0    0             @const1368
+0    118   0    1   265  5.2  data_get_comm_type
+0     48   0    0             @const1371
+0     46   0    0             @const1372
+0     44   0    0             @const1373
+0     76   0    2   104  3.0  data_get_last_pos
+0     36   0    0             @const1376
+0    122   0    6   159  4.0  data_get_pos
+0     42   0    0             @const1380
+0    100   0    3   459  6.8  data_get_pos_table
+0    234   1    2   545  2.3  data_get_sys_data
+0     48   0    0             @const1389
+0     48   0    0             @const1391
+0     56   0    0             @const1393
+0    774   2    2  1930  2.4  data_get_reset_state
+0     52   0    0             @const1398
+0     36   0    0             @const1401
+0     22   0    0             @const1403
+0     22   0    0             @const1406
+0     22   0    0             @const1409
+0     22   0    0             @const1412
+0     22   0    0             @const1415
+0     22   0    0             @const1418
+0     22   0    0             @const1421
+0     22   0    0             @const1424
+0     22   0    0             @const1427
+0     22   0    0             @const1430
+0     22   0    0             @const1433
+0     50   0    0             @const1436
+0    100   0   18   317  5.7  data_set_serial_no
+0    214   1   13   851  8.1  data_set_move_range
+0     92   0    0             @const1445
+0     94   0    0             @const1446
+0    150   0   13   607  7.1  data_set_home_pos
+0     86   0    0             @const1451
+0    170   0   15   685  6.6  data_set_end_pos
+0     98   0    0             @const1456
+0    286   1    5   494  4.0  data_set_conv_const
+0     32   0    0             @const1460
+0     30   0    0             @const1461
+0     46   0    0             @const1462
+0    102   0    9   424  6.3  data_set_backlash
+0     94   0    4   359  5.8  data_set_comm_type
+0     14   0    2    38  1.7  data_set_last_pos
+0     26   0    6    79  2.8  data_set_pos
+0     76   0    0   606  2.8  qei_init
+0     46   0    0             @const1475
+0     66   0    2    83  2.5  qei_set_count
+0     48   0    0             @const1478
+0     66   0    2    83  2.5  qei_set_max_count
+0     58   0    0             @const1481
+0      6   0    0    13  1.0  qei_get_count
+0     24   0    2   156  3.1  pwm_select_mode
+0     62   0    0   359  2.7  pwm_init
+0     38   0    0             @const1485
+0     74   0    9   319  5.5  pwm_set_period
+0     44   0    0   144  3.3  pwm_disable
+0     28   0    0             @const1490
+0    668   2    3  3757 10.9  pwm_enable
+0     38   0    0             @const1494
+0    456   1   11  1311  8.3  move_to
+0     66   0    8             @MULS3232
+0    126   0    8             @DIVS3232A
+0     32   0    0             @const1506
+0     38   0    0             @const1507
+0     38   0    0             @const1508
+0     38   0    0             @const1509
+0    660   2   15  1098  6.7  move_pos
+0    110   0    0             @const1510
+0    106   0    0             @const1511
+0     40   0    0             @const1512
+0     32   0    0             @const1514
+0    246   1    0             @PRINTFD16_38400_5893_5892
+0     40   0    0             @const1518
+0     40   0    0             @const1519
+0     40   0    0             @const1520
+0     24   0    0             @const1522
+0     64   0    0   221  2.6  move_home
+0     24   0    0             @const1524
+0    154   0    3   378  3.6  move_init
+0     42   0    0             @const1526
+0    110   0    0   457  4.2  move_from_limit
+0     42   0    0             @const1528
+0     70   0    5   382  5.8  pp_str_low_check
+0     70   0    5   382  5.8  pp_str_high_check
+0     10   0    0    21  1.0  pp_str_check
+0    476   1   24  3300  9.7  pp_get_byte
+0    490   1   24  3426  9.8  pp_get_BCD_byte
+0    242   1    3   803  3.6  pp_set_pos
+0     54   0    0             @const1585
+0    106   0    4   156  2.8  pp_move_pos
+0     56   0    0             @const1590
+0    246   1    0   816  4.7  pp_get_command
+0     38   0    0             @const1593
+0     30   0    0             @const1594
+0     32   0    0             @const1595
+0     32   0    0             @const1596
+0     36   0    0             @const1597
+0   2816   7    5 12812 11.8  rs232_message
+0     30   0    0             @const1600
+0     36   0    0             @const1601
+0     36   0    0             @const1602
+0     40   0    0             @const1603
+0     36   0    0             @const1604
+0     42   0    0             @const1605
+0     34   0    0             @const1606
+0     42   0    0             @const1607
+0     36   0    0             @const1608
+0     38   0    0             @const1609
+0     36   0    0             @const1610
+0     36   0    0             @const1611
+0     38   0    0             @const1612
+0     40   0    0             @const1613
+0     36   0    0             @const1614
+0     38   0    0             @const1615
+0     38   0    0             @const1616
+0     34   0    0             @const1617
+0     50   0    0             @const1619
+0     44   0    0             @const1621
+0     54   0    0             @const1623
+0     52   0    0             @const1625
+0     48   0    0             @const1627
+0     34   0    0             @const1629
+0     60   0    0             @const1631
+0     44   0    0             @const1633
+0     36   0    0             @const1634
+0     40   0    0             @const1639
+0     24   0    0             @const1644
+0     38   0    0             @const1645
+0     28   0    0             @const1649
+0     30   0    0             @const1650
+0     32   0    0             @const1664
+0     50   0    0             @const1665
+0     50   0    0             @const1666
+0     50   0    0             @const1667
+0     50   0    0             @const1668
+0     50   0    0             @const1669
+0     50   0    0             @const1670
+0     50   0    0             @const1671
+0     30   0    0             @const1672
+0     28   0    0             @const1677
+0     34   0    0             @const1679
+0     56   0    0             @const1680
+0     50   0    0             @const1684
+0     34   0    0    18  1.0  isr_md_limit
+0     34   0    0    18  1.0  isr_rs232_message
+0    828   2    2  2279  8.9  MAIN
+0     52   0    0             @const1694
+0     56   0    0             @const1695
+0     42   0    0             @const1696
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               59
+    Statements              2097
+    Comments                750
+    Volume (V)              83263
+    Difficulty (D)          272.5
+    Effort to implement (E) 22690839
+    Time to implement (T)   350 hours, 10 minutes
+    Est Delivered Bugs (B)  27
+    Cyclomatic Complexity   217
+    Maintainability (MI)    40
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-000FE   252  0  
+00100-0FFFE  19580  45700  
+10000-17FFE     0  32768  
+
+
+

@@ -1,0 +1,2492 @@
+CCS PCM C Compiler, Version 5.008, 5967               28-Aðu-14 09:28
+
+               Filename:   E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Divizör Kod\Demo V1.1(8x)\DEMO v1.1.lst
+
+               ROM used:   1884 words (92%)
+                           Largest free fragment is 164
+               RAM used:   7 (2%) at main() level
+                           49 (15%) worst case
+               Stack used: 2 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   734
+0002:  NOP
+.................... #INCLUDE <16f1826.h>  
+.................... //////// Standard Header file for the PIC16F1826 device //////////////// 
+.................... #device PIC16F1826 
+0003:  BRW
+0004:  RETLW  91
+0005:  RETLW  F7
+0006:  RETLW  0B
+0007:  RETLW  90
+0008:  RETLW  42
+0009:  RETLW  0B
+000A:  RETLW  E1
+000B:  RETLW  BF
+000C:  RETLW  A4
+000D:  RETLW  8D
+000E:  RETLW  7A
+000F:  RETLW  69
+0010:  RETLW  5A
+0011:  RETLW  4D
+0012:  RETLW  42
+0013:  RETLW  37
+0014:  RETLW  2E
+0015:  RETLW  25
+0016:  RETLW  1D
+0017:  RETLW  15
+0018:  RETLW  0F
+0019:  RETLW  08
+001A:  RETLW  02
+001B:  RETLW  FD
+001C:  RETLW  F7
+001D:  RETLW  F3
+001E:  RETLW  EE
+001F:  RETLW  EA
+0020:  RETLW  E5
+0021:  RETLW  E2
+0022:  RETLW  DE
+0023:  RETLW  DA
+0024:  RETLW  D7
+0025:  RETLW  D4
+0026:  RETLW  D1
+0027:  RETLW  CE
+0028:  RETLW  CB
+0029:  RETLW  C8
+002A:  RETLW  C5
+002B:  RETLW  C3
+002C:  RETLW  C0
+002D:  RETLW  BE
+002E:  RETLW  BC
+002F:  RETLW  BA
+0030:  RETLW  B8
+0031:  RETLW  B6
+0032:  RETLW  B4
+0033:  RETLW  B2
+0034:  RETLW  B0
+0035:  RETLW  AE
+0036:  RETLW  AC
+0037:  RETLW  AB
+0038:  RETLW  A9
+0039:  RETLW  A7
+003A:  RETLW  A6
+003B:  RETLW  A4
+003C:  RETLW  A3
+003D:  RETLW  A2
+003E:  RETLW  A0
+003F:  RETLW  9F
+0040:  RETLW  9D
+0041:  RETLW  9C
+0042:  RETLW  9B
+0043:  RETLW  9A
+0044:  RETLW  98
+0045:  RETLW  97
+0046:  RETLW  96
+0047:  RETLW  95
+0048:  RETLW  94
+0049:  RETLW  93
+004A:  RETLW  92
+004B:  RETLW  91
+004C:  RETLW  90
+004D:  RETLW  8F
+004E:  RETLW  8E
+004F:  RETLW  8D
+0050:  RETLW  8C
+0051:  RETLW  8B
+0052:  RETLW  8A
+0053:  RETLW  89
+0054:  RETLW  88
+0055:  RETLW  87
+0056:  RETLW  86
+0057:  RETLW  85
+0058:  RETLW  84
+0059:  RETLW  83
+005A:  RETLW  82
+005B:  RETLW  81
+005C:  RETLW  80
+005D:  RETLW  7F
+005E:  RETLW  7E
+005F:  RETLW  7D
+0060:  RETLW  7C
+0061:  RETLW  7B
+0062:  RETLW  7A
+0063:  RETLW  79
+0064:  RETLW  78
+0065:  RETLW  77
+0066:  RETLW  76
+0067:  RETLW  75
+0068:  RETLW  74
+0069:  RETLW  73
+006A:  RETLW  72
+006B:  RETLW  71
+006C:  RETLW  70
+006D:  RETLW  6F
+006E:  RETLW  6E
+006F:  RETLW  6D
+0070:  RETLW  6C
+0071:  RETLW  6B
+0072:  RETLW  6A
+0073:  RETLW  69
+0074:  RETLW  68
+0075:  RETLW  67
+0076:  RETLW  66
+0077:  RETLW  65
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES INTRC_IO      // Internal RC clock (OSC1 and OSC2 pins are normal I/O) 
+.................... #FUSES NOWDT         // Watch Dog Timer disabled 
+.................... #FUSES PUT           // Power Up Timer enabled 
+.................... #FUSES NOMCLR        // Master Clear pin is used for I/O 
+.................... #FUSES PROTECT       // Code protected from reads 
+.................... #FUSES CPD           // Data EEPROM code protected 
+.................... #FUSES BROWNOUT      // Brownout Reset enabled 
+.................... #FUSES BORV25        // Brownout Reset at 2.5V 
+.................... #FUSES NOCLKOUT      // Disable clock output on OSC2 
+.................... #FUSES NOIESO        // Internal External Switch Over Mode disabled 
+.................... #FUSES NOFCMEN       // Fail-safe clock monitor disabled 
+.................... #FUSES WRT           // Program memory write protected                                               
+.................... #FUSES NOLVP         // Low Voltage Programming disabled 
+....................  
+.................... #USE   DELAY(internal = 32MHz) 
+*
+008B:  MOVLW  20
+008C:  MOVWF  05
+008D:  MOVLW  1D
+008E:  MOVWF  04
+008F:  MOVF   00,W
+0090:  BTFSC  03.2
+0091:  GOTO   09F
+0092:  MOVLW  0A
+0093:  MOVWF  78
+0094:  CLRF   77
+0095:  DECFSZ 77,F
+0096:  GOTO   095
+0097:  DECFSZ 78,F
+0098:  GOTO   094
+0099:  MOVLW  5F
+009A:  MOVWF  77
+009B:  DECFSZ 77,F
+009C:  GOTO   09B
+009D:  DECFSZ 00,F
+009E:  GOTO   092
+009F:  RETURN
+*
+0207:  MOVLW  02
+0208:  SUBWF  41,F
+0209:  BTFSS  03.0
+020A:  GOTO   218
+020B:  MOVLW  20
+020C:  MOVWF  05
+020D:  MOVLW  21
+020E:  MOVWF  04
+020F:  MOVF   00,W
+0210:  BTFSC  03.2
+0211:  GOTO   218
+0212:  GOTO   216
+0213:  GOTO   214
+0214:  GOTO   215
+0215:  NOP
+0216:  DECFSZ 00,F
+0217:  GOTO   213
+0218:  RETURN
+.................... //#USE   RS232(stream=RS232, baud=38400, XMIT=PIN_B5, RCV=PIN_B2, parity=N, bits=8, stop=1) 
+....................  
+.................... #DEFINE DRV_STEP     PIN_A0                  // Step output pin to driver (Rising edge causes the indexer to move one step) 
+.................... #DEFINE DRV_RESET    PIN_A1                  // Reset output pin to driver (Active-high reset input initializes all internal logic and disables the Hbridge outputs. Internal pulldown.) 
+.................... #DEFINE USER_FAULT   PIN_A2                  // Fault output pin to user 
+.................... #DEFINE USER_DIR     PIN_A3                  // Direction input pin from user 
+.................... #DEFINE DRV_DIR      PIN_A4                  // Direction output pin to driver (Logic level, sets the direction of stepping) 
+....................  
+.................... #DEFINE SPI_SDO      PIN_A6                  // SPI data output pin 
+.................... #DEFINE SPI_CS       PIN_A7                  // SPI chip select pin 
+....................  
+.................... #DEFINE USER_STEP    PIN_B0                  // Step input pin from user 
+.................... #DEFINE SPI_SDI      PIN_B1                  // SPI data input pin 
+....................  
+.................... #DEFINE USER_ENABLE  PIN_B3                  // Enable input pin from user 
+.................... #DEFINE SPI_SCK      PIN_B4                  // SPI clock output pin 
+....................  
+.................... #DEFINE DRV_STALL    PIN_B6                  // Stall input pin from driver (Internal stall detect mode: logic low when motor stall detected. Pull up mevcut) 
+.................... #DEFINE DRV_FAULT    PIN_B7                  // Fault input pin from driver (Logic low when in fault condition. Pull up mevcut) 
+....................  
+....................  
+.................... // Interrupt On Change Registers 
+.................... #WORD IOC_INTCON     =0x00B 
+.................... #WORD IOC_IOCBP      =0x394 
+.................... #WORD IOC_IOCBN      =0x395 
+.................... #WORD IOC_IOCBF      =0x396 
+.................... #WORD ANSELB         =0x18d 
+....................  
+.................... //Bits of IOC_INTCON register 
+.................... #BIT IOC_GIE           = IOC_INTCON.7        //General interrupt enable bit 
+.................... #BIT IOC_PEIE          = IOC_INTCON.6        //Peripheral interrupt enable bit 
+.................... #BIT IOC_IOCIE         = IOC_INTCON.3        //Interrupt on change enable bit 
+....................  
+.................... //Bits of IOC_IOCBP register 
+.................... #BIT IOC_PINB3_RISING            = IOC_IOCBP.3        //Pin B3 interrupt on change enable bit(Rising Edge) 
+....................  
+.................... //Bits of IOC_IOCBN register 
+.................... #BIT IOC_PINB3_FALLING           = IOC_IOCBN.3        //Pin B3 interrupt on change enable bit(Falling Edge) 
+....................  
+.................... //Bits of IOC_IOCBF register 
+.................... #BIT IOC_PINB3_FLAG              = IOC_IOCBF.3        //Pin B3 interrupt on change interrupt flag bit(Both Rising and Falling Edges) 
+.................... //Bits of ANSELB register 
+....................  
+.................... #BIT ANSELB_PINB3                = ANSELB.3           //Selection of Pin B3 as a Digial I/O (0) or an Analog input (1) selection bit 
+....................  
+.................... // SPI Registers 
+.................... #WORD SPI_SSP1CON1   = 0x215                 // Synchronous serial port control register 
+.................... #WORD SPI_SSP1STAT   = 0x214                 // Synchronous serial port status register 
+.................... #WORD SPI_SSP1BUF    = 0x211                 // Synchronous serial port buffer register 
+.................... #WORD SPI_PIR1       = 0x011                 // Peripheral interrupt request register 
+.................... // Pin function control registers 
+.................... #WORD PIN_APFCON0    = 0x11D                 // Alternate pin function control register 0 
+.................... #WORD PIN_APFCON1    = 0x11E                 // Alternate pin function control register 1 
+....................  
+.................... // Bits of SSP1CON1 register 
+.................... #BIT SPI_WRITE_FLAG     = SPI_SSP1CON1.7     // Synchronous serial port write collision detect bit 
+.................... #BIT SPI_ENABLE         = SPI_SSP1CON1.5     // Synchronous serial port enable bit 
+.................... #BIT SPI_CLOCK_POLARITY = SPI_SSP1CON1.4     // Synchronous serial port clock polarity select bit 
+.................... #BIT SPI_MODE_3         = SPI_SSP1CON1.3     // Synchronous serial port mode select bits 
+.................... #BIT SPI_MODE_2         = SPI_SSP1CON1.2    
+.................... #BIT SPI_MODE_1         = SPI_SSP1CON1.1    
+.................... #BIT SPI_MODE_0         = SPI_SSP1CON1.0   
+....................  
+.................... // Bits of SPI_SSP1STAT register 
+.................... #BIT SPI_INPUT_SAMPLE   = SPI_SSP1STAT.7     // Synchronous serial port data input sample bit 
+.................... #BIT SPI_CLOCK_EDGE     = SPI_SSP1STAT.6     // Synchronous serial port clock edge select bit 
+.................... #BIT SPI_BUFFER_STATUS  = SPI_SSP1STAT.0     // Synchronous serial port buffer full status bit 
+....................  
+.................... // Bits of SPI_PIR1 register 
+.................... #BIT SPI_FLAG           = SPI_PIR1.3         // Synchronous serial port interrupt flag bit 
+....................  
+.................... // Bits of PIN_APFCON0 register 
+.................... #BIT PIN_RX_SELECT      = PIN_APFCON0.7      // RX pin selection bit 
+.................... #BIT PIN_SDO_SELECT     = PIN_APFCON0.6      // SDO pin selection bit  
+.................... #BIT PIN_SS_SELECT      = PIN_APFCON0.5      // SS pin selection bit  
+....................  
+.................... // Bits of PIN_APFCON1 register 
+.................... #BIT PIN_TX_SELECT      = PIN_APFCON1.0      // TX pin selection bit 
+....................  
+.................... int1  dir   = 0; 
+.................... int1  step  = 0; 
+.................... int1 enable_state = 0; 
+....................  
+.................... unsigned int   acc_lim    = 116;             // Number of steps before we hit max speed. acc=10000 dec=10000  
+.................... unsigned int const periods[116]={2449,1015,779,656,578,523,481,447,420,397,378,361,346,333,322,311,302,293,285,277,271,264,258,253,247,243,238,234,229,226,222,218,215,212,209,206,203,200,197,195,192,190,188,186,184,182,180, 
+.................... 178,176,174,172,171,169,167,166,164,163,162,160,159,157,156,155,154,152,151,150,149,148,147,146,145,144,143,142,141,140,139,138,137,136,135,134,133,132,131,130,129,128,127,126,125,124,123,122,121,120,119,118,117,116,115, 
+.................... 114,113,112,111,110,109,108,107,106,105,104,103,102,101}; 
+....................  
+....................  
+....................  
+....................  
+.................... /* 
+.................... // Sets interrupt on change bits 
+.................... void set_IOC(){ 
+....................    IOC_GIE           = 1;                  //General interrupt enable bit 
+....................    IOC_PEIE          = 1;                  //Peripheral interrupt enable bit 
+....................    IOC_IOCIE         = 1;                  //Interrupt on change enable bit 
+....................    IOC_PINB3_RISING  = 1; 
+....................    IOC_PINB3_FALLING = 1;  
+....................    IOC_PINB3_FLAG    = 0; 
+....................    ANSELB_PINB3      = 0; 
+....................     
+.................... } 
+.................... */ 
+....................  
+....................  
+....................  
+.................... // Sets alternative pin functions 
+.................... void set_pins() 
+.................... { 
+....................    // Set RB2 as RX pin 
+....................    //PIN_RX_SELECT = 1; 
+....................    // Set RA6 as SDO pin 
+....................    PIN_SDO_SELECT = 1; 
+*
+0078:  MOVLB  02
+0079:  BSF    1D.6
+....................    // Set RA5 as SS pin 
+....................    PIN_SS_SELECT = 1; 
+007A:  BSF    1D.5
+007B:  MOVLP  00
+007C:  MOVLB  00
+007D:  GOTO   74B (RETURN)
+....................    // Set RB5 as TX pin 
+....................    //PIN_TX_SELECT = 1; 
+.................... } 
+.................... // Sets SPI parameters 
+.................... void set_SPI() 
+.................... { 
+....................    // Disable SPI to set registers 
+....................    SPI_ENABLE = 0; 
+007E:  MOVLB  04
+007F:  BCF    15.5
+....................    // Set idle state of the clock to low  
+....................    SPI_CLOCK_POLARITY = 0; 
+0080:  BCF    15.4
+....................    // Set SPI mode to SPI  
+....................    SPI_MODE_3 = 0;  
+0081:  BCF    15.3
+....................    SPI_MODE_2 = 0; 
+0082:  BCF    15.2
+....................    SPI_MODE_1 = 1; 
+0083:  BSF    15.1
+....................    SPI_MODE_0 = 0; 
+0084:  BCF    15.0
+....................    // Input data sampled at the middle of data output time 
+....................    SPI_INPUT_SAMPLE = 0; 
+0085:  BCF    14.7
+....................    // Transmit occurs on transition from active to idle clock state 
+....................    SPI_CLOCK_EDGE = 1; 
+0086:  BSF    14.6
+....................  
+....................    // Enable SPI 
+....................    SPI_ENABLE = 1; 
+0087:  BSF    15.5
+0088:  MOVLP  00
+0089:  MOVLB  00
+008A:  GOTO   74C (RETURN)
+.................... } 
+.................... // Sets variables to default values  
+.................... void set_variables() 
+.................... { 
+....................    output_low(SPI_CS);     // Chip select is active high so keep it low to prevent out-of-sync transaction 
+*
+00A0:  MOVLB  01
+00A1:  BCF    0C.7
+00A2:  MOVLB  02
+00A3:  BCF    0C.7
+....................    output_low(USER_FAULT); // Clear fault status  
+00A4:  MOVLB  01
+00A5:  BCF    0C.2
+00A6:  MOVLB  02
+00A7:  BCF    0C.2
+....................    output_low(DRV_RESET);  // Reset is active high so keep reset pin low to activate driver  
+00A8:  MOVLB  01
+00A9:  BCF    0C.1
+00AA:  MOVLB  02
+00AB:  BCF    0C.1
+....................    output_low(DRV_DIR);    // Set default direction 
+00AC:  MOVLB  01
+00AD:  BCF    0C.4
+00AE:  MOVLB  02
+00AF:  BCF    0C.4
+....................    output_low(DRV_STEP);   // Keep step output low until a step command is received from the user 
+00B0:  MOVLB  01
+00B1:  BCF    0C.0
+00B2:  MOVLB  02
+00B3:  BCF    0C.0
+00B4:  MOVLP  00
+00B5:  MOVLB  00
+00B6:  GOTO   759 (RETURN)
+.................... } 
+.................... // Sets driver parameters to default values 
+.................... void set_driver() 
+.................... { 
+....................    // Driver control register sets these parameters 
+....................    // data operation type                       (bit 15)    1=read,  
+....................    //                                                       0=write 
+....................    // register adress                           (bit 14-12) 000=CTRL reg 
+....................    // DTIME (dead time between MOSFET switching)(bit 11-10) 00=400ns,  
+....................    //                                                       01=450ns,  
+....................    //                                                       10=650ns,  
+....................    //                                                       11=850ns 
+....................    // ISGain (current amplifier gain)           (bit 9-8)   00=Gain of 5,  
+....................    //                                                       01=Gain of 10,  
+....................    //                                                       10=Gain of 20,  
+....................    //                                                       11=Gain of 40 
+....................    // EXSTALL (source of stall detection)       (bit 7)     0=Internal 
+....................    //                                                       1=External 
+....................    // MODE (microstepping mode)                 (bit 6-3)   0000=Full-step, 71% current 
+....................    //                                                       0001=Half step 
+....................    //                                                       0010=1/4 step 
+....................    //                                                       0011=1/8 step 
+....................    //                                                       0100=1/16 step 
+....................    //                                                       0101=1/32 step 
+....................    //                                                       0110=1/64 step 
+....................    //                                                       0111=1/128 step 
+....................    //                                                       1000=1/256 step 
+....................    // RSTEP (single step output)                (bit 2)     0=No action 
+....................    //                                                       1=Indexer will advance one step; automatically cleared after write 
+....................    // direction                                 (bit 1)     0=Direction set by DIR pin 
+....................    //                                                       1=Direction set by inverse of DIR pin 
+....................    // enable                                    (bit 0)     0=Disable motor 
+....................    //                                                       1=Enable motor 
+....................    //   
+....................    //                 76543210 
+....................     
+....................    output_high(SPI_CS); 
+00B7:  MOVLB  01
+00B8:  BCF    0C.7
+00B9:  MOVLB  02
+00BA:  BSF    0C.7
+....................    int Ctrl_1     = 0b00000011; 
+....................    int Ctrl_0     = 0b01000001; 
+00BB:  MOVLW  03
+00BC:  MOVLB  00
+00BD:  MOVWF  22
+00BE:  MOVLW  41
+00BF:  MOVWF  23
+....................    SPI_SSP1BUF = Ctrl_1; 
+00C0:  MOVLB  04
+00C1:  CLRF   12
+00C2:  MOVLB  00
+00C3:  MOVF   22,W
+00C4:  MOVLB  04
+00C5:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00C6:  MOVLB  00
+00C7:  BTFSS  11.3
+00C8:  GOTO   0C7
+....................    SPI_FLAG = 0; 
+00C9:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+00CA:  MOVLB  04
+00CB:  CLRF   12
+00CC:  MOVLB  00
+00CD:  MOVF   23,W
+00CE:  MOVLB  04
+00CF:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00D0:  MOVLB  00
+00D1:  BTFSS  11.3
+00D2:  GOTO   0D1
+....................    SPI_FLAG = 0; 
+00D3:  BCF    11.3
+....................    output_low(SPI_CS); 
+00D4:  MOVLB  01
+00D5:  BCF    0C.7
+00D6:  MOVLB  02
+00D7:  BCF    0C.7
+....................    delay_ms(10); 
+00D8:  MOVLW  0A
+00D9:  MOVLB  00
+00DA:  MOVWF  3D
+00DB:  CALL   08B
+....................  
+....................    output_high(SPI_CS); 
+00DC:  MOVLB  01
+00DD:  BCF    0C.7
+00DE:  MOVLB  02
+00DF:  BSF    0C.7
+....................    int Torque_1   = 0b00010000; 
+....................    int Torque_0   = 0b11001000; 
+00E0:  MOVLW  10
+00E1:  MOVLB  00
+00E2:  MOVWF  24
+00E3:  MOVLW  C8
+00E4:  MOVWF  25
+....................    SPI_SSP1BUF = Torque_1; 
+00E5:  MOVLB  04
+00E6:  CLRF   12
+00E7:  MOVLB  00
+00E8:  MOVF   24,W
+00E9:  MOVLB  04
+00EA:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00EB:  MOVLB  00
+00EC:  BTFSS  11.3
+00ED:  GOTO   0EC
+....................    SPI_FLAG = 0; 
+00EE:  BCF    11.3
+....................    SPI_SSP1BUF = Torque_0; 
+00EF:  MOVLB  04
+00F0:  CLRF   12
+00F1:  MOVLB  00
+00F2:  MOVF   25,W
+00F3:  MOVLB  04
+00F4:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00F5:  MOVLB  00
+00F6:  BTFSS  11.3
+00F7:  GOTO   0F6
+....................    SPI_FLAG = 0; 
+00F8:  BCF    11.3
+....................    output_low(SPI_CS); 
+00F9:  MOVLB  01
+00FA:  BCF    0C.7
+00FB:  MOVLB  02
+00FC:  BCF    0C.7
+....................    delay_ms(10); 
+00FD:  MOVLW  0A
+00FE:  MOVLB  00
+00FF:  MOVWF  3D
+0100:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+0101:  MOVLB  01
+0102:  BCF    0C.7
+0103:  MOVLB  02
+0104:  BSF    0C.7
+....................    int Off_1      = 0b00100000; 
+....................    int Off_0      = 0b01000110; 
+0105:  MOVLW  20
+0106:  MOVLB  00
+0107:  MOVWF  26
+0108:  MOVLW  46
+0109:  MOVWF  27
+....................    SPI_SSP1BUF = Off_1; 
+010A:  MOVLB  04
+010B:  CLRF   12
+010C:  MOVLB  00
+010D:  MOVF   26,W
+010E:  MOVLB  04
+010F:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0110:  MOVLB  00
+0111:  BTFSS  11.3
+0112:  GOTO   111
+....................    SPI_FLAG = 0; 
+0113:  BCF    11.3
+....................    SPI_SSP1BUF = Off_0; 
+0114:  MOVLB  04
+0115:  CLRF   12
+0116:  MOVLB  00
+0117:  MOVF   27,W
+0118:  MOVLB  04
+0119:  MOVWF  11
+....................    while (!SPI_FLAG); 
+011A:  MOVLB  00
+011B:  BTFSS  11.3
+011C:  GOTO   11B
+....................    SPI_FLAG = 0; 
+011D:  BCF    11.3
+....................    output_low(SPI_CS); 
+011E:  MOVLB  01
+011F:  BCF    0C.7
+0120:  MOVLB  02
+0121:  BCF    0C.7
+....................    delay_ms(10); 
+0122:  MOVLW  0A
+0123:  MOVLB  00
+0124:  MOVWF  3D
+0125:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+0126:  MOVLB  01
+0127:  BCF    0C.7
+0128:  MOVLB  02
+0129:  BSF    0C.7
+....................    int Blank_1    = 0b00110001; 
+....................    int Blank_0    = 0b01111101; 
+012A:  MOVLW  31
+012B:  MOVLB  00
+012C:  MOVWF  28
+012D:  MOVLW  7D
+012E:  MOVWF  29
+....................    SPI_SSP1BUF = Blank_1; 
+012F:  MOVLB  04
+0130:  CLRF   12
+0131:  MOVLB  00
+0132:  MOVF   28,W
+0133:  MOVLB  04
+0134:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0135:  MOVLB  00
+0136:  BTFSS  11.3
+0137:  GOTO   136
+....................    SPI_FLAG = 0; 
+0138:  BCF    11.3
+....................    SPI_SSP1BUF = Blank_0; 
+0139:  MOVLB  04
+013A:  CLRF   12
+013B:  MOVLB  00
+013C:  MOVF   29,W
+013D:  MOVLB  04
+013E:  MOVWF  11
+....................    while (!SPI_FLAG); 
+013F:  MOVLB  00
+0140:  BTFSS  11.3
+0141:  GOTO   140
+....................    SPI_FLAG = 0; 
+0142:  BCF    11.3
+....................    output_low(SPI_CS); 
+0143:  MOVLB  01
+0144:  BCF    0C.7
+0145:  MOVLB  02
+0146:  BCF    0C.7
+....................    delay_ms(10); 
+0147:  MOVLW  0A
+0148:  MOVLB  00
+0149:  MOVWF  3D
+014A:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+014B:  MOVLB  01
+014C:  BCF    0C.7
+014D:  MOVLB  02
+014E:  BSF    0C.7
+....................    int Decay_1    = 0b01000101; 
+....................    int Decay_0    = 0b00101001; 
+014F:  MOVLW  45
+0150:  MOVLB  00
+0151:  MOVWF  2A
+0152:  MOVLW  29
+0153:  MOVWF  2B
+....................    SPI_SSP1BUF = Decay_1; 
+0154:  MOVLB  04
+0155:  CLRF   12
+0156:  MOVLB  00
+0157:  MOVF   2A,W
+0158:  MOVLB  04
+0159:  MOVWF  11
+....................    while (!SPI_FLAG); 
+015A:  MOVLB  00
+015B:  BTFSS  11.3
+015C:  GOTO   15B
+....................    SPI_FLAG = 0; 
+015D:  BCF    11.3
+....................    SPI_SSP1BUF = Decay_0; 
+015E:  MOVLB  04
+015F:  CLRF   12
+0160:  MOVLB  00
+0161:  MOVF   2B,W
+0162:  MOVLB  04
+0163:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0164:  MOVLB  00
+0165:  BTFSS  11.3
+0166:  GOTO   165
+....................    SPI_FLAG = 0; 
+0167:  BCF    11.3
+....................    output_low(SPI_CS); 
+0168:  MOVLB  01
+0169:  BCF    0C.7
+016A:  MOVLB  02
+016B:  BCF    0C.7
+....................    delay_ms(10); 
+016C:  MOVLW  0A
+016D:  MOVLB  00
+016E:  MOVWF  3D
+016F:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+0170:  MOVLB  01
+0171:  BCF    0C.7
+0172:  MOVLB  02
+0173:  BSF    0C.7
+....................    int Stall_1    = 0b01011001; 
+....................    int Stall_0    = 0b00010100; 
+0174:  MOVLW  59
+0175:  MOVLB  00
+0176:  MOVWF  2C
+0177:  MOVLW  14
+0178:  MOVWF  2D
+....................    SPI_SSP1BUF = Stall_1; 
+0179:  MOVLB  04
+017A:  CLRF   12
+017B:  MOVLB  00
+017C:  MOVF   2C,W
+017D:  MOVLB  04
+017E:  MOVWF  11
+....................    while (!SPI_FLAG); 
+017F:  MOVLB  00
+0180:  BTFSS  11.3
+0181:  GOTO   180
+....................    SPI_FLAG = 0; 
+0182:  BCF    11.3
+....................    SPI_SSP1BUF = Stall_0; 
+0183:  MOVLB  04
+0184:  CLRF   12
+0185:  MOVLB  00
+0186:  MOVF   2D,W
+0187:  MOVLB  04
+0188:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0189:  MOVLB  00
+018A:  BTFSS  11.3
+018B:  GOTO   18A
+....................    SPI_FLAG = 0; 
+018C:  BCF    11.3
+....................    output_low(SPI_CS); 
+018D:  MOVLB  01
+018E:  BCF    0C.7
+018F:  MOVLB  02
+0190:  BCF    0C.7
+....................    delay_ms(10); 
+0191:  MOVLW  0A
+0192:  MOVLB  00
+0193:  MOVWF  3D
+0194:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+0195:  MOVLB  01
+0196:  BCF    0C.7
+0197:  MOVLB  02
+0198:  BSF    0C.7
+....................    int Drive_1    = 0b01101111; 
+....................    int Drive_0    = 0b10100000; 
+0199:  MOVLW  6F
+019A:  MOVLB  00
+019B:  MOVWF  2E
+019C:  MOVLW  A0
+019D:  MOVWF  2F
+....................    SPI_SSP1BUF = Drive_1; 
+019E:  MOVLB  04
+019F:  CLRF   12
+01A0:  MOVLB  00
+01A1:  MOVF   2E,W
+01A2:  MOVLB  04
+01A3:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01A4:  MOVLB  00
+01A5:  BTFSS  11.3
+01A6:  GOTO   1A5
+....................    SPI_FLAG = 0; 
+01A7:  BCF    11.3
+....................    SPI_SSP1BUF = Drive_0; 
+01A8:  MOVLB  04
+01A9:  CLRF   12
+01AA:  MOVLB  00
+01AB:  MOVF   2F,W
+01AC:  MOVLB  04
+01AD:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01AE:  MOVLB  00
+01AF:  BTFSS  11.3
+01B0:  GOTO   1AF
+....................    SPI_FLAG = 0; 
+01B1:  BCF    11.3
+....................    output_low(SPI_CS); 
+01B2:  MOVLB  01
+01B3:  BCF    0C.7
+01B4:  MOVLB  02
+01B5:  BCF    0C.7
+....................    delay_ms(10); 
+01B6:  MOVLW  0A
+01B7:  MOVLB  00
+01B8:  MOVWF  3D
+01B9:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+01BA:  MOVLB  01
+01BB:  BCF    0C.7
+01BC:  MOVLB  02
+01BD:  BSF    0C.7
+....................    int Status_1   = 0b01110000; 
+....................    int Status_0   = 0b00000000; 
+01BE:  MOVLW  70
+01BF:  MOVLB  00
+01C0:  MOVWF  30
+01C1:  CLRF   31
+....................    SPI_SSP1BUF = Status_1; 
+01C2:  MOVLB  04
+01C3:  CLRF   12
+01C4:  MOVLB  00
+01C5:  MOVF   30,W
+01C6:  MOVLB  04
+01C7:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01C8:  MOVLB  00
+01C9:  BTFSS  11.3
+01CA:  GOTO   1C9
+....................    SPI_FLAG = 0; 
+01CB:  BCF    11.3
+....................    SPI_SSP1BUF = Status_0; 
+01CC:  MOVLB  04
+01CD:  CLRF   12
+01CE:  MOVLB  00
+01CF:  MOVF   31,W
+01D0:  MOVLB  04
+01D1:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01D2:  MOVLB  00
+01D3:  BTFSS  11.3
+01D4:  GOTO   1D3
+....................    SPI_FLAG = 0; 
+01D5:  BCF    11.3
+....................    output_low(SPI_CS); 
+01D6:  MOVLB  01
+01D7:  BCF    0C.7
+01D8:  MOVLB  02
+01D9:  BCF    0C.7
+....................    delay_ms(10); 
+01DA:  MOVLW  0A
+01DB:  MOVLB  00
+01DC:  MOVWF  3D
+01DD:  CALL   08B
+....................  
+....................    delay_ms(100); 
+01DE:  MOVLW  64
+01DF:  MOVWF  3D
+01E0:  CALL   08B
+....................     
+....................    output_high(SPI_CS); 
+01E1:  MOVLB  01
+01E2:  BCF    0C.7
+01E3:  MOVLB  02
+01E4:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000000; 
+01E5:  MOVLB  00
+01E6:  CLRF   22
+....................    Ctrl_0      = 0b00100001; 
+01E7:  MOVLW  21
+01E8:  MOVWF  23
+....................    SPI_SSP1BUF = Ctrl_1; 
+01E9:  MOVLB  04
+01EA:  CLRF   12
+01EB:  MOVLB  00
+01EC:  MOVF   22,W
+01ED:  MOVLB  04
+01EE:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01EF:  MOVLB  00
+01F0:  BTFSS  11.3
+01F1:  GOTO   1F0
+....................    SPI_FLAG = 0; 
+01F2:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+01F3:  MOVLB  04
+01F4:  CLRF   12
+01F5:  MOVLB  00
+01F6:  MOVF   23,W
+01F7:  MOVLB  04
+01F8:  MOVWF  11
+....................    while (!SPI_FLAG); 
+01F9:  MOVLB  00
+01FA:  BTFSS  11.3
+01FB:  GOTO   1FA
+....................    SPI_FLAG = 0; 
+01FC:  BCF    11.3
+....................    output_low(SPI_CS); 
+01FD:  MOVLB  01
+01FE:  BCF    0C.7
+01FF:  MOVLB  02
+0200:  BCF    0C.7
+....................    delay_ms(10); 
+0201:  MOVLW  0A
+0202:  MOVLB  00
+0203:  MOVWF  3D
+0204:  CALL   08B
+0205:  MOVLP  00
+0206:  GOTO   75A (RETURN)
+.................... } 
+....................  
+.................... void IOC_cycle () 
+.................... { 
+....................    if (IOC_PINB3_FLAG){ 
+....................       if(enable_state){ 
+....................       enable_state=0; 
+....................       IOC_PINB3_FLAG=0; 
+....................       } 
+....................       if(!enable_state){ 
+....................       enable_state=1; 
+....................       IOC_PINB3_FLAG=0; 
+....................       }    
+....................    } 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+.................... void motion_cycle() 
+*
+0219:  CLRF   25
+021A:  CLRF   24
+021B:  CLRF   23
+021C:  CLRF   22
+021D:  CLRF   29
+021E:  CLRF   28
+021F:  CLRF   27
+0220:  CLRF   26
+0221:  CLRF   2D
+0222:  CLRF   2C
+0223:  CLRF   2B
+0224:  CLRF   2A
+0225:  CLRF   31
+0226:  CLRF   30
+0227:  MOVLW  13
+0228:  MOVWF  2F
+0229:  MOVLW  88
+022A:  MOVWF  2E
+022B:  CLRF   35
+022C:  CLRF   34
+022D:  CLRF   33
+022E:  MOVLW  32
+022F:  MOVWF  32
+0230:  CLRF   39
+0231:  CLRF   38
+0232:  MOVLW  E1
+0233:  MOVWF  37
+0234:  CLRF   36
+.................... { 
+....................  
+....................    int32 i=0; 
+....................    int32 e=0; 
+....................    int32 pulse_time = 0; 
+....................     
+....................    int32          frequency            =  5000; 
+....................    int32          delay                =  50; 
+....................    unsigned int32          distance_step        =  57600; 
+....................     
+....................    //////////////////////////////////////////////////////////////// 
+....................      
+....................    ///////////////////////////////////////////////////////////////// 
+....................    while(true) 
+....................    {              
+....................       output_high(DRV_DIR); 
+0235:  MOVLB  01
+0236:  BCF    0C.4
+0237:  MOVLB  02
+0238:  BSF    0C.4
+....................       delay_ms(10); 
+0239:  MOVLW  0A
+023A:  MOVLB  00
+023B:  MOVWF  3D
+023C:  CALL   08B
+....................        
+....................          for(i=0; i<acc_lim; i++) 
+023D:  CLRF   25
+023E:  CLRF   24
+023F:  CLRF   23
+0240:  CLRF   22
+0241:  MOVF   25,F
+0242:  BTFSS  03.2
+0243:  GOTO   283
+0244:  MOVF   24,F
+0245:  BTFSS  03.2
+0246:  GOTO   283
+0247:  MOVF   23,F
+0248:  BTFSS  03.2
+0249:  GOTO   283
+024A:  MOVF   21,W
+024B:  SUBWF  22,W
+024C:  BTFSC  03.0
+024D:  GOTO   283
+....................          { 
+....................             output_high(DRV_STEP); 
+024E:  MOVLB  01
+024F:  BCF    0C.0
+0250:  MOVLB  02
+0251:  BSF    0C.0
+....................             delay_us(periods[i]/2); 
+0252:  MOVLB  00
+0253:  MOVF   22,W
+0254:  MOVWF  77
+0255:  MOVF   23,W
+0256:  MOVWF  78
+0257:  MOVF   24,W
+0258:  MOVWF  79
+0259:  MOVF   25,W
+025A:  MOVWF  7A
+025B:  MOVF   77,W
+025C:  CALL   003
+025D:  MOVWF  77
+025E:  BCF    03.0
+025F:  RRF    77,W
+0260:  MOVWF  3C
+0261:  MOVF   3C,W
+0262:  MOVWF  41
+0263:  CALL   207
+....................             output_low(DRV_STEP); 
+0264:  MOVLB  01
+0265:  BCF    0C.0
+0266:  MOVLB  02
+0267:  BCF    0C.0
+....................             delay_us(periods[i]/2); 
+0268:  MOVLB  00
+0269:  MOVF   22,W
+026A:  MOVWF  77
+026B:  MOVF   23,W
+026C:  MOVWF  78
+026D:  MOVF   24,W
+026E:  MOVWF  79
+026F:  MOVF   25,W
+0270:  MOVWF  7A
+0271:  MOVF   77,W
+0272:  CALL   003
+0273:  MOVWF  77
+0274:  BCF    03.0
+0275:  RRF    77,W
+0276:  MOVWF  3C
+0277:  MOVF   3C,W
+0278:  MOVWF  41
+0279:  CALL   207
+027A:  MOVLW  01
+027B:  ADDWF  22,F
+027C:  BTFSC  03.0
+027D:  INCF   23,F
+027E:  BTFSC  03.2
+027F:  INCF   24,F
+0280:  BTFSC  03.2
+0281:  INCF   25,F
+0282:  GOTO   241
+....................          } 
+....................          for(i=0; i<distance_step; i++) 
+0283:  CLRF   25
+0284:  CLRF   24
+0285:  CLRF   23
+0286:  CLRF   22
+0287:  MOVF   25,W
+0288:  SUBWF  39,W
+0289:  BTFSS  03.0
+028A:  GOTO   2CA
+028B:  BTFSS  03.2
+028C:  GOTO   29D
+028D:  MOVF   24,W
+028E:  SUBWF  38,W
+028F:  BTFSS  03.0
+0290:  GOTO   2CA
+0291:  BTFSS  03.2
+0292:  GOTO   29D
+0293:  MOVF   23,W
+0294:  SUBWF  37,W
+0295:  BTFSS  03.0
+0296:  GOTO   2CA
+0297:  BTFSS  03.2
+0298:  GOTO   29D
+0299:  MOVF   36,W
+029A:  SUBWF  22,W
+029B:  BTFSC  03.0
+029C:  GOTO   2CA
+....................          { 
+....................             output_high(DRV_STEP); 
+029D:  MOVLB  01
+029E:  BCF    0C.0
+029F:  MOVLB  02
+02A0:  BSF    0C.0
+....................             delay_us(delay); 
+02A1:  MOVLB  00
+02A2:  MOVF   33,W
+02A3:  MOVWF  3C
+02A4:  INCF   3C,F
+02A5:  DECF   3C,F
+02A6:  BTFSC  03.2
+02A7:  GOTO   2AC
+02A8:  MOVLW  FF
+02A9:  MOVWF  41
+02AA:  CALL   207
+02AB:  GOTO   2A5
+02AC:  MOVF   32,W
+02AD:  MOVWF  41
+02AE:  CALL   207
+....................             output_low(DRV_STEP); 
+02AF:  MOVLB  01
+02B0:  BCF    0C.0
+02B1:  MOVLB  02
+02B2:  BCF    0C.0
+....................             delay_us(delay); 
+02B3:  MOVLB  00
+02B4:  MOVF   33,W
+02B5:  MOVWF  3C
+02B6:  INCF   3C,F
+02B7:  DECF   3C,F
+02B8:  BTFSC  03.2
+02B9:  GOTO   2BE
+02BA:  MOVLW  FF
+02BB:  MOVWF  41
+02BC:  CALL   207
+02BD:  GOTO   2B7
+02BE:  MOVF   32,W
+02BF:  MOVWF  41
+02C0:  CALL   207
+02C1:  MOVLW  01
+02C2:  ADDWF  22,F
+02C3:  BTFSC  03.0
+02C4:  INCF   23,F
+02C5:  BTFSC  03.2
+02C6:  INCF   24,F
+02C7:  BTFSC  03.2
+02C8:  INCF   25,F
+02C9:  GOTO   287
+....................          } 
+....................          for(i=acc_lim; i>0; i--) 
+02CA:  CLRF   25
+02CB:  CLRF   24
+02CC:  CLRF   23
+02CD:  MOVF   21,W
+02CE:  MOVWF  22
+02CF:  MOVF   22,F
+02D0:  BTFSS  03.2
+02D1:  GOTO   2DB
+02D2:  MOVF   23,F
+02D3:  BTFSS  03.2
+02D4:  GOTO   2DB
+02D5:  MOVF   24,F
+02D6:  BTFSS  03.2
+02D7:  GOTO   2DB
+02D8:  MOVF   25,F
+02D9:  BTFSC  03.2
+02DA:  GOTO   328
+....................          { 
+....................             output_high(DRV_STEP); 
+02DB:  MOVLB  01
+02DC:  BCF    0C.0
+02DD:  MOVLB  02
+02DE:  BSF    0C.0
+....................             delay_us(periods[i-1]/2); 
+02DF:  MOVLW  01
+02E0:  MOVLB  00
+02E1:  SUBWF  22,W
+02E2:  MOVWF  3C
+02E3:  MOVLW  00
+02E4:  SUBWFC 23,W
+02E5:  MOVWF  3D
+02E6:  MOVLW  00
+02E7:  SUBWFC 24,W
+02E8:  MOVWF  3E
+02E9:  MOVLW  00
+02EA:  SUBWFC 25,W
+02EB:  MOVWF  3F
+02EC:  MOVF   3C,W
+02ED:  MOVWF  77
+02EE:  MOVF   3D,W
+02EF:  MOVWF  78
+02F0:  MOVF   3E,W
+02F1:  MOVWF  79
+02F2:  MOVF   3F,W
+02F3:  MOVWF  7A
+02F4:  MOVF   77,W
+02F5:  CALL   003
+02F6:  MOVWF  77
+02F7:  BCF    03.0
+02F8:  RRF    77,W
+02F9:  MOVWF  40
+02FA:  MOVF   40,W
+02FB:  MOVWF  41
+02FC:  CALL   207
+....................             output_low(DRV_STEP); 
+02FD:  MOVLB  01
+02FE:  BCF    0C.0
+02FF:  MOVLB  02
+0300:  BCF    0C.0
+....................             delay_us(periods[i-1]/2); 
+0301:  MOVLW  01
+0302:  MOVLB  00
+0303:  SUBWF  22,W
+0304:  MOVWF  3C
+0305:  MOVLW  00
+0306:  SUBWFC 23,W
+0307:  MOVWF  3D
+0308:  MOVLW  00
+0309:  SUBWFC 24,W
+030A:  MOVWF  3E
+030B:  MOVLW  00
+030C:  SUBWFC 25,W
+030D:  MOVWF  3F
+030E:  MOVF   3C,W
+030F:  MOVWF  77
+0310:  MOVF   3D,W
+0311:  MOVWF  78
+0312:  MOVF   3E,W
+0313:  MOVWF  79
+0314:  MOVF   3F,W
+0315:  MOVWF  7A
+0316:  MOVF   77,W
+0317:  CALL   003
+0318:  MOVWF  77
+0319:  BCF    03.0
+031A:  RRF    77,W
+031B:  MOVWF  40
+031C:  MOVF   40,W
+031D:  MOVWF  41
+031E:  CALL   207
+031F:  MOVLW  FF
+0320:  ADDWF  22,F
+0321:  BTFSS  03.0
+0322:  ADDWF  23,F
+0323:  BTFSS  03.0
+0324:  ADDWF  24,F
+0325:  BTFSS  03.0
+0326:  ADDWF  25,F
+0327:  GOTO   2CF
+....................          } 
+....................           
+....................    output_high(SPI_CS); 
+0328:  MOVLB  01
+0329:  BCF    0C.7
+032A:  MOVLB  02
+032B:  BSF    0C.7
+....................                  //76543210 
+....................    int Ctrl_1      = 0b00000001; 
+....................    int Ctrl_0      = 0b00100001; 
+032C:  MOVLW  01
+032D:  MOVLB  00
+032E:  MOVWF  3A
+032F:  MOVLW  21
+0330:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+0331:  MOVLB  04
+0332:  CLRF   12
+0333:  MOVLB  00
+0334:  MOVF   3A,W
+0335:  MOVLB  04
+0336:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0337:  MOVLB  00
+0338:  BTFSS  11.3
+0339:  GOTO   338
+....................    SPI_FLAG = 0; 
+033A:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+033B:  MOVLB  04
+033C:  CLRF   12
+033D:  MOVLB  00
+033E:  MOVF   3B,W
+033F:  MOVLB  04
+0340:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0341:  MOVLB  00
+0342:  BTFSS  11.3
+0343:  GOTO   342
+....................    SPI_FLAG = 0; 
+0344:  BCF    11.3
+....................    output_low(SPI_CS); 
+0345:  MOVLB  01
+0346:  BCF    0C.7
+0347:  MOVLB  02
+0348:  BCF    0C.7
+....................    delay_ms(10); 
+0349:  MOVLW  0A
+034A:  MOVLB  00
+034B:  MOVWF  3D
+034C:  CALL   08B
+....................        
+....................       delay_ms(5000); 
+034D:  MOVLW  14
+034E:  MOVWF  3C
+034F:  MOVLW  FA
+0350:  MOVWF  3D
+0351:  CALL   08B
+0352:  DECFSZ 3C,F
+0353:  GOTO   34F
+....................     
+....................    output_high(SPI_CS); 
+0354:  MOVLB  01
+0355:  BCF    0C.7
+0356:  MOVLB  02
+0357:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000000; 
+0358:  MOVLB  00
+0359:  CLRF   3A
+....................    Ctrl_0      = 0b00100001; 
+035A:  MOVLW  21
+035B:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+035C:  MOVLB  04
+035D:  CLRF   12
+035E:  MOVLB  00
+035F:  MOVF   3A,W
+0360:  MOVLB  04
+0361:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0362:  MOVLB  00
+0363:  BTFSS  11.3
+0364:  GOTO   363
+....................    SPI_FLAG = 0; 
+0365:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+0366:  MOVLB  04
+0367:  CLRF   12
+0368:  MOVLB  00
+0369:  MOVF   3B,W
+036A:  MOVLB  04
+036B:  MOVWF  11
+....................    while (!SPI_FLAG); 
+036C:  MOVLB  00
+036D:  BTFSS  11.3
+036E:  GOTO   36D
+....................    SPI_FLAG = 0; 
+036F:  BCF    11.3
+....................    output_low(SPI_CS); 
+0370:  MOVLB  01
+0371:  BCF    0C.7
+0372:  MOVLB  02
+0373:  BCF    0C.7
+....................    delay_ms(10); 
+0374:  MOVLW  0A
+0375:  MOVLB  00
+0376:  MOVWF  3D
+0377:  CALL   08B
+....................     
+....................    ///////////////////////       
+....................          for(i=0; i<acc_lim; i++) 
+0378:  CLRF   25
+0379:  CLRF   24
+037A:  CLRF   23
+037B:  CLRF   22
+037C:  MOVF   25,F
+037D:  BTFSS  03.2
+037E:  GOTO   3BE
+037F:  MOVF   24,F
+0380:  BTFSS  03.2
+0381:  GOTO   3BE
+0382:  MOVF   23,F
+0383:  BTFSS  03.2
+0384:  GOTO   3BE
+0385:  MOVF   21,W
+0386:  SUBWF  22,W
+0387:  BTFSC  03.0
+0388:  GOTO   3BE
+....................          { 
+....................             output_high(DRV_STEP); 
+0389:  MOVLB  01
+038A:  BCF    0C.0
+038B:  MOVLB  02
+038C:  BSF    0C.0
+....................             delay_us(periods[i]/2); 
+038D:  MOVLB  00
+038E:  MOVF   22,W
+038F:  MOVWF  77
+0390:  MOVF   23,W
+0391:  MOVWF  78
+0392:  MOVF   24,W
+0393:  MOVWF  79
+0394:  MOVF   25,W
+0395:  MOVWF  7A
+0396:  MOVF   77,W
+0397:  CALL   003
+0398:  MOVWF  77
+0399:  BCF    03.0
+039A:  RRF    77,W
+039B:  MOVWF  3C
+039C:  MOVF   3C,W
+039D:  MOVWF  41
+039E:  CALL   207
+....................             output_low(DRV_STEP); 
+039F:  MOVLB  01
+03A0:  BCF    0C.0
+03A1:  MOVLB  02
+03A2:  BCF    0C.0
+....................             delay_us(periods[i]/2); 
+03A3:  MOVLB  00
+03A4:  MOVF   22,W
+03A5:  MOVWF  77
+03A6:  MOVF   23,W
+03A7:  MOVWF  78
+03A8:  MOVF   24,W
+03A9:  MOVWF  79
+03AA:  MOVF   25,W
+03AB:  MOVWF  7A
+03AC:  MOVF   77,W
+03AD:  CALL   003
+03AE:  MOVWF  77
+03AF:  BCF    03.0
+03B0:  RRF    77,W
+03B1:  MOVWF  3C
+03B2:  MOVF   3C,W
+03B3:  MOVWF  41
+03B4:  CALL   207
+03B5:  MOVLW  01
+03B6:  ADDWF  22,F
+03B7:  BTFSC  03.0
+03B8:  INCF   23,F
+03B9:  BTFSC  03.2
+03BA:  INCF   24,F
+03BB:  BTFSC  03.2
+03BC:  INCF   25,F
+03BD:  GOTO   37C
+....................          } 
+....................          for(i=0; i<distance_step; i++) 
+03BE:  CLRF   25
+03BF:  CLRF   24
+03C0:  CLRF   23
+03C1:  CLRF   22
+03C2:  MOVF   25,W
+03C3:  SUBWF  39,W
+03C4:  BTFSS  03.0
+03C5:  GOTO   405
+03C6:  BTFSS  03.2
+03C7:  GOTO   3D8
+03C8:  MOVF   24,W
+03C9:  SUBWF  38,W
+03CA:  BTFSS  03.0
+03CB:  GOTO   405
+03CC:  BTFSS  03.2
+03CD:  GOTO   3D8
+03CE:  MOVF   23,W
+03CF:  SUBWF  37,W
+03D0:  BTFSS  03.0
+03D1:  GOTO   405
+03D2:  BTFSS  03.2
+03D3:  GOTO   3D8
+03D4:  MOVF   36,W
+03D5:  SUBWF  22,W
+03D6:  BTFSC  03.0
+03D7:  GOTO   405
+....................          { 
+....................             output_high(DRV_STEP); 
+03D8:  MOVLB  01
+03D9:  BCF    0C.0
+03DA:  MOVLB  02
+03DB:  BSF    0C.0
+....................             delay_us(delay); 
+03DC:  MOVLB  00
+03DD:  MOVF   33,W
+03DE:  MOVWF  3C
+03DF:  INCF   3C,F
+03E0:  DECF   3C,F
+03E1:  BTFSC  03.2
+03E2:  GOTO   3E7
+03E3:  MOVLW  FF
+03E4:  MOVWF  41
+03E5:  CALL   207
+03E6:  GOTO   3E0
+03E7:  MOVF   32,W
+03E8:  MOVWF  41
+03E9:  CALL   207
+....................             output_low(DRV_STEP); 
+03EA:  MOVLB  01
+03EB:  BCF    0C.0
+03EC:  MOVLB  02
+03ED:  BCF    0C.0
+....................             delay_us(delay); 
+03EE:  MOVLB  00
+03EF:  MOVF   33,W
+03F0:  MOVWF  3C
+03F1:  INCF   3C,F
+03F2:  DECF   3C,F
+03F3:  BTFSC  03.2
+03F4:  GOTO   3F9
+03F5:  MOVLW  FF
+03F6:  MOVWF  41
+03F7:  CALL   207
+03F8:  GOTO   3F2
+03F9:  MOVF   32,W
+03FA:  MOVWF  41
+03FB:  CALL   207
+03FC:  MOVLW  01
+03FD:  ADDWF  22,F
+03FE:  BTFSC  03.0
+03FF:  INCF   23,F
+0400:  BTFSC  03.2
+0401:  INCF   24,F
+0402:  BTFSC  03.2
+0403:  INCF   25,F
+0404:  GOTO   3C2
+....................          } 
+....................          for(i=acc_lim; i>0; i--) 
+0405:  CLRF   25
+0406:  CLRF   24
+0407:  CLRF   23
+0408:  MOVF   21,W
+0409:  MOVWF  22
+040A:  MOVF   22,F
+040B:  BTFSS  03.2
+040C:  GOTO   416
+040D:  MOVF   23,F
+040E:  BTFSS  03.2
+040F:  GOTO   416
+0410:  MOVF   24,F
+0411:  BTFSS  03.2
+0412:  GOTO   416
+0413:  MOVF   25,F
+0414:  BTFSC  03.2
+0415:  GOTO   463
+....................          { 
+....................             output_high(DRV_STEP); 
+0416:  MOVLB  01
+0417:  BCF    0C.0
+0418:  MOVLB  02
+0419:  BSF    0C.0
+....................             delay_us(periods[i-1]/2); 
+041A:  MOVLW  01
+041B:  MOVLB  00
+041C:  SUBWF  22,W
+041D:  MOVWF  3C
+041E:  MOVLW  00
+041F:  SUBWFC 23,W
+0420:  MOVWF  3D
+0421:  MOVLW  00
+0422:  SUBWFC 24,W
+0423:  MOVWF  3E
+0424:  MOVLW  00
+0425:  SUBWFC 25,W
+0426:  MOVWF  3F
+0427:  MOVF   3C,W
+0428:  MOVWF  77
+0429:  MOVF   3D,W
+042A:  MOVWF  78
+042B:  MOVF   3E,W
+042C:  MOVWF  79
+042D:  MOVF   3F,W
+042E:  MOVWF  7A
+042F:  MOVF   77,W
+0430:  CALL   003
+0431:  MOVWF  77
+0432:  BCF    03.0
+0433:  RRF    77,W
+0434:  MOVWF  40
+0435:  MOVF   40,W
+0436:  MOVWF  41
+0437:  CALL   207
+....................             output_low(DRV_STEP); 
+0438:  MOVLB  01
+0439:  BCF    0C.0
+043A:  MOVLB  02
+043B:  BCF    0C.0
+....................             delay_us(periods[i-1]/2); 
+043C:  MOVLW  01
+043D:  MOVLB  00
+043E:  SUBWF  22,W
+043F:  MOVWF  3C
+0440:  MOVLW  00
+0441:  SUBWFC 23,W
+0442:  MOVWF  3D
+0443:  MOVLW  00
+0444:  SUBWFC 24,W
+0445:  MOVWF  3E
+0446:  MOVLW  00
+0447:  SUBWFC 25,W
+0448:  MOVWF  3F
+0449:  MOVF   3C,W
+044A:  MOVWF  77
+044B:  MOVF   3D,W
+044C:  MOVWF  78
+044D:  MOVF   3E,W
+044E:  MOVWF  79
+044F:  MOVF   3F,W
+0450:  MOVWF  7A
+0451:  MOVF   77,W
+0452:  CALL   003
+0453:  MOVWF  77
+0454:  BCF    03.0
+0455:  RRF    77,W
+0456:  MOVWF  40
+0457:  MOVF   40,W
+0458:  MOVWF  41
+0459:  CALL   207
+045A:  MOVLW  FF
+045B:  ADDWF  22,F
+045C:  BTFSS  03.0
+045D:  ADDWF  23,F
+045E:  BTFSS  03.0
+045F:  ADDWF  24,F
+0460:  BTFSS  03.0
+0461:  ADDWF  25,F
+0462:  GOTO   40A
+....................          } 
+....................           
+....................    output_high(SPI_CS); 
+0463:  MOVLB  01
+0464:  BCF    0C.7
+0465:  MOVLB  02
+0466:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000001; 
+0467:  MOVLW  01
+0468:  MOVLB  00
+0469:  MOVWF  3A
+....................    Ctrl_0      = 0b00100001; 
+046A:  MOVLW  21
+046B:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+046C:  MOVLB  04
+046D:  CLRF   12
+046E:  MOVLB  00
+046F:  MOVF   3A,W
+0470:  MOVLB  04
+0471:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0472:  MOVLB  00
+0473:  BTFSS  11.3
+0474:  GOTO   473
+....................    SPI_FLAG = 0; 
+0475:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+0476:  MOVLB  04
+0477:  CLRF   12
+0478:  MOVLB  00
+0479:  MOVF   3B,W
+047A:  MOVLB  04
+047B:  MOVWF  11
+....................    while (!SPI_FLAG); 
+047C:  MOVLB  00
+047D:  BTFSS  11.3
+047E:  GOTO   47D
+....................    SPI_FLAG = 0; 
+047F:  BCF    11.3
+....................    output_low(SPI_CS); 
+0480:  MOVLB  01
+0481:  BCF    0C.7
+0482:  MOVLB  02
+0483:  BCF    0C.7
+....................    delay_ms(10); 
+0484:  MOVLW  0A
+0485:  MOVLB  00
+0486:  MOVWF  3D
+0487:  CALL   08B
+....................        
+....................       delay_ms(5000); 
+0488:  MOVLW  14
+0489:  MOVWF  3C
+048A:  MOVLW  FA
+048B:  MOVWF  3D
+048C:  CALL   08B
+048D:  DECFSZ 3C,F
+048E:  GOTO   48A
+....................     
+....................    output_high(SPI_CS); 
+048F:  MOVLB  01
+0490:  BCF    0C.7
+0491:  MOVLB  02
+0492:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000000; 
+0493:  MOVLB  00
+0494:  CLRF   3A
+....................    Ctrl_0      = 0b00100001; 
+0495:  MOVLW  21
+0496:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+0497:  MOVLB  04
+0498:  CLRF   12
+0499:  MOVLB  00
+049A:  MOVF   3A,W
+049B:  MOVLB  04
+049C:  MOVWF  11
+....................    while (!SPI_FLAG); 
+049D:  MOVLB  00
+049E:  BTFSS  11.3
+049F:  GOTO   49E
+....................    SPI_FLAG = 0; 
+04A0:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+04A1:  MOVLB  04
+04A2:  CLRF   12
+04A3:  MOVLB  00
+04A4:  MOVF   3B,W
+04A5:  MOVLB  04
+04A6:  MOVWF  11
+....................    while (!SPI_FLAG); 
+04A7:  MOVLB  00
+04A8:  BTFSS  11.3
+04A9:  GOTO   4A8
+....................    SPI_FLAG = 0; 
+04AA:  BCF    11.3
+....................    output_low(SPI_CS); 
+04AB:  MOVLB  01
+04AC:  BCF    0C.7
+04AD:  MOVLB  02
+04AE:  BCF    0C.7
+....................    delay_ms(10); 
+04AF:  MOVLW  0A
+04B0:  MOVLB  00
+04B1:  MOVWF  3D
+04B2:  CALL   08B
+....................     
+....................       output_low(DRV_DIR); 
+04B3:  MOVLB  01
+04B4:  BCF    0C.4
+04B5:  MOVLB  02
+04B6:  BCF    0C.4
+....................       delay_ms(10); 
+04B7:  MOVLW  0A
+04B8:  MOVLB  00
+04B9:  MOVWF  3D
+04BA:  CALL   08B
+....................        
+....................              for(i=0; i<acc_lim; i++) 
+04BB:  CLRF   25
+04BC:  CLRF   24
+04BD:  CLRF   23
+04BE:  CLRF   22
+04BF:  MOVF   25,F
+04C0:  BTFSS  03.2
+04C1:  GOTO   501
+04C2:  MOVF   24,F
+04C3:  BTFSS  03.2
+04C4:  GOTO   501
+04C5:  MOVF   23,F
+04C6:  BTFSS  03.2
+04C7:  GOTO   501
+04C8:  MOVF   21,W
+04C9:  SUBWF  22,W
+04CA:  BTFSC  03.0
+04CB:  GOTO   501
+....................          { 
+....................             output_high(DRV_STEP); 
+04CC:  MOVLB  01
+04CD:  BCF    0C.0
+04CE:  MOVLB  02
+04CF:  BSF    0C.0
+....................             delay_us(periods[i]/2); 
+04D0:  MOVLB  00
+04D1:  MOVF   22,W
+04D2:  MOVWF  77
+04D3:  MOVF   23,W
+04D4:  MOVWF  78
+04D5:  MOVF   24,W
+04D6:  MOVWF  79
+04D7:  MOVF   25,W
+04D8:  MOVWF  7A
+04D9:  MOVF   77,W
+04DA:  CALL   003
+04DB:  MOVWF  77
+04DC:  BCF    03.0
+04DD:  RRF    77,W
+04DE:  MOVWF  3C
+04DF:  MOVF   3C,W
+04E0:  MOVWF  41
+04E1:  CALL   207
+....................             output_low(DRV_STEP); 
+04E2:  MOVLB  01
+04E3:  BCF    0C.0
+04E4:  MOVLB  02
+04E5:  BCF    0C.0
+....................             delay_us(periods[i]/2); 
+04E6:  MOVLB  00
+04E7:  MOVF   22,W
+04E8:  MOVWF  77
+04E9:  MOVF   23,W
+04EA:  MOVWF  78
+04EB:  MOVF   24,W
+04EC:  MOVWF  79
+04ED:  MOVF   25,W
+04EE:  MOVWF  7A
+04EF:  MOVF   77,W
+04F0:  CALL   003
+04F1:  MOVWF  77
+04F2:  BCF    03.0
+04F3:  RRF    77,W
+04F4:  MOVWF  3C
+04F5:  MOVF   3C,W
+04F6:  MOVWF  41
+04F7:  CALL   207
+04F8:  MOVLW  01
+04F9:  ADDWF  22,F
+04FA:  BTFSC  03.0
+04FB:  INCF   23,F
+04FC:  BTFSC  03.2
+04FD:  INCF   24,F
+04FE:  BTFSC  03.2
+04FF:  INCF   25,F
+0500:  GOTO   4BF
+....................          } 
+....................          for(i=0; i<distance_step; i++) 
+0501:  CLRF   25
+0502:  CLRF   24
+0503:  CLRF   23
+0504:  CLRF   22
+0505:  MOVF   25,W
+0506:  SUBWF  39,W
+0507:  BTFSS  03.0
+0508:  GOTO   548
+0509:  BTFSS  03.2
+050A:  GOTO   51B
+050B:  MOVF   24,W
+050C:  SUBWF  38,W
+050D:  BTFSS  03.0
+050E:  GOTO   548
+050F:  BTFSS  03.2
+0510:  GOTO   51B
+0511:  MOVF   23,W
+0512:  SUBWF  37,W
+0513:  BTFSS  03.0
+0514:  GOTO   548
+0515:  BTFSS  03.2
+0516:  GOTO   51B
+0517:  MOVF   36,W
+0518:  SUBWF  22,W
+0519:  BTFSC  03.0
+051A:  GOTO   548
+....................          { 
+....................             output_high(DRV_STEP); 
+051B:  MOVLB  01
+051C:  BCF    0C.0
+051D:  MOVLB  02
+051E:  BSF    0C.0
+....................             delay_us(delay); 
+051F:  MOVLB  00
+0520:  MOVF   33,W
+0521:  MOVWF  3C
+0522:  INCF   3C,F
+0523:  DECF   3C,F
+0524:  BTFSC  03.2
+0525:  GOTO   52A
+0526:  MOVLW  FF
+0527:  MOVWF  41
+0528:  CALL   207
+0529:  GOTO   523
+052A:  MOVF   32,W
+052B:  MOVWF  41
+052C:  CALL   207
+....................             output_low(DRV_STEP); 
+052D:  MOVLB  01
+052E:  BCF    0C.0
+052F:  MOVLB  02
+0530:  BCF    0C.0
+....................             delay_us(delay); 
+0531:  MOVLB  00
+0532:  MOVF   33,W
+0533:  MOVWF  3C
+0534:  INCF   3C,F
+0535:  DECF   3C,F
+0536:  BTFSC  03.2
+0537:  GOTO   53C
+0538:  MOVLW  FF
+0539:  MOVWF  41
+053A:  CALL   207
+053B:  GOTO   535
+053C:  MOVF   32,W
+053D:  MOVWF  41
+053E:  CALL   207
+053F:  MOVLW  01
+0540:  ADDWF  22,F
+0541:  BTFSC  03.0
+0542:  INCF   23,F
+0543:  BTFSC  03.2
+0544:  INCF   24,F
+0545:  BTFSC  03.2
+0546:  INCF   25,F
+0547:  GOTO   505
+....................          } 
+....................          for(i=acc_lim; i>0; i--) 
+0548:  CLRF   25
+0549:  CLRF   24
+054A:  CLRF   23
+054B:  MOVF   21,W
+054C:  MOVWF  22
+054D:  MOVF   22,F
+054E:  BTFSS  03.2
+054F:  GOTO   559
+0550:  MOVF   23,F
+0551:  BTFSS  03.2
+0552:  GOTO   559
+0553:  MOVF   24,F
+0554:  BTFSS  03.2
+0555:  GOTO   559
+0556:  MOVF   25,F
+0557:  BTFSC  03.2
+0558:  GOTO   5A6
+....................          { 
+....................             output_high(DRV_STEP); 
+0559:  MOVLB  01
+055A:  BCF    0C.0
+055B:  MOVLB  02
+055C:  BSF    0C.0
+....................             delay_us(periods[i-1]/2); 
+055D:  MOVLW  01
+055E:  MOVLB  00
+055F:  SUBWF  22,W
+0560:  MOVWF  3C
+0561:  MOVLW  00
+0562:  SUBWFC 23,W
+0563:  MOVWF  3D
+0564:  MOVLW  00
+0565:  SUBWFC 24,W
+0566:  MOVWF  3E
+0567:  MOVLW  00
+0568:  SUBWFC 25,W
+0569:  MOVWF  3F
+056A:  MOVF   3C,W
+056B:  MOVWF  77
+056C:  MOVF   3D,W
+056D:  MOVWF  78
+056E:  MOVF   3E,W
+056F:  MOVWF  79
+0570:  MOVF   3F,W
+0571:  MOVWF  7A
+0572:  MOVF   77,W
+0573:  CALL   003
+0574:  MOVWF  77
+0575:  BCF    03.0
+0576:  RRF    77,W
+0577:  MOVWF  40
+0578:  MOVF   40,W
+0579:  MOVWF  41
+057A:  CALL   207
+....................             output_low(DRV_STEP); 
+057B:  MOVLB  01
+057C:  BCF    0C.0
+057D:  MOVLB  02
+057E:  BCF    0C.0
+....................             delay_us(periods[i-1]/2); 
+057F:  MOVLW  01
+0580:  MOVLB  00
+0581:  SUBWF  22,W
+0582:  MOVWF  3C
+0583:  MOVLW  00
+0584:  SUBWFC 23,W
+0585:  MOVWF  3D
+0586:  MOVLW  00
+0587:  SUBWFC 24,W
+0588:  MOVWF  3E
+0589:  MOVLW  00
+058A:  SUBWFC 25,W
+058B:  MOVWF  3F
+058C:  MOVF   3C,W
+058D:  MOVWF  77
+058E:  MOVF   3D,W
+058F:  MOVWF  78
+0590:  MOVF   3E,W
+0591:  MOVWF  79
+0592:  MOVF   3F,W
+0593:  MOVWF  7A
+0594:  MOVF   77,W
+0595:  CALL   003
+0596:  MOVWF  77
+0597:  BCF    03.0
+0598:  RRF    77,W
+0599:  MOVWF  40
+059A:  MOVF   40,W
+059B:  MOVWF  41
+059C:  CALL   207
+059D:  MOVLW  FF
+059E:  ADDWF  22,F
+059F:  BTFSS  03.0
+05A0:  ADDWF  23,F
+05A1:  BTFSS  03.0
+05A2:  ADDWF  24,F
+05A3:  BTFSS  03.0
+05A4:  ADDWF  25,F
+05A5:  GOTO   54D
+....................          } 
+....................           
+....................    output_high(SPI_CS); 
+05A6:  MOVLB  01
+05A7:  BCF    0C.7
+05A8:  MOVLB  02
+05A9:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000001; 
+05AA:  MOVLW  01
+05AB:  MOVLB  00
+05AC:  MOVWF  3A
+....................    Ctrl_0      = 0b00100001; 
+05AD:  MOVLW  21
+05AE:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+05AF:  MOVLB  04
+05B0:  CLRF   12
+05B1:  MOVLB  00
+05B2:  MOVF   3A,W
+05B3:  MOVLB  04
+05B4:  MOVWF  11
+....................    while (!SPI_FLAG); 
+05B5:  MOVLB  00
+05B6:  BTFSS  11.3
+05B7:  GOTO   5B6
+....................    SPI_FLAG = 0; 
+05B8:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+05B9:  MOVLB  04
+05BA:  CLRF   12
+05BB:  MOVLB  00
+05BC:  MOVF   3B,W
+05BD:  MOVLB  04
+05BE:  MOVWF  11
+....................    while (!SPI_FLAG); 
+05BF:  MOVLB  00
+05C0:  BTFSS  11.3
+05C1:  GOTO   5C0
+....................    SPI_FLAG = 0; 
+05C2:  BCF    11.3
+....................    output_low(SPI_CS); 
+05C3:  MOVLB  01
+05C4:  BCF    0C.7
+05C5:  MOVLB  02
+05C6:  BCF    0C.7
+....................    delay_ms(10); 
+05C7:  MOVLW  0A
+05C8:  MOVLB  00
+05C9:  MOVWF  3D
+05CA:  CALL   08B
+....................        
+....................       delay_ms(5000); 
+05CB:  MOVLW  14
+05CC:  MOVWF  3C
+05CD:  MOVLW  FA
+05CE:  MOVWF  3D
+05CF:  CALL   08B
+05D0:  DECFSZ 3C,F
+05D1:  GOTO   5CD
+....................     
+....................    output_high(SPI_CS); 
+05D2:  MOVLB  01
+05D3:  BCF    0C.7
+05D4:  MOVLB  02
+05D5:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000000; 
+05D6:  MOVLB  00
+05D7:  CLRF   3A
+....................    Ctrl_0      = 0b00100001; 
+05D8:  MOVLW  21
+05D9:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+05DA:  MOVLB  04
+05DB:  CLRF   12
+05DC:  MOVLB  00
+05DD:  MOVF   3A,W
+05DE:  MOVLB  04
+05DF:  MOVWF  11
+....................    while (!SPI_FLAG); 
+05E0:  MOVLB  00
+05E1:  BTFSS  11.3
+05E2:  GOTO   5E1
+....................    SPI_FLAG = 0; 
+05E3:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+05E4:  MOVLB  04
+05E5:  CLRF   12
+05E6:  MOVLB  00
+05E7:  MOVF   3B,W
+05E8:  MOVLB  04
+05E9:  MOVWF  11
+....................    while (!SPI_FLAG); 
+05EA:  MOVLB  00
+05EB:  BTFSS  11.3
+05EC:  GOTO   5EB
+....................    SPI_FLAG = 0; 
+05ED:  BCF    11.3
+....................    output_low(SPI_CS); 
+05EE:  MOVLB  01
+05EF:  BCF    0C.7
+05F0:  MOVLB  02
+05F1:  BCF    0C.7
+....................    delay_ms(10); 
+05F2:  MOVLW  0A
+05F3:  MOVLB  00
+05F4:  MOVWF  3D
+05F5:  CALL   08B
+....................     
+....................    ///////////////////////       
+....................          for(i=0; i<acc_lim; i++) 
+05F6:  CLRF   25
+05F7:  CLRF   24
+05F8:  CLRF   23
+05F9:  CLRF   22
+05FA:  MOVF   25,F
+05FB:  BTFSS  03.2
+05FC:  GOTO   63C
+05FD:  MOVF   24,F
+05FE:  BTFSS  03.2
+05FF:  GOTO   63C
+0600:  MOVF   23,F
+0601:  BTFSS  03.2
+0602:  GOTO   63C
+0603:  MOVF   21,W
+0604:  SUBWF  22,W
+0605:  BTFSC  03.0
+0606:  GOTO   63C
+....................          { 
+....................             output_high(DRV_STEP); 
+0607:  MOVLB  01
+0608:  BCF    0C.0
+0609:  MOVLB  02
+060A:  BSF    0C.0
+....................             delay_us(periods[i]/2); 
+060B:  MOVLB  00
+060C:  MOVF   22,W
+060D:  MOVWF  77
+060E:  MOVF   23,W
+060F:  MOVWF  78
+0610:  MOVF   24,W
+0611:  MOVWF  79
+0612:  MOVF   25,W
+0613:  MOVWF  7A
+0614:  MOVF   77,W
+0615:  CALL   003
+0616:  MOVWF  77
+0617:  BCF    03.0
+0618:  RRF    77,W
+0619:  MOVWF  3C
+061A:  MOVF   3C,W
+061B:  MOVWF  41
+061C:  CALL   207
+....................             output_low(DRV_STEP); 
+061D:  MOVLB  01
+061E:  BCF    0C.0
+061F:  MOVLB  02
+0620:  BCF    0C.0
+....................             delay_us(periods[i]/2); 
+0621:  MOVLB  00
+0622:  MOVF   22,W
+0623:  MOVWF  77
+0624:  MOVF   23,W
+0625:  MOVWF  78
+0626:  MOVF   24,W
+0627:  MOVWF  79
+0628:  MOVF   25,W
+0629:  MOVWF  7A
+062A:  MOVF   77,W
+062B:  CALL   003
+062C:  MOVWF  77
+062D:  BCF    03.0
+062E:  RRF    77,W
+062F:  MOVWF  3C
+0630:  MOVF   3C,W
+0631:  MOVWF  41
+0632:  CALL   207
+0633:  MOVLW  01
+0634:  ADDWF  22,F
+0635:  BTFSC  03.0
+0636:  INCF   23,F
+0637:  BTFSC  03.2
+0638:  INCF   24,F
+0639:  BTFSC  03.2
+063A:  INCF   25,F
+063B:  GOTO   5FA
+....................          } 
+....................          for(i=0; i<distance_step; i++) 
+063C:  CLRF   25
+063D:  CLRF   24
+063E:  CLRF   23
+063F:  CLRF   22
+0640:  MOVF   25,W
+0641:  SUBWF  39,W
+0642:  BTFSS  03.0
+0643:  GOTO   683
+0644:  BTFSS  03.2
+0645:  GOTO   656
+0646:  MOVF   24,W
+0647:  SUBWF  38,W
+0648:  BTFSS  03.0
+0649:  GOTO   683
+064A:  BTFSS  03.2
+064B:  GOTO   656
+064C:  MOVF   23,W
+064D:  SUBWF  37,W
+064E:  BTFSS  03.0
+064F:  GOTO   683
+0650:  BTFSS  03.2
+0651:  GOTO   656
+0652:  MOVF   36,W
+0653:  SUBWF  22,W
+0654:  BTFSC  03.0
+0655:  GOTO   683
+....................          { 
+....................             output_high(DRV_STEP); 
+0656:  MOVLB  01
+0657:  BCF    0C.0
+0658:  MOVLB  02
+0659:  BSF    0C.0
+....................             delay_us(delay); 
+065A:  MOVLB  00
+065B:  MOVF   33,W
+065C:  MOVWF  3C
+065D:  INCF   3C,F
+065E:  DECF   3C,F
+065F:  BTFSC  03.2
+0660:  GOTO   665
+0661:  MOVLW  FF
+0662:  MOVWF  41
+0663:  CALL   207
+0664:  GOTO   65E
+0665:  MOVF   32,W
+0666:  MOVWF  41
+0667:  CALL   207
+....................             output_low(DRV_STEP); 
+0668:  MOVLB  01
+0669:  BCF    0C.0
+066A:  MOVLB  02
+066B:  BCF    0C.0
+....................             delay_us(delay); 
+066C:  MOVLB  00
+066D:  MOVF   33,W
+066E:  MOVWF  3C
+066F:  INCF   3C,F
+0670:  DECF   3C,F
+0671:  BTFSC  03.2
+0672:  GOTO   677
+0673:  MOVLW  FF
+0674:  MOVWF  41
+0675:  CALL   207
+0676:  GOTO   670
+0677:  MOVF   32,W
+0678:  MOVWF  41
+0679:  CALL   207
+067A:  MOVLW  01
+067B:  ADDWF  22,F
+067C:  BTFSC  03.0
+067D:  INCF   23,F
+067E:  BTFSC  03.2
+067F:  INCF   24,F
+0680:  BTFSC  03.2
+0681:  INCF   25,F
+0682:  GOTO   640
+....................          } 
+....................          for(i=acc_lim; i>0; i--) 
+0683:  CLRF   25
+0684:  CLRF   24
+0685:  CLRF   23
+0686:  MOVF   21,W
+0687:  MOVWF  22
+0688:  MOVF   22,F
+0689:  BTFSS  03.2
+068A:  GOTO   694
+068B:  MOVF   23,F
+068C:  BTFSS  03.2
+068D:  GOTO   694
+068E:  MOVF   24,F
+068F:  BTFSS  03.2
+0690:  GOTO   694
+0691:  MOVF   25,F
+0692:  BTFSC  03.2
+0693:  GOTO   6E1
+....................          { 
+....................             output_high(DRV_STEP); 
+0694:  MOVLB  01
+0695:  BCF    0C.0
+0696:  MOVLB  02
+0697:  BSF    0C.0
+....................             delay_us(periods[i-1]/2); 
+0698:  MOVLW  01
+0699:  MOVLB  00
+069A:  SUBWF  22,W
+069B:  MOVWF  3C
+069C:  MOVLW  00
+069D:  SUBWFC 23,W
+069E:  MOVWF  3D
+069F:  MOVLW  00
+06A0:  SUBWFC 24,W
+06A1:  MOVWF  3E
+06A2:  MOVLW  00
+06A3:  SUBWFC 25,W
+06A4:  MOVWF  3F
+06A5:  MOVF   3C,W
+06A6:  MOVWF  77
+06A7:  MOVF   3D,W
+06A8:  MOVWF  78
+06A9:  MOVF   3E,W
+06AA:  MOVWF  79
+06AB:  MOVF   3F,W
+06AC:  MOVWF  7A
+06AD:  MOVF   77,W
+06AE:  CALL   003
+06AF:  MOVWF  77
+06B0:  BCF    03.0
+06B1:  RRF    77,W
+06B2:  MOVWF  40
+06B3:  MOVF   40,W
+06B4:  MOVWF  41
+06B5:  CALL   207
+....................             output_low(DRV_STEP); 
+06B6:  MOVLB  01
+06B7:  BCF    0C.0
+06B8:  MOVLB  02
+06B9:  BCF    0C.0
+....................             delay_us(periods[i-1]/2); 
+06BA:  MOVLW  01
+06BB:  MOVLB  00
+06BC:  SUBWF  22,W
+06BD:  MOVWF  3C
+06BE:  MOVLW  00
+06BF:  SUBWFC 23,W
+06C0:  MOVWF  3D
+06C1:  MOVLW  00
+06C2:  SUBWFC 24,W
+06C3:  MOVWF  3E
+06C4:  MOVLW  00
+06C5:  SUBWFC 25,W
+06C6:  MOVWF  3F
+06C7:  MOVF   3C,W
+06C8:  MOVWF  77
+06C9:  MOVF   3D,W
+06CA:  MOVWF  78
+06CB:  MOVF   3E,W
+06CC:  MOVWF  79
+06CD:  MOVF   3F,W
+06CE:  MOVWF  7A
+06CF:  MOVF   77,W
+06D0:  CALL   003
+06D1:  MOVWF  77
+06D2:  BCF    03.0
+06D3:  RRF    77,W
+06D4:  MOVWF  40
+06D5:  MOVF   40,W
+06D6:  MOVWF  41
+06D7:  CALL   207
+06D8:  MOVLW  FF
+06D9:  ADDWF  22,F
+06DA:  BTFSS  03.0
+06DB:  ADDWF  23,F
+06DC:  BTFSS  03.0
+06DD:  ADDWF  24,F
+06DE:  BTFSS  03.0
+06DF:  ADDWF  25,F
+06E0:  GOTO   688
+....................          } 
+....................           
+....................    output_high(SPI_CS); 
+06E1:  MOVLB  01
+06E2:  BCF    0C.7
+06E3:  MOVLB  02
+06E4:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000001; 
+06E5:  MOVLW  01
+06E6:  MOVLB  00
+06E7:  MOVWF  3A
+....................    Ctrl_0      = 0b00100001; 
+06E8:  MOVLW  21
+06E9:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+06EA:  MOVLB  04
+06EB:  CLRF   12
+06EC:  MOVLB  00
+06ED:  MOVF   3A,W
+06EE:  MOVLB  04
+06EF:  MOVWF  11
+....................    while (!SPI_FLAG); 
+06F0:  MOVLB  00
+06F1:  BTFSS  11.3
+06F2:  GOTO   6F1
+....................    SPI_FLAG = 0; 
+06F3:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+06F4:  MOVLB  04
+06F5:  CLRF   12
+06F6:  MOVLB  00
+06F7:  MOVF   3B,W
+06F8:  MOVLB  04
+06F9:  MOVWF  11
+....................    while (!SPI_FLAG); 
+06FA:  MOVLB  00
+06FB:  BTFSS  11.3
+06FC:  GOTO   6FB
+....................    SPI_FLAG = 0; 
+06FD:  BCF    11.3
+....................    output_low(SPI_CS); 
+06FE:  MOVLB  01
+06FF:  BCF    0C.7
+0700:  MOVLB  02
+0701:  BCF    0C.7
+....................    delay_ms(10); 
+0702:  MOVLW  0A
+0703:  MOVLB  00
+0704:  MOVWF  3D
+0705:  CALL   08B
+....................        
+....................       delay_ms(5000); 
+0706:  MOVLW  14
+0707:  MOVWF  3C
+0708:  MOVLW  FA
+0709:  MOVWF  3D
+070A:  CALL   08B
+070B:  DECFSZ 3C,F
+070C:  GOTO   708
+....................     
+....................    output_high(SPI_CS); 
+070D:  MOVLB  01
+070E:  BCF    0C.7
+070F:  MOVLB  02
+0710:  BSF    0C.7
+....................                  //76543210 
+....................    Ctrl_1      = 0b00000000; 
+0711:  MOVLB  00
+0712:  CLRF   3A
+....................    Ctrl_0      = 0b00100001; 
+0713:  MOVLW  21
+0714:  MOVWF  3B
+....................    SPI_SSP1BUF = Ctrl_1; 
+0715:  MOVLB  04
+0716:  CLRF   12
+0717:  MOVLB  00
+0718:  MOVF   3A,W
+0719:  MOVLB  04
+071A:  MOVWF  11
+....................    while (!SPI_FLAG); 
+071B:  MOVLB  00
+071C:  BTFSS  11.3
+071D:  GOTO   71C
+....................    SPI_FLAG = 0; 
+071E:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+071F:  MOVLB  04
+0720:  CLRF   12
+0721:  MOVLB  00
+0722:  MOVF   3B,W
+0723:  MOVLB  04
+0724:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0725:  MOVLB  00
+0726:  BTFSS  11.3
+0727:  GOTO   726
+....................    SPI_FLAG = 0; 
+0728:  BCF    11.3
+....................    output_low(SPI_CS); 
+0729:  MOVLB  01
+072A:  BCF    0C.7
+072B:  MOVLB  02
+072C:  BCF    0C.7
+....................    delay_ms(10); 
+072D:  MOVLW  0A
+072E:  MOVLB  00
+072F:  MOVWF  3D
+0730:  CALL   08B
+0731:  GOTO   235
+....................           
+....................           
+....................    } 
+0732:  MOVLP  00
+0733:  GOTO   75B (RETURN)
+.................... } 
+....................  
+....................  
+.................... void main() 
+0734:  MOVLW  F0
+0735:  MOVLB  01
+0736:  MOVWF  19
+0737:  MOVLB  00
+0738:  BCF    20.0
+0739:  BCF    20.1
+073A:  BCF    20.2
+073B:  MOVLW  74
+073C:  MOVWF  21
+073D:  MOVLB  03
+073E:  CLRF   0C
+073F:  CLRF   0D
+0740:  MOVLB  02
+0741:  CLRF   12
+0742:  CLRF   11
+0743:  CLRF   14
+0744:  CLRF   13
+.................... { 
+.................... // Set I/O states of the ports 
+....................    //           76543210                   
+....................    set_tris_a(0b00101000);        
+0745:  MOVLW  28
+0746:  TRIS   5
+....................    set_tris_b(0b11001111); 
+0747:  MOVLW  CF
+0748:  TRIS   6
+....................  
+....................    // Set alternative pin functions 
+....................    set_pins(); 
+0749:  MOVLB  00
+074A:  GOTO   078
+....................    // Set SPI parameters 
+....................    set_SPI(); 
+074B:  GOTO   07E
+....................    //set_IOC(); 
+....................     
+....................    // Give user a hint of system start by turning on fault led 
+....................    output_high(USER_FAULT); 
+074C:  MOVLB  01
+074D:  BCF    0C.2
+074E:  MOVLB  02
+074F:  BSF    0C.2
+....................    delay_ms(500); 
+0750:  MOVLW  02
+0751:  MOVLB  00
+0752:  MOVWF  22
+0753:  MOVLW  FA
+0754:  MOVWF  3D
+0755:  CALL   08B
+0756:  DECFSZ 22,F
+0757:  GOTO   753
+....................     
+....................    // Set variables to default values 
+....................    set_variables(); 
+0758:  GOTO   0A0
+....................    // Set driver variables to default values 
+....................    set_driver(); 
+0759:  GOTO   0B7
+....................     
+....................    motion_cycle(); 
+075A:  GOTO   219
+.................... } 
+075B:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0E04   INTRC_IO NOWDT PUT NOMCLR PROTECT CPD BROWNOUT NOCLKOUT NOIESO NOFCMEN
+   Word  2: 1AFC   WRT PLL_SW STVREN BORV25 NODEBUG NOLVP

@@ -1,0 +1,45 @@
+
+ROM used: 145 (7%)
+          145 (7%) including unused fragments
+
+          0 Average locations per line
+          7 Average locations per statement
+
+RAM used: 11 (3%) at main() level
+          23 (7%) worst case
+
+Stack used: 2 worst case (out of 16 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  155    21 100  Test Card Code (Pulse Generator) V1.1 Rampali.c
+  474     0   0  C:\Program Files (x86)\PICC\devices\16f1826.h
+----- -----
+  629    21 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21  14   1             @delay_ms1
+0     18  12   1             @delay_us1
+0     48  33   1   138  3.0  pulser
+0     55  38   1   165  1.8  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              21
+    Comments                153
+    Volume (V)              376
+    Difficilty (D)          4.6
+    Effort to implement (E) 1712
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    147
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-007FF   142  1903  
+
+
+

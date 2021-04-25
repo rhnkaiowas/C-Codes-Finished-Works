@@ -1,0 +1,111 @@
+ÀÄX Motoru
+   ÃÄMAIN  0/95  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@delay_ms1  0/21  Ram=1
+   ³  ÃÄset_pins  0/6  Ram=0
+   ³  ÃÄset_SPI  0/13  Ram=0
+   ³  ÃÄset_variables  0/19  Ram=0
+   ³  ÃÄset_driver  0/791  Ram=0
+   ³  ³  ÃÄset_ctrl_reg  (Inline)  Ram=7
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÃÄ@PRINTF_LU_38400_106_105  (Inline)  Ram=9
+   ³  ³  ³     ÃÄwrite_register_byte  0/11  Ram=1
+   ³  ³  ³     ÃÄwrite_register_byte  0/11  Ram=1
+   ³  ³  ³     ÀÄ@delay_ms1  0/21  Ram=1
+   ³  ³  ÃÄset_torque_reg  (Inline)  Ram=2
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄset_off_reg  (Inline)  Ram=2
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄset_blank_reg  (Inline)  Ram=2
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄset_decay_reg  (Inline)  Ram=2
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄset_stall_reg  (Inline)  Ram=3
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄset_drive_reg  (Inline)  Ram=6
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄclear_status_reg  (Inline)  Ram=0
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÀÄ@delay_ms1  0/21  Ram=1
+   ³  ÃÄrs232_message  0/422  Ram=5
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÃÄ@PSTRINGCN7_38400_106_105  (Inline)  Ram=5
+   ³  ³  ÃÄ@PRINTF_U_38400_106_105  (Inline)  Ram=2
+   ³  ³  ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ³  ³  ÀÄ@DIV88  0/21  Ram=3
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÃÄset_off_time  (Inline)  Ram=1
+   ³  ³  ³  ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÃÄset_register_bits  0/88  Ram=7
+   ³  ³  ³  ÀÄwrite_register  0/130  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ³  ÀÄset_blank_time  (Inline)  Ram=1
+   ³  ³     ÃÄ@PSTRINGC7_38400_106_105  0/75  Ram=4
+   ³  ³     ÃÄset_register_bits  0/88  Ram=7
+   ³  ³     ÃÄset_register_bits  0/88  Ram=7
+   ³  ³     ÃÄset_register_bits  0/88  Ram=7
+   ³  ³     ÀÄwrite_register  0/130  Ram=3
+   ³  ³        ÀÄ*
+   ³  ÀÄ@delay_us1  0/19  Ram=1
+   ÀÄisr_rs232_message  0/9  Ram=0

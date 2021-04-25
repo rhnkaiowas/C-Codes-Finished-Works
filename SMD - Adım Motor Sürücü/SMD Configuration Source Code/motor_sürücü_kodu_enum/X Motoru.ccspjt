@@ -1,0 +1,140 @@
+[PROJECT]
+Target=X Motoru.hex
+Processor_Text=PIC16F1826
+CCSVersion=5.008
+Compiler=PCM
+[Target Data]
+FileList=X Motoru.c
+[X Motoru.c]
+Type=4
+[mru-list]
+1=X Motoru.c
+
+[ProjectLog]
+Days=8
+D1=01-07-2014
+D1_L=17
+D1_L1=[55360]Started Editing.
+D1_L2=[55559]Stopped Editing.
+TotalEdit=96
+TotalDebug=0
+D1_E=16
+D1_D=0
+D1_L3=[55559]Project Closed.
+D1_L4=[57187]Project Opened.
+D1_L5=[57212]Started Editing.
+D1_L6=[57668]Stopped Editing.
+D1_L7=[58722]Started Editing.
+D1_L8=[58989]Stopped Editing.
+D1_L9=[58989]Project Closed.
+D1_L10=[59120]Project Opened.
+D1_L11=[59204]Started Editing.
+D1_L12=[59211]Stopped Editing.
+D1_L13=[59211]Project Closed.
+D1_L14=[59552]Project Opened.
+D1_L15=[60055]Started Editing.
+D1_L16=[60207]Stopped Editing.
+D1_L17=[60207]Project Closed.
+D2=02-07-2014
+D2_L=4
+D2_L1=[34134]Project Opened.
+D2_L2=[34152]Started Editing.
+D2_L3=[34452]Stopped Editing.
+D2_E=1
+D2_D=0
+D2_L4=[34457]Project Closed.
+D3=03-07-2014
+D3_L=8
+D3_L1=[32737]Project Opened.
+D3_L2=[32946]Started Editing.
+D3_L3=[33426]Stopped Editing.
+D3_L4=[33745]Started Editing.
+D3_L5=[34555]Stopped Editing.
+D3_L6=[34659]Started Editing.
+D3_L7=[34698]Stopped Editing.
+D3_E=13
+D3_D=0
+D3_L8=[34698]Project Closed.
+D4=04-07-2014
+D4_L=21
+D4_L1=[40946]Project Opened.
+D4_L2=[41044]Started Editing.
+D4_L3=[41816]Stopped Editing.
+D4_L4=[41888]Started Editing.
+D4_L5=[42188]Stopped Editing.
+D4_L6=[42265]Started Editing.
+D4_L7=[43257]Stopped Editing.
+D4_E=41
+D4_D=0
+D4_L8=[43503]Project Closed.
+D4_L9=[52082]Project Opened.
+D4_L10=[52104]Started Editing.
+D4_L11=[53094]Stopped Editing.
+D4_L12=[53184]Started Editing.
+D4_L13=[53913]Stopped Editing.
+D4_L14=[54040]Started Editing.
+D4_L15=[54362]Stopped Editing.
+D4_L16=[55436]Project Closed.
+D4_L17=[55448]Project Opened.
+D4_L18=[55476]Started Editing.
+D4_L19=[55509]Stopped Editing.
+D4_L20=[55509]Project Closed.
+D4_L21=[75163]Project Opened.
+D5=05-07-2014
+D5_L=1
+D5_L1=[43360]Project Closed.
+D6=07-07-2014
+D6_L=16
+D6_L1=[50608]Project Opened.
+D6_L2=[50628]Started Editing.
+D6_L3=[50684]Stopped Editing.
+D6_E=23
+D6_D=0
+D6_L4=[50684]Project Closed.
+D6_L5=[50945]Project Opened.
+D6_L6=[50984]Started Editing.
+D6_L7=[51837]Stopped Editing.
+D6_L8=[51837]Project Closed.
+D6_L9=[52270]Project Opened.
+D6_L10=[52284]Started Editing.
+D6_L11=[52619]Stopped Editing.
+D6_L12=[52619]Project Closed.
+D6_L13=[52697]Project Opened.
+D6_L14=[52734]Started Editing.
+D6_L15=[52770]Stopped Editing.
+D6_L16=[52770]Project Closed.
+D7=09-07-2014
+D7_L=2
+D7_L1=[51950]Project Opened.
+D7_L2=[51956]Project Closed.
+D8=16-07-2014
+D8_L=8
+D8_L1=[56016]Project Opened.
+D8_L2=[56057]Started Editing.
+D8_L3=[56076]Stopped Editing.
+D8_E=2
+D8_D=0
+D8_L4=[56076]Project Closed.
+D8_L5=[56133]Project Opened.
+D8_L6=[56140]Started Editing.
+D8_L7=[56149]Stopped Editing.
+D8_L8=[56149]Project Closed.
+
+[Opened Files]
+1=X Motoru.c
+t1=571
+Count=1
+2=
+t2=1
+3=
+4=
+5=
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Users\Onur Yarkýnoðlu\Desktop\DLM\motor_sürücü_kodu\
+[ExtraIncludes]
+Count=1
+1=drv8711=c:\users\onur yarkýnoðlu\desktop\dlm\motor_sürücü_kodu\drv8711.h
+2=x motoru=c:\users\onur yarkýnoðlu\desktop\dlm\motor_sürücü_kodu\drv8711.h
+[Units]
+Count=1
+1=X Motoru (main)

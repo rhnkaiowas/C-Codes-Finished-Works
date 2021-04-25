@@ -1,0 +1,15 @@
+CTRL 3096
+
+Torque 4279
+
+OFF 8313
+
+blank 12694
+
+decay 17692
+
+stall 22804
+
+drive 27296
+
+status 28672

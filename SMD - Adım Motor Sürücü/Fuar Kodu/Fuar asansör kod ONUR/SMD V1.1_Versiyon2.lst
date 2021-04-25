@@ -1,0 +1,1793 @@
+CCS PCM C Compiler, Version 5.008, 5967               10-Eki-14 16:05
+
+               Filename:   E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Fuar Kodu\Fuar asansör kod ONUR\SMD V1.1_Versiyon2.lst
+
+               ROM used:   1503 words (73%)
+                           Largest free fragment is 545
+               RAM used:   8 (2%) at main() level
+                           26 (8%) worst case
+               Stack used: 4 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   5A8
+0002:  NOP
+.................... #INCLUDE <16f1826.h>  
+.................... //////// Standard Header file for the PIC16F1826 device //////////////// 
+.................... #device PIC16F1826 
+0003:  MOVWF  7B
+0004:  MOVLW  00
+0005:  ADDWF  7A,W
+0006:  MOVWF  0A
+0007:  MOVF   7B,W
+0008:  ADDLW  0C
+0009:  BTFSC  03.0
+000A:  INCF   0A,F
+000B:  MOVWF  02
+000C:  RETLW  32
+000D:  RETLW  0A
+000E:  RETLW  50
+000F:  RETLW  0A
+0010:  RETLW  50
+0011:  RETLW  0A
+0012:  RETLW  50
+0013:  RETLW  0A
+0014:  RETLW  50
+0015:  RETLW  0A
+0016:  RETLW  50
+0017:  RETLW  0A
+0018:  RETLW  4F
+0019:  RETLW  0A
+001A:  RETLW  4F
+001B:  RETLW  0A
+001C:  RETLW  4E
+001D:  RETLW  0A
+001E:  RETLW  4E
+001F:  RETLW  0A
+0020:  RETLW  4D
+0021:  RETLW  0A
+0022:  RETLW  4D
+0023:  RETLW  0A
+0024:  RETLW  4C
+0025:  RETLW  0A
+0026:  RETLW  4C
+0027:  RETLW  0A
+0028:  RETLW  4B
+0029:  RETLW  0A
+002A:  RETLW  4A
+002B:  RETLW  0A
+002C:  RETLW  49
+002D:  RETLW  0A
+002E:  RETLW  48
+002F:  RETLW  0A
+0030:  RETLW  47
+0031:  RETLW  0A
+0032:  RETLW  46
+0033:  RETLW  0A
+0034:  RETLW  45
+0035:  RETLW  0A
+0036:  RETLW  44
+0037:  RETLW  0A
+0038:  RETLW  43
+0039:  RETLW  0A
+003A:  RETLW  42
+003B:  RETLW  0A
+003C:  RETLW  41
+003D:  RETLW  0A
+003E:  RETLW  40
+003F:  RETLW  0A
+0040:  RETLW  3E
+0041:  RETLW  0A
+0042:  RETLW  3D
+0043:  RETLW  0A
+0044:  RETLW  3C
+0045:  RETLW  0A
+0046:  RETLW  3A
+0047:  RETLW  0A
+0048:  RETLW  39
+0049:  RETLW  0A
+004A:  RETLW  37
+004B:  RETLW  0A
+004C:  RETLW  36
+004D:  RETLW  0A
+004E:  RETLW  34
+004F:  RETLW  0A
+0050:  RETLW  32
+0051:  RETLW  0A
+0052:  RETLW  31
+0053:  RETLW  0A
+0054:  RETLW  2F
+0055:  RETLW  0A
+0056:  RETLW  2D
+0057:  RETLW  0A
+0058:  RETLW  2B
+0059:  RETLW  0A
+005A:  RETLW  29
+005B:  RETLW  0A
+005C:  RETLW  27
+005D:  RETLW  0A
+005E:  RETLW  25
+005F:  RETLW  0A
+0060:  RETLW  23
+0061:  RETLW  0A
+0062:  RETLW  21
+0063:  RETLW  0A
+0064:  RETLW  1F
+0065:  RETLW  0A
+0066:  RETLW  1D
+0067:  RETLW  0A
+0068:  RETLW  1B
+0069:  RETLW  0A
+006A:  RETLW  19
+006B:  RETLW  0A
+006C:  RETLW  16
+006D:  RETLW  0A
+006E:  RETLW  14
+006F:  RETLW  0A
+0070:  RETLW  12
+0071:  RETLW  0A
+0072:  RETLW  0F
+0073:  RETLW  0A
+0074:  RETLW  0D
+0075:  RETLW  0A
+0076:  RETLW  0A
+0077:  RETLW  0A
+0078:  RETLW  08
+0079:  RETLW  0A
+007A:  RETLW  05
+007B:  RETLW  0A
+007C:  RETLW  03
+007D:  RETLW  0A
+007E:  RETLW  00
+007F:  RETLW  0A
+0080:  RETLW  FD
+0081:  RETLW  09
+0082:  RETLW  FA
+0083:  RETLW  09
+0084:  RETLW  F8
+0085:  RETLW  09
+0086:  RETLW  F5
+0087:  RETLW  09
+0088:  RETLW  F2
+0089:  RETLW  09
+008A:  RETLW  EF
+008B:  RETLW  09
+008C:  RETLW  EC
+008D:  RETLW  09
+008E:  RETLW  E9
+008F:  RETLW  09
+0090:  RETLW  E6
+0091:  RETLW  09
+0092:  RETLW  E3
+0093:  RETLW  09
+0094:  RETLW  E0
+0095:  RETLW  09
+0096:  RETLW  DD
+0097:  RETLW  09
+0098:  RETLW  DA
+0099:  RETLW  09
+009A:  RETLW  D6
+009B:  RETLW  09
+009C:  RETLW  D3
+009D:  RETLW  09
+009E:  RETLW  D0
+009F:  RETLW  09
+00A0:  RETLW  CD
+00A1:  RETLW  09
+00A2:  RETLW  C9
+00A3:  RETLW  09
+00A4:  RETLW  C6
+00A5:  RETLW  09
+00A6:  RETLW  C2
+00A7:  RETLW  09
+00A8:  RETLW  BF
+00A9:  RETLW  09
+00AA:  RETLW  BB
+00AB:  RETLW  09
+00AC:  RETLW  B8
+00AD:  RETLW  09
+00AE:  RETLW  B4
+00AF:  RETLW  09
+00B0:  RETLW  B1
+00B1:  RETLW  09
+00B2:  RETLW  AD
+00B3:  RETLW  09
+00B4:  RETLW  A9
+00B5:  RETLW  09
+00B6:  RETLW  A6
+00B7:  RETLW  09
+00B8:  RETLW  A2
+00B9:  RETLW  09
+00BA:  RETLW  9E
+00BB:  RETLW  09
+00BC:  RETLW  9A
+00BD:  RETLW  09
+00BE:  RETLW  96
+00BF:  RETLW  09
+00C0:  RETLW  93
+00C1:  RETLW  09
+00C2:  RETLW  8F
+00C3:  RETLW  09
+00C4:  RETLW  8B
+00C5:  RETLW  09
+00C6:  RETLW  87
+00C7:  RETLW  09
+00C8:  RETLW  83
+00C9:  RETLW  09
+00CA:  RETLW  7F
+00CB:  RETLW  09
+00CC:  RETLW  7A
+00CD:  RETLW  09
+00CE:  RETLW  76
+00CF:  RETLW  09
+00D0:  RETLW  72
+00D1:  RETLW  09
+00D2:  RETLW  6E
+00D3:  RETLW  09
+00D4:  RETLW  6A
+00D5:  RETLW  09
+00D6:  RETLW  65
+00D7:  RETLW  09
+00D8:  RETLW  61
+00D9:  RETLW  09
+00DA:  RETLW  5D
+00DB:  RETLW  09
+00DC:  RETLW  58
+00DD:  RETLW  09
+00DE:  RETLW  54
+00DF:  RETLW  09
+00E0:  RETLW  50
+00E1:  RETLW  09
+00E2:  RETLW  4B
+00E3:  RETLW  09
+00E4:  RETLW  47
+00E5:  RETLW  09
+00E6:  RETLW  42
+00E7:  RETLW  09
+00E8:  RETLW  3E
+00E9:  RETLW  09
+00EA:  RETLW  39
+00EB:  RETLW  09
+00EC:  RETLW  34
+00ED:  RETLW  09
+00EE:  RETLW  30
+00EF:  RETLW  09
+00F0:  RETLW  2B
+00F1:  RETLW  09
+00F2:  RETLW  26
+00F3:  RETLW  09
+00F4:  RETLW  22
+00F5:  RETLW  09
+00F6:  RETLW  1D
+00F7:  RETLW  09
+00F8:  RETLW  18
+00F9:  RETLW  09
+00FA:  RETLW  13
+00FB:  RETLW  09
+00FC:  RETLW  0E
+00FD:  RETLW  09
+00FE:  RETLW  09
+00FF:  RETLW  09
+0100:  RETLW  05
+0101:  RETLW  09
+0102:  RETLW  00
+0103:  RETLW  09
+0104:  RETLW  FB
+0105:  RETLW  08
+0106:  RETLW  F6
+0107:  RETLW  08
+0108:  RETLW  F1
+0109:  RETLW  08
+010A:  RETLW  EC
+010B:  RETLW  08
+010C:  RETLW  E7
+010D:  RETLW  08
+010E:  RETLW  E1
+010F:  RETLW  08
+0110:  RETLW  DC
+0111:  RETLW  08
+0112:  RETLW  D7
+0113:  RETLW  08
+0114:  RETLW  D2
+0115:  RETLW  08
+0116:  RETLW  CD
+0117:  RETLW  08
+0118:  RETLW  C7
+0119:  RETLW  08
+011A:  RETLW  C2
+011B:  RETLW  08
+011C:  RETLW  BD
+011D:  RETLW  08
+011E:  RETLW  B8
+011F:  RETLW  08
+0120:  RETLW  B2
+0121:  RETLW  08
+0122:  RETLW  AD
+0123:  RETLW  08
+0124:  RETLW  A7
+0125:  RETLW  08
+0126:  RETLW  A2
+0127:  RETLW  08
+0128:  RETLW  9D
+0129:  RETLW  08
+012A:  RETLW  97
+012B:  RETLW  08
+012C:  RETLW  92
+012D:  RETLW  08
+012E:  RETLW  8C
+012F:  RETLW  08
+0130:  RETLW  87
+0131:  RETLW  08
+0132:  RETLW  81
+0133:  RETLW  08
+0134:  RETLW  7B
+0135:  RETLW  08
+0136:  RETLW  76
+0137:  RETLW  08
+0138:  RETLW  70
+0139:  RETLW  08
+013A:  RETLW  6B
+013B:  RETLW  08
+013C:  RETLW  65
+013D:  RETLW  08
+013E:  RETLW  5F
+013F:  RETLW  08
+0140:  RETLW  59
+0141:  RETLW  08
+0142:  RETLW  54
+0143:  RETLW  08
+0144:  RETLW  4E
+0145:  RETLW  08
+0146:  RETLW  48
+0147:  RETLW  08
+0148:  RETLW  42
+0149:  RETLW  08
+014A:  RETLW  3C
+014B:  RETLW  08
+014C:  RETLW  37
+014D:  RETLW  08
+014E:  RETLW  31
+014F:  RETLW  08
+0150:  RETLW  2B
+0151:  RETLW  08
+0152:  RETLW  25
+0153:  RETLW  08
+0154:  RETLW  1F
+0155:  RETLW  08
+0156:  RETLW  19
+0157:  RETLW  08
+0158:  RETLW  13
+0159:  RETLW  08
+015A:  RETLW  0D
+015B:  RETLW  08
+015C:  RETLW  07
+015D:  RETLW  08
+015E:  RETLW  01
+015F:  RETLW  08
+0160:  RETLW  FB
+0161:  RETLW  07
+0162:  RETLW  F5
+0163:  RETLW  07
+0164:  RETLW  EF
+0165:  RETLW  07
+0166:  RETLW  E8
+0167:  RETLW  07
+0168:  RETLW  E2
+0169:  RETLW  07
+016A:  RETLW  DC
+016B:  RETLW  07
+016C:  RETLW  D6
+016D:  RETLW  07
+016E:  RETLW  D0
+016F:  RETLW  07
+0170:  RETLW  CA
+0171:  RETLW  07
+0172:  RETLW  C3
+0173:  RETLW  07
+0174:  RETLW  BD
+0175:  RETLW  07
+0176:  RETLW  B7
+0177:  RETLW  07
+0178:  RETLW  B1
+0179:  RETLW  07
+017A:  RETLW  AA
+017B:  RETLW  07
+017C:  RETLW  A4
+017D:  RETLW  07
+017E:  RETLW  9E
+017F:  RETLW  07
+0180:  RETLW  97
+0181:  RETLW  07
+0182:  RETLW  91
+0183:  RETLW  07
+0184:  RETLW  8A
+0185:  RETLW  07
+0186:  RETLW  84
+0187:  RETLW  07
+0188:  RETLW  7E
+0189:  RETLW  07
+018A:  RETLW  77
+018B:  RETLW  07
+018C:  RETLW  71
+018D:  RETLW  07
+018E:  RETLW  6A
+018F:  RETLW  07
+0190:  RETLW  64
+0191:  RETLW  07
+0192:  RETLW  5D
+0193:  RETLW  07
+0194:  RETLW  57
+0195:  RETLW  07
+0196:  RETLW  50
+0197:  RETLW  07
+0198:  RETLW  4A
+0199:  RETLW  07
+019A:  RETLW  43
+019B:  RETLW  07
+019C:  RETLW  3D
+019D:  RETLW  07
+019E:  RETLW  36
+019F:  RETLW  07
+01A0:  RETLW  2F
+01A1:  RETLW  07
+01A2:  RETLW  29
+01A3:  RETLW  07
+01A4:  RETLW  22
+01A5:  RETLW  07
+01A6:  RETLW  1C
+01A7:  RETLW  07
+01A8:  RETLW  15
+01A9:  RETLW  07
+01AA:  RETLW  0E
+01AB:  RETLW  07
+01AC:  RETLW  08
+01AD:  RETLW  07
+01AE:  RETLW  01
+01AF:  RETLW  07
+01B0:  RETLW  FA
+01B1:  RETLW  06
+01B2:  RETLW  F3
+01B3:  RETLW  06
+01B4:  RETLW  ED
+01B5:  RETLW  06
+01B6:  RETLW  E6
+01B7:  RETLW  06
+01B8:  RETLW  DF
+01B9:  RETLW  06
+01BA:  RETLW  D8
+01BB:  RETLW  06
+01BC:  RETLW  D2
+01BD:  RETLW  06
+01BE:  RETLW  CB
+01BF:  RETLW  06
+01C0:  RETLW  C4
+01C1:  RETLW  06
+01C2:  RETLW  BD
+01C3:  RETLW  06
+01C4:  RETLW  B6
+01C5:  RETLW  06
+01C6:  RETLW  B0
+01C7:  RETLW  06
+01C8:  RETLW  A9
+01C9:  RETLW  06
+01CA:  RETLW  A2
+01CB:  RETLW  06
+01CC:  RETLW  9B
+01CD:  RETLW  06
+01CE:  RETLW  94
+01CF:  RETLW  06
+01D0:  RETLW  8D
+01D1:  RETLW  06
+01D2:  RETLW  87
+01D3:  RETLW  06
+01D4:  RETLW  80
+01D5:  RETLW  06
+01D6:  RETLW  79
+01D7:  RETLW  06
+01D8:  RETLW  72
+01D9:  RETLW  06
+01DA:  RETLW  6B
+01DB:  RETLW  06
+01DC:  RETLW  64
+01DD:  RETLW  06
+01DE:  RETLW  5D
+01DF:  RETLW  06
+01E0:  RETLW  56
+01E1:  RETLW  06
+01E2:  RETLW  4F
+01E3:  RETLW  06
+01E4:  RETLW  48
+01E5:  RETLW  06
+01E6:  RETLW  41
+01E7:  RETLW  06
+01E8:  RETLW  3A
+01E9:  RETLW  06
+01EA:  RETLW  33
+01EB:  RETLW  06
+01EC:  RETLW  2C
+01ED:  RETLW  06
+01EE:  RETLW  25
+01EF:  RETLW  06
+01F0:  RETLW  1E
+01F1:  RETLW  06
+01F2:  RETLW  17
+01F3:  RETLW  06
+01F4:  RETLW  10
+01F5:  RETLW  06
+01F6:  RETLW  09
+01F7:  RETLW  06
+01F8:  RETLW  02
+01F9:  RETLW  06
+01FA:  RETLW  FB
+01FB:  RETLW  05
+01FC:  RETLW  F4
+01FD:  RETLW  05
+01FE:  RETLW  ED
+01FF:  RETLW  05
+0200:  RETLW  E6
+0201:  RETLW  05
+0202:  RETLW  DF
+0203:  RETLW  05
+0204:  RETLW  D8
+0205:  RETLW  05
+0206:  RETLW  D1
+0207:  RETLW  05
+0208:  RETLW  CA
+0209:  RETLW  05
+020A:  RETLW  C3
+020B:  RETLW  05
+020C:  RETLW  BC
+020D:  RETLW  05
+020E:  RETLW  B5
+020F:  RETLW  05
+0210:  RETLW  AE
+0211:  RETLW  05
+0212:  RETLW  A7
+0213:  RETLW  05
+0214:  RETLW  A0
+0215:  RETLW  05
+0216:  RETLW  99
+0217:  RETLW  05
+0218:  RETLW  92
+0219:  RETLW  05
+021A:  RETLW  8A
+021B:  RETLW  05
+021C:  RETLW  83
+021D:  RETLW  05
+021E:  RETLW  7C
+021F:  RETLW  05
+0220:  RETLW  75
+0221:  RETLW  05
+0222:  RETLW  6E
+0223:  RETLW  05
+0224:  RETLW  67
+0225:  RETLW  05
+0226:  RETLW  60
+0227:  RETLW  05
+0228:  RETLW  59
+0229:  RETLW  05
+022A:  RETLW  52
+022B:  RETLW  05
+022C:  RETLW  4B
+022D:  RETLW  05
+022E:  RETLW  44
+022F:  RETLW  05
+0230:  RETLW  3C
+0231:  RETLW  05
+0232:  RETLW  35
+0233:  RETLW  05
+0234:  RETLW  2E
+0235:  RETLW  05
+0236:  RETLW  27
+0237:  RETLW  05
+0238:  RETLW  20
+0239:  RETLW  05
+023A:  RETLW  19
+023B:  RETLW  05
+023C:  RETLW  12
+023D:  RETLW  05
+023E:  RETLW  0B
+023F:  RETLW  05
+0240:  RETLW  04
+0241:  RETLW  05
+0242:  RETLW  FD
+0243:  RETLW  04
+0244:  RETLW  F6
+0245:  RETLW  04
+0246:  RETLW  EF
+0247:  RETLW  04
+0248:  RETLW  E7
+0249:  RETLW  04
+024A:  RETLW  E0
+024B:  RETLW  04
+024C:  RETLW  D9
+024D:  RETLW  04
+024E:  RETLW  D2
+024F:  RETLW  04
+0250:  RETLW  CB
+0251:  RETLW  04
+0252:  RETLW  C4
+0253:  RETLW  04
+0254:  RETLW  BD
+0255:  RETLW  04
+0256:  RETLW  B6
+0257:  RETLW  04
+0258:  RETLW  AF
+0259:  RETLW  04
+025A:  RETLW  A8
+025B:  RETLW  04
+025C:  RETLW  A1
+025D:  RETLW  04
+025E:  RETLW  9A
+025F:  RETLW  04
+0260:  RETLW  93
+0261:  RETLW  04
+0262:  RETLW  8C
+0263:  RETLW  04
+0264:  RETLW  85
+0265:  RETLW  04
+0266:  RETLW  7E
+0267:  RETLW  04
+0268:  RETLW  77
+0269:  RETLW  04
+026A:  RETLW  70
+026B:  RETLW  04
+026C:  RETLW  69
+026D:  RETLW  04
+026E:  RETLW  62
+026F:  RETLW  04
+0270:  RETLW  5B
+0271:  RETLW  04
+0272:  RETLW  54
+0273:  RETLW  04
+0274:  RETLW  4D
+0275:  RETLW  04
+0276:  RETLW  46
+0277:  RETLW  04
+0278:  RETLW  3F
+0279:  RETLW  04
+027A:  RETLW  38
+027B:  RETLW  04
+027C:  RETLW  31
+027D:  RETLW  04
+027E:  RETLW  2A
+027F:  RETLW  04
+0280:  RETLW  23
+0281:  RETLW  04
+0282:  RETLW  1C
+0283:  RETLW  04
+0284:  RETLW  15
+0285:  RETLW  04
+0286:  RETLW  0E
+0287:  RETLW  04
+0288:  RETLW  07
+0289:  RETLW  04
+028A:  RETLW  00
+028B:  RETLW  04
+028C:  RETLW  F9
+028D:  RETLW  03
+028E:  RETLW  F2
+028F:  RETLW  03
+0290:  RETLW  EC
+0291:  RETLW  03
+0292:  RETLW  E5
+0293:  RETLW  03
+0294:  RETLW  DE
+0295:  RETLW  03
+0296:  RETLW  D7
+0297:  RETLW  03
+0298:  RETLW  D0
+0299:  RETLW  03
+029A:  RETLW  C9
+029B:  RETLW  03
+029C:  RETLW  C3
+029D:  RETLW  03
+029E:  RETLW  BC
+029F:  RETLW  03
+02A0:  RETLW  B5
+02A1:  RETLW  03
+02A2:  RETLW  AE
+02A3:  RETLW  03
+02A4:  RETLW  A7
+02A5:  RETLW  03
+02A6:  RETLW  A1
+02A7:  RETLW  03
+02A8:  RETLW  9A
+02A9:  RETLW  03
+02AA:  RETLW  93
+02AB:  RETLW  03
+02AC:  RETLW  8C
+02AD:  RETLW  03
+02AE:  RETLW  86
+02AF:  RETLW  03
+02B0:  RETLW  7F
+02B1:  RETLW  03
+02B2:  RETLW  78
+02B3:  RETLW  03
+02B4:  RETLW  71
+02B5:  RETLW  03
+02B6:  RETLW  6B
+02B7:  RETLW  03
+02B8:  RETLW  64
+02B9:  RETLW  03
+02BA:  RETLW  5D
+02BB:  RETLW  03
+02BC:  RETLW  57
+02BD:  RETLW  03
+02BE:  RETLW  50
+02BF:  RETLW  03
+02C0:  RETLW  4A
+02C1:  RETLW  03
+02C2:  RETLW  43
+02C3:  RETLW  03
+02C4:  RETLW  3C
+02C5:  RETLW  03
+02C6:  RETLW  36
+02C7:  RETLW  03
+02C8:  RETLW  2F
+02C9:  RETLW  03
+02CA:  RETLW  29
+02CB:  RETLW  03
+02CC:  RETLW  22
+02CD:  RETLW  03
+02CE:  RETLW  1C
+02CF:  RETLW  03
+02D0:  RETLW  15
+02D1:  RETLW  03
+02D2:  RETLW  0F
+02D3:  RETLW  03
+02D4:  RETLW  08
+02D5:  RETLW  03
+02D6:  RETLW  02
+02D7:  RETLW  03
+02D8:  RETLW  FB
+02D9:  RETLW  02
+02DA:  RETLW  F5
+02DB:  RETLW  02
+02DC:  RETLW  EF
+02DD:  RETLW  02
+02DE:  RETLW  E8
+02DF:  RETLW  02
+02E0:  RETLW  E2
+02E1:  RETLW  02
+02E2:  RETLW  DB
+02E3:  RETLW  02
+02E4:  RETLW  D5
+02E5:  RETLW  02
+02E6:  RETLW  CF
+02E7:  RETLW  02
+02E8:  RETLW  C8
+02E9:  RETLW  02
+02EA:  RETLW  C2
+02EB:  RETLW  02
+02EC:  RETLW  BC
+02ED:  RETLW  02
+02EE:  RETLW  B6
+02EF:  RETLW  02
+02F0:  RETLW  AF
+02F1:  RETLW  02
+02F2:  RETLW  A9
+02F3:  RETLW  02
+02F4:  RETLW  A3
+02F5:  RETLW  02
+02F6:  RETLW  9D
+02F7:  RETLW  02
+02F8:  RETLW  97
+02F9:  RETLW  02
+02FA:  RETLW  91
+02FB:  RETLW  02
+02FC:  RETLW  8A
+02FD:  RETLW  02
+02FE:  RETLW  84
+02FF:  RETLW  02
+0300:  RETLW  7E
+0301:  RETLW  02
+0302:  RETLW  78
+0303:  RETLW  02
+0304:  RETLW  72
+0305:  RETLW  02
+0306:  RETLW  6C
+0307:  RETLW  02
+0308:  RETLW  66
+0309:  RETLW  02
+030A:  RETLW  60
+030B:  RETLW  02
+030C:  RETLW  5A
+030D:  RETLW  02
+030E:  RETLW  54
+030F:  RETLW  02
+0310:  RETLW  4E
+0311:  RETLW  02
+0312:  RETLW  48
+0313:  RETLW  02
+0314:  RETLW  42
+0315:  RETLW  02
+0316:  RETLW  3D
+0317:  RETLW  02
+0318:  RETLW  37
+0319:  RETLW  02
+031A:  RETLW  31
+031B:  RETLW  02
+031C:  RETLW  2B
+031D:  RETLW  02
+031E:  RETLW  25
+031F:  RETLW  02
+0320:  RETLW  20
+0321:  RETLW  02
+0322:  RETLW  1A
+0323:  RETLW  02
+0324:  RETLW  14
+0325:  RETLW  02
+0326:  RETLW  0E
+0327:  RETLW  02
+0328:  RETLW  09
+0329:  RETLW  02
+032A:  RETLW  03
+032B:  RETLW  02
+032C:  RETLW  FE
+032D:  RETLW  01
+032E:  RETLW  F8
+032F:  RETLW  01
+0330:  RETLW  F2
+0331:  RETLW  01
+0332:  RETLW  ED
+0333:  RETLW  01
+0334:  RETLW  E7
+0335:  RETLW  01
+0336:  RETLW  E2
+0337:  RETLW  01
+0338:  RETLW  DC
+0339:  RETLW  01
+033A:  RETLW  D7
+033B:  RETLW  01
+033C:  RETLW  D2
+033D:  RETLW  01
+033E:  RETLW  CC
+033F:  RETLW  01
+0340:  RETLW  C7
+0341:  RETLW  01
+0342:  RETLW  C1
+0343:  RETLW  01
+0344:  RETLW  BC
+0345:  RETLW  01
+0346:  RETLW  B7
+0347:  RETLW  01
+0348:  RETLW  B2
+0349:  RETLW  01
+034A:  RETLW  AC
+034B:  RETLW  01
+034C:  RETLW  A7
+034D:  RETLW  01
+034E:  RETLW  A2
+034F:  RETLW  01
+0350:  RETLW  9D
+0351:  RETLW  01
+0352:  RETLW  98
+0353:  RETLW  01
+0354:  RETLW  92
+0355:  RETLW  01
+0356:  RETLW  8D
+0357:  RETLW  01
+0358:  RETLW  88
+0359:  RETLW  01
+035A:  RETLW  83
+035B:  RETLW  01
+035C:  RETLW  7E
+035D:  RETLW  01
+035E:  RETLW  79
+035F:  RETLW  01
+0360:  RETLW  74
+0361:  RETLW  01
+0362:  RETLW  70
+0363:  RETLW  01
+0364:  RETLW  6B
+0365:  RETLW  01
+0366:  RETLW  66
+0367:  RETLW  01
+0368:  RETLW  61
+0369:  RETLW  01
+036A:  RETLW  5C
+036B:  RETLW  01
+036C:  RETLW  57
+036D:  RETLW  01
+036E:  RETLW  53
+036F:  RETLW  01
+0370:  RETLW  4E
+0371:  RETLW  01
+0372:  RETLW  49
+0373:  RETLW  01
+0374:  RETLW  45
+0375:  RETLW  01
+0376:  RETLW  40
+0377:  RETLW  01
+0378:  RETLW  3B
+0379:  RETLW  01
+037A:  RETLW  37
+037B:  RETLW  01
+037C:  RETLW  32
+037D:  RETLW  01
+037E:  RETLW  2E
+037F:  RETLW  01
+0380:  RETLW  29
+0381:  RETLW  01
+0382:  RETLW  25
+0383:  RETLW  01
+0384:  RETLW  21
+0385:  RETLW  01
+0386:  RETLW  1C
+0387:  RETLW  01
+0388:  RETLW  18
+0389:  RETLW  01
+038A:  RETLW  14
+038B:  RETLW  01
+038C:  RETLW  0F
+038D:  RETLW  01
+038E:  RETLW  0B
+038F:  RETLW  01
+0390:  RETLW  07
+0391:  RETLW  01
+0392:  RETLW  03
+0393:  RETLW  01
+0394:  RETLW  FF
+0395:  RETLW  00
+0396:  RETLW  FA
+0397:  RETLW  00
+0398:  RETLW  F6
+0399:  RETLW  00
+039A:  RETLW  F2
+039B:  RETLW  00
+039C:  RETLW  EE
+039D:  RETLW  00
+039E:  RETLW  EA
+039F:  RETLW  00
+03A0:  RETLW  E6
+03A1:  RETLW  00
+03A2:  RETLW  E3
+03A3:  RETLW  00
+03A4:  RETLW  DF
+03A5:  RETLW  00
+03A6:  RETLW  DB
+03A7:  RETLW  00
+03A8:  RETLW  D7
+03A9:  RETLW  00
+03AA:  RETLW  D3
+03AB:  RETLW  00
+03AC:  RETLW  D0
+03AD:  RETLW  00
+03AE:  RETLW  CC
+03AF:  RETLW  00
+03B0:  RETLW  C8
+03B1:  RETLW  00
+03B2:  RETLW  C5
+03B3:  RETLW  00
+03B4:  RETLW  C1
+03B5:  RETLW  00
+03B6:  RETLW  BE
+03B7:  RETLW  00
+03B8:  RETLW  BA
+03B9:  RETLW  00
+03BA:  RETLW  B7
+03BB:  RETLW  00
+03BC:  RETLW  B3
+03BD:  RETLW  00
+03BE:  RETLW  B0
+03BF:  RETLW  00
+03C0:  RETLW  AC
+03C1:  RETLW  00
+03C2:  RETLW  A9
+03C3:  RETLW  00
+03C4:  RETLW  A6
+03C5:  RETLW  00
+03C6:  RETLW  A3
+03C7:  RETLW  00
+03C8:  RETLW  9F
+03C9:  RETLW  00
+03CA:  RETLW  9C
+03CB:  RETLW  00
+03CC:  RETLW  99
+03CD:  RETLW  00
+03CE:  RETLW  96
+03CF:  RETLW  00
+03D0:  RETLW  93
+03D1:  RETLW  00
+03D2:  RETLW  90
+03D3:  RETLW  00
+03D4:  RETLW  8D
+03D5:  RETLW  00
+03D6:  RETLW  8A
+03D7:  RETLW  00
+03D8:  RETLW  87
+03D9:  RETLW  00
+03DA:  RETLW  84
+03DB:  RETLW  00
+03DC:  RETLW  81
+03DD:  RETLW  00
+03DE:  RETLW  7F
+03DF:  RETLW  00
+03E0:  RETLW  7C
+03E1:  RETLW  00
+03E2:  RETLW  79
+03E3:  RETLW  00
+03E4:  RETLW  76
+03E5:  RETLW  00
+03E6:  RETLW  74
+03E7:  RETLW  00
+03E8:  RETLW  71
+03E9:  RETLW  00
+03EA:  RETLW  6F
+03EB:  RETLW  00
+03EC:  RETLW  6C
+03ED:  RETLW  00
+03EE:  RETLW  6A
+03EF:  RETLW  00
+03F0:  RETLW  67
+03F1:  RETLW  00
+03F2:  RETLW  65
+03F3:  RETLW  00
+03F4:  RETLW  63
+03F5:  RETLW  00
+03F6:  RETLW  60
+03F7:  RETLW  00
+03F8:  RETLW  5E
+03F9:  RETLW  00
+03FA:  RETLW  5C
+03FB:  RETLW  00
+03FC:  RETLW  5A
+03FD:  RETLW  00
+03FE:  RETLW  58
+03FF:  RETLW  00
+0400:  RETLW  56
+0401:  RETLW  00
+0402:  RETLW  54
+0403:  RETLW  00
+0404:  RETLW  52
+0405:  RETLW  00
+0406:  RETLW  50
+0407:  RETLW  00
+0408:  RETLW  4E
+0409:  RETLW  00
+040A:  RETLW  4C
+040B:  RETLW  00
+040C:  RETLW  4A
+040D:  RETLW  00
+040E:  RETLW  48
+040F:  RETLW  00
+0410:  RETLW  47
+0411:  RETLW  00
+0412:  RETLW  45
+0413:  RETLW  00
+0414:  RETLW  43
+0415:  RETLW  00
+0416:  RETLW  42
+0417:  RETLW  00
+0418:  RETLW  40
+0419:  RETLW  00
+041A:  RETLW  3F
+041B:  RETLW  00
+041C:  RETLW  3D
+041D:  RETLW  00
+041E:  RETLW  3C
+041F:  RETLW  00
+0420:  RETLW  3B
+0421:  RETLW  00
+0422:  RETLW  39
+0423:  RETLW  00
+0424:  RETLW  38
+0425:  RETLW  00
+0426:  RETLW  37
+0427:  RETLW  00
+0428:  RETLW  36
+0429:  RETLW  00
+042A:  RETLW  35
+042B:  RETLW  00
+042C:  RETLW  34
+042D:  RETLW  00
+042E:  RETLW  33
+042F:  RETLW  00
+0430:  RETLW  32
+0431:  RETLW  00
+0432:  RETLW  31
+0433:  RETLW  00
+0434:  RETLW  30
+0435:  RETLW  00
+0436:  RETLW  2F
+0437:  RETLW  00
+0438:  RETLW  2E
+0439:  RETLW  00
+043A:  RETLW  2D
+043B:  RETLW  00
+043C:  RETLW  2D
+043D:  RETLW  00
+043E:  RETLW  2C
+043F:  RETLW  00
+0440:  RETLW  2C
+0441:  RETLW  00
+0442:  RETLW  2B
+0443:  RETLW  00
+0444:  RETLW  2B
+0445:  RETLW  00
+0446:  RETLW  2A
+0447:  RETLW  00
+0448:  RETLW  2A
+0449:  RETLW  00
+044A:  RETLW  29
+044B:  RETLW  00
+044C:  RETLW  29
+044D:  RETLW  00
+044E:  RETLW  29
+044F:  RETLW  00
+0450:  RETLW  29
+0451:  RETLW  00
+0452:  RETLW  29
+0453:  RETLW  00
+0454:  RETLW  29
+0455:  RETLW  00
+0456:  RETLW  28
+0457:  RETLW  00
+....................  
+.................... #list 
+....................  
+.................... #FUSES INTRC_IO      // Internal RC clock (OSC1 and OSC2 pins are normal I/O) 
+.................... #FUSES NOWDT         // Watch Dog Timer disabled 
+.................... #FUSES PUT           // Power Up Timer enabled 
+.................... #FUSES NOMCLR        // Master Clear pin is used for I/O 
+.................... #FUSES PROTECT       // Code protected from reads 
+.................... #FUSES CPD           // Data EEPROM code protected 
+.................... #FUSES BROWNOUT      // Brownout Reset enabled 
+.................... #FUSES BORV25        // Brownout Reset at 2.5V 
+.................... #FUSES NOCLKOUT      // Disable clock output on OSC2 
+.................... #FUSES NOIESO        // Internal External Switch Over Mode disabled 
+.................... #FUSES NOFCMEN       // Fail-safe clock monitor disabled 
+.................... #FUSES WRT           // Program memory write protected                                               
+.................... #FUSES NOLVP         // Low Voltage Programming disabled 
+....................  
+.................... #USE   DELAY(internal = 32MHz)                                         // delay() func. adjusted for 20Mhz Primary Osc. 
+0458:  MOVLW  20
+0459:  MOVWF  05
+045A:  MOVLW  09
+045B:  MOVWF  04
+045C:  MOVF   00,W
+045D:  BTFSC  03.2
+045E:  GOTO   46C
+045F:  MOVLW  0A
+0460:  MOVWF  78
+0461:  CLRF   77
+0462:  DECFSZ 77,F
+0463:  GOTO   462
+0464:  DECFSZ 78,F
+0465:  GOTO   461
+0466:  MOVLW  5F
+0467:  MOVWF  77
+0468:  DECFSZ 77,F
+0469:  GOTO   468
+046A:  DECFSZ 00,F
+046B:  GOTO   45F
+046C:  RETURN
+*
+04FE:  MOVLW  02
+04FF:  SUBWF  29,F
+0500:  BTFSS  03.0
+0501:  GOTO   50F
+0502:  MOVLW  20
+0503:  MOVWF  05
+0504:  MOVLW  09
+0505:  MOVWF  04
+0506:  MOVF   00,W
+0507:  BTFSC  03.2
+0508:  GOTO   50F
+0509:  GOTO   50D
+050A:  GOTO   50B
+050B:  GOTO   50C
+050C:  NOP
+050D:  DECFSZ 00,F
+050E:  GOTO   50A
+050F:  RETURN
+....................  
+.................... // Pin assignments 
+.................... #DEFINE DRV_STEP     PIN_A0                  // Step output pin to driver (Rising edge causes the indexer to move one step) 
+.................... #DEFINE DRV_RESET    PIN_A1                  // Reset output pin to driver (Active-high reset input initializes all internal logic and disables the Hbridge outputs. Internal pulldown.) 
+.................... #DEFINE DRV_DIR      PIN_A4                  // Direction output pin to driver (Logic level, sets the direction of stepping) 
+.................... #DEFINE SPI_SDO      PIN_A6                  // SPI data output pin 
+.................... #DEFINE SPI_CS       PIN_A7                  // SPI chip select pin 
+.................... #DEFINE SPI_SDI      PIN_B1                  // SPI data input pin 
+.................... #DEFINE SPI_SCK      PIN_B4                  // SPI clock output pin 
+.................... #DEFINE DRV_STALL    PIN_B6                  // Stall input pin from driver (Internal stall detect mode: logic low when motor stall detected. Pull up mevcut) 
+.................... #DEFINE DRV_FAULT    PIN_B7                  // Fault input pin from driver (Logic low when in fault condition. Pull up mevcut) 
+.................... #DEFINE LM_UP        PIN_A2                  // Up limit switch input pin 
+.................... #DEFINE LM_DOWN      PIN_A3                  // Down limit switch input pin 
+....................  
+.................... // SPI Registers 
+.................... #WORD SPI_SSP1CON1   = 0x215                 // Synchronous serial port control register 
+.................... #WORD SPI_SSP1STAT   = 0x214                 // Synchronous serial port status register 
+.................... #WORD SPI_SSP1BUF    = 0x211                 // Synchronous serial port buffer register 
+.................... #WORD SPI_PIR1       = 0x011                 // Peripheral interrupt request register 
+.................... // Pin function control registers 
+.................... #WORD PIN_APFCON0    = 0x11D                 // Alternate pin function control register 0 
+.................... #WORD PIN_APFCON1    = 0x11E                 // Alternate pin function control register 1 
+....................  
+.................... // Bits of SSP1CON1 register 
+.................... #BIT SPI_WRITE_FLAG     = SPI_SSP1CON1.7     // Synchronous serial port write collision detect bit 
+.................... #BIT SPI_ENABLE         = SPI_SSP1CON1.5     // Synchronous serial port enable bit 
+.................... #BIT SPI_CLOCK_POLARITY = SPI_SSP1CON1.4     // Synchronous serial port clock polarity select bit 
+.................... #BIT SPI_MODE_3         = SPI_SSP1CON1.3     // Synchronous serial port mode select bits 
+.................... #BIT SPI_MODE_2         = SPI_SSP1CON1.2    
+.................... #BIT SPI_MODE_1         = SPI_SSP1CON1.1    
+.................... #BIT SPI_MODE_0         = SPI_SSP1CON1.0   
+....................  
+.................... // Bits of SPI_SSP1STAT register 
+.................... #BIT SPI_INPUT_SAMPLE   = SPI_SSP1STAT.7     // Synchronous serial port data input sample bit 
+.................... #BIT SPI_CLOCK_EDGE     = SPI_SSP1STAT.6     // Synchronous serial port clock edge select bit 
+.................... #BIT SPI_BUFFER_STATUS  = SPI_SSP1STAT.0     // Synchronous serial port buffer full status bit 
+....................  
+.................... // Bits of SPI_PIR1 register 
+.................... #BIT SPI_FLAG           = SPI_PIR1.3         // Synchronous serial port interrupt flag bit 
+....................  
+.................... // Bits of PIN_APFCON0 register 
+.................... #BIT PIN_SDO_SELECT     = PIN_APFCON0.6      // SDO pin selection bit  
+.................... #BIT PIN_SS_SELECT      = PIN_APFCON0.5      // SS pin selection bit  
+....................  
+.................... enum  State     {OFF = 0, ON   = 1};                                 // Motor states 
+.................... enum  Direction {UP  = 0, DOWN = 1};                                 // Direction of motion 
+.................... enum  Motion    {ACC = 0, WALK = 1, RUN  = 2, DEC = 3, STEADY = 4};  // State of the motion 
+....................  
+.................... int const off_time      = 10;                                        // Off time of the pwm signal (should be smaller than period) 
+.................... int8      motion_state  = STEADY;                                    // Current state of the motion 
+.................... int       upwards       = 0; 
+....................  
+.................... unsigned int16   const acc_lim         = 550;                        // Number of steps before we hit max speed. acc=10000 dec=10000  
+.................... unsigned int16 const periods[acc_lim]  = {2610,2640,2640,2640,2640,2640,2639,2639,2638,2638,2637,2637,2636,2636,2635,2634,2633,2632,2631,2630,2629, 
+.................... 2628,2627,2626,2625,2624,2622,2621,2620,2618,2617,2615,2614,2612,2610,2609,2607,2605,2603,2601,2599,2597,2595,2593,2591,2589,2587,2585,2582,2580,2578, 
+.................... 2575,2573,2570,2568,2565,2563,2560,2557,2554,2552,2549,2546,2543,2540,2537,2534,2531,2528,2525,2522,2518,2515,2512,2509,2505,2502,2498,2495,2491,2488, 
+.................... 2484,2481,2477,2473,2470,2466,2462,2458,2454,2451,2447,2443,2439,2435,2431,2426,2422,2418,2414,2410,2405,2401,2397,2392,2388,2384,2379,2375,2370,2366, 
+.................... 2361,2356,2352,2347,2342,2338,2333,2328,2323,2318,2313,2309,2304,2299,2294,2289,2284,2279,2273,2268,2263,2258,2253,2247,2242,2237,2232,2226,2221,2215, 
+.................... 2210,2205,2199,2194,2188,2183,2177,2171,2166,2160,2155,2149,2143,2137,2132,2126,2120,2114,2108,2103,2097,2091,2085,2079,2073,2067,2061,2055,2049,2043, 
+.................... 2037,2031,2024,2018,2012,2006,2000,1994,1987,1981,1975,1969,1962,1956,1950,1943,1937,1930,1924,1918,1911,1905,1898,1892,1885,1879,1872,1866,1859,1853, 
+.................... 1846,1839,1833,1826,1820,1813,1806,1800,1793,1786,1779,1773,1766,1759,1752,1746,1739,1732,1725,1718,1712,1705,1698,1691,1684,1677,1671,1664,1657,1650, 
+.................... 1643,1636,1629,1622,1615,1608,1601,1594,1587,1580,1573,1566,1559,1552,1545,1538,1531,1524,1517,1510,1503,1496,1489,1482,1475,1468,1461,1454,1447,1440, 
+.................... 1433,1426,1418,1411,1404,1397,1390,1383,1376,1369,1362,1355,1348,1340,1333,1326,1319,1312,1305,1298,1291,1284,1277,1270,1263,1255,1248,1241,1234,1227, 
+.................... 1220,1213,1206,1199,1192,1185,1178,1171,1164,1157,1150,1143,1136,1129,1122,1115,1108,1101,1094,1087,1080,1073,1066,1059,1052,1045,1038,1031,1024,1017, 
+.................... 1010,1004,997,990,983,976,969,963,956,949,942,935,929,922,915,908,902,895,888,881,875,868,861,855,848,842,835,828,822,815,809,802,796,789,783,776,770, 
+.................... 763,757,751,744,738,731,725,719,712,706,700,694,687,681,675,669,663,657,650,644,638,632,626,620,614,608,602,596,590,584,578,573,567,561,555,549,544,538, 
+.................... 532,526,521,515,510,504,498,493,487,482,476,471,466,460,455,449,444,439,434,428,423,418,413,408,402,397,392,387,382,377,372,368,363,358,353,348,343,339, 
+.................... 334,329,325,320,315,311,306,302,297,293,289,284,280,276,271,267,263,259,255,250,246,242,238,234,230,227,223,219,215,211,208,204,200,197,193,190,186,183, 
+.................... 179,176,172,169,166,163,159,156,153,150,147,144,141,138,135,132,129,127,124,121,118,116,113,111,108,106,103,101,99,96,94,92,90,88,86,84,82,80,78,76,74,72, 
+.................... 71,69,67,66,64,63,61,60,59,57,56,55,54,53,52,51,50,49,48,47,46,45,45,44,44,43,43,42,42,41,41,41,41,41,41,40 
+.................... }; 
+....................  
+.................... // Sets alternative pin functions 
+.................... void set_pins() 
+.................... { 
+....................    // Set RA6 as SDO pin 
+....................    PIN_SDO_SELECT = 1; 
+*
+046D:  MOVLB  02
+046E:  BSF    1D.6
+....................    // Set RA5 as SS pin 
+....................    PIN_SS_SELECT = 1; 
+046F:  BSF    1D.5
+0470:  MOVLP  00
+0471:  MOVLB  00
+0472:  GOTO   5C4 (RETURN)
+....................    // Set RB5 as TX pin 
+.................... } 
+.................... // Sets SPI parameters 
+.................... void set_SPI() 
+.................... { 
+....................    // Disable SPI to set registers 
+....................    SPI_ENABLE = 0; 
+0473:  MOVLB  04
+0474:  BCF    15.5
+....................     
+....................    // Set idle state of the clock to low  
+....................    SPI_CLOCK_POLARITY = 0; 
+0475:  BCF    15.4
+....................    // Set SPI mode to SPI  
+....................    SPI_MODE_3 = 0;  
+0476:  BCF    15.3
+....................    SPI_MODE_2 = 0; 
+0477:  BCF    15.2
+....................    SPI_MODE_1 = 1; 
+0478:  BSF    15.1
+....................    SPI_MODE_0 = 0; 
+0479:  BCF    15.0
+....................    // Input data sampled at the middle of data output time 
+....................    SPI_INPUT_SAMPLE = 0; 
+047A:  BCF    14.7
+....................    // Transmit occurs on transition from active to idle clock state 
+....................    SPI_CLOCK_EDGE = 1; 
+047B:  BSF    14.6
+....................  
+....................    // Enable SPI 
+....................    SPI_ENABLE = 1; 
+047C:  BSF    15.5
+047D:  MOVLP  00
+047E:  MOVLB  00
+047F:  GOTO   5C5 (RETURN)
+.................... } 
+.................... // Sets variables to default values  
+.................... void set_variables() 
+.................... { 
+....................    output_low(SPI_CS);     // Chip select is active high so keep it low to prevent out-of-sync transaction  
+0480:  MOVLB  01
+0481:  BCF    0C.7
+0482:  MOVLB  02
+0483:  BCF    0C.7
+....................    output_low(DRV_RESET);  // Reset is active high so keep reset pin low to activate driver  
+0484:  MOVLB  01
+0485:  BCF    0C.1
+0486:  MOVLB  02
+0487:  BCF    0C.1
+....................    output_low(DRV_DIR);    // Set default direction 
+0488:  MOVLB  01
+0489:  BCF    0C.4
+048A:  MOVLB  02
+048B:  BCF    0C.4
+....................    output_low(DRV_STEP);   // Keep step output low until a step command is received from the user 
+048C:  MOVLB  01
+048D:  BCF    0C.0
+048E:  MOVLB  02
+048F:  BCF    0C.0
+0490:  MOVLP  00
+0491:  MOVLB  00
+0492:  GOTO   5C6 (RETURN)
+.................... } 
+....................  
+.................... // Writes the given register byte to the driver 
+.................... void write_register_byte(unsigned int8 reg_byte) 
+.................... { 
+....................    // write the byte to spi buffer 
+....................    SPI_SSP1BUF = reg_byte; 
+0493:  MOVLB  04
+0494:  CLRF   12
+0495:  MOVLB  00
+0496:  MOVF   2A,W
+0497:  MOVLB  04
+0498:  MOVWF  11
+....................    // Wait until the end of the write operation 
+....................    while (!SPI_FLAG); 
+0499:  MOVLB  00
+049A:  BTFSS  11.3
+049B:  GOTO   49A
+....................    // Clear the write-completed-flag of the spi module 
+....................    SPI_FLAG = 0; 
+049C:  BCF    11.3
+049D:  RETURN
+.................... } 
+.................... // Writes the given register to the driver 
+.................... void write_register(unsigned int16 reg) 
+.................... { 
+....................    // start spi write operation by setting the chip select port to high 
+....................    output_high(SPI_CS); 
+049E:  MOVLB  01
+049F:  BCF    0C.7
+04A0:  MOVLB  02
+04A1:  BSF    0C.7
+....................    // Get and write the MSB of the register 
+....................    write_register_byte(make8(reg, 1)); 
+04A2:  MOVLB  00
+04A3:  MOVF   28,W
+04A4:  MOVWF  29
+04A5:  MOVWF  2A
+04A6:  CALL   493
+....................    // Get and write the MSB of the register 
+....................    write_register_byte(make8(reg, 0)); 
+04A7:  MOVF   27,W
+04A8:  MOVWF  29
+04A9:  MOVWF  2A
+04AA:  CALL   493
+....................    // stop spi write operation by setting the chip select port to low 
+....................    output_low(SPI_CS); 
+04AB:  MOVLB  01
+04AC:  BCF    0C.7
+04AD:  MOVLB  02
+04AE:  BCF    0C.7
+....................    delay_ms(10); 
+04AF:  MOVLW  0A
+04B0:  MOVLB  00
+04B1:  MOVWF  29
+04B2:  CALL   458
+04B3:  RETURN
+.................... } 
+.................... // Sets driver parameters 
+.................... void set_driver() 
+.................... { 
+....................    write_register(3096); 
+04B4:  MOVLW  0C
+04B5:  MOVWF  28
+04B6:  MOVLW  18
+04B7:  MOVWF  27
+04B8:  CALL   49E
+....................    write_register(4279); 
+04B9:  MOVLW  10
+04BA:  MOVWF  28
+04BB:  MOVLW  B7
+04BC:  MOVWF  27
+04BD:  CALL   49E
+....................    write_register(8313); 
+04BE:  MOVLW  20
+04BF:  MOVWF  28
+04C0:  MOVLW  79
+04C1:  MOVWF  27
+04C2:  CALL   49E
+....................    write_register(12694); 
+04C3:  MOVLW  31
+04C4:  MOVWF  28
+04C5:  MOVLW  96
+04C6:  MOVWF  27
+04C7:  CALL   49E
+....................    write_register(17692); 
+04C8:  MOVLW  45
+04C9:  MOVWF  28
+04CA:  MOVLW  1C
+04CB:  MOVWF  27
+04CC:  CALL   49E
+....................    write_register(22804); 
+04CD:  MOVLW  59
+04CE:  MOVWF  28
+04CF:  MOVLW  14
+04D0:  MOVWF  27
+04D1:  CALL   49E
+....................    write_register(27296); 
+04D2:  MOVLW  6A
+04D3:  MOVWF  28
+04D4:  MOVLW  A0
+04D5:  MOVWF  27
+04D6:  CALL   49E
+....................    write_register(28672);    
+04D7:  MOVLW  70
+04D8:  MOVWF  28
+04D9:  CLRF   27
+04DA:  CALL   49E
+....................    delay_ms(10); 
+04DB:  MOVLW  0A
+04DC:  MOVWF  29
+04DD:  CALL   458
+04DE:  MOVLP  00
+04DF:  GOTO   5C7 (RETURN)
+.................... } 
+....................  
+.................... // Sets the motor state 
+.................... void md_set_state(State value) 
+.................... { 
+....................    if (value == on) 
+*
+04ED:  DECFSZ 26,W
+04EE:  GOTO   4F5
+....................       write_register(3097); 
+04EF:  MOVLW  0C
+04F0:  MOVWF  28
+04F1:  MOVLW  19
+04F2:  MOVWF  27
+04F3:  CALL   49E
+04F4:  GOTO   4FD
+....................    else if (value == off) 
+04F5:  MOVF   26,F
+04F6:  BTFSS  03.2
+04F7:  GOTO   4FD
+....................       write_register(3096); 
+04F8:  MOVLW  0C
+04F9:  MOVWF  28
+04FA:  MOVLW  18
+04FB:  MOVWF  27
+04FC:  CALL   49E
+04FD:  RETURN
+.................... } 
+.................... // Sets the motion direction 
+.................... void md_set_direction(Direction value) 
+.................... { 
+....................    output_bit(DRV_DIR, !value);     // Set direction pin to given value 
+*
+04E0:  MOVF   22,F
+04E1:  BTFSC  03.2
+04E2:  GOTO   4E7
+04E3:  MOVLB  02
+04E4:  BCF    0C.4
+04E5:  GOTO   4E9
+04E6:  MOVLB  00
+04E7:  MOVLB  02
+04E8:  BSF    0C.4
+04E9:  MOVLB  01
+04EA:  BCF    0C.4
+04EB:  MOVLB  00
+04EC:  RETURN
+.................... } 
+....................  
+.................... // Starts motion cycle 
+.................... void motion_cycle() 
+*
+0510:  CLRF   23
+0511:  CLRF   22
+0512:  CLRF   25
+0513:  CLRF   24
+.................... { 
+....................    // Start cycle 
+....................    int16 step_count = 0; 
+....................    int16 period     = 0; 
+....................    motion_state     = ACC; 
+0514:  CLRF   20
+....................     
+....................    md_set_state(ON); 
+0515:  MOVLW  01
+0516:  MOVWF  26
+0517:  CALL   4ED
+....................     
+....................    while(true) 
+....................    { 
+....................       switch(motion_state)  
+0518:  MOVF   20,W
+0519:  BTFSC  03.2
+051A:  GOTO   522
+051B:  XORLW  02
+051C:  BTFSC  03.2
+051D:  GOTO   540
+051E:  XORLW  01
+051F:  BTFSC  03.2
+0520:  GOTO   568
+0521:  GOTO   583
+....................       {  
+....................          case ACC: 
+....................             if(step_count == acc_lim - 1) 
+0522:  MOVF   22,W
+0523:  SUBLW  25
+0524:  BTFSS  03.2
+0525:  GOTO   52C
+0526:  MOVF   23,W
+0527:  SUBLW  02
+0528:  BTFSS  03.2
+0529:  GOTO   52C
+....................             { 
+....................                motion_state = RUN; 
+052A:  MOVLW  02
+052B:  MOVWF  20
+....................             } 
+....................                 
+....................             period = periods[step_count]; 
+052C:  BCF    03.0
+052D:  RLF    22,W
+052E:  MOVWF  79
+052F:  RLF    23,W
+0530:  MOVWF  7A
+0531:  MOVF   79,W
+0532:  MOVWF  26
+0533:  CALL   003
+0534:  MOVWF  77
+0535:  INCF   26,W
+0536:  CALL   003
+0537:  MOVWF  7A
+0538:  MOVF   77,W
+0539:  MOVWF  24
+053A:  MOVF   7A,W
+053B:  MOVWF  25
+....................             step_count++; 
+053C:  INCF   22,F
+053D:  BTFSC  03.2
+053E:  INCF   23,F
+....................             break; 
+053F:  GOTO   583
+....................              
+....................          case RUN: 
+....................             if((upwards == 1 && input(LM_UP) == 1) || (upwards == 0 && input(LM_DOWN) == 1)) 
+0540:  DECFSZ 21,W
+0541:  GOTO   547
+0542:  MOVLB  01
+0543:  BSF    0C.2
+0544:  MOVLB  00
+0545:  BTFSC  0C.2
+0546:  GOTO   54F
+0547:  MOVF   21,F
+0548:  BTFSS  03.2
+0549:  GOTO   551
+054A:  MOVLB  01
+054B:  BSF    0C.3
+054C:  MOVLB  00
+054D:  BTFSS  0C.3
+054E:  GOTO   551
+....................                motion_state = DEC; 
+054F:  MOVLW  03
+0550:  MOVWF  20
+....................                 
+....................             period = periods[step_count - 1]; 
+0551:  MOVLW  01
+0552:  SUBWF  22,W
+0553:  MOVWF  26
+0554:  MOVLW  00
+0555:  SUBWFC 23,W
+0556:  MOVWF  27
+0557:  BCF    03.0
+0558:  RLF    26,W
+0559:  MOVWF  79
+055A:  RLF    27,W
+055B:  MOVWF  7A
+055C:  MOVF   79,W
+055D:  MOVWF  26
+055E:  CALL   003
+055F:  MOVWF  77
+0560:  INCF   26,W
+0561:  CALL   003
+0562:  MOVWF  7A
+0563:  MOVF   77,W
+0564:  MOVWF  24
+0565:  MOVF   7A,W
+0566:  MOVWF  25
+....................             break; 
+0567:  GOTO   583
+....................     
+....................          case DEC: 
+....................             step_count--; 
+0568:  MOVF   22,W
+0569:  BTFSC  03.2
+056A:  DECF   23,F
+056B:  DECFSZ 22,F
+....................             // Check if we at last step 
+....................             if(step_count == 0) 
+056C:  GOTO   573
+056D:  MOVF   23,F
+056E:  BTFSS  03.2
+056F:  GOTO   573
+....................             { 
+....................                md_set_state(OFF); 
+0570:  CLRF   26
+0571:  CALL   4ED
+....................                return; 
+0572:  GOTO   5A6
+....................             } 
+....................                 
+....................             period = periods[step_count]; 
+0573:  BCF    03.0
+0574:  RLF    22,W
+0575:  MOVWF  79
+0576:  RLF    23,W
+0577:  MOVWF  7A
+0578:  MOVF   79,W
+0579:  MOVWF  26
+057A:  CALL   003
+057B:  MOVWF  77
+057C:  INCF   26,W
+057D:  CALL   003
+057E:  MOVWF  7A
+057F:  MOVF   77,W
+0580:  MOVWF  24
+0581:  MOVF   7A,W
+0582:  MOVWF  25
+....................             break; 
+....................       } 
+....................  
+....................       delay_us(off_time); 
+0583:  MOVLW  1A
+0584:  MOVWF  77
+0585:  DECFSZ 77,F
+0586:  GOTO   585
+0587:  NOP
+....................       output_low(DRV_STEP); 
+0588:  MOVLB  01
+0589:  BCF    0C.0
+058A:  MOVLB  02
+058B:  BCF    0C.0
+....................       delay_us(period - off_time); 
+058C:  MOVLW  0A
+058D:  MOVLB  00
+058E:  SUBWF  24,W
+058F:  MOVWF  26
+0590:  MOVLW  00
+0591:  SUBWFC 25,W
+0592:  MOVWF  27
+0593:  MOVF   27,W
+0594:  MOVWF  28
+0595:  INCF   28,F
+0596:  DECF   28,F
+0597:  BTFSC  03.2
+0598:  GOTO   59D
+0599:  MOVLW  FF
+059A:  MOVWF  29
+059B:  CALL   4FE
+059C:  GOTO   596
+059D:  MOVF   26,W
+059E:  MOVWF  29
+059F:  CALL   4FE
+....................       output_high(DRV_STEP); 
+05A0:  MOVLB  01
+05A1:  BCF    0C.0
+05A2:  MOVLB  02
+05A3:  BSF    0C.0
+05A4:  MOVLB  00
+05A5:  GOTO   518
+....................    } 
+05A6:  MOVLP  00
+05A7:  GOTO   5DD (RETURN)
+.................... } 
+....................  
+.................... // Main method 
+.................... void main() 
+05A8:  MOVLW  F0
+05A9:  MOVLB  01
+05AA:  MOVWF  19
+05AB:  MOVLW  04
+05AC:  MOVLB  00
+05AD:  MOVWF  20
+05AE:  CLRF   21
+05AF:  MOVLB  03
+05B0:  CLRF   0C
+05B1:  CLRF   0D
+05B2:  MOVLB  02
+05B3:  CLRF   12
+05B4:  CLRF   11
+05B5:  CLRF   14
+05B6:  CLRF   13
+.................... { 
+....................    //             76543210 
+....................    set_tris_a(0b00101100);       // Set I/O states of the ports 
+05B7:  MOVLW  2C
+05B8:  TRIS   5
+....................    set_tris_b(0b11001111); 
+05B9:  MOVLW  CF
+05BA:  TRIS   6
+....................     
+....................    delay_ms(500); 
+05BB:  MOVLW  02
+05BC:  MOVLB  00
+05BD:  MOVWF  22
+05BE:  MOVLW  FA
+05BF:  MOVWF  29
+05C0:  CALL   458
+05C1:  DECFSZ 22,F
+05C2:  GOTO   5BE
+....................  
+....................    // Set alternative pin functions 
+....................    set_pins(); 
+05C3:  GOTO   46D
+....................    // Set SPI parameters 
+....................    set_SPI(); 
+05C4:  GOTO   473
+....................    // Set variables to default values 
+....................    set_variables(); 
+05C5:  GOTO   480
+....................    // Set driver 
+....................    set_driver(); 
+05C6:  GOTO   4B4
+....................     
+....................    while(true) 
+....................    { 
+....................       if(input(LM_UP) == 1) 
+05C7:  MOVLB  01
+05C8:  BSF    0C.2
+05C9:  MOVLB  00
+05CA:  BTFSS  0C.2
+05CB:  GOTO   5D1
+....................       { 
+....................          md_set_direction(DOWN); 
+05CC:  MOVLW  01
+05CD:  MOVWF  22
+05CE:  CALL   4E0
+....................          upwards = 0; 
+05CF:  CLRF   21
+....................       } 
+05D0:  GOTO   5D5
+....................       else 
+....................       { 
+....................          md_set_direction(UP); 
+05D1:  CLRF   22
+05D2:  CALL   4E0
+....................          upwards = 1; 
+05D3:  MOVLW  01
+05D4:  MOVWF  21
+....................       } 
+....................       delay_ms(2000); 
+05D5:  MOVLW  08
+05D6:  MOVWF  22
+05D7:  MOVLW  FA
+05D8:  MOVWF  29
+05D9:  CALL   458
+05DA:  DECFSZ 22,F
+05DB:  GOTO   5D7
+....................       // Start motion cycle 
+....................       motion_cycle();  
+05DC:  GOTO   510
+05DD:  GOTO   5C7
+....................    }     
+.................... } 
+05DE:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0E04   INTRC_IO NOWDT PUT NOMCLR PROTECT CPD BROWNOUT NOCLKOUT NOIESO NOFCMEN
+   Word  2: 1AFC   WRT PLL_SW STVREN BORV25 NODEBUG NOLVP

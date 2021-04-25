@@ -1,0 +1,637 @@
+#include "Drv8711.h" 
+
+// CTRL register of the driver
+unsigned int16 reg_ctrl = 0;
+// TORQUE register of the driver
+unsigned int16 reg_torque = 0;
+// OFF register of the driver
+unsigned int16 reg_off = 0;
+// BLANK register of the driver
+unsigned int16 reg_blank = 0;
+// DECAY register of the driver
+unsigned int16 reg_decay = 0;
+// STALL register of the driver
+unsigned int16 reg_stall = 0;
+// DRIVE register of the driver
+unsigned int16 reg_drive = 0;
+// STATUS register of the driver
+unsigned int16 reg_status = 0;
+
+// Writes the given register byte to the driver
+private void write_register_byte(unsigned int8 reg_byte)
+{
+   // write the byte to spi buffer
+   SPI_SSP1BUF = reg_byte;
+   // Wait until the end of the write operation
+   while (!SPI_FLAG);
+   // Clear the write-completed-flag of the spi module
+   SPI_FLAG = 0;
+}
+// Writes the given register to the driver
+private void write_register(unsigned int16 reg)
+{
+   // start spi write operation by setting the chip select port to high
+   output_high(SPI_CS);
+   // Get and write the MSB of the register
+   write_register_byte(make8(reg, 1));
+   // Get and write the MSB of the register
+   write_register_byte(make8(reg, 0));
+   // stop spi write operation by setting the chip select port to low
+   output_low(SPI_CS);
+   delay_ms(10);
+}
+// Sets the given number of bits of the register from starting address to the given value
+int1 set_register_bits(unsigned int16 reg, unsigned int8 bit_address, unsigned int8 bit_size, unsigned int16 value)
+{
+   // bit address must be smaller then register size (16 bit)
+   if(bit_address < 16) return 0;
+   // bit size can't be larger then the number of bits between the given address and the last bit of the register
+   if(bit_size <= (16 - bit_address)) return 0;
+   
+   // Get the bits of the "value" and set it to the corresponding bit in the given address
+   for(int i=0; i<bit_size; i++)
+   {
+      if(bit_test(value, i) == 1)
+         bit_set(reg, bit_address + i);
+      else
+         bit_clear(reg, bit_address + i);
+   }
+   return 1;
+}
+/*
+// Driver common register variables
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 000: CTRL register
+//                                                             001: TORQUE register
+//                                                             010: OFF register
+//                                                             011: BLANK register
+//                                                             100: DECAY register
+//                                                             101: STALL register
+//                                                             110: DRIVE register
+//                                                             111: STATUS register
+*/
+enum reg_type           {ctrl = 0, torque = 1, off = 2, blank = 3, decay = 4, stall = 5, drive = 6, status = 7};
+// Driver register operations
+enum op_type            {write = 0, read = 1};
+// Drivet registers common masks
+enum reg_common_mask    {reg_type_addr = 12, op_type_addr = 15};
+// Drivet registers common masks
+enum reg_common_size    {reg_type_size = 3, op_type_size = 1};
+/*
+// CTRL register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 000: CTRL reg
+// DTIME (dead time btw MOSFET switching)    (R/W) (bit 11-10) 00: 400 ns, 
+//                                                             01: 450 ns, 
+//                                                             10: 650 ns, 
+//                                                             11: 850 ns
+// ISGain (current amplifier gain)           (R/W) (bit 9-8)   00: Gain of 5, 
+//                                                             01: Gain of 10, 
+//                                                             10: Gain of 20, 
+//                                                             11: Gain of 40
+// EXSTALL (source of stall detection)       (R/W) (bit 7)     0: Internal
+//                                                             1: External
+// MODE (microstepping mode)                 (R/W) (bit 6-3)   0000: Full-step, 71% current
+//                                                             0001: Half step
+//                                                             0010: 1/4 step
+//                                                             0011: 1/8 step
+//                                                             0100: 1/16 step
+//                                                             0101: 1/32 step
+//                                                             0110: 1/64 step
+//                                                             0111: 1/128 step
+//                                                             1000: 1/256 step
+// RSTEP (single step output)                (W)   (bit 2)     0: No action
+//                                                             1: Indexer will advance one step; automatically cleared after write
+// direction                                 (R/W) (bit 1)     0: Direction set by DIR pin
+//                                                             1: Direction set by inverse of DIR pin
+// motor state                               (R/W) (bit 0)     0: Disable motor
+//                                                             1: Enable motor
+*/
+enum dead_time          {dtime_400ns = 0, dtime_450ns = 1, dtime_650ns = 2, dtime_850ns = 3};
+enum curent_amp_gain    {gain_5 = 0, gain_10 = 1, gain_20 = 2, gain_40 = 3};
+enum src_stall_detect   {stall_int = 0, stall_ext = 1};
+enum microstepping      {full_step = 0, half_step = 1, _4x = 2, _8x = 3, _16x = 4, _32x = 5, _64x = 6, _128x = 7, _256x = 8};
+enum single_step_out    {no_action = 0, one_step = 1};
+enum dir_control        {dir_pin = 0, inverse_dir_pin = 1};
+enum motor_state        {motor_disable = 0, motor_enable = 1};
+enum reg_ctrl_mask      {motor_state_addr = 0, dir_control_addr = 1, single_step_out_addr = 2, microstepping_addr = 3, src_stall_detect_addr = 7, curent_amp_gain_addr = 8, dead_time_addr = 10};
+enum reg_ctrl_size      {motor_state_size = 1, dir_control_size = 1, single_step_out_size = 1, microstepping_size = 4, src_stall_detect_size = 1, curent_amp_gain_size = 2, dead_time_size = 2};
+// Sets CTRL register
+void set_ctrl_reg(dead_time dtime, curent_amp_gain gain, src_stall_detect stall, microstepping mode, single_step_out rstep, dir_control dir, motor_state state)
+{
+   // clear the register
+   reg_ctrl = 0b0000000000000000;
+   // set write operation
+   set_register_bits(reg_ctrl, op_type_addr, op_type_size, write); 
+   // set register address
+   set_register_bits(reg_ctrl, reg_type_addr, reg_type_size, ctrl);
+   // set dead time between MOSFET switching
+   set_register_bits(reg_ctrl, dead_time_addr, dead_time_size, dtime); 
+   // set current amplifier gain
+   set_register_bits(reg_ctrl, curent_amp_gain_addr, curent_amp_gain_size, gain);
+   // set source of stall detection
+   set_register_bits(reg_ctrl, src_stall_detect_addr, src_stall_detect_size, stall);
+   // set microstepping mode
+   set_register_bits(reg_ctrl, microstepping_addr, microstepping_size, mode);
+   // set single step output mode
+   set_register_bits(reg_ctrl, single_step_out_addr, single_step_out_size, rstep);
+   // set direction
+   set_register_bits(reg_ctrl, dir_control_addr, dir_control_size, dir);
+   // set motor state
+   set_register_bits(reg_ctrl, motor_state_addr, motor_state_size, state);
+   
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_dead_time(dead_time dtime)
+{
+   // set dead time between MOSFET switching
+   set_register_bits(reg_ctrl, dead_time_addr, dead_time_size, dtime); 
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_amp_gain(curent_amp_gain gain)
+{
+   // set current amplifier gain
+   set_register_bits(reg_ctrl, curent_amp_gain_addr, curent_amp_gain_size, gain);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_stall_detection(src_stall_detect stall)
+{
+   // set source of stall detection
+   set_register_bits(reg_ctrl, src_stall_detect_addr, src_stall_detect_size, stall);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_microstepping_mode(microstepping mode)
+{
+   // set microstepping mode
+   set_register_bits(reg_ctrl, microstepping_addr, microstepping_size, mode);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_rstep(single_step_out rstep)
+{  
+   // set single step output mode
+   set_register_bits(reg_ctrl, single_step_out_addr, single_step_out_size, rstep);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_dir_mode(dir_control dir)
+{
+   // set direction mode
+   set_register_bits(reg_ctrl, dir_control_addr, dir_control_size, dir);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+// Sets CTRL register
+void set_motor_state(motor_state state)
+{
+   // set motor state
+   set_register_bits(reg_ctrl, motor_state_addr, motor_state_size, state);
+   // write register to SPI
+   write_register(reg_ctrl);
+}
+/*
+// TORQUE register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 001: Torque reg
+// Reserved                                        (bit 11)
+// SMPLTH (Back EMF sample threshold)        (R/W) (bit 10-8)  000: 50 us, 
+//                                                             001: 100 us, 
+//                                                             010: 200 us, 
+//                                                             011: 300 us,
+//                                                             100: 400 us,
+//                                                             101: 600 us,
+//                                                             110: 800 us, 
+//                                                             111: 1000 us,
+// Torque (Output current for H-bridges)     (R/W) (bit 7-0)   0xFFh
+*/
+enum emf_samp_thr       {emf_50us = 0, emf_100us = 1, emf_200us = 2, emf_300us = 3, emf_400us = 4, emf_600us = 5, emf_800us = 6, emf_1000us = 7};
+enum reg_torque_mask    {torque_addr = 0, emf_samp_thr_addr = 8};
+enum reg_torque_size    {torque_size = 8, emf_samp_thr_size = 3};
+// Sets TORQUE register
+void set_torque_reg(emf_samp_thr emf, unsigned int8 torque)
+{
+   // clear the register
+   reg_torque = 0b0000000000000000;
+   // set back EMF sample threshold
+   set_register_bits(reg_torque, emf_samp_thr_addr, emf_samp_thr_size, emf);
+   // set output current for H-bridges
+   set_register_bits(reg_torque, torque_addr, torque_size, torque);
+   
+   // write register to SPI
+   write_register(reg_torque);
+}
+// Sets back EMF sample threshold
+void set_emf_samp_thr(emf_samp_thr emf)
+{
+   // set back EMF sample threshold
+   set_register_bits(reg_torque, emf_samp_thr_addr, emf_samp_thr_size, emf);
+   // write register to SPI
+   write_register(reg_torque);
+}
+// Sets full-scale output current for both H-bridges
+void set_torque(unsigned int8 torque)
+{
+   // set output current for H-bridges
+   set_register_bits(reg_torque, torque_addr, torque_size, torque);
+   // write register to SPI
+   write_register(reg_torque);
+}
+/*
+// OFF register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 010: OFF reg
+// Reserved                                        (bit 11-9)
+// PWMMODE (indexer mode)                    (R/W) (bit 8)     0: Use internal indexer, 
+//                                                             1: Bypass indexer, use xINx inputs to control outputs 
+// TOFF (Sets fixed off time, 500ns steps)   (R/W) (bit 7-0)   0x00h: 500 ns
+//                                                             0xFFh: 128 us
+*/
+enum pwm_mode           {int_indexer = 0, ext_indexer = 1};
+enum reg_off_mask       {toff_addr = 0, pwm_mode_addr = 8};
+enum reg_off_size       {toff_size = 8, pwm_mode_size = 1};
+// Sets OFF register
+void set_off_reg(pwm_mode indexer, unsigned int8 toff)
+{
+   // clear the register
+   reg_off = 0b0000000000000000;
+   // set pwm indexer mode
+   set_register_bits(reg_off, pwm_mode_addr, pwm_mode_size, indexer);
+   // set fixed off time
+   set_register_bits(reg_off, toff_addr, toff_size, toff);
+   
+   // write register to SPI
+   write_register(reg_off);
+}
+// Sets pwm indexer mode
+void set_pwm_mode(pwm_mode indexer)
+{
+   // set pwm indexer mode
+   set_register_bits(reg_off, pwm_mode_addr, pwm_mode_size, indexer);
+   // write register to SPI
+   write_register(reg_off);
+}
+// Sets fixed off time
+void set_off_time(unsigned int8 toff)
+{
+   // set fixed off time
+   set_register_bits(reg_off, toff_addr, toff_size, toff);
+   // write register to SPI
+   write_register(reg_off);
+}
+/*
+// BLANK register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 011: BLANK reg
+// Reserved                                        (bit 11-9)
+// ABT (adaptive blanking time state)        (R/W) (bit 8)     0: Disable adaptive blanking time, 
+//                                                             1: Enable adaptive blanking time
+// TBLANK (Sets blanking time, 20ns steps)   (R/W) (bit 7-0)   0x00h: 1.00 us
+//                                                             ...
+//                                                             0x32h: 1.00 us
+//                                                             0x33h: 1.02 us
+//                                                             ...
+//                                                             0xFEh: 5.10 us
+//                                                             0xFFh: 5.12 us
+*/
+enum adap_blank_time    {disable_abt = 0, enable_abt = 1};
+enum reg_blank_mask     {tblank_addr = 0, adap_blank_time_addr = 8};
+enum reg_blank_size     {tblank_size = 8, adap_blank_time_size = 1};
+// Sets BLANK register
+void set_blank_reg(adap_blank_time abt, unsigned int8 tblank)
+{
+   // clear the register
+   reg_blank = 0b0000000000000000;
+   // set adaptive blanking time state
+   set_register_bits(reg_blank, adap_blank_time_addr, adap_blank_time_size, abt);
+   // set blanking time
+   set_register_bits(reg_blank, tblank_addr, tblank_size, tblank);
+   
+   // write register to SPI
+   write_register(reg_blank);
+}
+// Sets adaptive blank time state
+void set_adap_blank_time(adap_blank_time abt)
+{
+   // set adaptive blanking time state
+   set_register_bits(reg_blank, adap_blank_time_addr, adap_blank_time_size, abt);
+   // write register to SPI
+   write_register(reg_blank);
+}
+// Sets blanking time
+void set_blank_time(unsigned int8 tblank)
+{
+   // set blanking time
+   set_register_bits(reg_blank, tblank_addr, tblank_size, tblank);
+   // write register to SPI
+   write_register(reg_blank);
+}
+/*
+// DECAY register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 100: DECAY reg
+// Reserved                                        (bit 11)
+// DECMODE (decay modes)                     (R/W) (bit 10-8)  000: Force slow decay at all times
+//                                                             001: Slow decay for increasing current, mixed decay for decreasing current (indexer mode only)
+//                                                             010: Force fast decay at all times
+//                                                             011: Use mixed decay at all times
+//                                                             100: Slow decay for increasing current, auto mixed decay for decreasing current (indexer mode only)
+//                                                             101: Use auto mixed decay at all times
+//                                                             110-111: Reserved
+// TDECAY (Sets transition time, 500ns steps)(R/W) (bit 7-0)   0x00h: 500 ns
+//                                                             0xFFh: 128 us
+*/
+enum decay_mode         {force_slow_decay = 0, slow_mixed_decay = 1, force_fast_decay = 2, mixed_decay = 3, slow_auto_mixed_decay = 4, auto_mixed_decay = 5};
+enum reg_decay_mask     {tdecay_addr = 0, decay_mode_addr = 8};
+enum reg_decay_size     {tdecay_size = 8, decay_mode_size = 3};
+// Sets DECAY register
+void set_decay_reg(decay_mode dmode, unsigned int8 tdecay)
+{
+   // clear the register
+   reg_decay = 0b0000000000000000;
+   // set decay mode
+   set_register_bits(reg_decay, decay_mode_addr, decay_mode_size, dmode);
+   // set decay time
+   set_register_bits(reg_decay, tdecay_addr, tdecay_size, tdecay);
+   
+   // write register to SPI
+   write_register(reg_decay);
+}
+// Sets decay (transition) mode
+void set_decay_mode(decay_mode dmode)
+{
+   // set decay mode
+   set_register_bits(reg_decay, decay_mode_addr, decay_mode_size, dmode);
+   // write register to SPI
+   write_register(reg_decay);
+}
+// Sets decay (transition) time
+void set_decay_time(unsigned int8 tdecay)
+{
+   // set decay time
+   set_register_bits(reg_decay, tdecay_addr, tdecay_size, tdecay);
+   // write register to SPI
+   write_register(reg_decay);
+}
+/*
+// STALL register bits
+// data operation type                             (bit 15)    0: write,
+//                                                             1: read
+// register address                                (bit 14-12) 101: STALL reg
+// VDIV (Back EMF divider)                   (R/W) (bit 11-10) 00: Back EMF is divided by 32
+//                                                             01: Back EMF is divided by 16
+//                                                             10: Back EMF is divided by 8
+//                                                             11: Back EMF is divided by 4
+// SDCNT (Back EMF sample step mode)         (R/W) (bit 9-8)   00: STALLn asserted on first step with back EMF below SDTHR
+//                                                             01: STALLn asserted after 2 steps
+//                                                             10: STALLn asserted after 4 steps
+//                                                             11: STALLn asserted after 8 steps
+// SDTHR (Sets stall detect threshold)       (R/W) (bit 7-0)   0x00h: 0
+//                                                             0xFFh: 255
+*/
+enum emf_vol_div        {divide_by_32 = 0, divide_by_16 = 1, divide_by_8 = 2, divide_by_4 = 3};
+enum emf_samp_mode      {after_1_step = 0, after_2_steps = 1, after_4_steps = 2, after_8_steps = 3};
+enum reg_stall_mask     {stall_thr_addr = 0, emf_samp_mode_addr = 8, emf_vol_div_addr = 10};
+enum reg_stall_size     {stall_thr_size = 8, emf_samp_mode_size = 2, emf_vol_div_size = 2};  
+// Sets STALL register
+void set_stall_reg(emf_vol_div divider, emf_samp_mode smode, unsigned int8 stall_thr)
+{
+   // clear the register
+   reg_stall = 0b0000000000000000;
+   // set back EMF voltage divider
+   set_register_bits(reg_stall, emf_vol_div_addr, emf_vol_div_size, divider);
+   // set back EMF sample step mode
+   set_register_bits(reg_stall, emf_samp_mode_addr, emf_samp_mode_size, smode);
+   // set stall detect threshold
+   set_register_bits(reg_stall, stall_thr_addr, stall_thr_size, stall_thr);
+   
+   // write register to SPI
+   write_register(reg_stall);
+}
+// Sets back EMF voltage divider
+void set_emf_vol_div(emf_vol_div divider)
+{
+   // set back EMF voltage divider
+   set_register_bits(reg_stall, emf_vol_div_addr, emf_vol_div_size, divider);
+   // write register to SPI
+   write_register(reg_stall);
+}
+// Sets back EMF sample step mode
+void set_emf_samp_mode(emf_samp_mode smode)
+{
+   // set back EMF sample step mode
+   set_register_bits(reg_stall, emf_samp_mode_addr, emf_samp_mode_size, smode);
+   // write register to SPI
+   write_register(reg_stall);
+}
+// Sets stall detect threshold
+void set_stall_thr(unsigned int8 stall_thr)
+{
+   // set stall detect threshold
+   set_register_bits(reg_stall, stall_thr_addr, stall_thr_size, stall_thr);
+   // write register to SPI
+   write_register(reg_stall);
+}
+/*
+// DRIVE register bits
+// data operation type                       (R/W) (bit 15)    0: write, 
+//                                                             1: read
+// register address                          (R/W) (bit 14-12) 110: STALL reg
+// IDRIVEP (High-side gate peak current)     (R/W) (bit 11-10) 00: 50 mA peak (source)
+//                                                             01: 100 mA peak (source)
+//                                                             10: 150 mA peak (source)
+//                                                             11: 200 mA peak (source)
+// IDRIVEN (Low-side gate peak current)      (R/W) (bit 9-8)   00: 100 mA peak (sink)
+//                                                             01: 200 mA peak (sink)
+//                                                             10: 300 mA peak (sink)
+//                                                             11: 400 mA peak (sink)
+// TDRIVEP (High-side gate drive time)       (R/W) (bit 7-6)   00: 250 ns
+//                                                             01: 500 ns
+//                                                             10: 1 us
+//                                                             11: 2 us
+// TDRIVEN (Low-side gate drive time)        (R/W) (bit 5-4)   00: 250 ns
+//                                                             01: 500 ns
+//                                                             10: 1 us
+//                                                             11: 2 us
+// OCPDEG (OCP deglitch time)                (R/W) (bit 3-2)   00: 1 us
+//                                                             01: 2 us
+//                                                             10: 4 us
+//                                                             11: 8 us
+// OCPTH (OCP threshold)                     (R/W) (bit 1-0)   00: 250 mV
+//                                                             01: 500 mV
+//                                                             10: 750 mV
+//                                                             11: 1000 mV
+*/
+enum hs_peak_cur        {hs_50mA = 0, hs_100mA = 1, hs_150mA = 2, hs_200mA = 3};
+enum ls_peak_cur        {ls_100mA = 0, ls_200mA = 1, ls_300mA = 2, ls_400mA = 3};
+enum hs_drive_time      {hs_250ns = 0, hs_500ns = 1, hs_1us = 2, hs_2us = 3};
+enum ls_drive_time      {ls_250ns = 0, ls_500ns = 1, ls_1us = 2, ls_2us = 3};
+enum ocp_deg_time       {ocp_1us = 0, ocp_2us = 1, ocp_4us = 2, ocp_8us = 3};
+enum ocp_thr            {ocp_250mV = 0, ocp_500mV = 1, ocp_750mV = 2, ocp_1000mV = 3};
+enum reg_drive_mask     {ocp_thr_addr = 0, ocp_deg_time_addr = 2, ls_drive_time_addr = 4, hs_drive_time_addr = 6, ls_peak_cur_addr = 8, hs_peak_cur_addr = 10};
+enum reg_drive_size     {ocp_thr_size = 2, ocp_deg_time_size = 2, ls_drive_time_size = 2, hs_drive_time_size = 2, ls_peak_cur_size = 2, hs_peak_cur_size = 2}; 
+// Sets DRIVE register
+void set_drive_reg(hs_peak_cur idrivep, ls_peak_cur idriven, hs_drive_time tdrivep, ls_drive_time tdriven, ocp_deg_time ocpdeg, ocp_thr ocpth)
+{
+   // clear the register
+   reg_drive = 0b0000000000000000;
+   // set high-side gate peak current
+   set_register_bits(reg_drive, hs_peak_cur_addr, hs_peak_cur_size, idrivep);
+   // set low-side gate peak current
+   set_register_bits(reg_drive, ls_peak_cur_addr, ls_peak_cur_size, idriven);
+   // set high-side gate drive time
+   set_register_bits(reg_drive, hs_drive_time_addr, hs_drive_time_size, tdrivep);
+   // set low-side gate drive time
+   set_register_bits(reg_drive, ls_drive_time_addr, ls_drive_time_size, tdriven);
+   // set OCP deglitch time
+   set_register_bits(reg_drive, ocp_deg_time_addr, ocp_deg_time_size, ocpdeg);
+   // set OCP threshold
+   set_register_bits(reg_drive, ocp_thr_addr, ocp_thr_size, ocpth);
+   
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets high-side gate peak current
+void set_hs_peak_cur(hs_peak_cur idrivep)
+{
+   // set high-side gate peak current
+   set_register_bits(reg_drive, hs_peak_cur_addr, hs_peak_cur_size, idrivep);
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets low-side gate peak current
+void set_ls_peak_cur(ls_peak_cur idriven)
+{
+   // set low-side gate peak current
+   set_register_bits(reg_drive, ls_peak_cur_addr, ls_peak_cur_size, idriven);
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets high-side gate drive time
+void set_hs_drive_time(hs_drive_time tdrivep)
+{
+   // set high-side gate drive time
+   set_register_bits(reg_drive, hs_drive_time_addr, hs_drive_time_size, tdrivep);
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets low-side gate drive time
+void set_ls_drive_time(ls_drive_time tdriven)
+{
+   // set low-side gate drive time
+   set_register_bits(reg_drive, ls_drive_time_addr, ls_drive_time_size, tdriven);
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets OCP deglitch time
+void set_ocp_deg_time(ocp_deg_time ocpdeg)
+{
+   // set OCP deglitch time
+   set_register_bits(reg_drive, ocp_deg_time_addr, ocp_deg_time_size, ocpdeg);
+   // write register to SPI
+   write_register(reg_drive);
+}
+// Sets OCP threshold
+void set_ocp_thr(ocp_thr ocpth)
+{
+   // set OCP threshold
+   set_register_bits(reg_drive, ocp_thr_addr, ocp_thr_size, ocpth);
+   // write register to SPI
+   write_register(reg_drive);
+}
+/*
+// STATUS register bits
+// data operation type                             (bit 15)    0: write, 
+//                                                             1: read
+// register address                                (bit 14-12) 111: STATUS reg
+// Reserved                                        (bit 11-8)
+// STDLAT (Stall clear flag)                 (R/W) (bit 7)     0: Normal operation
+//                                                             1: Latched stall detect
+//                                                             (Write a '0' to this bit to clear the fault and resume operation)
+// STD (Stall detected flag)                 (R)   (bit 6)     0: Normal operation
+//                                                             1: Stall detected
+// UVLO (Undervoltage lockout flag)          (R)   (bit 5)     0: Normal operation
+//                                                             1: Undervoltage lockout
+//                                                             (UVLO bit will clear after VM has increased over VUVLO)
+// BPDF (Channel B predriver fault flag)     (R/W) (bit 4)     0: Normal operation
+//                                                             1: Channel B predriver fault
+//                                                             (Write a '0' to this bit to clear the fault and resume operation)
+// APDF (Channel A predriver fault flag)     (R/W) (bit 3)     0: Normal operation
+//                                                             1: Channel A predriver fault
+//                                                             (Write a '0' to this bit to clear the fault and resume operation)
+// BOCP (Channel B overcurrent flag)         (R/W) (bit 2)     0: Normal operation
+//                                                             1: Channel B overcurrent shutdown
+//                                                             (Write a '0' to this bit to clear the fault and resume operation)
+// AOCP (Channel A overcurrent flag)         (R/W) (bit 1)     0: Normal operation
+//                                                             1: Channel A overcurrent shutdown
+//                                                             (Write a '0' to this bit to clear the fault and resume operation)
+// OTS (Overtemperature shutdown flag)       (R)   (bit 0)     0: Normal operation
+//                                                             1: Device has entered overtemperature shutdown
+//                                                             (OTS bit will clear once temperature has fallen to safe levels
+)
+*/
+enum reg_status_mask    {a_over_curr_flag_addr = 1, b_over_curr_flag_addr = 2, a_fault_flag_addr = 3, b_fault_flag_addr = 4, stall_flag_addr = 7};
+enum reg_status_size    {a_over_curr_flag_size = 1, b_over_curr_flag_size = 1, a_fault_flag_size = 1, b_fault_flag_size = 1, stall_flag_size = 1}; 
+// Clears STATUS register
+void clear_status_reg()
+{
+   // clear the register
+   reg_status = 0b0000000000000000;
+   // write register to SPI
+   write_register(reg_status);
+}
+// Clears STATUS register
+void clear_stall_flag()
+{
+   // clear stall flag
+   set_register_bits(reg_status, stall_flag_addr, stall_flag_size, 0);
+   // write register to SPI
+   write_register(reg_status);
+}
+// Clears STATUS register
+void clear_b_fault_flag()
+{
+   // clear channel b predriver fault flag
+   set_register_bits(reg_status, b_fault_flag_addr, b_fault_flag_size, 0);
+   // write register to SPI
+   write_register(reg_status);
+}
+// Clears STATUS register
+void clear_a_fault_flag()
+{
+   // clear channel a predriver fault flag
+   set_register_bits(reg_status, a_fault_flag_addr, a_fault_flag_size, 0);
+   // write register to SPI
+   write_register(reg_status);
+}
+// Clears STATUS register
+void clear_b_over_curr_flag()
+{
+   // clear channel b overcurrent fault flag
+   set_register_bits(reg_status, b_over_curr_flag_addr, b_over_curr_flag_size, 0);
+   // write register to SPI
+   write_register(reg_status);
+}
+// Clears STATUS register
+void clear_a_over_curr_flag()
+{
+   // clear channel a overcurrent fault flag
+   set_register_bits(reg_status, a_over_curr_flag_addr, a_over_curr_flag_size, 0);
+   // write register to SPI
+   write_register(reg_status);
+}

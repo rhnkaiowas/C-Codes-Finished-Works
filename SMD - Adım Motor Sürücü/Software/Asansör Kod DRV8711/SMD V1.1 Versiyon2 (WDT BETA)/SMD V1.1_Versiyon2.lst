@@ -1,0 +1,1827 @@
+CCS PCM C Compiler, Version 5.008, 5967               07-Kas-14 15:59
+
+               Filename:   E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\SMD V1.1 Versiyon2 (WDT BETA)\SMD V1.1_Versiyon2.lst
+
+               ROM used:   1361 words (66%)
+                           Largest free fragment is 687
+               RAM used:   9 (3%) at main() level
+                           40 (12%) worst case
+               Stack used: 3 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   52B
+0002:  NOP
+.................... #INCLUDE <16f1826.h>  
+.................... //////// Standard Header file for the PIC16F1826 device //////////////// 
+.................... #device PIC16F1826 
+0003:  MOVWF  7B
+0004:  MOVLW  00
+0005:  ADDWF  7A,W
+0006:  MOVWF  0A
+0007:  MOVF   7B,W
+0008:  ADDLW  0C
+0009:  BTFSC  03.0
+000A:  INCF   0A,F
+000B:  MOVWF  02
+000C:  RETLW  28
+000D:  RETLW  0A
+000E:  RETLW  28
+000F:  RETLW  0A
+0010:  RETLW  28
+0011:  RETLW  0A
+0012:  RETLW  27
+0013:  RETLW  0A
+0014:  RETLW  26
+0015:  RETLW  0A
+0016:  RETLW  25
+0017:  RETLW  0A
+0018:  RETLW  24
+0019:  RETLW  0A
+001A:  RETLW  23
+001B:  RETLW  0A
+001C:  RETLW  21
+001D:  RETLW  0A
+001E:  RETLW  1F
+001F:  RETLW  0A
+0020:  RETLW  1E
+0021:  RETLW  0A
+0022:  RETLW  1C
+0023:  RETLW  0A
+0024:  RETLW  19
+0025:  RETLW  0A
+0026:  RETLW  17
+0027:  RETLW  0A
+0028:  RETLW  14
+0029:  RETLW  0A
+002A:  RETLW  12
+002B:  RETLW  0A
+002C:  RETLW  0F
+002D:  RETLW  0A
+002E:  RETLW  0C
+002F:  RETLW  0A
+0030:  RETLW  09
+0031:  RETLW  0A
+0032:  RETLW  05
+0033:  RETLW  0A
+0034:  RETLW  02
+0035:  RETLW  0A
+0036:  RETLW  FE
+0037:  RETLW  09
+0038:  RETLW  FA
+0039:  RETLW  09
+003A:  RETLW  F6
+003B:  RETLW  09
+003C:  RETLW  F2
+003D:  RETLW  09
+003E:  RETLW  EE
+003F:  RETLW  09
+0040:  RETLW  E9
+0041:  RETLW  09
+0042:  RETLW  E5
+0043:  RETLW  09
+0044:  RETLW  E0
+0045:  RETLW  09
+0046:  RETLW  DB
+0047:  RETLW  09
+0048:  RETLW  D6
+0049:  RETLW  09
+004A:  RETLW  D1
+004B:  RETLW  09
+004C:  RETLW  CC
+004D:  RETLW  09
+004E:  RETLW  C6
+004F:  RETLW  09
+0050:  RETLW  C1
+0051:  RETLW  09
+0052:  RETLW  BB
+0053:  RETLW  09
+0054:  RETLW  B5
+0055:  RETLW  09
+0056:  RETLW  AF
+0057:  RETLW  09
+0058:  RETLW  A9
+0059:  RETLW  09
+005A:  RETLW  A3
+005B:  RETLW  09
+005C:  RETLW  9C
+005D:  RETLW  09
+005E:  RETLW  96
+005F:  RETLW  09
+0060:  RETLW  8F
+0061:  RETLW  09
+0062:  RETLW  88
+0063:  RETLW  09
+0064:  RETLW  81
+0065:  RETLW  09
+0066:  RETLW  7A
+0067:  RETLW  09
+0068:  RETLW  73
+0069:  RETLW  09
+006A:  RETLW  6C
+006B:  RETLW  09
+006C:  RETLW  64
+006D:  RETLW  09
+006E:  RETLW  5D
+006F:  RETLW  09
+0070:  RETLW  55
+0071:  RETLW  09
+0072:  RETLW  4D
+0073:  RETLW  09
+0074:  RETLW  45
+0075:  RETLW  09
+0076:  RETLW  3D
+0077:  RETLW  09
+0078:  RETLW  35
+0079:  RETLW  09
+007A:  RETLW  2D
+007B:  RETLW  09
+007C:  RETLW  24
+007D:  RETLW  09
+007E:  RETLW  1C
+007F:  RETLW  09
+0080:  RETLW  13
+0081:  RETLW  09
+0082:  RETLW  0B
+0083:  RETLW  09
+0084:  RETLW  02
+0085:  RETLW  09
+0086:  RETLW  F9
+0087:  RETLW  08
+0088:  RETLW  F0
+0089:  RETLW  08
+008A:  RETLW  E7
+008B:  RETLW  08
+008C:  RETLW  DE
+008D:  RETLW  08
+008E:  RETLW  D4
+008F:  RETLW  08
+0090:  RETLW  CB
+0091:  RETLW  08
+0092:  RETLW  C1
+0093:  RETLW  08
+0094:  RETLW  B8
+0095:  RETLW  08
+0096:  RETLW  AE
+0097:  RETLW  08
+0098:  RETLW  A4
+0099:  RETLW  08
+009A:  RETLW  9A
+009B:  RETLW  08
+009C:  RETLW  90
+009D:  RETLW  08
+009E:  RETLW  86
+009F:  RETLW  08
+00A0:  RETLW  7C
+00A1:  RETLW  08
+00A2:  RETLW  72
+00A3:  RETLW  08
+00A4:  RETLW  68
+00A5:  RETLW  08
+00A6:  RETLW  5D
+00A7:  RETLW  08
+00A8:  RETLW  53
+00A9:  RETLW  08
+00AA:  RETLW  48
+00AB:  RETLW  08
+00AC:  RETLW  3D
+00AD:  RETLW  08
+00AE:  RETLW  33
+00AF:  RETLW  08
+00B0:  RETLW  28
+00B1:  RETLW  08
+00B2:  RETLW  1D
+00B3:  RETLW  08
+00B4:  RETLW  12
+00B5:  RETLW  08
+00B6:  RETLW  07
+00B7:  RETLW  08
+00B8:  RETLW  FC
+00B9:  RETLW  07
+00BA:  RETLW  F1
+00BB:  RETLW  07
+00BC:  RETLW  E5
+00BD:  RETLW  07
+00BE:  RETLW  DA
+00BF:  RETLW  07
+00C0:  RETLW  CF
+00C1:  RETLW  07
+00C2:  RETLW  C3
+00C3:  RETLW  07
+00C4:  RETLW  B8
+00C5:  RETLW  07
+00C6:  RETLW  AC
+00C7:  RETLW  07
+00C8:  RETLW  A0
+00C9:  RETLW  07
+00CA:  RETLW  95
+00CB:  RETLW  07
+00CC:  RETLW  89
+00CD:  RETLW  07
+00CE:  RETLW  7D
+00CF:  RETLW  07
+00D0:  RETLW  71
+00D1:  RETLW  07
+00D2:  RETLW  65
+00D3:  RETLW  07
+00D4:  RETLW  59
+00D5:  RETLW  07
+00D6:  RETLW  4D
+00D7:  RETLW  07
+00D8:  RETLW  41
+00D9:  RETLW  07
+00DA:  RETLW  35
+00DB:  RETLW  07
+00DC:  RETLW  29
+00DD:  RETLW  07
+00DE:  RETLW  1C
+00DF:  RETLW  07
+00E0:  RETLW  10
+00E1:  RETLW  07
+00E2:  RETLW  04
+00E3:  RETLW  07
+00E4:  RETLW  F7
+00E5:  RETLW  06
+00E6:  RETLW  EB
+00E7:  RETLW  06
+00E8:  RETLW  DE
+00E9:  RETLW  06
+00EA:  RETLW  D2
+00EB:  RETLW  06
+00EC:  RETLW  C5
+00ED:  RETLW  06
+00EE:  RETLW  B8
+00EF:  RETLW  06
+00F0:  RETLW  AC
+00F1:  RETLW  06
+00F2:  RETLW  9F
+00F3:  RETLW  06
+00F4:  RETLW  92
+00F5:  RETLW  06
+00F6:  RETLW  86
+00F7:  RETLW  06
+00F8:  RETLW  79
+00F9:  RETLW  06
+00FA:  RETLW  6C
+00FB:  RETLW  06
+00FC:  RETLW  5F
+00FD:  RETLW  06
+00FE:  RETLW  52
+00FF:  RETLW  06
+0100:  RETLW  45
+0101:  RETLW  06
+0102:  RETLW  39
+0103:  RETLW  06
+0104:  RETLW  2C
+0105:  RETLW  06
+0106:  RETLW  1F
+0107:  RETLW  06
+0108:  RETLW  12
+0109:  RETLW  06
+010A:  RETLW  05
+010B:  RETLW  06
+010C:  RETLW  F8
+010D:  RETLW  05
+010E:  RETLW  EB
+010F:  RETLW  05
+0110:  RETLW  DD
+0111:  RETLW  05
+0112:  RETLW  D0
+0113:  RETLW  05
+0114:  RETLW  C3
+0115:  RETLW  05
+0116:  RETLW  B6
+0117:  RETLW  05
+0118:  RETLW  A9
+0119:  RETLW  05
+011A:  RETLW  9C
+011B:  RETLW  05
+011C:  RETLW  8F
+011D:  RETLW  05
+011E:  RETLW  82
+011F:  RETLW  05
+0120:  RETLW  75
+0121:  RETLW  05
+0122:  RETLW  67
+0123:  RETLW  05
+0124:  RETLW  5A
+0125:  RETLW  05
+0126:  RETLW  4D
+0127:  RETLW  05
+0128:  RETLW  40
+0129:  RETLW  05
+012A:  RETLW  33
+012B:  RETLW  05
+012C:  RETLW  26
+012D:  RETLW  05
+012E:  RETLW  18
+012F:  RETLW  05
+0130:  RETLW  0B
+0131:  RETLW  05
+0132:  RETLW  FE
+0133:  RETLW  04
+0134:  RETLW  F1
+0135:  RETLW  04
+0136:  RETLW  E4
+0137:  RETLW  04
+0138:  RETLW  D7
+0139:  RETLW  04
+013A:  RETLW  CA
+013B:  RETLW  04
+013C:  RETLW  BD
+013D:  RETLW  04
+013E:  RETLW  B0
+013F:  RETLW  04
+0140:  RETLW  A2
+0141:  RETLW  04
+0142:  RETLW  95
+0143:  RETLW  04
+0144:  RETLW  88
+0145:  RETLW  04
+0146:  RETLW  7B
+0147:  RETLW  04
+0148:  RETLW  6E
+0149:  RETLW  04
+014A:  RETLW  61
+014B:  RETLW  04
+014C:  RETLW  54
+014D:  RETLW  04
+014E:  RETLW  48
+014F:  RETLW  04
+0150:  RETLW  3B
+0151:  RETLW  04
+0152:  RETLW  2E
+0153:  RETLW  04
+0154:  RETLW  21
+0155:  RETLW  04
+0156:  RETLW  14
+0157:  RETLW  04
+0158:  RETLW  07
+0159:  RETLW  04
+015A:  RETLW  FB
+015B:  RETLW  03
+015C:  RETLW  EE
+015D:  RETLW  03
+015E:  RETLW  E1
+015F:  RETLW  03
+0160:  RETLW  D4
+0161:  RETLW  03
+0162:  RETLW  C8
+0163:  RETLW  03
+0164:  RETLW  BB
+0165:  RETLW  03
+0166:  RETLW  AF
+0167:  RETLW  03
+0168:  RETLW  A2
+0169:  RETLW  03
+016A:  RETLW  96
+016B:  RETLW  03
+016C:  RETLW  89
+016D:  RETLW  03
+016E:  RETLW  7D
+016F:  RETLW  03
+0170:  RETLW  71
+0171:  RETLW  03
+0172:  RETLW  64
+0173:  RETLW  03
+0174:  RETLW  58
+0175:  RETLW  03
+0176:  RETLW  4C
+0177:  RETLW  03
+0178:  RETLW  40
+0179:  RETLW  03
+017A:  RETLW  34
+017B:  RETLW  03
+017C:  RETLW  28
+017D:  RETLW  03
+017E:  RETLW  1C
+017F:  RETLW  03
+0180:  RETLW  10
+0181:  RETLW  03
+0182:  RETLW  04
+0183:  RETLW  03
+0184:  RETLW  F8
+0185:  RETLW  02
+0186:  RETLW  ED
+0187:  RETLW  02
+0188:  RETLW  E1
+0189:  RETLW  02
+018A:  RETLW  D5
+018B:  RETLW  02
+018C:  RETLW  CA
+018D:  RETLW  02
+018E:  RETLW  BE
+018F:  RETLW  02
+0190:  RETLW  B3
+0191:  RETLW  02
+0192:  RETLW  A8
+0193:  RETLW  02
+0194:  RETLW  9C
+0195:  RETLW  02
+0196:  RETLW  91
+0197:  RETLW  02
+0198:  RETLW  86
+0199:  RETLW  02
+019A:  RETLW  7B
+019B:  RETLW  02
+019C:  RETLW  70
+019D:  RETLW  02
+019E:  RETLW  65
+019F:  RETLW  02
+01A0:  RETLW  5A
+01A1:  RETLW  02
+01A2:  RETLW  50
+01A3:  RETLW  02
+01A4:  RETLW  45
+01A5:  RETLW  02
+01A6:  RETLW  3A
+01A7:  RETLW  02
+01A8:  RETLW  30
+01A9:  RETLW  02
+01AA:  RETLW  25
+01AB:  RETLW  02
+01AC:  RETLW  1B
+01AD:  RETLW  02
+01AE:  RETLW  11
+01AF:  RETLW  02
+01B0:  RETLW  07
+01B1:  RETLW  02
+01B2:  RETLW  FD
+01B3:  RETLW  01
+01B4:  RETLW  F3
+01B5:  RETLW  01
+01B6:  RETLW  E9
+01B7:  RETLW  01
+01B8:  RETLW  DF
+01B9:  RETLW  01
+01BA:  RETLW  D5
+01BB:  RETLW  01
+01BC:  RETLW  CC
+01BD:  RETLW  01
+01BE:  RETLW  C2
+01BF:  RETLW  01
+01C0:  RETLW  B9
+01C1:  RETLW  01
+01C2:  RETLW  AF
+01C3:  RETLW  01
+01C4:  RETLW  A6
+01C5:  RETLW  01
+01C6:  RETLW  9D
+01C7:  RETLW  01
+01C8:  RETLW  94
+01C9:  RETLW  01
+01CA:  RETLW  8B
+01CB:  RETLW  01
+01CC:  RETLW  82
+01CD:  RETLW  01
+01CE:  RETLW  7A
+01CF:  RETLW  01
+01D0:  RETLW  71
+01D1:  RETLW  01
+01D2:  RETLW  68
+01D3:  RETLW  01
+01D4:  RETLW  60
+01D5:  RETLW  01
+01D6:  RETLW  58
+01D7:  RETLW  01
+01D8:  RETLW  50
+01D9:  RETLW  01
+01DA:  RETLW  48
+01DB:  RETLW  01
+01DC:  RETLW  40
+01DD:  RETLW  01
+01DE:  RETLW  38
+01DF:  RETLW  01
+01E0:  RETLW  30
+01E1:  RETLW  01
+01E2:  RETLW  29
+01E3:  RETLW  01
+01E4:  RETLW  21
+01E5:  RETLW  01
+01E6:  RETLW  1A
+01E7:  RETLW  01
+01E8:  RETLW  13
+01E9:  RETLW  01
+01EA:  RETLW  0C
+01EB:  RETLW  01
+01EC:  RETLW  05
+01ED:  RETLW  01
+01EE:  RETLW  FE
+01EF:  RETLW  00
+01F0:  RETLW  F7
+01F1:  RETLW  00
+01F2:  RETLW  F1
+01F3:  RETLW  00
+01F4:  RETLW  EA
+01F5:  RETLW  00
+01F6:  RETLW  E4
+01F7:  RETLW  00
+01F8:  RETLW  DE
+01F9:  RETLW  00
+01FA:  RETLW  D8
+01FB:  RETLW  00
+01FC:  RETLW  D2
+01FD:  RETLW  00
+01FE:  RETLW  CC
+01FF:  RETLW  00
+0200:  RETLW  C7
+0201:  RETLW  00
+0202:  RETLW  C1
+0203:  RETLW  00
+0204:  RETLW  BC
+0205:  RETLW  00
+0206:  RETLW  B7
+0207:  RETLW  00
+0208:  RETLW  B2
+0209:  RETLW  00
+020A:  RETLW  AD
+020B:  RETLW  00
+020C:  RETLW  A8
+020D:  RETLW  00
+020E:  RETLW  A4
+020F:  RETLW  00
+0210:  RETLW  9F
+0211:  RETLW  00
+0212:  RETLW  9B
+0213:  RETLW  00
+0214:  RETLW  97
+0215:  RETLW  00
+0216:  RETLW  93
+0217:  RETLW  00
+0218:  RETLW  8F
+0219:  RETLW  00
+021A:  RETLW  8B
+021B:  RETLW  00
+021C:  RETLW  88
+021D:  RETLW  00
+021E:  RETLW  84
+021F:  RETLW  00
+0220:  RETLW  81
+0221:  RETLW  00
+0222:  RETLW  7E
+0223:  RETLW  00
+0224:  RETLW  7B
+0225:  RETLW  00
+0226:  RETLW  79
+0227:  RETLW  00
+0228:  RETLW  76
+0229:  RETLW  00
+022A:  RETLW  74
+022B:  RETLW  00
+022C:  RETLW  71
+022D:  RETLW  00
+022E:  RETLW  6F
+022F:  RETLW  00
+0230:  RETLW  6E
+0231:  RETLW  00
+0232:  RETLW  6C
+0233:  RETLW  00
+0234:  RETLW  6A
+0235:  RETLW  00
+0236:  RETLW  69
+0237:  RETLW  00
+0238:  RETLW  68
+0239:  RETLW  00
+023A:  RETLW  67
+023B:  RETLW  00
+023C:  RETLW  66
+023D:  RETLW  00
+023E:  RETLW  65
+023F:  RETLW  00
+0240:  RETLW  65
+0241:  RETLW  00
+0242:  RETLW  65
+0243:  RETLW  00
+0244:  RETLW  64
+0245:  RETLW  00
+*
+0522:  BSF    0A.0
+0523:  BCF    0A.1
+0524:  BSF    0A.2
+0525:  ADDWF  02,F
+0526:  GOTO   4A3
+0527:  GOTO   486
+0528:  GOTO   4BF
+0529:  GOTO   4D6
+052A:  GOTO   4F1
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES INTRC_IO                                                      // High Speed Oscilator (>4 Mhz) crystal 
+.................... #FUSES WDT                                                         // Watch Dog Timer disabled 
+.................... #FUSES PUT                                                           // Power Up Timer enabled 
+.................... #FUSES MCLR                                                          // Master Clear pin enabled 
+.................... #FUSES BROWNOUT                                                      // Brownout Reset enabled 
+.................... #FUSES BORV25                                                        // Brownout Reset at 2.5V 
+.................... #FUSES NOLVP                                                         // Low Voltage Programming disabled 
+.................... #FUSES CPD                                                           // Data EEPROM code protected 
+.................... #FUSES PROTECT                                                       // Code protected from reads 
+.................... #FUSES NOIESO                                                        // Internal External Switch Over Mode disabled 
+.................... #FUSES NOFCMEN                                                       // Fail-safe clock monitor disabled 
+....................  
+.................... #USE   DELAY(clock=32000000)                                         // delay() func. adjusted for 20Mhz Primary Osc. 
+*
+0246:  MOVLW  20
+0247:  MOVWF  05
+0248:  MOVLW  18
+0249:  MOVWF  04
+024A:  MOVF   00,W
+024B:  BTFSC  03.2
+024C:  GOTO   25A
+024D:  MOVLW  0A
+024E:  MOVWF  78
+024F:  CLRF   77
+0250:  DECFSZ 77,F
+0251:  GOTO   250
+0252:  DECFSZ 78,F
+0253:  GOTO   24F
+0254:  MOVLW  5F
+0255:  MOVWF  77
+0256:  DECFSZ 77,F
+0257:  GOTO   256
+0258:  DECFSZ 00,F
+0259:  GOTO   24D
+025A:  RETURN
+*
+040E:  MOVLW  02
+040F:  SUBWF  29,F
+0410:  BTFSS  03.0
+0411:  GOTO   41F
+0412:  MOVLW  20
+0413:  MOVWF  05
+0414:  MOVLW  09
+0415:  MOVWF  04
+0416:  MOVF   00,W
+0417:  BTFSC  03.2
+0418:  GOTO   41F
+0419:  GOTO   41D
+041A:  GOTO   41B
+041B:  GOTO   41C
+041C:  NOP
+041D:  DECFSZ 00,F
+041E:  GOTO   41A
+041F:  RETURN
+....................  
+.................... // Pin assignments 
+.................... #DEFINE DRV_STEP     PIN_A0                  // Step output pin 
+.................... #DEFINE DRV_RESET    PIN_A1                  // Reset output pin to driver (Active-high reset input initializes all internal logic and disables the Hbridge outputs. Internal pulldown.) 
+.................... #DEFINE LM_UP        PIN_A2                  // Up limit switch input pin 
+.................... #DEFINE LM_DOWN      PIN_A3                  // Down limit switch input pin 
+.................... #DEFINE DRV_DIR      PIN_A4                  // Direction output pin 
+....................  
+.................... #DEFINE SPI_SDO      PIN_A6                  // SPI data output pin 
+.................... #DEFINE SPI_CS       PIN_A7                  // SPI chip select output pin 
+....................  
+.................... #DEFINE BT_DOWN      PIN_B0                  // Down button input pin 
+.................... #DEFINE SPI_SDI      PIN_B1                  // SPI data input pin 
+....................  
+.................... #DEFINE BT_UP        PIN_B3                  // Up button input pin 
+.................... #DEFINE SPI_SCK      PIN_B4                  // SPI clock output pin 
+....................  
+.................... #DEFINE DRV_STALL    PIN_B6                  // Stall input pin from driver (Internal stall detect mode: logic low when motor stall detected. Pull up mevcut) 
+.................... #DEFINE DRV_FAULT    PIN_B7                  // Fault input pin from driver (Logic low when in fault condition. Pull up mevcut) 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... //OPTION Register  
+.................... #WORD OPTION         = 0x095 
+.................... //Bits of Option Register 
+.................... #BIT OPTION_WPUEN    = OPTION.7 
+....................  
+....................  
+.................... // SPI Registers 
+.................... #WORD SPI_SSP1CON1   = 0x215                 // Synchronous serial port control register 
+.................... #WORD SPI_SSP1STAT   = 0x214                 // Synchronous serial port status register 
+.................... #WORD SPI_SSP1BUF    = 0x211                 // Synchronous serial port buffer register 
+.................... #WORD SPI_PIR1       = 0x011                 // Peripheral interrupt request register 
+.................... // Pin function control registers 
+.................... #WORD PIN_APFCON0    = 0x11D                 // Alternate pin function control register 0 
+.................... #WORD PIN_APFCON1    = 0x11E                 // Alternate pin function control register 1 
+....................  
+.................... // Bits of SSP1CON1 register 
+.................... #BIT SPI_WRITE_FLAG     = SPI_SSP1CON1.7     // Synchronous serial port write collision detect bit 
+.................... #BIT SPI_ENABLE         = SPI_SSP1CON1.5     // Synchronous serial port enable bit 
+.................... #BIT SPI_CLOCK_POLARITY = SPI_SSP1CON1.4     // Synchronous serial port clock polarity select bit 
+.................... #BIT SPI_MODE_3         = SPI_SSP1CON1.3     // Synchronous serial port mode select bits 
+.................... #BIT SPI_MODE_2         = SPI_SSP1CON1.2    
+.................... #BIT SPI_MODE_1         = SPI_SSP1CON1.1    
+.................... #BIT SPI_MODE_0         = SPI_SSP1CON1.0   
+....................  
+.................... // Bits of SPI_SSP1STAT register 
+.................... #BIT SPI_INPUT_SAMPLE   = SPI_SSP1STAT.7     // Synchronous serial port data input sample bit 
+.................... #BIT SPI_CLOCK_EDGE     = SPI_SSP1STAT.6     // Synchronous serial port clock edge select bit 
+.................... #BIT SPI_BUFFER_STATUS  = SPI_SSP1STAT.0     // Synchronous serial port buffer full status bit 
+....................  
+.................... // Bits of SPI_PIR1 register 
+.................... #BIT SPI_FLAG           = SPI_PIR1.3         // Synchronous serial port interrupt flag bit 
+....................  
+.................... // Bits of PIN_APFCON0 register 
+.................... #BIT PIN_RX_SELECT      = PIN_APFCON0.7      // RX pin selection bit 
+.................... #BIT PIN_SDO_SELECT     = PIN_APFCON0.6      // SDO pin selection bit  
+.................... #BIT PIN_SS_SELECT      = PIN_APFCON0.5      // SS pin selection bit  
+....................  
+.................... // Bits of PIN_APFCON1 register 
+.................... #BIT PIN_TX_SELECT      = PIN_APFCON1.0      // TX pin selection bit 
+....................  
+....................  
+.................... enum  State     {OFF = 0, ON   = 1};                                 // Motor states 
+.................... enum  Direction {UP  = 0, DOWN = 1};                                 // Direction of motion 
+.................... enum  Motion    {ACC = 0, WALK = 1, RUN  = 2, DEC = 3, STEADY = 4};  // State of the motion 
+....................  
+.................... int16 step_count = 0; 
+.................... int16 const run_lim          = 800;                                  // Duration of the slow motion (per count) before acclerating to high speed   
+.................... unsigned int16   const acc_lim          = 285;                                  // Number of steps before we hit max speed. acc=10000 dec=10000  
+.................... unsigned int16 const periods[acc_lim] = {2600,2600,2600,2599,2598,2597,2596,2595,2593,2591,2590,2588,2585,2583, 
+.................... 2580,2578,2575,2572,2569,2565,2562,2558,2554,2550,2546,2542,2537,2533,2528,2523,2518,2513,2508,2502,2497,2491, 
+.................... 2485,2479,2473,2467,2460,2454,2447,2440,2433,2426,2419,2412,2404,2397,2389,2381,2373,2365,2357,2349,2340,2332, 
+.................... 2323,2315,2306,2297,2288,2279,2270,2260,2251,2241,2232,2222,2212,2202,2192,2182,2172,2162,2152,2141,2131,2120, 
+.................... 2109,2099,2088,2077,2066,2055,2044,2033,2021,2010,1999,1987,1976,1964,1952,1941,1929,1917,1905,1893,1881,1869, 
+.................... 1857,1845,1833,1820,1808,1796,1783,1771,1758,1746,1733,1720,1708,1695,1682,1670,1657,1644,1631,1618,1605,1593, 
+.................... 1580,1567,1554,1541,1528,1515,1501,1488,1475,1462,1449,1436,1423,1410,1397,1383,1370,1357,1344,1331,1318,1304, 
+.................... 1291,1278,1265,1252,1239,1226,1213,1200,1186,1173,1160,1147,1134,1121,1108,1096,1083,1070,1057,1044,1031,1019, 
+.................... 1006,993,980,968,955,943,930,918,905,893,881,868,856,844,832,820,808,796,784,772,760,749,737,725,714,702,691, 
+.................... 680,668,657,646,635,624,613,602,592,581,570,560,549,539,529,519,509,499,489,479,469,460,450,441,431,422,413, 
+.................... 404,395,386,378,369,360,352,344,336,328,320,312,304,297,289,282,275,268,261,254,247,241,234,228,222,216,210, 
+.................... 204,199,193,188,183,178,173,168,164,159,155,151,147,143,139,136,132,129,126,123,121,118,116,113,111,110,108, 
+.................... 106,105,104,103,102,101,101,101,100}; 
+....................  
+.................... int const off_time = 50;                                             // Off time of the pwm signal (should be smaller than period) 
+.................... int8      motion_state = STEADY;                                     // Current state of the motion 
+....................  
+.................... void set_SPI() 
+.................... { 
+....................    // Disable SPI to set registers 
+....................    SPI_ENABLE = 0; 
+*
+0261:  MOVLB  04
+0262:  BCF    15.5
+....................    // Set idle state of the clock to low  
+....................    SPI_CLOCK_POLARITY = 0; 
+0263:  BCF    15.4
+....................    // Set SPI mode to SPI  
+....................    SPI_MODE_3 = 0;  
+0264:  BCF    15.3
+....................    SPI_MODE_2 = 0; 
+0265:  BCF    15.2
+....................    SPI_MODE_1 = 1; 
+0266:  BSF    15.1
+....................    SPI_MODE_0 = 0; 
+0267:  BCF    15.0
+....................    // Input data sampled at the middle of data output time 
+....................    SPI_INPUT_SAMPLE = 0; 
+0268:  BCF    14.7
+....................    // Transmit occurs on transition from active to idle clock state 
+....................    SPI_CLOCK_EDGE = 1; 
+0269:  BSF    14.6
+....................  
+....................    // Enable SPI 
+....................    SPI_ENABLE = 1; 
+026A:  BSF    15.5
+026B:  MOVLP  00
+026C:  MOVLB  00
+026D:  GOTO   549 (RETURN)
+.................... } 
+....................  
+.................... void set_variables() 
+.................... { 
+....................    output_low(SPI_CS);     // Chip select is active high so keep it low to prevent out-of-sync transaction 
+026E:  MOVLB  01
+026F:  BCF    0C.7
+0270:  MOVLB  02
+0271:  BCF    0C.7
+....................    output_low(DRV_RESET);  // Reset is active high so keep reset pin low to activate driver  
+0272:  MOVLB  01
+0273:  BCF    0C.1
+0274:  MOVLB  02
+0275:  BCF    0C.1
+0276:  MOVLP  00
+0277:  MOVLB  00
+0278:  GOTO   54A (RETURN)
+.................... } 
+....................  
+.................... void set_pins() 
+.................... { 
+....................    // Set RB2 as RX pin 
+....................    //PIN_RX_SELECT = 1; 
+....................    // Set RA6 as SDO pin 
+....................    PIN_SDO_SELECT = 1; 
+*
+025B:  MOVLB  02
+025C:  BSF    1D.6
+....................    // Set RA5 as SS pin 
+....................    PIN_SS_SELECT = 1; 
+025D:  BSF    1D.5
+025E:  MOVLP  00
+025F:  MOVLB  00
+0260:  GOTO   548 (RETURN)
+....................    // Set RB5 as TX pin 
+....................    //PIN_TX_SELECT = 1; 
+.................... } 
+....................  
+....................  
+.................... // Sets the motor state 
+.................... void md_set_state(State value) 
+.................... { 
+....................    if (value == on) 
+*
+0279:  DECFSZ 33,W
+027A:  GOTO   2A1
+....................    { 
+....................    output_high(SPI_CS); 
+027B:  MOVLB  01
+027C:  BCF    0C.7
+027D:  MOVLB  02
+027E:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Ctrl_1     = 0b00001100; 
+....................                     //76543210 
+....................    int Ctrl_0     = 0b00011001;// Set enable pin to given motor state 
+027F:  MOVLW  0C
+0280:  MOVLB  00
+0281:  MOVWF  34
+0282:  MOVLW  19
+0283:  MOVWF  35
+....................    SPI_SSP1BUF = Ctrl_1; 
+0284:  MOVLB  04
+0285:  CLRF   12
+0286:  MOVLB  00
+0287:  MOVF   34,W
+0288:  MOVLB  04
+0289:  MOVWF  11
+....................    while (!SPI_FLAG); 
+028A:  MOVLB  00
+028B:  BTFSS  11.3
+028C:  GOTO   28B
+....................    SPI_FLAG = 0; 
+028D:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+028E:  MOVLB  04
+028F:  CLRF   12
+0290:  MOVLB  00
+0291:  MOVF   35,W
+0292:  MOVLB  04
+0293:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0294:  MOVLB  00
+0295:  BTFSS  11.3
+0296:  GOTO   295
+....................    SPI_FLAG = 0; 
+0297:  BCF    11.3
+....................    output_low(SPI_CS); 
+0298:  MOVLB  01
+0299:  BCF    0C.7
+029A:  MOVLB  02
+029B:  BCF    0C.7
+....................    delay_ms(10); 
+029C:  MOVLW  0A
+029D:  MOVLB  00
+029E:  MOVWF  38
+029F:  CALL   246
+....................    } 
+02A0:  GOTO   2C9
+....................    else if (value == off) 
+02A1:  MOVF   33,F
+02A2:  BTFSS  03.2
+02A3:  GOTO   2C9
+....................    { 
+....................    output_high(SPI_CS); 
+02A4:  MOVLB  01
+02A5:  BCF    0C.7
+02A6:  MOVLB  02
+02A7:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Ctrl_1     = 0b00001100; 
+....................                     //76543210 
+....................    int Ctrl_0     = 0b00011000;// Set enable pin to given motor state 
+02A8:  MOVLW  0C
+02A9:  MOVLB  00
+02AA:  MOVWF  36
+02AB:  MOVLW  18
+02AC:  MOVWF  37
+....................    SPI_SSP1BUF = Ctrl_1; 
+02AD:  MOVLB  04
+02AE:  CLRF   12
+02AF:  MOVLB  00
+02B0:  MOVF   36,W
+02B1:  MOVLB  04
+02B2:  MOVWF  11
+....................    while (!SPI_FLAG); 
+02B3:  MOVLB  00
+02B4:  BTFSS  11.3
+02B5:  GOTO   2B4
+....................    SPI_FLAG = 0; 
+02B6:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+02B7:  MOVLB  04
+02B8:  CLRF   12
+02B9:  MOVLB  00
+02BA:  MOVF   37,W
+02BB:  MOVLB  04
+02BC:  MOVWF  11
+....................    while (!SPI_FLAG); 
+02BD:  MOVLB  00
+02BE:  BTFSS  11.3
+02BF:  GOTO   2BE
+....................    SPI_FLAG = 0; 
+02C0:  BCF    11.3
+....................    output_low(SPI_CS); 
+02C1:  MOVLB  01
+02C2:  BCF    0C.7
+02C3:  MOVLB  02
+02C4:  BCF    0C.7
+....................    delay_ms(10); 
+02C5:  MOVLW  0A
+02C6:  MOVLB  00
+02C7:  MOVWF  38
+02C8:  CALL   246
+....................    } 
+02C9:  RETURN
+.................... } 
+.................... // Sets the motion direction 
+.................... void md_set_direction(Direction value) 
+.................... { 
+....................       restart_wdt();//watchdog sýfýrlanacak 
+*
+0400:  CLRWDT
+....................       output_bit(DRV_DIR, !value);                                     // Set direction pin to given value 
+0401:  MOVF   26,F
+0402:  BTFSC  03.2
+0403:  GOTO   408
+0404:  MOVLB  02
+0405:  BCF    0C.4
+0406:  GOTO   40A
+0407:  MOVLB  00
+0408:  MOVLB  02
+0409:  BSF    0C.4
+040A:  MOVLB  01
+040B:  BCF    0C.4
+040C:  MOVLB  00
+040D:  RETURN
+.................... } 
+.................... // Initializes motor driver 
+.................... void md_init() 
+.................... { 
+....................    md_set_state(OFF);                                                 // Motor off 
+*
+02CA:  CLRF   33
+02CB:  CALL   279
+....................    output_high(DRV_DIR);                                              // Direction control pin can be in any state 
+02CC:  MOVLB  01
+02CD:  BCF    0C.4
+02CE:  MOVLB  02
+02CF:  BSF    0C.4
+....................    output_high(DRV_STEP);                                             // Keep step input pin high (A low-to-high transition advances the motor one increment  
+02D0:  MOVLB  01
+02D1:  BCF    0C.0
+02D2:  MOVLB  02
+02D3:  BSF    0C.0
+....................     
+....................    output_high(SPI_CS); 
+02D4:  MOVLB  01
+02D5:  BCF    0C.7
+02D6:  MOVLB  02
+02D7:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Ctrl_1     = 0b00001100; 
+....................                     //76543210 
+....................    int Ctrl_0     = 0b00011000; 
+02D8:  MOVLW  0C
+02D9:  MOVLB  00
+02DA:  MOVWF  23
+02DB:  MOVLW  18
+02DC:  MOVWF  24
+....................    SPI_SSP1BUF = Ctrl_1; 
+02DD:  MOVLB  04
+02DE:  CLRF   12
+02DF:  MOVLB  00
+02E0:  MOVF   23,W
+02E1:  MOVLB  04
+02E2:  MOVWF  11
+....................    while (!SPI_FLAG); 
+02E3:  MOVLB  00
+02E4:  BTFSS  11.3
+02E5:  GOTO   2E4
+....................    SPI_FLAG = 0; 
+02E6:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+02E7:  MOVLB  04
+02E8:  CLRF   12
+02E9:  MOVLB  00
+02EA:  MOVF   24,W
+02EB:  MOVLB  04
+02EC:  MOVWF  11
+....................    while (!SPI_FLAG); 
+02ED:  MOVLB  00
+02EE:  BTFSS  11.3
+02EF:  GOTO   2EE
+....................    SPI_FLAG = 0; 
+02F0:  BCF    11.3
+....................    output_low(SPI_CS); 
+02F1:  MOVLB  01
+02F2:  BCF    0C.7
+02F3:  MOVLB  02
+02F4:  BCF    0C.7
+....................    delay_ms(10); 
+02F5:  MOVLW  0A
+02F6:  MOVLB  00
+02F7:  MOVWF  38
+02F8:  CALL   246
+....................  
+....................    output_high(SPI_CS); 
+02F9:  MOVLB  01
+02FA:  BCF    0C.7
+02FB:  MOVLB  02
+02FC:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Torque_1   = 0b00010000; 
+....................                     //76543210 
+....................    int Torque_0   = 0b10110111; 
+02FD:  MOVLW  10
+02FE:  MOVLB  00
+02FF:  MOVWF  25
+0300:  MOVLW  B7
+0301:  MOVWF  26
+....................    SPI_SSP1BUF = Torque_1; 
+0302:  MOVLB  04
+0303:  CLRF   12
+0304:  MOVLB  00
+0305:  MOVF   25,W
+0306:  MOVLB  04
+0307:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0308:  MOVLB  00
+0309:  BTFSS  11.3
+030A:  GOTO   309
+....................    SPI_FLAG = 0; 
+030B:  BCF    11.3
+....................    SPI_SSP1BUF = Torque_0; 
+030C:  MOVLB  04
+030D:  CLRF   12
+030E:  MOVLB  00
+030F:  MOVF   26,W
+0310:  MOVLB  04
+0311:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0312:  MOVLB  00
+0313:  BTFSS  11.3
+0314:  GOTO   313
+....................    SPI_FLAG = 0; 
+0315:  BCF    11.3
+....................    output_low(SPI_CS); 
+0316:  MOVLB  01
+0317:  BCF    0C.7
+0318:  MOVLB  02
+0319:  BCF    0C.7
+....................    delay_ms(10); 
+031A:  MOVLW  0A
+031B:  MOVLB  00
+031C:  MOVWF  38
+031D:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+031E:  MOVLB  01
+031F:  BCF    0C.7
+0320:  MOVLB  02
+0321:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Off_1      = 0b00100000; 
+....................                     //76543210 
+....................    int Off_0      = 0b01111001; 
+0322:  MOVLW  20
+0323:  MOVLB  00
+0324:  MOVWF  27
+0325:  MOVLW  79
+0326:  MOVWF  28
+....................    SPI_SSP1BUF = Off_1; 
+0327:  MOVLB  04
+0328:  CLRF   12
+0329:  MOVLB  00
+032A:  MOVF   27,W
+032B:  MOVLB  04
+032C:  MOVWF  11
+....................    while (!SPI_FLAG); 
+032D:  MOVLB  00
+032E:  BTFSS  11.3
+032F:  GOTO   32E
+....................    SPI_FLAG = 0; 
+0330:  BCF    11.3
+....................    SPI_SSP1BUF = Off_0; 
+0331:  MOVLB  04
+0332:  CLRF   12
+0333:  MOVLB  00
+0334:  MOVF   28,W
+0335:  MOVLB  04
+0336:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0337:  MOVLB  00
+0338:  BTFSS  11.3
+0339:  GOTO   338
+....................    SPI_FLAG = 0; 
+033A:  BCF    11.3
+....................    output_low(SPI_CS); 
+033B:  MOVLB  01
+033C:  BCF    0C.7
+033D:  MOVLB  02
+033E:  BCF    0C.7
+....................    delay_ms(10); 
+033F:  MOVLW  0A
+0340:  MOVLB  00
+0341:  MOVWF  38
+0342:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+0343:  MOVLB  01
+0344:  BCF    0C.7
+0345:  MOVLB  02
+0346:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Blank_1    = 0b00110001; 
+....................                     //76543210 
+....................    int Blank_0    = 0b10010110; 
+0347:  MOVLW  31
+0348:  MOVLB  00
+0349:  MOVWF  29
+034A:  MOVLW  96
+034B:  MOVWF  2A
+....................    SPI_SSP1BUF = Blank_1; 
+034C:  MOVLB  04
+034D:  CLRF   12
+034E:  MOVLB  00
+034F:  MOVF   29,W
+0350:  MOVLB  04
+0351:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0352:  MOVLB  00
+0353:  BTFSS  11.3
+0354:  GOTO   353
+....................    SPI_FLAG = 0; 
+0355:  BCF    11.3
+....................    SPI_SSP1BUF = Blank_0; 
+0356:  MOVLB  04
+0357:  CLRF   12
+0358:  MOVLB  00
+0359:  MOVF   2A,W
+035A:  MOVLB  04
+035B:  MOVWF  11
+....................    while (!SPI_FLAG); 
+035C:  MOVLB  00
+035D:  BTFSS  11.3
+035E:  GOTO   35D
+....................    SPI_FLAG = 0; 
+035F:  BCF    11.3
+....................    output_low(SPI_CS); 
+0360:  MOVLB  01
+0361:  BCF    0C.7
+0362:  MOVLB  02
+0363:  BCF    0C.7
+....................    delay_ms(10); 
+0364:  MOVLW  0A
+0365:  MOVLB  00
+0366:  MOVWF  38
+0367:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+0368:  MOVLB  01
+0369:  BCF    0C.7
+036A:  MOVLB  02
+036B:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Decay_1    = 0b01000101; 
+....................                     //76543210 
+....................    int Decay_0    = 0b00011100; 
+036C:  MOVLW  45
+036D:  MOVLB  00
+036E:  MOVWF  2B
+036F:  MOVLW  1C
+0370:  MOVWF  2C
+....................    SPI_SSP1BUF = Decay_1; 
+0371:  MOVLB  04
+0372:  CLRF   12
+0373:  MOVLB  00
+0374:  MOVF   2B,W
+0375:  MOVLB  04
+0376:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0377:  MOVLB  00
+0378:  BTFSS  11.3
+0379:  GOTO   378
+....................    SPI_FLAG = 0; 
+037A:  BCF    11.3
+....................    SPI_SSP1BUF = Decay_0; 
+037B:  MOVLB  04
+037C:  CLRF   12
+037D:  MOVLB  00
+037E:  MOVF   2C,W
+037F:  MOVLB  04
+0380:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0381:  MOVLB  00
+0382:  BTFSS  11.3
+0383:  GOTO   382
+....................    SPI_FLAG = 0; 
+0384:  BCF    11.3
+....................    output_low(SPI_CS); 
+0385:  MOVLB  01
+0386:  BCF    0C.7
+0387:  MOVLB  02
+0388:  BCF    0C.7
+....................    delay_ms(10); 
+0389:  MOVLW  0A
+038A:  MOVLB  00
+038B:  MOVWF  38
+038C:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+038D:  MOVLB  01
+038E:  BCF    0C.7
+038F:  MOVLB  02
+0390:  BSF    0C.7
+....................    int Stall_1    = 0b01011001; 
+....................    int Stall_0    = 0b00010100; 
+0391:  MOVLW  59
+0392:  MOVLB  00
+0393:  MOVWF  2D
+0394:  MOVLW  14
+0395:  MOVWF  2E
+....................    SPI_SSP1BUF = Stall_1; 
+0396:  MOVLB  04
+0397:  CLRF   12
+0398:  MOVLB  00
+0399:  MOVF   2D,W
+039A:  MOVLB  04
+039B:  MOVWF  11
+....................    while (!SPI_FLAG); 
+039C:  MOVLB  00
+039D:  BTFSS  11.3
+039E:  GOTO   39D
+....................    SPI_FLAG = 0; 
+039F:  BCF    11.3
+....................    SPI_SSP1BUF = Stall_0; 
+03A0:  MOVLB  04
+03A1:  CLRF   12
+03A2:  MOVLB  00
+03A3:  MOVF   2E,W
+03A4:  MOVLB  04
+03A5:  MOVWF  11
+....................    while (!SPI_FLAG); 
+03A6:  MOVLB  00
+03A7:  BTFSS  11.3
+03A8:  GOTO   3A7
+....................    SPI_FLAG = 0; 
+03A9:  BCF    11.3
+....................    output_low(SPI_CS); 
+03AA:  MOVLB  01
+03AB:  BCF    0C.7
+03AC:  MOVLB  02
+03AD:  BCF    0C.7
+....................    delay_ms(10); 
+03AE:  MOVLW  0A
+03AF:  MOVLB  00
+03B0:  MOVWF  38
+03B1:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+03B2:  MOVLB  01
+03B3:  BCF    0C.7
+03B4:  MOVLB  02
+03B5:  BSF    0C.7
+....................                     //FEDCBA98 
+....................    int Drive_1    = 0b01101010; 
+....................                     //76543210 
+....................    int Drive_0    = 0b10100000; 
+03B6:  MOVLW  6A
+03B7:  MOVLB  00
+03B8:  MOVWF  2F
+03B9:  MOVLW  A0
+03BA:  MOVWF  30
+....................    SPI_SSP1BUF = Drive_1; 
+03BB:  MOVLB  04
+03BC:  CLRF   12
+03BD:  MOVLB  00
+03BE:  MOVF   2F,W
+03BF:  MOVLB  04
+03C0:  MOVWF  11
+....................    while (!SPI_FLAG); 
+03C1:  MOVLB  00
+03C2:  BTFSS  11.3
+03C3:  GOTO   3C2
+....................    SPI_FLAG = 0; 
+03C4:  BCF    11.3
+....................    SPI_SSP1BUF = Drive_0; 
+03C5:  MOVLB  04
+03C6:  CLRF   12
+03C7:  MOVLB  00
+03C8:  MOVF   30,W
+03C9:  MOVLB  04
+03CA:  MOVWF  11
+....................    while (!SPI_FLAG); 
+03CB:  MOVLB  00
+03CC:  BTFSS  11.3
+03CD:  GOTO   3CC
+....................    SPI_FLAG = 0; 
+03CE:  BCF    11.3
+....................    output_low(SPI_CS); 
+03CF:  MOVLB  01
+03D0:  BCF    0C.7
+03D1:  MOVLB  02
+03D2:  BCF    0C.7
+....................    delay_ms(10); 
+03D3:  MOVLW  0A
+03D4:  MOVLB  00
+03D5:  MOVWF  38
+03D6:  CALL   246
+....................     
+....................    output_high(SPI_CS); 
+03D7:  MOVLB  01
+03D8:  BCF    0C.7
+03D9:  MOVLB  02
+03DA:  BSF    0C.7
+....................    int Status_1   = 0b01110000; 
+....................    int Status_0   = 0b00000000; 
+03DB:  MOVLW  70
+03DC:  MOVLB  00
+03DD:  MOVWF  31
+03DE:  CLRF   32
+....................    SPI_SSP1BUF = Status_1; 
+03DF:  MOVLB  04
+03E0:  CLRF   12
+03E1:  MOVLB  00
+03E2:  MOVF   31,W
+03E3:  MOVLB  04
+03E4:  MOVWF  11
+....................    while (!SPI_FLAG); 
+03E5:  MOVLB  00
+03E6:  BTFSS  11.3
+03E7:  GOTO   3E6
+....................    SPI_FLAG = 0; 
+03E8:  BCF    11.3
+....................    SPI_SSP1BUF = Status_0; 
+03E9:  MOVLB  04
+03EA:  CLRF   12
+03EB:  MOVLB  00
+03EC:  MOVF   32,W
+03ED:  MOVLB  04
+03EE:  MOVWF  11
+....................    while (!SPI_FLAG); 
+03EF:  MOVLB  00
+03F0:  BTFSS  11.3
+03F1:  GOTO   3F0
+....................    SPI_FLAG = 0; 
+03F2:  BCF    11.3
+....................    output_low(SPI_CS); 
+03F3:  MOVLB  01
+03F4:  BCF    0C.7
+03F5:  MOVLB  02
+03F6:  BCF    0C.7
+....................    delay_ms(10); 
+03F7:  MOVLW  0A
+03F8:  MOVLB  00
+03F9:  MOVWF  38
+03FA:  CALL   246
+....................  
+....................    delay_ms(100); 
+03FB:  MOVLW  64
+03FC:  MOVWF  38
+03FD:  CALL   246
+03FE:  MOVLP  00
+03FF:  GOTO   54B (RETURN)
+.................... } 
+....................  
+.................... // Starts motion cycle 
+.................... void motion_cycle() 
+*
+0420:  CLRF   24
+0421:  CLRF   23
+0422:  BCF    25.0
+.................... { 
+....................    // Start cycle 
+....................    unsigned int16 period     = 0; 
+....................    int1  running    = 0; 
+....................     
+....................    while(true) 
+....................    { 
+....................       if(input(BT_UP)) 
+0423:  MOVLB  01
+0424:  BSF    0D.3
+0425:  MOVLB  00
+0426:  BTFSS  0D.3
+0427:  GOTO   44A
+....................       { 
+....................          if(input(LM_UP) == 0 && running == 0) 
+0428:  MOVLB  01
+0429:  BSF    0C.2
+042A:  MOVLB  00
+042B:  BTFSC  0C.2
+042C:  GOTO   434
+042D:  BTFSC  25.0
+042E:  GOTO   434
+....................          { 
+....................             md_set_direction(UP); 
+042F:  CLRF   26
+0430:  CALL   400
+....................             motion_state = WALK; 
+0431:  MOVLW  01
+0432:  MOVWF  22
+....................          } 
+0433:  GOTO   449
+....................          else if(input(LM_UP) && running == 1) 
+0434:  MOVLB  01
+0435:  BSF    0C.2
+0436:  MOVLB  00
+0437:  BTFSS  0C.2
+0438:  GOTO   449
+0439:  BTFSS  25.0
+043A:  GOTO   449
+....................          { 
+....................             if(motion_state == ACC || motion_state == RUN) 
+043B:  MOVF   22,F
+043C:  BTFSC  03.2
+043D:  GOTO   442
+043E:  MOVF   22,W
+043F:  SUBLW  02
+0440:  BTFSS  03.2
+0441:  GOTO   445
+....................                motion_state = DEC; 
+0442:  MOVLW  03
+0443:  MOVWF  22
+0444:  GOTO   449
+....................             else if(motion_state == WALK) 
+0445:  DECFSZ 22,W
+0446:  GOTO   449
+....................                motion_state = STEADY; 
+0447:  MOVLW  04
+0448:  MOVWF  22
+....................          } 
+....................       } 
+0449:  GOTO   480
+....................       else if(input(BT_DOWN)) 
+044A:  MOVLB  01
+044B:  BSF    0D.0
+044C:  MOVLB  00
+044D:  BTFSS  0D.0
+044E:  GOTO   472
+....................       { 
+....................          if(input(LM_DOWN) == 0 && running == 0) 
+044F:  MOVLB  01
+0450:  BSF    0C.3
+0451:  MOVLB  00
+0452:  BTFSC  0C.3
+0453:  GOTO   45C
+0454:  BTFSC  25.0
+0455:  GOTO   45C
+....................          { 
+....................             md_set_direction(DOWN); 
+0456:  MOVLW  01
+0457:  MOVWF  26
+0458:  CALL   400
+....................             motion_state = WALK; 
+0459:  MOVLW  01
+045A:  MOVWF  22
+....................          } 
+045B:  GOTO   471
+....................          else if(input(LM_DOWN) && running == 1) 
+045C:  MOVLB  01
+045D:  BSF    0C.3
+045E:  MOVLB  00
+045F:  BTFSS  0C.3
+0460:  GOTO   471
+0461:  BTFSS  25.0
+0462:  GOTO   471
+....................          { 
+....................             if(motion_state == ACC || motion_state == RUN) 
+0463:  MOVF   22,F
+0464:  BTFSC  03.2
+0465:  GOTO   46A
+0466:  MOVF   22,W
+0467:  SUBLW  02
+0468:  BTFSS  03.2
+0469:  GOTO   46D
+....................                motion_state = DEC; 
+046A:  MOVLW  03
+046B:  MOVWF  22
+046C:  GOTO   471
+....................             else if(motion_state == WALK) 
+046D:  DECFSZ 22,W
+046E:  GOTO   471
+....................                motion_state = STEADY; 
+046F:  MOVLW  04
+0470:  MOVWF  22
+....................          } 
+....................       } 
+0471:  GOTO   480
+....................       else 
+....................       { 
+....................          if(motion_state == ACC || motion_state == RUN) 
+0472:  MOVF   22,F
+0473:  BTFSC  03.2
+0474:  GOTO   479
+0475:  MOVF   22,W
+0476:  SUBLW  02
+0477:  BTFSS  03.2
+0478:  GOTO   47C
+....................          { 
+....................             motion_state = DEC; 
+0479:  MOVLW  03
+047A:  MOVWF  22
+....................          }    
+047B:  GOTO   480
+....................          else if(motion_state == WALK) 
+047C:  DECFSZ 22,W
+047D:  GOTO   480
+....................          { 
+....................             motion_state = STEADY; 
+047E:  MOVLW  04
+047F:  MOVWF  22
+....................          } 
+....................       } 
+....................        
+....................       switch(motion_state)  
+0480:  MOVF   22,W
+0481:  ADDLW  FB
+0482:  BTFSC  03.0
+0483:  GOTO   4FA
+0484:  ADDLW  05
+0485:  GOTO   522
+....................       {  
+....................          case WALK: 
+....................             step_count++; 
+0486:  INCF   20,F
+0487:  BTFSC  03.2
+0488:  INCF   21,F
+....................           
+....................             if(step_count == 1) 
+0489:  DECFSZ 20,W
+048A:  GOTO   497
+048B:  MOVF   21,F
+048C:  BTFSS  03.2
+048D:  GOTO   497
+....................             { 
+....................                running = 1; 
+048E:  BSF    25.0
+....................                md_set_state(ON); 
+048F:  MOVLW  01
+0490:  MOVWF  33
+0491:  CALL   279
+....................                period = periods[0]; 
+0492:  MOVLW  0A
+0493:  MOVWF  24
+0494:  MOVLW  28
+0495:  MOVWF  23
+....................             } 
+0496:  GOTO   4A2
+....................             else if(step_count == run_lim) 
+0497:  MOVF   20,W
+0498:  SUBLW  20
+0499:  BTFSS  03.2
+049A:  GOTO   4A2
+049B:  MOVF   21,W
+049C:  SUBLW  03
+049D:  BTFSS  03.2
+049E:  GOTO   4A2
+....................             { 
+....................                step_count   = 0; 
+049F:  CLRF   21
+04A0:  CLRF   20
+....................                motion_state = ACC; 
+04A1:  CLRF   22
+....................             } 
+....................             break; 
+04A2:  GOTO   4FA
+....................          case ACC: 
+....................             if(step_count == acc_lim - 1) 
+04A3:  MOVF   20,W
+04A4:  SUBLW  1C
+04A5:  BTFSS  03.2
+04A6:  GOTO   4AB
+04A7:  DECFSZ 21,W
+04A8:  GOTO   4AB
+....................             { 
+....................                motion_state = RUN; 
+04A9:  MOVLW  02
+04AA:  MOVWF  22
+....................             } 
+....................                 
+....................             period = periods[step_count]; 
+04AB:  BCF    03.0
+04AC:  RLF    20,W
+04AD:  MOVWF  79
+04AE:  RLF    21,W
+04AF:  MOVWF  7A
+04B0:  MOVF   79,W
+04B1:  MOVWF  26
+04B2:  CALL   003
+04B3:  MOVWF  77
+04B4:  INCF   26,W
+04B5:  CALL   003
+04B6:  MOVWF  7A
+04B7:  MOVF   77,W
+04B8:  MOVWF  23
+04B9:  MOVF   7A,W
+04BA:  MOVWF  24
+....................             step_count++; 
+04BB:  INCF   20,F
+04BC:  BTFSC  03.2
+04BD:  INCF   21,F
+....................             break; 
+04BE:  GOTO   4FA
+....................              
+....................          case RUN: 
+....................             period = periods[step_count - 1]; 
+04BF:  MOVLW  01
+04C0:  SUBWF  20,W
+04C1:  MOVWF  26
+04C2:  MOVLW  00
+04C3:  SUBWFC 21,W
+04C4:  MOVWF  27
+04C5:  BCF    03.0
+04C6:  RLF    26,W
+04C7:  MOVWF  79
+04C8:  RLF    27,W
+04C9:  MOVWF  7A
+04CA:  MOVF   79,W
+04CB:  MOVWF  26
+04CC:  CALL   003
+04CD:  MOVWF  77
+04CE:  INCF   26,W
+04CF:  CALL   003
+04D0:  MOVWF  7A
+04D1:  MOVF   77,W
+04D2:  MOVWF  23
+04D3:  MOVF   7A,W
+04D4:  MOVWF  24
+....................             break; 
+04D5:  GOTO   4FA
+....................     
+....................          case DEC: 
+....................             step_count--; 
+04D6:  MOVF   20,W
+04D7:  BTFSC  03.2
+04D8:  DECF   21,F
+04D9:  DECFSZ 20,F
+....................             // Check if we at last step 
+....................             if(step_count == 0) 
+04DA:  GOTO   4E0
+04DB:  MOVF   21,F
+04DC:  BTFSS  03.2
+04DD:  GOTO   4E0
+....................             { 
+....................                motion_state = STEADY; 
+04DE:  MOVLW  04
+04DF:  MOVWF  22
+....................             } 
+....................                 
+....................             period = periods[step_count]; 
+04E0:  BCF    03.0
+04E1:  RLF    20,W
+04E2:  MOVWF  79
+04E3:  RLF    21,W
+04E4:  MOVWF  7A
+04E5:  MOVF   79,W
+04E6:  MOVWF  26
+04E7:  CALL   003
+04E8:  MOVWF  77
+04E9:  INCF   26,W
+04EA:  CALL   003
+04EB:  MOVWF  7A
+04EC:  MOVF   77,W
+04ED:  MOVWF  23
+04EE:  MOVF   7A,W
+04EF:  MOVWF  24
+....................             break; 
+04F0:  GOTO   4FA
+....................              
+....................          case STEADY: 
+....................             if(running) 
+04F1:  BTFSS  25.0
+04F2:  GOTO   4FA
+....................             { 
+....................                running    = 0; 
+04F3:  BCF    25.0
+....................                period     = 0; 
+04F4:  CLRF   24
+04F5:  CLRF   23
+....................                step_count = 0; 
+04F6:  CLRF   21
+04F7:  CLRF   20
+....................                md_set_state(OFF); 
+04F8:  CLRF   33
+04F9:  CALL   279
+....................             } 
+....................             break; 
+....................       } 
+....................       if(running) 
+04FA:  BTFSS  25.0
+04FB:  GOTO   51F
+....................       {   
+....................          delay_us(off_time); 
+04FC:  MOVLW  84
+04FD:  MOVWF  77
+04FE:  DECFSZ 77,F
+04FF:  GOTO   4FE
+0500:  GOTO   501
+0501:  NOP
+....................          output_low(DRV_STEP); 
+0502:  MOVLB  01
+0503:  BCF    0C.0
+0504:  MOVLB  02
+0505:  BCF    0C.0
+....................          delay_us(period - off_time); 
+0506:  MOVLW  32
+0507:  MOVLB  00
+0508:  SUBWF  23,W
+0509:  MOVWF  26
+050A:  MOVLW  00
+050B:  SUBWFC 24,W
+050C:  MOVWF  27
+050D:  MOVF   27,W
+050E:  MOVWF  28
+050F:  INCF   28,F
+0510:  DECF   28,F
+0511:  BTFSC  03.2
+0512:  GOTO   517
+0513:  MOVLW  FF
+0514:  MOVWF  29
+0515:  CALL   40E
+0516:  GOTO   510
+0517:  MOVF   26,W
+0518:  MOVWF  29
+0519:  CALL   40E
+....................          output_high(DRV_STEP); 
+051A:  MOVLB  01
+051B:  BCF    0C.0
+051C:  MOVLB  02
+051D:  BSF    0C.0
+051E:  MOVLB  00
+....................       } 
+051F:  GOTO   423
+....................    } 
+0520:  MOVLP  00
+0521:  GOTO   550 (RETURN)
+.................... } 
+....................  
+.................... // Main method 
+.................... void main() 
+*
+052B:  MOVLW  F0
+052C:  MOVLB  01
+052D:  MOVWF  19
+052E:  MOVLB  00
+052F:  CLRF   21
+0530:  CLRF   20
+0531:  MOVLW  04
+0532:  MOVWF  22
+0533:  MOVLB  03
+0534:  CLRF   0C
+0535:  CLRF   0D
+0536:  MOVLB  02
+0537:  CLRF   12
+0538:  CLRF   11
+0539:  CLRF   14
+053A:  CLRF   13
+.................... { 
+....................    //             76543210 
+....................      set_tris_a(0b00101100);       // Set I/O states of the ports 
+053B:  MOVLW  2C
+053C:  TRIS   5
+....................      set_tris_b(0b11001111); 
+053D:  MOVLW  CF
+053E:  TRIS   6
+....................     
+....................    delay_ms(500); 
+053F:  MOVLW  02
+0540:  MOVLB  00
+0541:  MOVWF  23
+0542:  MOVLW  FA
+0543:  MOVWF  38
+0544:  CALL   246
+0545:  DECFSZ 23,F
+0546:  GOTO   542
+....................     
+....................    //fprintf(RS232,"\n\n\rMODESIS LASER POSITIONING STAGE\n\n\r"); 
+....................     
+....................    set_pins(); 
+0547:  GOTO   25B
+....................    set_SPI(); 
+0548:  GOTO   261
+....................    set_variables(); 
+0549:  GOTO   26E
+....................    md_init();           // Initialize motor driver 
+054A:  GOTO   2CA
+....................    setup_wdt(WDT_256S);    
+054B:  MOVLW  25
+054C:  MOVLB  01
+054D:  MOVWF  17
+....................    motion_cycle();      // Start motion cycle 
+054E:  MOVLB  00
+054F:  GOTO   420
+.................... } 
+0550:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0E5C   INTRC_IO WDT PUT MCLR PROTECT CPD BROWNOUT NOCLKOUT NOIESO NOFCMEN
+   Word  2: 1AFF   NOWRT PLL_SW STVREN BORV25 NODEBUG NOLVP

@@ -1,0 +1,64 @@
+
+ROM used:   2080/8192 (25%)
+            2249/8192 (27%) including unused fragments
+
+            1.3 Average locations per line
+            8.5 Average locations per statement
+
+RAM used:   129/512 (25%) at main() level
+            161/512 (31%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 16
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  536   246 100  pin_surucu.c
+ 1079     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f1946.h
+----- -----
+ 1615   246 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+ Inline         1             @delay_ms1
+0      6   0    0             @PUTCHARI_BIU_1
+0     10   0    0    69  1.6  set_motor_timer
+0     52   2    1   112  2.6  set_address
+0    328  16    4   813  7.5  set_motor_state
+0     38   2    7             @WRITEBBITA
+0     17   1    0    89  3.3  reset_motor_states
+ Inline         6   579  8.4  set_pins
+0     26   1    5             @READBITA
+0     35   2    6             @WRITEBITA
+0    228  11    3  1109  4.9  rs485_message
+0      7   0    0    33  1.3  isr_rs485_message
+0    995  48    1  8652  6.0  isr_timer0
+1    202  10    0   494  3.3  MAIN
+0     18   1    0             @const753
+0     80   4    4             @PSTRINGC7_38400_5225_5226
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              246
+    Comments                237
+    Volume (V)              14889
+    Difficulty (D)          39.8
+    Effort to implement (E) 592751
+    Time to implement (T)   9 hours, 9 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   47
+    Maintainability (MI)    127
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     3  0  
+00003-00003     0  1  
+00004-00026    35  0  
+00027-007FF  1840  169  
+00800-00FFF   202  1846  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,162 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+004-005 @WRITE_PACKED_MEMORY.P3
+004-005 @READ_PACKED_MEMORY.P4
+006-007 @READ_PACKED_MEMORY.P1
+006-007 @WRITE_PACKED_MEMORY.P2
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024.0   reg_rs232_message
+024.1   enable_state
+024.2   up_state
+024.3   down_state
+025-026 frequency
+027-028 delay
+029-02A up_distance
+02B-02C down_distance
+02D-030 down_distance_step
+031-034 up_distance_step
+035     i
+036     i
+037     rs232_message.input
+037     MAIN.@SCRATCH1
+038-039 @PRINTF_LU_62.P1
+038     @delay_ms1.P2
+038     data_set_distance_downwards.i
+038     data_set_distance_upwards.i
+038     data_set_frequency.i
+038     data_set_enable.i
+038     rs232_message.@SCRATCH1
+038     @PSTRINGC7_62.@SCRATCH1
+039     data_set_enable.input
+039     @PRINTF_U_62.P1
+039-03B data_set_distance_downwards.input
+039-03D data_set_frequency.input
+039-03B data_set_distance_upwards.input
+039     @PSTRINGCN7_62.P1
+039     @PSTRINGC7_62.@SCRATCH2
+03A     @PRINTF_U_62.P1
+03A     data_set_enable.@SCRATCH1
+03A     @PSTRINGC7_62.@SCRATCH3
+03A     @PSTRINGCN7_62.@SCRATCH1
+03A     @PRINTF_LU_62.@SCRATCH1
+03B     @DIV88.P1
+03B     data_set_enable.@SCRATCH2
+03B     @PSTRINGCN7_62.@SCRATCH2
+03B     @PRINTF_LU_62.@SCRATCH2
+03C     @DIV88.P1
+03C     data_set_enable.@SCRATCH3
+03C     data_set_distance_upwards.@SCRATCH1
+03C     data_set_distance_downwards.@SCRATCH1
+03C     @PSTRINGCN7_62.@SCRATCH3
+03C     @PRINTF_LU_62.@SCRATCH3
+03D     data_set_enable.@SCRATCH4
+03D     data_set_distance_upwards.@SCRATCH2
+03D     data_set_distance_downwards.@SCRATCH2
+03D     @PRINTF_LU_62.@SCRATCH4
+03D     @DIV88.@SCRATCH1
+03E     data_set_frequency.@SCRATCH1
+03E     data_set_distance_upwards.@SCRATCH3
+03E     data_set_distance_downwards.@SCRATCH3
+03E     @PRINTF_LU_62.@SCRATCH5
+03F     data_set_frequency.@SCRATCH2
+03F     data_set_distance_upwards.@SCRATCH4
+03F     data_set_distance_downwards.@SCRATCH4
+03F     @PRINTF_LU_62.@SCRATCH6
+040     @MUL88.P1
+040-041 @DIV1616.P2
+040-041 @MUL1616.P3
+040     data_set_frequency.@SCRATCH3
+040     @PRINTF_LU_62.@SCRATCH7
+041     @MUL88.P1
+041     @PUTCHAR_1_.P2
+041     data_set_frequency.@SCRATCH4
+042-043 @MUL1616.P1
+042-043 @DIV1616.P2
+042     @GETCH_1_.@SCRATCH1
+044     @MUL1616.@SCRATCH1
+044     @DIV1616.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+111.6   C1OUT
+113.6   C2OUT
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+291     CCP_1_LOW
+291     CCP_1
+292     CCP_1_HIGH
+
+ROM Allocation:
+0112  @delay_ms1
+0127  @PUTCHAR_1_
+018C  @GETCH_1_
+001F  isr_rs232_message
+0247  data_set_frequency
+0232  @MUL1616
+020D  @MUL88
+02B1  @DIV1616
+02DA  data_set_enable
+0416  data_set_distance_upwards
+0490  data_set_distance_downwards
+0311  rs232_message
+0023  @const113
+014C  @PSTRINGC7_62
+0039  @const115
+0045  @const116
+0052  @const118
+01B0  @PSTRINGCN7_62
+0351  @PRINTF_LU_62
+005B  @const123
+01F8  @DIV88
+03C9  @PRINTF_U_62
+0065  @const131
+0079  @const133
+008B  @const135
+0099  @const137
+00AE  @const139
+00C0  @const141
+0505  MAIN
+00CE  @const146
+00EF  @const147
+0103  @const148
+0505  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\Asansor rs232 pulser\
+
+Project Files:
+    Pulser_rs232-asansor.c
+    C:\Program Files (x86)\PICC\devices\16f1826.h
+
+Units:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\Asansor rs232 pulser\Pulser_rs232-asansor (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      Pulser_rs232-asansor.err
+    Ext Symbols: Pulser_rs232-asansor.esym
+    INHX8:       Pulser_rs232-asansor.hex
+    Symbols:     Pulser_rs232-asansor.sym
+    List:        Pulser_rs232-asansor.lst
+    Debug/COFF:  Pulser_rs232-asansor.cof
+    Project:     Pulser_rs232-asansor.PJT
+    Call Tree:   Pulser_rs232-asansor.tre
+    Statistics:  Pulser_rs232-asansor.sta

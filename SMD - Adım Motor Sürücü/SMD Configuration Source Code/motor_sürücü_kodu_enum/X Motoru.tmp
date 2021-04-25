@@ -1,0 +1,166 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @READ_PACKED_MEMORY.P2
+004-005 @WRITE_PROGRAM_MEMORY8.P3
+004-005 @WRITE_PACKED_MEMORY.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+00B     IOC_INTCON
+00B.3   IOC_IOCIE
+00B.6   IOC_PEIE
+00B.7   IOC_GIE
+011     SPI_PIR1
+011.3   SPI_FLAG
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024-027 current_distance
+028     reg_rs232_message
+029     limit_state
+02A-02B pulse_per_turn
+02C     delay
+02D     acc_lim
+02E-02F MAIN.i
+030     homing_cycle.i
+030     rs232_message.command
+030     set_driver.Torque_1
+030     MAIN.@SCRATCH1
+031     set_driver.Torque_0
+031     rs232_message.i
+031     homing_cycle.@SCRATCH1
+032     set_driver.Off_1
+032-038 rs232_message.input_step
+033     set_driver.Off_0
+034     set_driver.Blank_1
+035     set_driver.Blank_0
+036     set_driver.Decay_1
+037     set_driver.Decay_0
+038     set_driver.Stall_1
+039     set_driver.Stall_0
+039-03C rs232_message.data
+03A     set_driver.Drive_1
+03B     set_driver.Drive_0
+03C     set_driver.Status_1
+03D-03F rs232_message.input_delay
+03D     set_driver.Status_0
+03E     @delay_ms1.P1
+040-043 go_position.user_distance
+040     rs232_message.@SCRATCH1
+041     rs232_message.@SCRATCH2
+042     rs232_message.@SCRATCH3
+043     rs232_message.@SCRATCH4
+044-045 @MUL1616.P1
+044     @MUL88.P2
+044-047 @MUL3232.P3
+044     go_position.@SCRATCH1
+045     @MUL88.P1
+045     go_position.@SCRATCH2
+046-047 @MUL1616.P1
+046     go_position.@SCRATCH3
+047     go_position.@SCRATCH4
+048-04B @MUL3232.P1
+048-04B motion_cycle.target_step
+048     @MUL1616.@SCRATCH1
+04C-04D motion_cycle.i
+04C     @MUL3232.@SCRATCH1
+04D     @MUL3232.@SCRATCH2
+04E-051 motion_cycle.j
+04E     @MUL3232.@SCRATCH3
+04F     @MUL3232.@SCRATCH4
+050     @MUL3232.@SCRATCH5
+052     motion_cycle.@SCRATCH1
+053     motion_cycle.@SCRATCH2
+054     motion_cycle.@SCRATCH3
+055     @delay_us1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+111.6   C1OUT
+113.6   C2OUT
+11D     PIN_APFCON0
+11D.5   PIN_SS_SELECT
+11D.6   PIN_SDO_SELECT
+11E     PIN_APFCON1
+18D     ANSELB
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+211     SPI_SSP1BUF
+214.0   SPI_BUFFER_STATUS
+214     SPI_SSP1STAT
+214.6   SPI_CLOCK_EDGE
+214.7   SPI_INPUT_SAMPLE
+215.0   SPI_MODE_0
+215     SPI_SSP1CON1
+215.1   SPI_MODE_1
+215.2   SPI_MODE_2
+215.3   SPI_MODE_3
+215.4   SPI_CLOCK_POLARITY
+215.5   SPI_ENABLE
+215.7   SPI_WRITE_FLAG
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+394.0   IOC_PINB0_RISING
+394     IOC_IOCBP
+394.3   IOC_PINB3_RISING
+395     IOC_IOCBN
+395.0   IOC_PINB0_FALLING
+395.3   IOC_PINB3_FALLING
+396     IOC_IOCBF
+
+ROM Allocation:
+00001F  periods.call
+000020  periods.data
+0000D6  isr_rs232_message
+0000DF  set_pins
+0000E5  set_SPI
+0000F2  set_variables
+000105  @delay_ms1
+00011A  set_driver
+000221  @PUTCHARI_BIU_1
+000227  @delay_us1
+000239  homing_cycle
+0002E6  @MUL3232
+000310  @MUL1616
+000325  @MUL88
+00034A  motion_cycle
+000447  rs232_message
+0004E1  go_position
+000579  MAIN
+000579  @cinit1
+00059D  @cinit2
+
+Project Directory:
+    C:\Users\Onur Yarkýnoðlu\Desktop\DLM\motor_sürücü_kodu\
+
+Project Files:
+    X Motoru.c                                              [05-Eyl-14 18:50  CRC=4C47C5AD]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f1826.h [03-Tem-13 14:28  CRC=186BCABD]
+
+Source signature=D970B74C
+
+Units:
+    X Motoru (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    XREF file:   X Motoru.xsym
+    Errors:      X Motoru.err
+    Ext Symbols: X Motoru.esym
+    INHX8:       X Motoru.hex
+    Symbols:     X Motoru.sym
+    List:        X Motoru.lst
+    Debug/COFF:  X Motoru.cof
+    Project:     X Motoru.ccspjt
+    Call Tree:   X Motoru.tre
+    Statistics:  

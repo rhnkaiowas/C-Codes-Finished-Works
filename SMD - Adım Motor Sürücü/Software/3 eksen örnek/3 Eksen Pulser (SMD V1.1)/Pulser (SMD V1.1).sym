@@ -1,0 +1,84 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+004-005 @READ_PACKED_MEMORY.P3
+004-005 @WRITE_PACKED_MEMORY.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+020-021 frequency
+022-025 distance_mm
+026-027 delay
+028-02B distance_step
+02C-02F i
+030-033 @MUL3232.P1
+030     main.@SCRATCH1
+031     @delay_us1.P1
+031     @delay_ms1.P2
+031     main.@SCRATCH2
+032-035 @DIV3232.P1
+034-037 @MUL3232.P1
+036-039 @DIV3232.P1
+038     @MUL3232.@SCRATCH1
+039     @MUL3232.@SCRATCH2
+03A     @DIV3232.@SCRATCH1
+03A     @MUL3232.@SCRATCH3
+03B     @DIV3232.@SCRATCH2
+03B     @MUL3232.@SCRATCH4
+03C     @DIV3232.@SCRATCH3
+03C     @MUL3232.@SCRATCH5
+03D     @DIV3232.@SCRATCH4
+03E     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+111.6   C1OUT
+113.6   C2OUT
+191-192 @WRITE_PROGRAM_MEMORY8.P1
+191-192 @READ_PROGRAM_MEMORY8.P2
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+
+ROM Allocation:
+0003  @delay_ms1
+0090  @delay_us1
+00A2  main
+0018  @DIV3232
+0065  @MUL3232
+00A2  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\konumlama test kodlarý (SMD V1.1)\Pulser (SMD V1.1)\
+
+Project Files:
+    Pulser (SMD V1.1).c
+    C:\Program Files (x86)\PICC\devices\16f1826.h
+
+Units:
+    E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Asansör Kod DRV8711\konumlama test kodlarý (SMD V1.1)\Pulser (SMD V1.1)\Pulser (SMD V1.1) (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    Errors:      Pulser (SMD V1.1).err
+    Ext Symbols: Pulser (SMD V1.1).esym
+    INHX8:       Pulser (SMD V1.1).hex
+    Symbols:     Pulser (SMD V1.1).sym
+    List:        Pulser (SMD V1.1).lst
+    Debug/COFF:  Pulser (SMD V1.1).cof
+    Project:     Pulser (SMD V1.1).PJT
+    Call Tree:   Pulser (SMD V1.1).tre
+    Statistics:  Pulser (SMD V1.1).sta

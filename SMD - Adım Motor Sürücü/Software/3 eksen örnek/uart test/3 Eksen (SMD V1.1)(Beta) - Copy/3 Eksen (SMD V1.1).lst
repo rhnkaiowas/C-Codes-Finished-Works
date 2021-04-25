@@ -1,0 +1,117 @@
+CCS PCM C Compiler, Version 4.108, 15145               25-Haz-14 14:00
+
+               Filename: E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\3 eksen örnek\uart test\3 Eksen (SMD V1.1)(Beta) - Copy\3 Eksen (SMD V1.1).lst
+
+               ROM used: 59 words (3%)
+                         Largest free fragment is 1989
+               RAM used: 5 (1%) at main() level
+                         17 (5%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   019
+0002:  NOP
+.................... #include <16f1826.h>    
+.................... //////// Standard Header file for the PIC16F1826 device //////////////// 
+.................... #device PIC16F1826 
+.................... #list 
+....................  
+....................  
+.................... #fuses intrc_io,NOWDT,NOPROTECT,NOBROWNOUT,NOLVP,NOPUT,NOWRT,NODEBUG,NOCPD 
+.................... #use delay (clock=32000000)  
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  02
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  MOVLP  00
+0018:  GOTO   036 (RETURN)
+.................... #use rs232 (baud=38400, xmit=pin_b5, rcv=pin_b2,parity=N,bits=8,stop=1) 
+....................  
+.................... /* 
+.................... #byte APFCON0 =0X11D//7=0 
+.................... #byte ANSELB=0X18D// 1,2=0 
+.................... #byte RCSTA = 0X19D//4,7=1 6=0 
+.................... #byte TXSTA = 0X19E//4=0 
+....................  
+.................... #bit APFCON0_RXDTSEL   = APFCON0.7 
+.................... #bit ANSELB_ANSB2     = ANSELB.2 
+.................... #bit RCSTA_SPEN      = RCSTA.7 
+.................... #bit TXSTA_SYNC      = TXSTA.4 
+.................... #bit RCSTA_RX9       = RCSTA.6 
+....................  
+.................... void set_pins(){ 
+.................... APFCON0_RXDTSEL    =  1; 
+.................... ANSELB_ANSB2      =  0; 
+.................... RCSTA_SPEN        =  1; 
+.................... TXSTA_SYNC        =  0; 
+.................... RCSTA_RX9         =  0; 
+.................... } 
+.................... */ 
+.................... void main() 
+.................... { 
+0019:  CLRF   05
+001A:  CLRF   04
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  MOVLW  F4
+001E:  MOVLB  01
+001F:  MOVWF  19
+0020:  BCF    0D.1
+0021:  MOVLB  02
+0022:  BSF    0D.1
+0023:  MOVLB  03
+0024:  CLRF   0C
+0025:  CLRF   0D
+0026:  MOVLB  02
+0027:  CLRF   12
+0028:  CLRF   11
+0029:  CLRF   14
+002A:  CLRF   13
+....................    // Set I/O states of the ports 
+....................    //           76543210                   
+....................    set_tris_a(0b00101000);        
+002B:  MOVLW  28
+002C:  MOVLB  01
+002D:  MOVWF  0C
+....................    set_tris_b(0b11001111); 
+002E:  MOVLW  CF
+002F:  MOVWF  0D
+....................   // set_pins(); 
+....................  
+....................    while(true){ 
+....................      //putc('c'); 
+....................       delay_ms(1000); 
+0030:  MOVLW  04
+0031:  MOVLB  00
+0032:  MOVWF  21
+0033:  MOVLW  FA
+0034:  MOVWF  22
+0035:  GOTO   003
+0036:  DECFSZ 21,F
+0037:  GOTO   033
+....................    }   
+0038:  MOVLB  01
+0039:  GOTO   030
+.................... } 
+003A:  SLEEP
+
+Configuration Fuses:
+   Word  1: 39E4   NOWDT NOPUT NOPROTECT MCLR NOCPD NOBROWNOUT IESO FCMEN INTRC_IO NOCLKOUT
+   Word  2: 1613   NOWRT NOVCAP PLL_SW STVREN BORV19 NODEBUG NOLVP

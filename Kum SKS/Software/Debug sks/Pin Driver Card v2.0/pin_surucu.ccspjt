@@ -1,0 +1,20 @@
+[PROJECT]
+Target=pin_surucu.hex
+Processor_Text=PIC16F1946
+CCSVersion=5.008
+Compiler=PCM
+[Target Data]
+FileList=pin_surucu.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\
+[pin_surucu.c]
+Type=4
+[mru-list]
+1=pin_surucu.c
+[Opened Files]
+1=pin_surucu.c
+2=
+3=
+[Units]
+Count=1
+1=pin_surucu (main)

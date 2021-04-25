@@ -1,0 +1,197 @@
+004-005 @WRITE_PACKED_MEMORY.P1
+004-005 @READ_PACKED_MEMORY.P2
+004-005 @WRITE_PROGRAM_MEMORY8.P3
+004-005 @READ_PROGRAM_MEMORY8.P4
+006-007 @WRITE_PACKED_MEMORY.P1
+006-007 @READ_PACKED_MEMORY.P2
+00B     IOC_INTCON
+00B.3   IOC_IOCIE
+00B.6   IOC_PEIE
+00B.7   IOC_GIE
+011     SPI_PIR1
+011.3   SPI_FLAG
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024-025 reg_ctrl
+026-027 reg_torque
+028-029 reg_off
+02A-02B reg_blank
+02C-02D reg_decay
+02E-02F reg_stall
+030-031 reg_drive
+032-033 reg_status
+034.0   drv_debug
+035     reg_rs232_message
+036     delay
+037     set_stall_reg.divider
+037     set_drive_reg.idrivep
+037     set_blank_reg.abt
+037     set_ctrl_reg.dtime
+037     set_off_reg.indexer
+037     set_torque_reg.emf
+037     set_decay_reg.dmode
+037     MAIN.@SCRATCH1
+038     set_off_reg.toff
+038     set_decay_reg.tdecay
+038     set_torque_reg.torque
+038     set_stall_reg.smode
+038     set_drive_reg.idriven
+038     set_ctrl_reg.gain
+038     set_blank_reg.tblank
+038     @delay_us1.P1
+039     set_stall_reg.stall_thr
+039     set_ctrl_reg.stall
+039     set_drive_reg.tdrivep
+03A     set_drive_reg.tdriven
+03A     set_ctrl_reg.mode
+03B     set_drive_reg.ocpdeg
+03B     set_ctrl_reg.rstep
+03C     set_drive_reg.ocpth
+03C     set_ctrl_reg.dir
+03D     set_ctrl_reg.state
+03E-03F write_register.reg
+03E-03F set_register_bits.reg
+03E     @PSTRINGC7_38400_106_105.@SCRATCH1
+03F     @PSTRINGC7_38400_106_105.@SCRATCH2
+040     @delay_ms1.P1
+040-041 @PRINTF_LU_38400_106_105.P2
+040     set_register_bits.bit_address
+040     write_register.@SCRATCH1
+040     @PSTRINGC7_38400_106_105.@SCRATCH3
+041     write_register_byte.reg_byte
+041     set_register_bits.bit_size
+041     @PSTRINGC7_38400_106_105.@SCRATCH4
+042-043 set_register_bits.value
+042     @PRINTF_LU_38400_106_105.@SCRATCH1
+043     @PRINTF_LU_38400_106_105.@SCRATCH2
+044     set_register_bits.i
+044     @PRINTF_LU_38400_106_105.@SCRATCH3
+045     @PRINTF_LU_38400_106_105.@SCRATCH4
+045     set_register_bits.@SCRATCH1
+046     @PRINTF_LU_38400_106_105.@SCRATCH5
+047     @PRINTF_LU_38400_106_105.@SCRATCH6
+048     @PRINTF_LU_38400_106_105.@SCRATCH7
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+111.6   C1OUT
+113.6   C2OUT
+11D     PIN_APFCON0
+11D.5   PIN_SS_SELECT
+11D.6   PIN_SDO_SELECT
+11E     PIN_APFCON1
+18D     ANSELB
+191-192 @READ_PROGRAM_MEMORY8.P1
+191-192 @WRITE_PROGRAM_MEMORY8.P2
+211     SPI_SSP1BUF
+214     SPI_SSP1STAT
+214.0   SPI_BUFFER_STATUS
+214.6   SPI_CLOCK_EDGE
+214.7   SPI_INPUT_SAMPLE
+215     SPI_SSP1CON1
+215.0   SPI_MODE_0
+215.1   SPI_MODE_1
+215.2   SPI_MODE_2
+215.3   SPI_MODE_3
+215.4   SPI_CLOCK_POLARITY
+215.5   SPI_ENABLE
+215.7   SPI_WRITE_FLAG
+291     CCP_1
+291     CCP_1_LOW
+292     CCP_1_HIGH
+394     IOC_IOCBP
+394.0   IOC_PINB0_RISING
+394.3   IOC_PINB3_RISING
+395.0   IOC_PINB0_FALLING
+395     IOC_IOCBN
+395.3   IOC_PINB3_FALLING
+396     IOC_IOCBF
+
+ROM Allocation:
+00001F  @const732.call
+000028  @const736.call
+000031  @const739.call
+00003A  @const742.call
+000043  @const745.call
+00004C  @const748.call
+000055  @const751.call
+00005E  @const754.call
+000067  @const773.call
+000071  @const776.call
+00007B  @const779.call
+000085  @const792.call
+00008E  @const795.call
+000097  @const798.call
+0000A0  @const811.call
+0000A9  @const814.call
+0000B2  @const817.call
+0000BB  @const834.call
+0000C4  @const837.call
+0000CD  @const840.call
+0000D6  @const863.call
+0000DF  @const866.call
+0000E8  @const869.call
+0000F1  @const872.call
+0000FA  @const924.call
+000103  @const938.call
+00010D  @const947.call
+000116  isr_rs232_message
+00011F  @delay_ms1
+000133  set_pins
+000139  set_SPI
+000146  set_variables
+000159  @PSTRINGC7_38400_106_105
+0001A4  set_register_bits
+0001FC  write_register_byte
+000207  write_register
+00020F  @PRINTF_LU_38400_106_105
+000289  set_driver
+000294  set_ctrl_reg
+000333  set_torque_reg
+000384  set_off_reg
+0003D6  set_blank_reg
+000427  set_decay_reg
+00047B  set_stall_reg
+0004E0  set_drive_reg
+00056D  clear_status_reg
+0005A1  @delay_us1
+0005B4  @cinit1
+0005B4  MAIN
+0005DF  @cinit2
+
+Project Directory:
+    E:\File Server\Modesis\Proje Dosyalarý\DLM - Düzlemsel Konumlama Sistemi\Software\kalibrasyon_paralel_0.150\256x\Motor Ayarlarý\
+
+Project Files:
+    X Motoru.c                                              [18-Eyl-14 11:34  CRC=110C17DD]
+    C:\Program Files (x86)\PICC\Devices\16f1826.h           [03-Tem-13 14:28  CRC=186BCABD]
+
+Source signature=41E3AD57
+
+Units:
+    X Motoru (main)
+
+Compiler Settings:
+    Processor:      PIC16F1826
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Enhanced 16:    Yes
+
+Output Files:
+    XREF file:   X Motoru.xsym
+    Errors:      X Motoru.err
+    Ext Symbols: X Motoru.esym
+    INHX8:       X Motoru.hex
+    Symbols:     X Motoru.sym
+    List:        X Motoru.lst
+    Debug/COFF:  X Motoru.cof
+    Project:     X Motoru.ccspjt
+    Call Tree:   X Motoru.tre
+    Statistics:  X Motoru.STA

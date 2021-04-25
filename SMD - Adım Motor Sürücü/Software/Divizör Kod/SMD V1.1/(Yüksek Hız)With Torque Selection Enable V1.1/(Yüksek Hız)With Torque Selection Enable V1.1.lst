@@ -1,0 +1,1176 @@
+CCS PCM C Compiler, Version 4.108, 15145               16-Haz-14 16:32
+
+               Filename: E:\File Server\Modesis\Proje Dosyalarý\SMD - Adým Motor Sürücü\Software\Divizör Kod\SMD V1.1\(Yüksek Hýz)With Torque Selection Enable V1.1\(Yüksek Hýz)With Torque Selection Enable V1.1.lst
+
+               ROM used: 716 words (35%)
+                         Largest free fragment is 1332
+               RAM used: 6 (2%) at main() level
+                         33 (10%) worst case
+               Stack:    2 locations
+
+*
+0000:  MOVLP  00
+0001:  GOTO   2A1
+0002:  NOP
+.................... #INCLUDE <16f1826.h>  
+.................... //////// Standard Header file for the PIC16F1826 device //////////////// 
+.................... #device PIC16F1826 
+.................... #list 
+....................  
+....................  
+.................... #FUSES INTRC_IO      // Internal RC clock (OSC1 and OSC2 pins are normal I/O) 
+.................... #FUSES NOWDT         // Watch Dog Timer disabled 
+.................... #FUSES PUT           // Power Up Timer enabled 
+.................... #FUSES NOMCLR        // Master Clear pin is used for I/O 
+.................... #FUSES PROTECT       // Code protected from reads 
+.................... #FUSES CPD           // Data EEPROM code protected 
+.................... #FUSES BROWNOUT      // Brownout Reset enabled 
+.................... #FUSES BORV25        // Brownout Reset at 2.5V 
+.................... #FUSES NOCLKOUT      // Disable clock output on OSC2 
+.................... #FUSES NOIESO        // Internal External Switch Over Mode disabled 
+.................... #FUSES NOFCMEN       // Fail-safe clock monitor disabled 
+.................... #FUSES WRT           // Program memory write protected                                               
+.................... #FUSES NOLVP         // Low Voltage Programming disabled 
+....................  
+.................... #USE   DELAY(internal = 32MHz) 
+*
+0016:  MOVLW  20
+0017:  MOVWF  05
+0018:  MOVLW  11
+0019:  MOVWF  04
+001A:  MOVF   00,W
+001B:  BTFSC  03.2
+001C:  GOTO   02A
+001D:  MOVLW  0A
+001E:  MOVWF  78
+001F:  CLRF   77
+0020:  DECFSZ 77,F
+0021:  GOTO   020
+0022:  DECFSZ 78,F
+0023:  GOTO   01F
+0024:  MOVLW  5F
+0025:  MOVWF  77
+0026:  DECFSZ 77,F
+0027:  GOTO   026
+0028:  DECFSZ 00,F
+0029:  GOTO   01D
+002A:  RETURN
+.................... //#USE   RS232(stream=RS232, baud=38400, XMIT=PIN_B5, RCV=PIN_B2, parity=N, bits=8, stop=1) 
+....................  
+.................... #DEFINE DRV_STEP     PIN_A0                  // Step output pin to driver (Rising edge causes the indexer to move one step) 
+.................... #DEFINE DRV_RESET    PIN_A1                  // Reset output pin to driver (Active-high reset input initializes all internal logic and disables the Hbridge outputs. Internal pulldown.) 
+.................... #DEFINE USER_FAULT   PIN_A2                  // Fault output pin to user 
+.................... #DEFINE USER_DIR     PIN_A3                  // Direction input pin from user 
+.................... #DEFINE DRV_DIR      PIN_A4                  // Direction output pin to driver (Logic level, sets the direction of stepping) 
+....................  
+.................... #DEFINE SPI_SDO      PIN_A6                  // SPI data output pin 
+.................... #DEFINE SPI_CS       PIN_A7                  // SPI chip select pin 
+....................  
+.................... #DEFINE USER_STEP    PIN_B0                  // Step input pin from user 
+.................... #DEFINE SPI_SDI      PIN_B1                  // SPI data input pin 
+....................  
+.................... #DEFINE USER_ENABLE  PIN_B3                  // Enable input pin from user 
+.................... #DEFINE SPI_SCK      PIN_B4                  // SPI clock output pin 
+....................  
+.................... #DEFINE DRV_STALL    PIN_B6                  // Stall input pin from driver (Internal stall detect mode: logic low when motor stall detected. Pull up mevcut) 
+.................... #DEFINE DRV_FAULT    PIN_B7                  // Fault input pin from driver (Logic low when in fault condition. Pull up mevcut) 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... // Interrupt On Change Registers 
+.................... #WORD IOC_INTCON     =0x00B 
+.................... #WORD IOC_IOCBP      =0x394 
+.................... #WORD IOC_IOCBN      =0x395 
+.................... #WORD IOC_IOCBF      =0x396 
+.................... #WORD ANSELB         =0x18d 
+....................  
+.................... //Bits of IOC_INTCON register 
+.................... #BIT IOC_GIE           = IOC_INTCON.7        //General interrupt enable bit 
+.................... #BIT IOC_PEIE          = IOC_INTCON.6        //Peripheral interrupt enable bit 
+.................... #BIT IOC_IOCIE         = IOC_INTCON.3        //Interrupt on change enable bit 
+....................  
+.................... //Bits of IOC_IOCBP register 
+.................... #BIT IOC_PINB3_RISING            = IOC_IOCBP.3        //Pin B3 interrupt on change enable bit(Rising Edge) 
+....................  
+.................... //Bits of IOC_IOCBN register 
+.................... #BIT IOC_PINB3_FALLING           = IOC_IOCBN.3        //Pin B3 interrupt on change enable bit(Falling Edge) 
+....................  
+.................... //Bits of IOC_IOCBF register 
+.................... #BIT IOC_PINB3_FLAG              = IOC_IOCBF.3        //Pin B3 interrupt on change interrupt flag bit(Both Rising and Falling Edges) 
+.................... //Bits of ANSELB register 
+....................  
+.................... #BIT ANSELB_PINB3                = ANSELB.3           //Selection of Pin B3 as a Digial I/O (0) or an Analog input (1) selection bit 
+....................  
+.................... // SPI Registers 
+.................... #WORD SPI_SSP1CON1   = 0x215                 // Synchronous serial port control register 
+.................... #WORD SPI_SSP1STAT   = 0x214                 // Synchronous serial port status register 
+.................... #WORD SPI_SSP1BUF    = 0x211                 // Synchronous serial port buffer register 
+.................... #WORD SPI_PIR1       = 0x011                 // Peripheral interrupt request register 
+.................... // Pin function control registers 
+.................... #WORD PIN_APFCON0    = 0x11D                 // Alternate pin function control register 0 
+.................... #WORD PIN_APFCON1    = 0x11E                 // Alternate pin function control register 1 
+....................  
+.................... // Bits of SSP1CON1 register 
+.................... #BIT SPI_WRITE_FLAG     = SPI_SSP1CON1.7     // Synchronous serial port write collision detect bit 
+.................... #BIT SPI_ENABLE         = SPI_SSP1CON1.5     // Synchronous serial port enable bit 
+.................... #BIT SPI_CLOCK_POLARITY = SPI_SSP1CON1.4     // Synchronous serial port clock polarity select bit 
+.................... #BIT SPI_MODE_3         = SPI_SSP1CON1.3     // Synchronous serial port mode select bits 
+.................... #BIT SPI_MODE_2         = SPI_SSP1CON1.2    
+.................... #BIT SPI_MODE_1         = SPI_SSP1CON1.1    
+.................... #BIT SPI_MODE_0         = SPI_SSP1CON1.0   
+....................  
+.................... // Bits of SPI_SSP1STAT register 
+.................... #BIT SPI_INPUT_SAMPLE   = SPI_SSP1STAT.7     // Synchronous serial port data input sample bit 
+.................... #BIT SPI_CLOCK_EDGE     = SPI_SSP1STAT.6     // Synchronous serial port clock edge select bit 
+.................... #BIT SPI_BUFFER_STATUS  = SPI_SSP1STAT.0     // Synchronous serial port buffer full status bit 
+....................  
+.................... // Bits of SPI_PIR1 register 
+.................... #BIT SPI_FLAG           = SPI_PIR1.3         // Synchronous serial port interrupt flag bit 
+....................  
+.................... // Bits of PIN_APFCON0 register 
+.................... #BIT PIN_RX_SELECT      = PIN_APFCON0.7      // RX pin selection bit 
+.................... #BIT PIN_SDO_SELECT     = PIN_APFCON0.6      // SDO pin selection bit  
+.................... #BIT PIN_SS_SELECT      = PIN_APFCON0.5      // SS pin selection bit  
+....................  
+.................... // Bits of PIN_APFCON1 register 
+.................... #BIT PIN_TX_SELECT      = PIN_APFCON1.0      // TX pin selection bit 
+....................  
+.................... int1  dir   = 0; 
+.................... int1  step  = 0; 
+.................... int1 enable_state = 0; 
+....................  
+.................... /* 
+.................... // Sets interrupt on change bits 
+.................... void set_IOC(){ 
+....................    IOC_GIE           = 1;                  //General interrupt enable bit 
+....................    IOC_PEIE          = 1;                  //Peripheral interrupt enable bit 
+....................    IOC_IOCIE         = 1;                  //Interrupt on change enable bit 
+....................    IOC_PINB3_RISING  = 1; 
+....................    IOC_PINB3_FALLING = 1;  
+....................    IOC_PINB3_FLAG    = 0; 
+....................    ANSELB_PINB3      = 0; 
+....................     
+.................... } 
+.................... */ 
+....................  
+....................  
+....................  
+.................... // Sets alternative pin functions 
+.................... void set_pins() 
+.................... { 
+....................    // Set RB2 as RX pin 
+....................    //PIN_RX_SELECT = 1; 
+....................    // Set RA6 as SDO pin 
+....................    PIN_SDO_SELECT = 1; 
+*
+0003:  MOVLB  02
+0004:  BSF    1D.6
+....................    // Set RA5 as SS pin 
+....................    PIN_SS_SELECT = 1; 
+0005:  BSF    1D.5
+....................    // Set RB5 as TX pin 
+....................    //PIN_TX_SELECT = 1; 
+.................... } 
+0006:  MOVLP  00
+0007:  MOVLB  00
+0008:  GOTO   2BB (RETURN)
+.................... // Sets SPI parameters 
+.................... void set_SPI() 
+.................... { 
+....................    // Disable SPI to set registers 
+....................    SPI_ENABLE = 0; 
+0009:  MOVLB  04
+000A:  BCF    15.5
+....................    // Set idle state of the clock to low  
+....................    SPI_CLOCK_POLARITY = 0; 
+000B:  BCF    15.4
+....................    // Set SPI mode to SPI  
+....................    SPI_MODE_3 = 0;  
+000C:  BCF    15.3
+....................    SPI_MODE_2 = 0; 
+000D:  BCF    15.2
+....................    SPI_MODE_1 = 1; 
+000E:  BSF    15.1
+....................    SPI_MODE_0 = 0; 
+000F:  BCF    15.0
+....................    // Input data sampled at the middle of data output time 
+....................    SPI_INPUT_SAMPLE = 0; 
+0010:  BCF    14.7
+....................    // Transmit occurs on transition from active to idle clock state 
+....................    SPI_CLOCK_EDGE = 1; 
+0011:  BSF    14.6
+....................  
+....................    // Enable SPI 
+....................    SPI_ENABLE = 1; 
+0012:  BSF    15.5
+.................... } 
+0013:  MOVLP  00
+0014:  MOVLB  00
+0015:  GOTO   2BC (RETURN)
+.................... // Sets variables to default values  
+.................... void set_variables() 
+.................... { 
+....................    output_low(SPI_CS);     // Chip select is active high so keep it low to prevent out-of-sync transaction 
+*
+002B:  MOVLB  01
+002C:  BCF    0C.7
+002D:  MOVLB  02
+002E:  BCF    0C.7
+....................    output_low(USER_FAULT); // Clear fault status  
+002F:  MOVLB  01
+0030:  BCF    0C.2
+0031:  MOVLB  02
+0032:  BCF    0C.2
+....................    output_low(DRV_RESET);  // Reset is active high so keep reset pin low to activate driver  
+0033:  MOVLB  01
+0034:  BCF    0C.1
+0035:  MOVLB  02
+0036:  BCF    0C.1
+....................    output_low(DRV_DIR);    // Set default direction 
+0037:  MOVLB  01
+0038:  BCF    0C.4
+0039:  MOVLB  02
+003A:  BCF    0C.4
+....................    output_low(DRV_STEP);   // Keep step output low until a step command is received from the user 
+003B:  MOVLB  01
+003C:  BCF    0C.0
+003D:  MOVLB  02
+003E:  BCF    0C.0
+.................... } 
+003F:  MOVLP  00
+0040:  MOVLB  00
+0041:  GOTO   2C9 (RETURN)
+.................... // Sets driver parameters to default values 
+.................... void set_driver() 
+.................... { 
+....................    // Driver control register sets these parameters 
+....................    // data operation type                       (bit 15)    1=read,  
+....................    //                                                       0=write 
+....................    // register adress                           (bit 14-12) 000=CTRL reg 
+....................    // DTIME (dead time between MOSFET switching)(bit 11-10) 00=400ns,  
+....................    //                                                       01=450ns,  
+....................    //                                                       10=650ns,  
+....................    //                                                       11=850ns 
+....................    // ISGain (current amplifier gain)           (bit 9-8)   00=Gain of 5,  
+....................    //                                                       01=Gain of 10,  
+....................    //                                                       10=Gain of 20,  
+....................    //                                                       11=Gain of 40 
+....................    // EXSTALL (source of stall detection)       (bit 7)     0=Internal 
+....................    //                                                       1=External 
+....................    // MODE (microstepping mode)                 (bit 6-3)   0000=Full-step, 71% current 
+....................    //                                                       0001=Half step 
+....................    //                                                       0010=1/4 step 
+....................    //                                                       0011=1/8 step 
+....................    //                                                       0100=1/16 step 
+....................    //                                                       0101=1/32 step 
+....................    //                                                       0110=1/64 step 
+....................    //                                                       0111=1/128 step 
+....................    //                                                       1000=1/256 step 
+....................    // RSTEP (single step output)                (bit 2)     0=No action 
+....................    //                                                       1=Indexer will advance one step; automatically cleared after write 
+....................    // direction                                 (bit 1)     0=Direction set by DIR pin 
+....................    //                                                       1=Direction set by inverse of DIR pin 
+....................    // enable                                    (bit 0)     0=Disable motor 
+....................    //                                                       1=Enable motor 
+....................    //   
+....................    //                 76543210 
+....................     
+....................    output_high(SPI_CS); 
+0042:  MOVLB  01
+0043:  BCF    0C.7
+0044:  MOVLB  02
+0045:  BSF    0C.7
+....................    int Ctrl_1     = 0b00000011; 
+....................    int Ctrl_0     = 0b01000001; 
+0046:  MOVLW  03
+0047:  MOVLB  00
+0048:  MOVWF  21
+0049:  MOVLW  41
+004A:  MOVWF  22
+....................    SPI_SSP1BUF = Ctrl_1; 
+004B:  MOVLB  04
+004C:  CLRF   12
+004D:  MOVLB  00
+004E:  MOVF   21,W
+004F:  MOVLB  04
+0050:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0051:  MOVLB  00
+0052:  BTFSS  11.3
+0053:  GOTO   052
+....................    SPI_FLAG = 0; 
+0054:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+0055:  MOVLB  04
+0056:  CLRF   12
+0057:  MOVLB  00
+0058:  MOVF   22,W
+0059:  MOVLB  04
+005A:  MOVWF  11
+....................    while (!SPI_FLAG); 
+005B:  MOVLB  00
+005C:  BTFSS  11.3
+005D:  GOTO   05C
+....................    SPI_FLAG = 0; 
+005E:  BCF    11.3
+....................    output_low(SPI_CS); 
+005F:  MOVLB  01
+0060:  BCF    0C.7
+0061:  MOVLB  02
+0062:  BCF    0C.7
+....................    delay_ms(10); 
+0063:  MOVLW  0A
+0064:  MOVLB  00
+0065:  MOVWF  31
+0066:  CALL   016
+....................  
+....................    output_high(SPI_CS); 
+0067:  MOVLB  01
+0068:  BCF    0C.7
+0069:  MOVLB  02
+006A:  BSF    0C.7
+....................    int Torque_1   = 0b00010000; 
+....................    int Torque_0   = 0b11001000; 
+006B:  MOVLW  10
+006C:  MOVLB  00
+006D:  MOVWF  23
+006E:  MOVLW  C8
+006F:  MOVWF  24
+....................    SPI_SSP1BUF = Torque_1; 
+0070:  MOVLB  04
+0071:  CLRF   12
+0072:  MOVLB  00
+0073:  MOVF   23,W
+0074:  MOVLB  04
+0075:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0076:  MOVLB  00
+0077:  BTFSS  11.3
+0078:  GOTO   077
+....................    SPI_FLAG = 0; 
+0079:  BCF    11.3
+....................    SPI_SSP1BUF = Torque_0; 
+007A:  MOVLB  04
+007B:  CLRF   12
+007C:  MOVLB  00
+007D:  MOVF   24,W
+007E:  MOVLB  04
+007F:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0080:  MOVLB  00
+0081:  BTFSS  11.3
+0082:  GOTO   081
+....................    SPI_FLAG = 0; 
+0083:  BCF    11.3
+....................    output_low(SPI_CS); 
+0084:  MOVLB  01
+0085:  BCF    0C.7
+0086:  MOVLB  02
+0087:  BCF    0C.7
+....................    delay_ms(10); 
+0088:  MOVLW  0A
+0089:  MOVLB  00
+008A:  MOVWF  31
+008B:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+008C:  MOVLB  01
+008D:  BCF    0C.7
+008E:  MOVLB  02
+008F:  BSF    0C.7
+....................    int Off_1      = 0b00100000; 
+....................    int Off_0      = 0b00001100; 
+0090:  MOVLW  20
+0091:  MOVLB  00
+0092:  MOVWF  25
+0093:  MOVLW  0C
+0094:  MOVWF  26
+....................    SPI_SSP1BUF = Off_1; 
+0095:  MOVLB  04
+0096:  CLRF   12
+0097:  MOVLB  00
+0098:  MOVF   25,W
+0099:  MOVLB  04
+009A:  MOVWF  11
+....................    while (!SPI_FLAG); 
+009B:  MOVLB  00
+009C:  BTFSS  11.3
+009D:  GOTO   09C
+....................    SPI_FLAG = 0; 
+009E:  BCF    11.3
+....................    SPI_SSP1BUF = Off_0; 
+009F:  MOVLB  04
+00A0:  CLRF   12
+00A1:  MOVLB  00
+00A2:  MOVF   26,W
+00A3:  MOVLB  04
+00A4:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00A5:  MOVLB  00
+00A6:  BTFSS  11.3
+00A7:  GOTO   0A6
+....................    SPI_FLAG = 0; 
+00A8:  BCF    11.3
+....................    output_low(SPI_CS); 
+00A9:  MOVLB  01
+00AA:  BCF    0C.7
+00AB:  MOVLB  02
+00AC:  BCF    0C.7
+....................    delay_ms(10); 
+00AD:  MOVLW  0A
+00AE:  MOVLB  00
+00AF:  MOVWF  31
+00B0:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+00B1:  MOVLB  01
+00B2:  BCF    0C.7
+00B3:  MOVLB  02
+00B4:  BSF    0C.7
+....................    int Blank_1    = 0b00110001; 
+....................    int Blank_0    = 0b10010001; 
+00B5:  MOVLW  31
+00B6:  MOVLB  00
+00B7:  MOVWF  27
+00B8:  MOVLW  91
+00B9:  MOVWF  28
+....................    SPI_SSP1BUF = Blank_1; 
+00BA:  MOVLB  04
+00BB:  CLRF   12
+00BC:  MOVLB  00
+00BD:  MOVF   27,W
+00BE:  MOVLB  04
+00BF:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00C0:  MOVLB  00
+00C1:  BTFSS  11.3
+00C2:  GOTO   0C1
+....................    SPI_FLAG = 0; 
+00C3:  BCF    11.3
+....................    SPI_SSP1BUF = Blank_0; 
+00C4:  MOVLB  04
+00C5:  CLRF   12
+00C6:  MOVLB  00
+00C7:  MOVF   28,W
+00C8:  MOVLB  04
+00C9:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00CA:  MOVLB  00
+00CB:  BTFSS  11.3
+00CC:  GOTO   0CB
+....................    SPI_FLAG = 0; 
+00CD:  BCF    11.3
+....................    output_low(SPI_CS); 
+00CE:  MOVLB  01
+00CF:  BCF    0C.7
+00D0:  MOVLB  02
+00D1:  BCF    0C.7
+....................    delay_ms(10); 
+00D2:  MOVLW  0A
+00D3:  MOVLB  00
+00D4:  MOVWF  31
+00D5:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+00D6:  MOVLB  01
+00D7:  BCF    0C.7
+00D8:  MOVLB  02
+00D9:  BSF    0C.7
+....................    int Decay_1    = 0b01000101; 
+....................    int Decay_0    = 0b00101001; 
+00DA:  MOVLW  45
+00DB:  MOVLB  00
+00DC:  MOVWF  29
+00DD:  MOVLW  29
+00DE:  MOVWF  2A
+....................    SPI_SSP1BUF = Decay_1; 
+00DF:  MOVLB  04
+00E0:  CLRF   12
+00E1:  MOVLB  00
+00E2:  MOVF   29,W
+00E3:  MOVLB  04
+00E4:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00E5:  MOVLB  00
+00E6:  BTFSS  11.3
+00E7:  GOTO   0E6
+....................    SPI_FLAG = 0; 
+00E8:  BCF    11.3
+....................    SPI_SSP1BUF = Decay_0; 
+00E9:  MOVLB  04
+00EA:  CLRF   12
+00EB:  MOVLB  00
+00EC:  MOVF   2A,W
+00ED:  MOVLB  04
+00EE:  MOVWF  11
+....................    while (!SPI_FLAG); 
+00EF:  MOVLB  00
+00F0:  BTFSS  11.3
+00F1:  GOTO   0F0
+....................    SPI_FLAG = 0; 
+00F2:  BCF    11.3
+....................    output_low(SPI_CS); 
+00F3:  MOVLB  01
+00F4:  BCF    0C.7
+00F5:  MOVLB  02
+00F6:  BCF    0C.7
+....................    delay_ms(10); 
+00F7:  MOVLW  0A
+00F8:  MOVLB  00
+00F9:  MOVWF  31
+00FA:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+00FB:  MOVLB  01
+00FC:  BCF    0C.7
+00FD:  MOVLB  02
+00FE:  BSF    0C.7
+....................    int Stall_1    = 0b01011001; 
+....................    int Stall_0    = 0b00010100; 
+00FF:  MOVLW  59
+0100:  MOVLB  00
+0101:  MOVWF  2B
+0102:  MOVLW  14
+0103:  MOVWF  2C
+....................    SPI_SSP1BUF = Stall_1; 
+0104:  MOVLB  04
+0105:  CLRF   12
+0106:  MOVLB  00
+0107:  MOVF   2B,W
+0108:  MOVLB  04
+0109:  MOVWF  11
+....................    while (!SPI_FLAG); 
+010A:  MOVLB  00
+010B:  BTFSS  11.3
+010C:  GOTO   10B
+....................    SPI_FLAG = 0; 
+010D:  BCF    11.3
+....................    SPI_SSP1BUF = Stall_0; 
+010E:  MOVLB  04
+010F:  CLRF   12
+0110:  MOVLB  00
+0111:  MOVF   2C,W
+0112:  MOVLB  04
+0113:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0114:  MOVLB  00
+0115:  BTFSS  11.3
+0116:  GOTO   115
+....................    SPI_FLAG = 0; 
+0117:  BCF    11.3
+....................    output_low(SPI_CS); 
+0118:  MOVLB  01
+0119:  BCF    0C.7
+011A:  MOVLB  02
+011B:  BCF    0C.7
+....................    delay_ms(10); 
+011C:  MOVLW  0A
+011D:  MOVLB  00
+011E:  MOVWF  31
+011F:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+0120:  MOVLB  01
+0121:  BCF    0C.7
+0122:  MOVLB  02
+0123:  BSF    0C.7
+....................    int Drive_1    = 0b01101111; 
+....................    int Drive_0    = 0b10100000; 
+0124:  MOVLW  6F
+0125:  MOVLB  00
+0126:  MOVWF  2D
+0127:  MOVLW  A0
+0128:  MOVWF  2E
+....................    SPI_SSP1BUF = Drive_1; 
+0129:  MOVLB  04
+012A:  CLRF   12
+012B:  MOVLB  00
+012C:  MOVF   2D,W
+012D:  MOVLB  04
+012E:  MOVWF  11
+....................    while (!SPI_FLAG); 
+012F:  MOVLB  00
+0130:  BTFSS  11.3
+0131:  GOTO   130
+....................    SPI_FLAG = 0; 
+0132:  BCF    11.3
+....................    SPI_SSP1BUF = Drive_0; 
+0133:  MOVLB  04
+0134:  CLRF   12
+0135:  MOVLB  00
+0136:  MOVF   2E,W
+0137:  MOVLB  04
+0138:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0139:  MOVLB  00
+013A:  BTFSS  11.3
+013B:  GOTO   13A
+....................    SPI_FLAG = 0; 
+013C:  BCF    11.3
+....................    output_low(SPI_CS); 
+013D:  MOVLB  01
+013E:  BCF    0C.7
+013F:  MOVLB  02
+0140:  BCF    0C.7
+....................    delay_ms(10); 
+0141:  MOVLW  0A
+0142:  MOVLB  00
+0143:  MOVWF  31
+0144:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+0145:  MOVLB  01
+0146:  BCF    0C.7
+0147:  MOVLB  02
+0148:  BSF    0C.7
+....................    int Status_1   = 0b01110000; 
+....................    int Status_0   = 0b00000000; 
+0149:  MOVLW  70
+014A:  MOVLB  00
+014B:  MOVWF  2F
+014C:  CLRF   30
+....................    SPI_SSP1BUF = Status_1; 
+014D:  MOVLB  04
+014E:  CLRF   12
+014F:  MOVLB  00
+0150:  MOVF   2F,W
+0151:  MOVLB  04
+0152:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0153:  MOVLB  00
+0154:  BTFSS  11.3
+0155:  GOTO   154
+....................    SPI_FLAG = 0; 
+0156:  BCF    11.3
+....................    SPI_SSP1BUF = Status_0; 
+0157:  MOVLB  04
+0158:  CLRF   12
+0159:  MOVLB  00
+015A:  MOVF   30,W
+015B:  MOVLB  04
+015C:  MOVWF  11
+....................    while (!SPI_FLAG); 
+015D:  MOVLB  00
+015E:  BTFSS  11.3
+015F:  GOTO   15E
+....................    SPI_FLAG = 0; 
+0160:  BCF    11.3
+....................    output_low(SPI_CS); 
+0161:  MOVLB  01
+0162:  BCF    0C.7
+0163:  MOVLB  02
+0164:  BCF    0C.7
+....................    delay_ms(10); 
+0165:  MOVLW  0A
+0166:  MOVLB  00
+0167:  MOVWF  31
+0168:  CALL   016
+....................  
+....................    delay_ms(100); 
+0169:  MOVLW  64
+016A:  MOVWF  31
+016B:  CALL   016
+....................     
+....................    output_high(SPI_CS); 
+016C:  MOVLB  01
+016D:  BCF    0C.7
+016E:  MOVLB  02
+016F:  BSF    0C.7
+....................    Ctrl_1      = 0b00000001; 
+0170:  MOVLW  01
+0171:  MOVLB  00
+0172:  MOVWF  21
+....................    Ctrl_0      = 0b00110001; 
+0173:  MOVLW  31
+0174:  MOVWF  22
+....................    SPI_SSP1BUF = Ctrl_1; 
+0175:  MOVLB  04
+0176:  CLRF   12
+0177:  MOVLB  00
+0178:  MOVF   21,W
+0179:  MOVLB  04
+017A:  MOVWF  11
+....................    while (!SPI_FLAG); 
+017B:  MOVLB  00
+017C:  BTFSS  11.3
+017D:  GOTO   17C
+....................    SPI_FLAG = 0; 
+017E:  BCF    11.3
+....................    SPI_SSP1BUF = Ctrl_0; 
+017F:  MOVLB  04
+0180:  CLRF   12
+0181:  MOVLB  00
+0182:  MOVF   22,W
+0183:  MOVLB  04
+0184:  MOVWF  11
+....................    while (!SPI_FLAG); 
+0185:  MOVLB  00
+0186:  BTFSS  11.3
+0187:  GOTO   186
+....................    SPI_FLAG = 0; 
+0188:  BCF    11.3
+....................    output_low(SPI_CS); 
+0189:  MOVLB  01
+018A:  BCF    0C.7
+018B:  MOVLB  02
+018C:  BCF    0C.7
+....................    delay_ms(10); 
+018D:  MOVLW  0A
+018E:  MOVLB  00
+018F:  MOVWF  31
+0190:  CALL   016
+.................... } 
+0191:  MOVLP  00
+0192:  GOTO   2CA (RETURN)
+....................  
+.................... void IOC_cycle () 
+.................... { 
+....................    if (IOC_PINB3_FLAG){ 
+....................       if(enable_state){ 
+....................       enable_state=0; 
+....................       IOC_PINB3_FLAG=0; 
+....................       } 
+....................       if(!enable_state){ 
+....................       enable_state=1; 
+....................       IOC_PINB3_FLAG=0; 
+....................       }    
+....................    } 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+.................... void motion_cycle() 
+.................... { 
+....................    step  = input(USER_STEP); 
+0193:  MOVLB  01
+0194:  BSF    0D.0
+0195:  MOVLB  00
+0196:  BCF    20.1
+0197:  BTFSC  0D.0
+0198:  BSF    20.1
+....................    dir   = input(USER_DIR); 
+0199:  MOVLB  01
+019A:  BSF    0C.3
+019B:  MOVLB  00
+019C:  BCF    20.0
+019D:  BTFSC  0C.3
+019E:  BSF    20.0
+....................    while(true) 
+....................    {  
+....................    /* 
+....................       if (IOC_PINB3_FLAG){ 
+....................          if(enable_state){ 
+....................           enable_state=0; 
+....................           } 
+....................          else if(!enable_state){ 
+....................          enable_state=1; 
+....................           } 
+....................          IOC_PINB3_FLAG=0; 
+....................      } 
+....................      */ 
+....................    int1 Enable=input(USER_ENABLE); 
+019F:  MOVLB  01
+01A0:  BSF    0D.3
+01A1:  MOVLB  00
+01A2:  BCF    21.0
+01A3:  BTFSC  0D.3
+01A4:  BSF    21.0
+....................       if(Enable)//High torque 
+01A5:  BTFSS  21.0
+01A6:  GOTO   210
+....................       { 
+....................           output_high(SPI_CS); 
+01A7:  MOVLB  01
+01A8:  BCF    0C.7
+01A9:  MOVLB  02
+01AA:  BSF    0C.7
+....................           int Ctrl_1     = 0b00000000; 
+....................           int Ctrl_0     = 0b00110001; 
+01AB:  MOVLB  00
+01AC:  CLRF   22
+01AD:  MOVLW  31
+01AE:  MOVWF  23
+....................           SPI_SSP1BUF = Ctrl_1; 
+01AF:  MOVLB  04
+01B0:  CLRF   12
+01B1:  MOVLB  00
+01B2:  MOVF   22,W
+01B3:  MOVLB  04
+01B4:  MOVWF  11
+....................           while (!SPI_FLAG); 
+01B5:  MOVLB  00
+01B6:  BTFSS  11.3
+01B7:  GOTO   1B6
+....................           SPI_FLAG = 0; 
+01B8:  BCF    11.3
+....................           SPI_SSP1BUF = Ctrl_0; 
+01B9:  MOVLB  04
+01BA:  CLRF   12
+01BB:  MOVLB  00
+01BC:  MOVF   23,W
+01BD:  MOVLB  04
+01BE:  MOVWF  11
+....................           while (!SPI_FLAG); 
+01BF:  MOVLB  00
+01C0:  BTFSS  11.3
+01C1:  GOTO   1C0
+....................           SPI_FLAG = 0; 
+01C2:  BCF    11.3
+....................           output_low(SPI_CS); 
+01C3:  MOVLB  01
+01C4:  BCF    0C.7
+01C5:  MOVLB  02
+01C6:  BCF    0C.7
+....................           
+....................          while(Enable){ 
+01C7:  MOVLB  00
+01C8:  BTFSS  21.0
+01C9:  GOTO   20F
+....................             if(dir != input(USER_DIR)) 
+01CA:  MOVLW  00
+01CB:  BTFSC  20.0
+01CC:  MOVLW  01
+01CD:  MOVWF  28
+01CE:  MOVLB  01
+01CF:  BSF    0C.3
+01D0:  MOVLW  00
+01D1:  MOVLB  00
+01D2:  BTFSC  0C.3
+01D3:  MOVLW  01
+01D4:  SUBWF  28,W
+01D5:  BTFSC  03.2
+01D6:  GOTO   1E9
+....................             { 
+....................                output_bit(DRV_DIR, input(USER_DIR)); 
+01D7:  MOVLB  01
+01D8:  BSF    0C.3
+01D9:  MOVLB  00
+01DA:  BTFSC  0C.3
+01DB:  GOTO   1E0
+01DC:  MOVLB  02
+01DD:  BCF    0C.4
+01DE:  GOTO   1E2
+01DF:  MOVLB  00
+01E0:  MOVLB  02
+01E1:  BSF    0C.4
+01E2:  MOVLB  01
+01E3:  BCF    0C.4
+....................                dir = input(USER_DIR); 
+01E4:  BSF    0C.3
+01E5:  MOVLB  00
+01E6:  BCF    20.0
+01E7:  BTFSC  0C.3
+01E8:  BSF    20.0
+....................             } 
+....................             if(step != input(USER_STEP)) 
+01E9:  MOVLW  00
+01EA:  BTFSC  20.1
+01EB:  MOVLW  01
+01EC:  MOVWF  28
+01ED:  MOVLB  01
+01EE:  BSF    0D.0
+01EF:  MOVLW  00
+01F0:  MOVLB  00
+01F1:  BTFSC  0D.0
+01F2:  MOVLW  01
+01F3:  SUBWF  28,W
+01F4:  BTFSC  03.2
+01F5:  GOTO   208
+....................             { 
+....................                output_bit(DRV_STEP, input(USER_STEP)); 
+01F6:  MOVLB  01
+01F7:  BSF    0D.0
+01F8:  MOVLB  00
+01F9:  BTFSC  0D.0
+01FA:  GOTO   1FF
+01FB:  MOVLB  02
+01FC:  BCF    0C.0
+01FD:  GOTO   201
+01FE:  MOVLB  00
+01FF:  MOVLB  02
+0200:  BSF    0C.0
+0201:  MOVLB  01
+0202:  BCF    0C.0
+....................                step = input(USER_STEP); 
+0203:  BSF    0D.0
+0204:  MOVLB  00
+0205:  BCF    20.1
+0206:  BTFSC  0D.0
+0207:  BSF    20.1
+....................             } 
+....................             Enable=input(USER_ENABLE); 
+0208:  MOVLB  01
+0209:  BSF    0D.3
+020A:  MOVLB  00
+020B:  BCF    21.0
+020C:  BTFSC  0D.3
+020D:  BSF    21.0
+....................          } 
+020E:  GOTO   1C8
+....................       } 
+....................       else if (!Enable) 
+020F:  GOTO   29E
+0210:  BTFSC  21.0
+0211:  GOTO   27C
+....................       { 
+....................          output_high(SPI_CS); 
+0212:  MOVLB  01
+0213:  BCF    0C.7
+0214:  MOVLB  02
+0215:  BSF    0C.7
+....................           int Ctrl_1     = 0b00000001; 
+....................           int Ctrl_0     = 0b00110001; 
+0216:  MOVLW  01
+0217:  MOVLB  00
+0218:  MOVWF  24
+0219:  MOVLW  31
+021A:  MOVWF  25
+....................           SPI_SSP1BUF = Ctrl_1; 
+021B:  MOVLB  04
+021C:  CLRF   12
+021D:  MOVLB  00
+021E:  MOVF   24,W
+021F:  MOVLB  04
+0220:  MOVWF  11
+....................           while (!SPI_FLAG); 
+0221:  MOVLB  00
+0222:  BTFSS  11.3
+0223:  GOTO   222
+....................           SPI_FLAG = 0; 
+0224:  BCF    11.3
+....................           SPI_SSP1BUF = Ctrl_0; 
+0225:  MOVLB  04
+0226:  CLRF   12
+0227:  MOVLB  00
+0228:  MOVF   25,W
+0229:  MOVLB  04
+022A:  MOVWF  11
+....................           while (!SPI_FLAG); 
+022B:  MOVLB  00
+022C:  BTFSS  11.3
+022D:  GOTO   22C
+....................           SPI_FLAG = 0; 
+022E:  BCF    11.3
+....................           output_low(SPI_CS); 
+022F:  MOVLB  01
+0230:  BCF    0C.7
+0231:  MOVLB  02
+0232:  BCF    0C.7
+....................          
+....................         while(!Enable){ 
+0233:  MOVLB  00
+0234:  BTFSC  21.0
+0235:  GOTO   27B
+....................             if(dir != input(USER_DIR)) 
+0236:  MOVLW  00
+0237:  BTFSC  20.0
+0238:  MOVLW  01
+0239:  MOVWF  28
+023A:  MOVLB  01
+023B:  BSF    0C.3
+023C:  MOVLW  00
+023D:  MOVLB  00
+023E:  BTFSC  0C.3
+023F:  MOVLW  01
+0240:  SUBWF  28,W
+0241:  BTFSC  03.2
+0242:  GOTO   255
+....................             { 
+....................                output_bit(DRV_DIR, input(USER_DIR)); 
+0243:  MOVLB  01
+0244:  BSF    0C.3
+0245:  MOVLB  00
+0246:  BTFSC  0C.3
+0247:  GOTO   24C
+0248:  MOVLB  02
+0249:  BCF    0C.4
+024A:  GOTO   24E
+024B:  MOVLB  00
+024C:  MOVLB  02
+024D:  BSF    0C.4
+024E:  MOVLB  01
+024F:  BCF    0C.4
+....................                dir = input(USER_DIR); 
+0250:  BSF    0C.3
+0251:  MOVLB  00
+0252:  BCF    20.0
+0253:  BTFSC  0C.3
+0254:  BSF    20.0
+....................             } 
+....................             if(step != input(USER_STEP)) 
+0255:  MOVLW  00
+0256:  BTFSC  20.1
+0257:  MOVLW  01
+0258:  MOVWF  28
+0259:  MOVLB  01
+025A:  BSF    0D.0
+025B:  MOVLW  00
+025C:  MOVLB  00
+025D:  BTFSC  0D.0
+025E:  MOVLW  01
+025F:  SUBWF  28,W
+0260:  BTFSC  03.2
+0261:  GOTO   274
+....................             { 
+....................                output_bit(DRV_STEP, input(USER_STEP)); 
+0262:  MOVLB  01
+0263:  BSF    0D.0
+0264:  MOVLB  00
+0265:  BTFSC  0D.0
+0266:  GOTO   26B
+0267:  MOVLB  02
+0268:  BCF    0C.0
+0269:  GOTO   26D
+026A:  MOVLB  00
+026B:  MOVLB  02
+026C:  BSF    0C.0
+026D:  MOVLB  01
+026E:  BCF    0C.0
+....................                step = input(USER_STEP); 
+026F:  BSF    0D.0
+0270:  MOVLB  00
+0271:  BCF    20.1
+0272:  BTFSC  0D.0
+0273:  BSF    20.1
+....................             } 
+....................             Enable=input(USER_ENABLE); 
+0274:  MOVLB  01
+0275:  BSF    0D.3
+0276:  MOVLB  00
+0277:  BCF    21.0
+0278:  BTFSC  0D.3
+0279:  BSF    21.0
+....................         } 
+027A:  GOTO   234
+....................       } 
+....................        
+....................       else 
+027B:  GOTO   29E
+....................       { 
+....................           output_high(SPI_CS); 
+027C:  MOVLB  01
+027D:  BCF    0C.7
+027E:  MOVLB  02
+027F:  BSF    0C.7
+....................           int Ctrl_1     = 0b00000011; 
+....................           int Ctrl_0     = 0b01000001; 
+0280:  MOVLW  03
+0281:  MOVLB  00
+0282:  MOVWF  26
+0283:  MOVLW  41
+0284:  MOVWF  27
+....................           SPI_SSP1BUF = Ctrl_1; 
+0285:  MOVLB  04
+0286:  CLRF   12
+0287:  MOVLB  00
+0288:  MOVF   26,W
+0289:  MOVLB  04
+028A:  MOVWF  11
+....................           while (!SPI_FLAG); 
+028B:  MOVLB  00
+028C:  BTFSS  11.3
+028D:  GOTO   28C
+....................           SPI_FLAG = 0; 
+028E:  BCF    11.3
+....................           SPI_SSP1BUF = Ctrl_0; 
+028F:  MOVLB  04
+0290:  CLRF   12
+0291:  MOVLB  00
+0292:  MOVF   27,W
+0293:  MOVLB  04
+0294:  MOVWF  11
+....................           while (!SPI_FLAG); 
+0295:  MOVLB  00
+0296:  BTFSS  11.3
+0297:  GOTO   296
+....................           SPI_FLAG = 0; 
+0298:  BCF    11.3
+....................           output_low(SPI_CS); 
+0299:  MOVLB  01
+029A:  BCF    0C.7
+029B:  MOVLB  02
+029C:  BCF    0C.7
+029D:  MOVLB  00
+....................       } 
+....................    } 
+029E:  GOTO   19F
+.................... } 
+029F:  MOVLP  00
+02A0:  GOTO   2CB (RETURN)
+....................  
+....................  
+.................... void main() 
+.................... { 
+02A1:  CLRF   05
+02A2:  CLRF   04
+02A3:  MOVLW  1F
+02A4:  ANDWF  03,F
+02A5:  MOVLW  F4
+02A6:  MOVLB  01
+02A7:  MOVWF  19
+02A8:  MOVLB  00
+02A9:  BCF    20.0
+02AA:  BCF    20.1
+02AB:  BCF    20.2
+02AC:  MOVLB  03
+02AD:  CLRF   0C
+02AE:  CLRF   0D
+02AF:  MOVLB  02
+02B0:  CLRF   12
+02B1:  CLRF   11
+02B2:  CLRF   14
+02B3:  CLRF   13
+.................... // Set I/O states of the ports 
+....................    //           76543210                  
+....................    set_tris_a(0b00101000);        
+02B4:  MOVLW  28
+02B5:  MOVLB  01
+02B6:  MOVWF  0C
+....................    set_tris_b(0b11001111); 
+02B7:  MOVLW  CF
+02B8:  MOVWF  0D
+....................  
+....................    // Set alternative pin functions 
+....................    set_pins(); 
+02B9:  MOVLB  00
+02BA:  GOTO   003
+....................    // Set SPI parameters 
+....................    set_SPI(); 
+02BB:  GOTO   009
+....................    //set_IOC(); 
+....................     
+....................    // Give user a hint of system start by turning on fault led 
+....................    output_high(USER_FAULT); 
+02BC:  MOVLB  01
+02BD:  BCF    0C.2
+02BE:  MOVLB  02
+02BF:  BSF    0C.2
+....................    delay_ms(500); 
+02C0:  MOVLW  02
+02C1:  MOVLB  00
+02C2:  MOVWF  21
+02C3:  MOVLW  FA
+02C4:  MOVWF  31
+02C5:  CALL   016
+02C6:  DECFSZ 21,F
+02C7:  GOTO   2C3
+....................     
+....................    // Set variables to default values 
+....................    set_variables(); 
+02C8:  GOTO   02B
+....................    // Set driver variables to default values 
+....................    set_driver(); 
+02C9:  GOTO   042
+....................     
+....................    motion_cycle(); 
+02CA:  GOTO   193
+.................... } 
+02CB:  SLEEP
+
+Configuration Fuses:
+   Word  1: 0E04   NOWDT PUT PROTECT NOMCLR CPD BROWNOUT NOIESO NOFCMEN INTRC_IO NOCLKOUT
+   Word  2: 1210   WRT NOVCAP PLL_SW STVREN BORV25 NODEBUG NOLVP

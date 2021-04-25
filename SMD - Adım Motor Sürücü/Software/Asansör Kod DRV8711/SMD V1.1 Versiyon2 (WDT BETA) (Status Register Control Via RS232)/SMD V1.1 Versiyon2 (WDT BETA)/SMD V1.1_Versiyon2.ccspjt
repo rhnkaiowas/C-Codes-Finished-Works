@@ -1,0 +1,20 @@
+[PROJECT]
+Target=SMD V1.1_Versiyon2.hex
+Processor_Text=PIC16F1826
+CCSVersion=5.008
+Compiler=PCM
+[Target Data]
+FileList=SMD V1.1_Versiyon2.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[SMD V1.1_Versiyon2.c]
+Type=4
+[mru-list]
+1=SMD V1.1_Versiyon2.c
+[Opened Files]
+1=SMD V1.1_Versiyon2.c
+2=
+3=
+[Units]
+Count=1
+1=SMD V1.1_Versiyon2 (main)

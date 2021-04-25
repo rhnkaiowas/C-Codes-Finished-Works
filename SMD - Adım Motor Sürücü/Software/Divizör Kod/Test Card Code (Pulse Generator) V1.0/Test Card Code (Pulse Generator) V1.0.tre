@@ -1,0 +1,14 @@
+읕Test Card Code (Pulse Generator) V1
+   읕MAIN  0/145  Ram=1
+      쳐??0??
+      쳐set_pins  0/6  Ram=0
+      쳐set_SPI  0/13  Ram=0
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@delay_us1  0/18  Ram=1
+      쳐@delay_us1  0/18  Ram=1
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@delay_us1  0/18  Ram=1
+      쳐@delay_us1  0/18  Ram=1
+      읕@delay_ms1  0/21  Ram=1
